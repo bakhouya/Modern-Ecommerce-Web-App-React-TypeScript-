@@ -1,0 +1,108 @@
+
+$primary    : #0f8a8a;
+$secondary  : #159abb;
+$success    : #4caf50;
+$danger     : #d13f3f;
+$warning    : #ff9800;
+$dark       : #2b2d42;
+$light      : #f8f9fa;
+
+
+
+
+
+$bg_color     : #0a0a0a ;
+$base_color   : #1a1a1a ;
+$border_color : rgb($dark, 0.5) ;
+// $hover_color  : #252525 ;
+$hover_color  : rgb($primary, 0.10)  ;
+
+$txt_color_title : #f0f0f0 ;
+$txt_color_base  : #c0c0c0 ;
+$txt_color_light : #827f7f ;
+$shadow : 0 10px 20px 2px rgb(18, 17, 17) ;
+// ++++++++++++++++++++++++++++++++++++
+$bg_color     : #ffffff ;
+$base_color   : #ffffff ;
+$border_color : #e7ebf1 ;
+$hover_color  : rgb($primary, 0.07);
+
+
+$txt_color_title : #06080A ;
+$txt_color_base  : #262D30 ;
+$txt_color_light : #757f83 ;
+$shadow : 0 10px 20px 2px rgb(238, 233, 233) ;
+
+
+
+$gray-100   : #f8f9fa;
+$gray-200   : #e9ecef;
+$gray-800   : #343a40;
+
+$colors: (
+  primary   : $primary,
+  secondary : $secondary,
+  success   : $success,
+  danger    : $danger,
+  warning   : $warning,
+  dark      : $dark,
+  light     : $light,
+  default   : $base_color,
+);
+
+
+
+$size_base    : 17px ;
+
+$size_xs      : 11.3px ;
+$size_sm      : 13.4px ;
+$size_md      : 15.4px ;
+$size_lg      : 17px ;
+$size_xl      : 24px ;
+$size_xxl     : 27px ;
+
+
+
+
+$sidebar_bg   : $bg_color ;
+$open_sidbar  : 350px ;
+$close_sidbar : 70px ;
+$height_box   : 65px ;
+
+// Montserrat? Nunito Outfit Unageo
+$family       : "Unageo", "Nunito", "Outfit", 'Unageo', system-ui, sans-serif ;
+// $family       : Montserrat, sans-serif, "Spline Sans Mono", monospace ;
+
+$weight_100 : 100 ;
+$weight_200 : 200 ;
+$weight_300 : 300 ;
+$weight_400 : 400 ;
+$weight_500 : 500 ;
+$weight_600 : 600 ;
+$weight_700 : 700 ;
+$weight_800 : 800 ;
+$weight_900 : 900 ;
+
+$radius_base: 5px ;
+$spacer: 1rem ;
+
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+$box_shadow_sm: 0 1px 2px rgba(0,0,0,0.05);
+$box_shadow_md: 0 4px 6px rgba(0,0,0,0.07);
+
+
+
+
+
+
+$padding_base : 12px ;
+$space        : 50px ;
+$padding      : 25px ;
+

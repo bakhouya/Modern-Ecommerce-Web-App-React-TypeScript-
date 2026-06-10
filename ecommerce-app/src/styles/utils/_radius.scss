@@ -1,0 +1,15 @@
+
+
+$radius_count : 100 ;
+
+
+
+@for $i from 1 through $radius_count {
+    .radius_#{$i}{
+        border-radius : #{$i}px !important ;
+    }
+}
+
+
+
+

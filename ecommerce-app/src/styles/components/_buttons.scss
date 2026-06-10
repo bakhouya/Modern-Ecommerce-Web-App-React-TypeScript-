@@ -1,0 +1,87 @@
+
+
+@function text-color($bg) {
+    @if (lightness($bg) > 60) {
+            @return #1a1a1a; 
+    } @else {
+            @return #ffffff; 
+    }
+}
+$icon-sizes: (
+    sm: (height: 32px, icon: 16px),
+    md: (height: 40px, icon: 18px),
+    lg: (height: 46px, icon: 22px),
+    xl: (height: 52px, icon: 26px)  
+);
+
+.btn_icon {
+    @include flex(center, center, 0) ;
+    border          : none;
+    cursor          : pointer;
+    border-radius   : 50% ;
+    background      : transparent;
+    color           : inherit;
+    transition      : transform 0.2s ease, background 0.2s ease;
+    svg {display: block; transition: inherit;}
+
+    &:hover {transform: scale(1.05);}
+    &:active {transform: scale(0.95);} 
+        
+    @each $size, $values in $icon-sizes {
+        &.#{$size} {
+            width: map-get($values, height);
+            height: map-get($values, height);
+            svg {
+                width: map-get($values, icon);
+                height: map-get($values, icon);
+            }
+        }
+    } 
+}
+.btn {
+    padding     : 15px ;
+    border-radius: $radius_base ;
+    border      : none ;
+    background  : $primary ;
+    color       : white ;
+    font-weight : bold ;
+    cursor      : pointer ;
+    transition  : all 0.3s ease-in-out ;
+    @include flex(center, center, 6px) ;
+    &:disabled {opacity: 0.7; cursor: not-allowed;}
+    &.w_full {width: 100% !important ;}
+    &.w_max {width: max-content }
+    .text {color: white ;}
+        
+    @each $size, $values in $icon-sizes {
+        &.#{$size} {
+            height: map-get($values, height);
+            svg {
+                width: map-get($values, icon);
+                height: map-get($values, icon);
+            }
+        }
+    }
+
+}
+
+.btn_icon, .btn{
+    @each $name, $color in $colors {
+        &.#{$name} {
+            background: $color;
+            color: text-color($color);
+            &:hover {
+                background: rgb($color, 0.4);
+            }
+        }
+        &.#{$name}_outline {
+            background: transparent;
+            border: 1px solid $color;
+            color: $color;
+            &:hover {
+                background: $color;
+                color: text-color($color);
+            }
+        }
+    } 
+}

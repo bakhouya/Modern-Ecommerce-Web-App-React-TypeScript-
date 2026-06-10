@@ -1,0 +1,50 @@
+
+
+/* ABSTRACTS */
+@import "./abstracts/variables" ;  
+@import "./abstracts/mixins" ;
+
+/* BASE */
+@import "./base/reset";
+@import "./base/typography";
+
+/* COMPONENTS */
+@import "./components/forms";
+@import "./components/buttons";
+@import "./components/avatars";
+@import "./components/loader";
+
+
+
+@import "./utils/margin";
+@import "./utils/padding";
+@import "./utils/flex";
+@import "./utils/border";
+// @import "./utils/grid" ;
+@import "./utils/text" ;
+@import "./utils/colors" ;
+@import "./utils/radius" ;
+
+
+/* LAYOUT */
+@import "./layout/sidebar";
+@import "./layout/header";
+@import "./layout/footer";
+
+/* PAGES */
+@import "./pages/dashboard/home";
+@import "./pages/dashboard/profile";
+
+
+
+@import "./pages/web/home";
+@import "./pages/auth";
+
+
+
+
+
+
+
+
+

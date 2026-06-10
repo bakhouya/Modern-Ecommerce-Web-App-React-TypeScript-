@@ -1,0 +1,61 @@
+
+$avatar-sizes: (
+    sm: (height: 32px, icon: 16px),
+    md: (height: 40px, icon: 18px),
+    lg: (height: 48px, icon: 22px),
+    xl: (height: 56px, icon: 26px),  
+    xxl: (height: 66px, icon: 36px),
+    wx: (height: 140px, icon: 36px)  
+);
+
+.avatars {
+    @include flex_center;
+    border-radius: 50% ;
+    border: 1px solid $border_color ;
+    position: relative ;
+    // &::before {
+    //     content: "" ;
+    //     position: absolute ;
+    //     width: 10px ; height: 10px ;
+    //     inset-inline-end: 5px ;
+    //     inset-block-start: 5px ;
+    //     background-color: $primary ;
+    //     border-radius: 50% ;
+    //     border: 1px solid rgba($primary, 0.04) ;
+    // }
+    @each $size, $values in $avatar-sizes {
+        &.#{$size} {
+            width: map-get($values, height);
+            height: map-get($values, height);
+            // svg {
+            //     width: map-get($values, icon);
+            //     height: map-get($values, icon);
+            // }
+        }
+    }
+}
+
+
+
+
+
+
+@each $color-name, $color-value in $colors {
+    .bg_#{$color-name} {
+        background-color: rgba($color-value, 1);
+        .text {
+            color: white ;
+        }
+    }
+    .bg_#{$color-name}_solid {
+        background-color: $color-value;
+    }
+    .text_#{$color-name} {
+        color: $color-value;
+    }
+    .border_#{$color-name} {
+        border-color: $color-value;
+    }
+}
+
+

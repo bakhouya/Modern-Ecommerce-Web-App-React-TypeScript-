@@ -1,0 +1,33 @@
+
+
+
+
+
+.flex {display: flex;} .block {display:block;} .inline_block {flex: inline-block;}
+
+.flex_start_start {@include flex(start, start, 0) ;}
+.flex_start_center {@include flex(start, center, 0) ;}
+.flex_start_end {@include flex(start, end, 0) ;}
+
+.flex_center_start {@include flex(center, start, 0) ;}
+.flex_center_center {@include flex(center, center, 0) ;}
+.flex_center_end {@include flex(center, end, 0) ;}
+
+.flex_between_start {@include flex(space-between, start, 0) ;}
+.flex_between_center {@include flex(space-between, center, 0) ;}
+.flex_between_end {@include flex(space-between, end, 0) ;}
+
+.flex_end_start {@include flex(end, start, 0) ;}
+.flex_end_center {@include flex(end, center, 0) ;}
+.flex_end_end {@include flex(end, end, 0) ;}
+
+.flex_around_start {@include flex(space-around, start, 0) ;}
+.flex_around_center {@include flex(space-around, center, 0) ;}
+.flex_around_end {@include flex(space-around, end, 0) ;}
+
+@for $i from 1 through 50 {
+    .gap_#{$i} {
+        gap : #{$i}px !important; 
+        flex-wrap: wrap ;
+    }
+}

@@ -1,0 +1,25 @@
+
+
+.wrapper_page {
+    @include flex(start, start, 0) ;
+}
+
+
+.nav_container {
+    position: sticky ;
+    top : $height_box ;
+    padding: $padding ;
+    min-width: $open_sidbar ;
+    // min-width: 400px ;
+    border-inline-end: 1px solid $border_color ;
+    min-height: calc(100vh - $height_box) ;
+}
+.flex_container {
+    border-radius: $radius_base ;
+    flex: 1 ;
+    padding: 3px $space  $padding $padding ;
+    // background-color: $base_color ;
+}
+
+
+

@@ -1,0 +1,31 @@
+
+
+$grid-columns: 12 ;
+
+.grid {
+    display: flex ;
+    flex-wrap: wrap ;
+    .col {flex: 1 0 0 ;}
+}
+
+// @for $i from 1 through 20 { .grid_#{$i}{ @include grid($i) ;} }
+
+@for $i from 1 through $grid-columns {
+    .col_#{$i}{
+        flex: 0 0  percentage($i/$grid-columns) ;
+        padding: $padding_base ;
+    }
+}
+
+$breakpoints: ( "sm": 576px , "md": 768px , "lg": 992px , "xl": 1200px);
+
+@each $breakpoint, $value in $breakpoints {
+    @media (min-width: $value){
+        @for $i from 1 through $grid-columns {
+            .col_#{$i}{
+                flex: 0 0  percentage($i/$grid-columns) ;
+                max-width: percentage($i/$grid-columns) ;
+            }
+        }
+    }
+}
