@@ -1,0 +1,34 @@
+
+
+@mixin dark() {
+    --bg_color          : #1b1b1e;
+    --base_color        : #242428;
+    --border_color      : #2e2e33;
+
+    // --bg_color     : #0a0a0c;
+    // --base_color   : #141416;
+    // --border_color : #1e1e22;
+    --border_input: #212125;
+
+    // --bg_color: #0a0a0f;
+    // --base_color: #14141e;
+    // --border_color: #1c1c2a;
+    // --border_input: #1f1f2e ;
+
+    --bg_color: #1d1d1e ;
+    --base_color: #242425  ;
+    --border_color: #28282a  ;
+    --border_input: #2f2f31  ;
+    
+
+    --wrapper_color     : var(--bg_color);
+
+    --txt_color_title   : #e3e3e9;
+    --txt_color_base    : #f2f2f8;
+    --txt_color_light   : #d2d2df;
+
+    --shadow            : 0 10px 20px 2px rgb(18, 17, 17);
+    --shadow2           : 0;
+    --shadow_primary    : 0 50px 100px -20px rgba(16, 16, 16, 0.501), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+    --shadow_model      : rgba(27, 27, 30, 0.55);
+}

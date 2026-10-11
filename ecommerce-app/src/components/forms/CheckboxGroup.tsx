@@ -1,30 +1,13 @@
 import { Checkbox } from "./Checkbox";
 
-interface FieldItem {
-    key: string;
-    label: string;
-    desc: string;
-}
+interface FieldItem {key: string; label: string; desc: string;}
+interface CheckboxField { value: boolean; error: string; onChange: (value: boolean) => void;}
 
-interface CheckboxField {
-    value: boolean;
-    error: string;
-    onChange: (value: boolean) => void;
-}
+interface PropsTypes { title: string; fields: FieldItem[]; checkboxes: Record<string, CheckboxField>;}
 
-interface PropsTypes {
-    title: string;
-    fields: FieldItem[];
-    checkboxes: Record<string, CheckboxField>;
-}
-
-export const CheckboxGroup = ({
-    title,
-    fields,
-    checkboxes,
-}: PropsTypes) => {
+export const CheckboxGroup = ({ title, fields, checkboxes,}: PropsTypes) => {
     return (
-        <div className="p_15 border radius_8 my_15">
+        <div className="p_15 border radius my_15">
             <div className="text text_xl weight_500">{title}</div>
             <div className="divider my_12"></div>
 

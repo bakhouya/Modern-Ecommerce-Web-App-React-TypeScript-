@@ -1,0 +1,197 @@
+
+$w : 8px ;
+
+.p_top {
+    padding-top: calc($padding - 3px) ;
+}
+.radius {
+    border-radius: $radius_base ;
+}
+.slash {
+    height: 15px ;
+    width: 1px ;
+    background-color: $border_color ;;
+}
+.item_active {
+    border-radius: $radius_base ;
+    background-color: rgb($success, 0.2) ;
+    padding: 1px 10px ;
+}
+.item_inactive {
+    border-radius: $radius_base ;
+    background-color: rgb($danger, 0.2) ;
+    padding: 1px 10px ;
+}
+
+
+.cardGrid {
+    display: flex;
+    flex-wrap: wrap ;
+    gap: 15px ;
+    cursor: pointer;
+}
+.card_flex {
+    position: relative ;
+    width: 100% ;
+    border-radius: $radius_base ;
+    border: 1px solid $border_color ;
+    padding:  $padding_base ;
+    transition: all 0.2s ease-in-out;
+    background: $base_color ;
+    backdrop-filter: blur(10px) ;
+    
+    cursor: pointer;
+    &.selected, &:hover {
+        border-color: $primary ;
+        background-color: $base_color ;
+        background: rgb($primary, 0.04);
+    }
+    .footer_flex_card {
+        border-top: 1px solid $border_color ;
+        margin-top: $padding_base ;
+        padding-top: $padding_base ;
+    }
+    .flex {
+        @include flex(start, start, $padding_base) ;
+    }
+}
+.img_card_flex {
+    height: 120px ;
+    aspect-ratio: 1 / 1 ;
+    position: relative ;
+    background-color: $hover_color ;
+    border-radius: $radius_base ;
+    @include flex_center() ;
+    img {
+        width: 50% ;
+        aspect-ratio: 1 / 1 ;
+        border-radius: $radius_base ;
+    }
+}
+.full_img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 ;
+    border-radius: $radius_base ;
+}
+.bulkBar {
+    @include flex(space-between, center, 0) ;
+    .select_all {
+        background-color: $base_color ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+
+.react-select-container {
+    width: 100% ;
+}
+.react-select__control {
+    height: 46px ;
+    position: relative !important ;
+    border-radius: $radius_base !important;
+    border: 1px solid $border_color !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease ease-in-out ;
+    &:hover { border-color: $border_color !important;}
+    color: $txt_color_base !important ;
+}
+.react-select__control--is-focused {
+  border-color: $primary !important;
+}
+.react-select__value-container {
+    padding: 0 $padding_base !important ;
+    height: 100% ;
+    display: flex !important ;
+    @include flex(start, center, 0);
+    color: $txt_color_base !important ;
+}
+.react-select__indicator-separator {
+    display: none ;
+}
+.react-select__menu {
+    border-radius: $radius_base !important;
+    overflow: hidden ;
+    padding: 4px 4px 2px 4px ;
+    border: 1px solid $border_color !important ;
+    box-shadow: $shadow !important;
+    background-color: $base_color !important ;
+}
+.react-select__option {
+    border-radius: $radius_base !important;
+}
+.react-select__option--is-selected {
+   background: $primary !important ;
+}
+.react-select__option--is-focused {
+   background: rgb($primary, 0.2) !important;
+}
+
+
+
+.icon-checkbox, .icon-radio {
+    margin: 0 ;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    padding: 0 !important;
+    border: 1px solid $border_color;
+    border-radius: 3px ;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s ease-in-out ;
+    &:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+.icon-radio {
+    border-radius: 50% ;
+    transition: all 0.5s ease-in-out ;
+    &:checked {
+        background-color: transparent ;
+        border-color    : $primary;
+    }
+}
+.icon-checkbox:checked::after{
+    content: '✓' ;
+    position: absolute ;
+    color: white ;
+    font-size: 18px ;
+    width: 100% ;
+    height: 100% ;
+    inset: 0 ;
+    @include flex_center() ;
+}
+.icon-radio:checked::after {
+    content     : '' ;
+    position    : absolute ;
+    background-color : $primary ;
+    width       : 10px ;
+    height      : 10px ;
+    inset       : 50% ;
+    transform   : translate(-50%, -50%);
+    border-radius: 50% ;
+    transition: all 0.5s ease-in-out ;
+}
+

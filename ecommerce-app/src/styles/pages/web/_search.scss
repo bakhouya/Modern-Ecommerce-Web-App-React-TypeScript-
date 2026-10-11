@@ -1,0 +1,302 @@
+
+$primary-dark: #4338ca;
+$text: #111827;
+$muted: #6b7280;
+$border: #e5e7eb;
+$bg: #f9fafb;
+$card: #ffffff;
+$danger: #dc2626;
+$success: #16a34a;
+$warning: #d97706;
+
+$radius: 12px;
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+$bp-md: 768px;
+
+// -----------------------------------------------------------------------------------------------
+// MIXINS
+// -----------------------------------------------------------------------------------------------
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin clamp-lines($n) {
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  line-clamp: $n;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+
+// -----------------------------------------------------------------------------------------------
+// PAGE LAYOUT
+// -----------------------------------------------------------------------------------------------
+.search-page {
+    min-height: 100vh;
+    // @include flex(center, center, 0) ;
+    &__container { 
+        width: 100% ; 
+        // padding-block-start: $padding_base ;
+        padding-block-end: 60px ;
+    }
+    // &__emptyContainer {
+    //     width: 60% !important;
+    //     margin: auto ;
+    // }
+    // &:has(&__emptyContainer) { @include flex(start, center, 0) ; }
+    &__header { 
+        @include flex(start, center, $padding_base) ;
+        position: sticky ;
+        top: 0 ;
+        padding-block: $padding_base ;
+        background-color: $base_color ;
+        border-bottom: 1px solid $border_color ;
+        z-index: 100 ;
+    }
+}
+.search_logo {
+    height: 52px ;
+    margin: auto ;
+    border-radius: $radius_full ;
+}
+.search-form {
+    flex: 1 ;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    @include md {flex-direction: row;}
+    &__field {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        position: absolute;
+        inset-inline-start: 5px ;
+        pointer-events: none;
+        @include flex(center,center, 0) ;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        padding: 10px ;
+        border-radius: 50%;
+        background: $hover_color ;
+    }
+    &__input {
+        width: 100%;
+        padding: 15px ;
+        padding-inline-start: 75px ;
+        height: 50px ;
+        border: 1px solid $border_color;
+        border-radius: 40px ;
+        font-size: $size_sm  ;
+        background: $base_color ;
+        transition: border-color 0.2s ;
+        // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+        &:focus {
+            outline: none;
+            border-color: $primary;
+        }
+        &::-webkit-search-cancel-button { display: none; }
+    }
+    &__clear {
+        @include flex(center,center, 0) ;
+        position: absolute;
+        inset-inline-end: 10px;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        border-radius: 50%;
+        background: $hover_color ;
+        cursor: pointer;
+        &:hover { background: darken($border, 8%); }
+    }
+}
+
+// -----------------------------------------------------------------------------------------------
+// HISTORY (recent searches)
+// -----------------------------------------------------------------------------------------------
+.search-history {
+    margin-top: $padding_base ;
+    &__head {
+        @include flex(space-between, center, 0) ;
+        margin-bottom: $padding_base ;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px ;
+    }
+}
+.chip {
+    @include flex(space-between, center, 7px) ;
+    // background: $bg_color ;
+    border: 1px solid $border_color ;
+    border-radius: $radius_base ;
+    padding: 10px ;
+    overflow: hidden;
+
+    &__label, &__remove {
+        border: 0;
+        background: none;
+        cursor: pointer ;
+    }
+    &__label { padding: 0.4rem 0.4rem 0.4rem 0.9rem; &:hover { color: $primary; } }
+    &__remove { padding: 0.4rem 0.7rem 0.4rem 0.2rem; color: $muted; &:hover { color: $danger; } }
+}
+
+// -----------------------------------------------------------------------------------------------
+// STATES (empty / error)
+// -----------------------------------------------------------------------------------------------
+.search-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    &--error { color: $danger; .btn { margin-top: 0.75rem; } }
+}
+
+// -----------------------------------------------------------------------------------------------
+// RESULTS
+// -----------------------------------------------------------------------------------------------
+.search-results{ 
+    margin-top: $padding_base ;
+}
+
+.search-section {
+    margin-top: $padding_base ;
+    .text_lg { margin-bottom: 10px ; }
+}
+
+.search-grid {
+    display: grid;
+    gap: 1rem;
+
+    // &--products {
+    //     grid-template-columns: repeat(2, 1fr);
+    //     @include md { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.25rem; }
+    // }
+    &--entities {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+// -----------------------------------------------------------------------------------------------
+// PRODUCT CARD
+// -----------------------------------------------------------------------------------------------
+.product-card {
+    display: flex;
+    //   flex-direction: column;
+    @include flex(start, start, $padding_base);
+    // background: $base_color ;
+    // border: 1px solid $border_color ;
+    border-radius: $radius_base;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        // box-shadow: $shadow-hover;
+    }
+
+    &__media {
+        position: relative;
+        width: 80px ;
+        aspect-ratio: 1 / 1;
+        background: #f3f4f6;
+        border-radius: $radius_base;
+        overflow: hidden ;
+        img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    }
+
+    &__placeholder {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: $muted;
+        font-size: 0.85rem;
+    }
+
+    &__body { display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+    &__brand { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: $muted; }
+
+    &__price {
+        margin-top: auto;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+
+        strong { font-size: 1.05rem; color: $primary; }
+        s { font-size: 0.85rem; color: $muted; }
+    }
+
+    &__no-price { font-size: 0.85rem; color: $muted; }
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// ENTITY CARD (brand / category)
+// -----------------------------------------------------------------------------------------------
+.entity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: $base_color ;
+  border: 1px solid $border_color;
+  border-radius: $radius_base;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover { transform: translateY(-3px); box-shadow: $shadow-hover; }
+
+  &__media {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eef2ff;
+    display: grid;
+    place-items: center ;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+  &__letter { font-size: 1.6rem; font-weight: 700; color: $primary; }
+}
+
+// -----------------------------------------------------------------------------------------------
+// SKELETON (loading)
+// -----------------------------------------------------------------------------------------------
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #eceff1 25%, #f6f7f8 37%, #eceff1 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: $radius_base ;
+  margin-top: $padding ;
+}
+.skeleton-card {
+  background: $base_color ;
+  border: 1px solid $border_color ;
+  border-radius: $radius_base ;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  &__media { aspect-ratio: 1 / 1; }
+  &__line { height: 14px; &--short { width: 60%; } }
+}

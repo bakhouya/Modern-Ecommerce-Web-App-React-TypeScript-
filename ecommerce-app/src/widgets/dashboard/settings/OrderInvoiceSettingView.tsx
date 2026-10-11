@@ -4,24 +4,32 @@
 import { useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import { AxiosError } from 'axios';
 
 import { useFieldText } from '../../../hooks/useFieldText';
 import { useFieldCheckbox } from '../../../hooks/useFieldCheckbox';
-import InputText from '../../../components/forms/InputText';
+import type { OrderInvoicesSettings } from '../../../types/settingsTypes';
+
 import { OrderInvoicesSettingCheckboxSchema, OrderInvoicesSettingTextSchema,  } from '../../../validations/settingsSchema';
 import { UpdateOrderInvoiceSettings } from '../../../services/settings/settingsService';
 import { handleBackendErrors } from '../../../helpers/handleValidationErrors';
-import { SectionHeader } from '../../../components/ui/SectionHeader';
 import { useOrderInvoiceSettings } from '../../../context/settings/OrderInvoiceSettingsContext';
-import { companyFields, customerFields, orderFields, totalFields } from '../../../models/settings/OrderInvoicesFields';
+import { useOrderCompanyFields, useOrderCustomerFields, useOrderOrderFields, useOrderTotalFields} from '../../../models/settings/OrderInvoicesFields';
+
 import { CheckboxGroup } from '../../../components/forms/CheckboxGroup';
-import type { OrderInvoicesSettings } from '../../../types/settingsTypes';
-
-
+import { SubmitButton } from '../../../components/ui/SubmitButton';
+import { SectionHeader } from '../../../components/ui/SectionHeader';
+import InputText from '../../../components/forms/InputText';
 
 interface PropsTypes {pageTitle: string;}
 
 export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
+    const { t } = useTranslation();
+    const companyFields = useOrderCompanyFields();
+    const customerFields = useOrderCustomerFields();
+    const orderFields = useOrderOrderFields();
+    const totalFields = useOrderTotalFields();
 
     const queryClient = useQueryClient() ;
     const { settingsQuery } = useOrderInvoiceSettings() ;
@@ -29,8 +37,6 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
 
     const form = useFieldText(OrderInvoicesSettingTextSchema, {title: '', footer_message: ''});     
     const checkboxes = useInvoiceCheckboxes(data);
-
-
 
     useEffect(() => {
 
@@ -43,18 +49,17 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
 
     }, [data]);
 
-
-
     const mutation = useMutation({
         mutationFn: UpdateOrderInvoiceSettings,
         onSuccess: async () => {
             await queryClient.invalidateQueries({queryKey: ['orderinvoicesetting']});
-            toast.success('Paramètres mis à jour');
+            toast.success(t('messages.update.success'));
             form.setErrors({});
         },
-        onError: (error: unknown) => {
+        onError: (error: AxiosError<{ message?: string }>) => {
+            toast.error(error.response?.data?.message || t('messages.update.error'));
             handleBackendErrors(error, form.setErrors);
-        },
+        }
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -69,21 +74,20 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
 
         mutation.mutate(putData);
     };
-
-    
+  
     return (
-        <form className="py_start_15 py_end_5" onSubmit={handleSubmit}>
+        <form className=" py_end_5" onSubmit={handleSubmit}>
             
             <div className="grid grid-cols-2 gap-4">
 
                 {/* ========== 1. Informations générales ========== */}
                 <div className="">
-                    <SectionHeader title={pageTitle} description="Titre, description et identité visuelle du site."/>
+                    <SectionHeader title={pageTitle} description={t('orderSettings.pageDescription')}/>
 
                     <div className="">
                         <InputText
                             type="text"
-                            label="Nom de factoration"
+                            label={t('orderSettings.labels.invoiceTitle')}
                             value={form.values.title}
                             onChange={(e) => form.handleChange("title", e.target.value)}
                             error={form.errors.title}
@@ -91,28 +95,24 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
                     </div>
 
                     <div className="">
-
                         <CheckboxGroup
-                            title="Info Company"
-                            fields={companyFields}
-                            checkboxes={checkboxes}
+                        title={t('orderSettings.sectionTitles.company')}
+                        fields={companyFields}
+                        checkboxes={checkboxes}
                         />
-
                     </div>
 
                     <div className="">
-                       
                         <CheckboxGroup
-                            title="Information de client"
+                            title={t('orderSettings.sectionTitles.customer')}
                             fields={customerFields}
                             checkboxes={checkboxes}
                         />
                     </div>
 
                     <div className="">
-                      
                         <CheckboxGroup
-                            title="Information de Commande"
+                            title={t('orderSettings.sectionTitles.order')}
                             fields={orderFields}
                             checkboxes={checkboxes}
                         />
@@ -121,7 +121,7 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
                     <div className="">
                      
                         <CheckboxGroup
-                            title="Information de Total facturation"
+                            title={t('orderSettings.sectionTitles.total')}
                             fields={totalFields}
                             checkboxes={checkboxes}
                         />
@@ -130,7 +130,7 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
                     <div className="">
                         <InputText
                             type="text"
-                            label="Message de pied de page"
+                            label={t('orderSettings.labels.footerMessage')}
                             value={form.values.footer_message}
                             onChange={(e) => form.handleChange("footer_message", e.target.value)}
                             error={form.errors.footer_message}
@@ -142,20 +142,10 @@ export default function UpdateSettingsOrderInvoices({pageTitle}: PropsTypes) {
 
             </div>
 
-
-
-
-
-
             <div className="divider my_12"></div>   
 
             <div className="flex_end_center my_start_12">
-                <button type="submit" className="btn primary lg" disabled={mutation.isPending}>
-                    {mutation.isPending 
-                        ? <span className="btn_loader"></span> 
-                        : <span className="text text_md"> Modéfier </span> 
-                    }
-                </button>
+                <SubmitButton isPending={mutation.isPending} type="update" />
             </div>
 
         </form>

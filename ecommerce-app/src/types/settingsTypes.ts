@@ -1,5 +1,7 @@
 
 
+// ================================================================================
+// ================================================================================
 export interface SettingsTypes {
     id: string;
     created_at: string;
@@ -33,7 +35,6 @@ export interface SettingsTypes {
     patente: string;
     maintenance: boolean;
 }
-
 export interface UpdateSettings {
     title?: string;
     description?: string;
@@ -64,7 +65,11 @@ export interface UpdateSettings {
     patente?: string;
     maintenance?: boolean;
 }
+// ================================================================================
 
+
+// ================================================================================
+// ================================================================================
 export interface OrderInvoicesSettings {
     title?: string;
 
@@ -93,5 +98,84 @@ export interface OrderInvoicesSettings {
     show_footer?: boolean;
     footer_message?: string;
 }
+// ================================================================================
+
+
+
+// ================================================================================
+// ================================================================================
+interface SalesInvoiceSettingsBase {
+  title: string;
+  show_logo: boolean;
+  show_company_name: boolean;
+  show_company_address: boolean;
+  show_company_phone: boolean;
+  show_company_email: boolean;
+  show_invoice_number: boolean;
+  show_issue_date: boolean;
+  show_order_reference: boolean;
+  show_payment_method: boolean;
+  show_payment_status: boolean;
+  show_customer_name: boolean;
+  show_customer_address: boolean;
+  show_customer_phone: boolean;
+  show_customer_city: boolean;
+  show_footer: boolean;
+  footer_message: string;
+}
+// For GET method 
+export interface SalesInvoiceSettings extends SalesInvoiceSettingsBase {
+  id: string;
+  created_at: string;   
+  updated_at: string;
+}
+// For PUT, PATCH method
+export type SalesInvoiceSettingsUpdate = SalesInvoiceSettingsBase;
+// ================================================================================
+
+
+
+// ================================================================================
+// ================================================================================
+interface DeliveryInvoiceSettingsBase {
+  title: string;
+  show_logo: boolean;
+  show_company_name: boolean;
+  show_company_address: boolean;
+  show_company_phone: boolean;
+  show_company_email: boolean;
+  show_delivery_note_number: boolean;
+  show_order_reference: boolean;
+  show_delivery_date: boolean;
+  show_customer_name: boolean;
+  show_customer_phone: boolean;
+  show_shipping_address: boolean;
+  show_customer_city: boolean;
+  show_payment_method: boolean;
+  show_status: boolean;
+  show_subtotal: boolean;
+  show_shipping_cost: boolean;
+  show_discount: boolean;
+  show_total: boolean;
+  show_offer: boolean;
+  show_product_image: boolean;
+  show_product_sku: boolean;
+  show_quantity: boolean;
+  show_unit_price: boolean;
+  show_line_total: boolean;
+  show_customer_signature: boolean;
+  show_delivery_agent_signature: boolean;
+  show_stamp_area: boolean;
+  show_footer: boolean;
+  footer_message: string;
+}
+export interface DeliveryInvoiceSettings extends DeliveryInvoiceSettingsBase {
+  id: string;
+  created_at: string;   // ISO date string
+  updated_at: string;
+}
+export type DeliveryInvoiceSettingsUpdate = DeliveryInvoiceSettingsBase;
+// ================================================================================
+
 
 

@@ -98,6 +98,86 @@ export type OrderInvoicesSettingsCheckboxType = z.infer<typeof OrderInvoicesSett
 
 
 
+// ==================== SalesInvoiceSettings ====================
+export const SalesInvoiceSettingTextSchema = z.object({
+    title: textSchema,
+    footer_message: textSchema,
+});
+export type SalesInvoiceSettingTextType = z.infer<typeof SalesInvoiceSettingTextSchema>;
+
+export const SalesInvoiceSettingCheckboxSchema = z.object({
+    // Entreprise
+    show_logo: z.boolean(),
+    show_company_name: z.boolean(),
+    show_company_address: z.boolean(),
+    show_company_phone: z.boolean(),
+    show_company_email: z.boolean(),
+    // Client
+    show_customer_name: z.boolean(),
+    show_customer_address: z.boolean(),
+    show_customer_phone: z.boolean(),
+    show_customer_city: z.boolean(),
+    // Facture
+    show_invoice_number: z.boolean(),
+    show_issue_date: z.boolean(),
+    show_order_reference: z.boolean(),
+    show_payment_method: z.boolean(),
+    show_payment_status: z.boolean(),
+    // Pied de page
+    show_footer: z.boolean(),
+});
+export type SalesInvoiceSettingsCheckboxType = z.infer<typeof SalesInvoiceSettingCheckboxSchema>;
+
+
+
+
+
+
+// ==================== DeliveryInvoiceSettings ====================
+export const DeliveryInvoiceSettingTextSchema = z.object({
+    title: textSchema,
+    footer_message: textSchema,
+});
+export type DeliveryInvoiceSettingTextType = z.infer<typeof DeliveryInvoiceSettingTextSchema>;
+
+export const DeliveryInvoiceSettingCheckboxSchema = z.object({
+    // Entreprise
+    show_logo: z.boolean(),
+    show_company_name: z.boolean(),
+    show_company_address: z.boolean(),
+    show_company_phone: z.boolean(),
+    show_company_email: z.boolean(),
+    // Client
+    show_customer_name: z.boolean(),
+    show_customer_phone: z.boolean(),
+    show_shipping_address: z.boolean(),
+    show_customer_city: z.boolean(),
+    // Document
+    show_delivery_note_number: z.boolean(),
+    show_order_reference: z.boolean(),
+    show_delivery_date: z.boolean(),
+    show_payment_method: z.boolean(),
+    show_status: z.boolean(),
+    // Produits
+    show_product_image: z.boolean(),
+    show_product_sku: z.boolean(),
+    show_quantity: z.boolean(),
+    show_unit_price: z.boolean(),
+    show_line_total: z.boolean(),
+    // Totaux
+    show_subtotal: z.boolean(),
+    show_shipping_cost: z.boolean(),
+    show_discount: z.boolean(),
+    show_total: z.boolean(),
+    show_offer: z.boolean(),
+    // Signatures et tampon
+    show_customer_signature: z.boolean(),
+    show_delivery_agent_signature: z.boolean(),
+    show_stamp_area: z.boolean(),
+    // Pied de page
+    show_footer: z.boolean(),
+});
+export type DeliveryInvoiceSettingsCheckboxType = z.infer<typeof DeliveryInvoiceSettingCheckboxSchema>;
 
 
     

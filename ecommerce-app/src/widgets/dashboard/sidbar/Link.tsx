@@ -18,7 +18,8 @@ export default function LinkSidbar({url, icon, title, badge, collapsed}: Props) 
 
         <div className="sidebar_link_left">
             {icon}
-            {!collapsed && (<span className="text text_md weight_500">{title}</span>)}
+            {/* {!collapsed && (<span className="text text_md weight_500">{title}</span>)} */}
+            <span className="text text_md weight_500">{title}</span>
         </div>
 
         {!collapsed && badge && (<div className="sidebar_badge">4</div>)}

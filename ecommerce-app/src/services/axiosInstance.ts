@@ -4,10 +4,26 @@
 import axios from 'axios';
 import ROUTES from '../routers/dashboard/path';
 
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api',
-    headers: {'Content-Type': 'application/json',},
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+    withCredentials: true,
+    headers: { 'Content-Type': 'application/json' },
+    paramsSerializer: (params) => {
+        const searchParams = new URLSearchParams();
+        Object.entries(params).forEach(([key, value]) => {
+            if (value === undefined || value === null || value === '') return;
+
+            if (Array.isArray(value)) {
+                value.forEach((v) => {if (v !== undefined && v !== null && v !== '') {searchParams.append(key, v);}});
+            } else {
+                searchParams.append(key, String(value));
+            }
+        });
+        return searchParams.toString();
+    },
 });
+
 
 api.interceptors.request.use(
     (config) => {
@@ -32,6 +48,9 @@ api.interceptors.response.use(
       return Promise.reject(error);
     }
 );
+
+
+
 
 export default api;
 

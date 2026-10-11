@@ -1,27 +1,32 @@
 
 
 
-
-
-import { motion} from "framer-motion";
-import { UserCircleIcon, LockIcon, SearchIcon } from "lucide-react";
-import { useState } from "react";
+import { UserCircleIcon, LockIcon } from "lucide-react";
+import { useMemo, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import UpdateProfile from "../../../widgets/dashboard/profiles/Update";
 import ChangePassword from "../../../widgets/dashboard/profiles/ChnagePassword";
 import { ProfileProvider } from "../../../context/admins/ProfileContext";
 import { AnimatedTransition } from "../../../components/boxs/AnimatedTransition";
+import { SearchInput } from "../../../components/ui/SearchInput";
+import TabListBlock from "../../../components/forms/AnimatedTabList";
 
 
 export default function AdminProfile() {
+    const { t } = useTranslation();
     const [screen, setScreen] = useState(1);
+    const [search, setSearch] = useState("");
     
-
-    // Éléments du menu
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const menuItems = [
-        { id: 1, label: "Modifier le profil", icon: <UserCircleIcon size={17} /> },
-        { id: 2, label: "Modifier le mot de passe", icon: <LockIcon size={17} /> }
+        { id: 1, label: t('profile.menu.editProfile'), icon: <UserCircleIcon size={17} /> },
+        { id: 2, label: t('profile.menu.changePassword'), icon: <LockIcon size={17} /> }
     ];
+
+    const filteredMenuItems = useMemo(() => {
+        return menuItems.filter(item => item.label.toLowerCase().includes(search.toLowerCase()));
+    }, [search, menuItems]);
 
     return (
 
@@ -30,36 +35,9 @@ export default function AdminProfile() {
                 
                 <aside className="nav_container">
 
-                    <div className="box_input">
-                        <input type="search" className="input_search" placeholder="Rechercher ... " />
-                        <div className="in_icon text text_sm" > <SearchIcon size={16} /> </div> 
-                    </div>
-
-                    <div className="" style={{ position: "relative" }}>
-                        {menuItems.map((item) => (
-                            <motion.div key={item.id}
-                                className={`link_item flex_between_center`}
-                                onClick={() => setScreen(item.id)}
-                                style={{ cursor: "pointer", position: "relative", zIndex: 2 }}>
-
-                                <div className="flex_start_center gap_12 link_item__content">
-                                    {item.icon}
-                                    <span className="text text_md">{item.label}</span>
-                                </div>
-                                {/* Indicateur animé (fond qui glisse) */}
-                                {screen === item.id && (
-                                    <motion.div 
-                                        layoutId="highlight" 
-                                        className="active_background" 
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }} 
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                        style={{ zIndex: 1 }}/>
-                                )}
-                            </motion.div>
-                        ))}
-                        
-                    </div>
+                    <SearchInput placeholder={t('search.placeholder')} value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    
+                    <TabListBlock items={filteredMenuItems} activeItem={screen} onChange={setScreen}/>
 
                 </aside>
 
@@ -80,6 +58,7 @@ export default function AdminProfile() {
         </ProfileProvider>
         
     );
+
 }
 
 

@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 import { useFieldText } from '../../../hooks/useFieldText';
 import { useFieldCheckbox } from '../../../hooks/useFieldCheckbox';
@@ -14,14 +15,16 @@ import { useSettings } from '../../../context/settings/PublicSettingsContext';
 import { SectionHeader } from '../../../components/ui/SectionHeader';
 import { useFieldFile } from '../../../hooks/useFieldFile';
 import { FileUploader } from '../../../components/forms/FileUploader';
-import { baseFields, contactFields, currencyFields, legalFields, seoFields, socialFields } from '../../../providers/formsSettings';
+import { useGeneralFields  } from '../../../models/settings/formsSettings';
 import AttentionInput from '../../../components/ui/AttentionInput';
+import { SubmitButton } from '../../../components/ui/SubmitButton';
 
 
 interface PropsTypes {taps: number; pageTitle: string;}
 
 export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
-
+    const { t } = useTranslation();
+    const { baseFields, contactFields, socialFields, currencyFields, legalFields, seoFields } = useGeneralFields();
     const queryClient = useQueryClient() ;
     const { settingsQuery } = useSettings() ;
     const { data } = settingsQuery ;
@@ -117,7 +120,7 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
         mutationFn: UpdateSettingPlatform,
         onSuccess: async () => {
             await queryClient.invalidateQueries({queryKey: ['publicSettings']});
-            toast.success('Paramètres mis à jour');
+            toast.success(t('messages.update.success'));
             form.setErrors({});
             maintenance.setError('');
             logo.reset();
@@ -130,78 +133,87 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-    if (
-        !form.validate() ||
-        !maintenance.validate() ||
-        !logo.validate() ||
-        !icon.validate()
-    ) {
-        return;
-    }
+        if (
+            !form.validate() ||
+            !maintenance.validate() ||
+            !logo.validate() ||
+            !icon.validate()
+        ) {
+            return;
+        }
 
-    const formData = new FormData();
+        const formData = new FormData();
 
-    Object.entries(form.values).forEach(
-        ([key, value]) => {
+        Object.entries(form.values).forEach(
+            ([key, value]) => {
+                formData.append(
+                    key,
+                    String(value ?? '')
+                );
+            }
+        );
+
+        formData.append(
+            'maintenance',
+            String(maintenance.value)
+        );
+
+        if (logo.files[0]) {
             formData.append(
-                key,
-                String(value ?? '')
+                'logo',
+                logo.files[0]
             );
         }
-    );
 
-    formData.append(
-        'maintenance',
-        String(maintenance.value)
-    );
+        if (icon.files[0]) {
+            formData.append(
+                'icon',
+                icon.files[0]
+            );
+        }
 
-    if (logo.files[0]) {
-        formData.append(
-            'logo',
-            logo.files[0]
-        );
-    }
-
-    if (icon.files[0]) {
-        formData.append(
-            'icon',
-            icon.files[0]
-        );
-    }
-
-    mutation.mutate(formData);
+        mutation.mutate(formData);
     };
-
-    
+    const sectionDescriptions: Record<number, string> = {
+        1: t('generalSettings.sectionDescriptions.general'),
+        2: t('generalSettings.sectionDescriptions.contact'),
+        3: t('generalSettings.sectionDescriptions.social'),
+        4: t('generalSettings.sectionDescriptions.currency'),
+        5: t('generalSettings.sectionDescriptions.legal'),
+        6: t('generalSettings.sectionDescriptions.seo'),
+    };
+   
     return (
-        <form className="py_start_15 py_end_5" onSubmit={handleSubmit}>
+        <form className=" py_end_5" onSubmit={handleSubmit}>
             
             <div className="grid grid-cols-2 gap-4">
 
                 {/* ========== 1. Informations générales ========== */}
                 <div className={taps === 1 ? "active" : "hidden"}>
-                    <SectionHeader title={pageTitle} description="Titre, description et identité visuelle du site."/>
-
-                    <div className="">
-                        <FileUploader
-                            label="Logo"
-                            // multiple={true}
-                            previews={logo.previews}
-                            initialPreviews={data?.logo ? [data.logo] : []}
-                            error={logo.error}
-                            onAddFiles={logo.addFiles}
-                            onRemoveFile={logo.removeFile}
-                        />
-                    </div>
-                    <div className="">
-                        <FileUploader
-                            label="Favicon"
-                            previews={icon.previews}
-                            initialPreviews={data?.icon ? [data.icon] : []}
-                            error={icon.error}
-                            onAddFiles={icon.addFiles}
-                            onRemoveFile={icon.removeFile}
-                        />
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[1]}/>
+                    
+                    <div className="row">
+                        <div className="col_1 lg:col_2">
+                            <FileUploader
+                                label={t('generalSettings.labels.logo')}
+                                // multiple={true}
+                                previews={logo.previews}
+                                initialPreviews={data?.logo ? [data.logo] : []}
+                                error={logo.error}
+                                onAddFiles={logo.addFiles}
+                                onRemoveFile={logo.removeFile}
+                            />
+                        </div>
+                        <div className="col_1 lg:col_2">
+                            <FileUploader
+                                label={t('generalSettings.labels.favicon')}
+                                previews={icon.previews}
+                                initialPreviews={data?.icon ? [data.icon] : []}
+                                error={icon.error}
+                                onAddFiles={icon.addFiles}
+                                onRemoveFile={icon.removeFile}
+                            />
+                        </div>
                     </div>
 
                     {baseFields.map((field) => (
@@ -209,7 +221,8 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
                             <InputText
                                 type={field.type}
                                 label={field.label}
-                                value={form.values[field.name]}
+                                // value={form.values[field.name]}
+                                value={form.values[field.name as keyof typeof form.values]}
                                 onChange={(e) => form.handleChange(field.name, e.target.value)}
                                 error={form.errors[field.name]}
                             />
@@ -218,8 +231,8 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
                     ))}
                     <div className="my_start_12">
                         <Checkbox
-                            label="Activer le mode maintenance"
-                            desc="Lorsque activé, seuls les administrateurs peuvent accéder au site."
+                            label={t('generalSettings.labels.maintenance')}
+                            desc={t('generalSettings.labels.maintenanceDesc')}
                             checked={maintenance.value}
                             onChange={maintenance.onChange}
                             error={maintenance.error}
@@ -232,15 +245,15 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
 
                 {/* ========== 2. Contact ========== */}
                 <div className={taps === 2 ? "col-span-2 active" : "col-span-2 hidden"}>
-                    <SectionHeader title={pageTitle} description="Email, téléphone, adresse et site web officiels."/>
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[2]}/>
                     {contactFields.map((field) => (
                         <div className="box_input" key={field.name}>
                             <InputText
                                 type={field.type}
                                 label={field.label}
-                                value={form.values[field.name]}
+                                value={form.values[field.name as keyof typeof form.values]}
                                 onChange={(e) => form.handleChange(field.name, e.target.value)}
-                                error={form.errors[field.name]}
+                                error={form.errors[field.name as keyof typeof form.errors]}
                             />
                             {field.attention && <AttentionInput title={field.attention} />}
                         </div>
@@ -250,20 +263,17 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
 
                 {/* ========== 3. Réseaux sociaux ========== */}
                 <div className={taps === 3 ? "col-span-2 active" : "col-span-2 hidden"}>
-                    <SectionHeader 
-                        title={pageTitle}
-                        description="Liens vers vos pages officielles (Facebook, X, Instagram, WhatsApp, TikTok, Telegram)."
-                    />
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[3]} />
                     {socialFields.map((field) => (
                         <div className="box_input" key={field.name}>
-                            <InputText
-                                type={field.type}
-                                label={field.label}
-                                value={form.values[field.name]}
-                                onChange={(e) => form.handleChange(field.name, e.target.value)}
-                                error={form.errors[field.name]}
-                            />
-                            {field.attention && <AttentionInput title={field.attention} />}
+                        <InputText
+                            type={field.type}
+                            label={field.label}
+                            value={form.values[field.name as keyof typeof form.values]}
+                            onChange={(e) => form.handleChange(field.name, e.target.value)}
+                            error={form.errors[field.name as keyof typeof form.errors]}
+                        />
+                        {field.attention && <AttentionInput title={field.attention} />}
                         </div>
                     ))}
                 </div>
@@ -271,20 +281,17 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
 
                 {/* ========== 4. Devise ========== */}
                 <div className={taps === 4 ? "col-span-2 active" : "col-span-2 hidden"}>
-                    <SectionHeader 
-                        title={pageTitle}
-                        description="Code et symbole monétaires utilisés sur le site (ex: MAD, EUR, $)."
-                    />
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[4]} />
                     {currencyFields.map((field) => (
                         <div className="box_input" key={field.name}>
-                            <InputText
-                                type={field.type}
-                                label={field.label}
-                                value={form.values[field.name]}
-                                onChange={(e) => form.handleChange(field.name, e.target.value)}
-                                error={form.errors[field.name]}
-                            />
-                            {field.attention && <AttentionInput title={field.attention} />}
+                        <InputText
+                            type={field.type}
+                            label={field.label}
+                            value={form.values[field.name as keyof typeof form.values]}
+                            onChange={(e) => form.handleChange(field.name, e.target.value)}
+                            error={form.errors[field.name as keyof typeof form.errors]}
+                        />
+                        {field.attention && <AttentionInput title={field.attention} />}
                         </div>
                     ))}
                 </div>
@@ -292,56 +299,45 @@ export default function UpdateSettingsGeneral({taps, pageTitle}: PropsTypes) {
 
                 {/* ========== 5. Informations légales ========== */}
                 <div className={taps === 5 ? "col-span-2 active" : "col-span-2 hidden"}>
-                    <SectionHeader 
-                        title={pageTitle}
-                        description="Statut juridique, ICE, IF, RC et patente de l'entreprise."
-                    />
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[5]} />
                     {legalFields.map((field) => (
                         <div className="box_input" key={field.name}>
-                            <InputText
-                                type={field.type}
-                                label={field.label}
-                                value={form.values[field.name]}
-                                onChange={(e) => form.handleChange(field.name, e.target.value)}
-                                error={form.errors[field.name]}
-                            />
-                            {field.attention && <AttentionInput title={field.attention} />}
+                        <InputText
+                            type={field.type}
+                            label={field.label}
+                            value={form.values[field.name as keyof typeof form.values]}
+                            onChange={(e) => form.handleChange(field.name, e.target.value)}
+                            error={form.errors[field.name as keyof typeof form.errors]}
+                        />
+                        {field.attention && <AttentionInput title={field.attention} />}
                         </div>
                     ))}
                 </div>
 
 
                 {/* ========== 6. SEO & Analytics ========== */}
-                <div className={taps === 6 ? "col-span-2 active" : "col-span-2 hidden"}>
-                    <SectionHeader 
-                        title={pageTitle}
-                        description="Balises meta, mots-clés et codes de suivi (Google Analytics, Facebook Pixel, TikTok Pixel)."
-                    />
+               <div className={taps === 6 ? "col-span-2 active" : "col-span-2 hidden"}>
+                    <SectionHeader title={pageTitle} description={sectionDescriptions[6]} />
                     {seoFields.map((field) => (
                         <div className="box_input" key={field.name}>
-                            <InputText
-                                type={field.type}
-                                label={field.label}
-                                value={form.values[field.name]}
-                                onChange={(e) => form.handleChange(field.name, e.target.value)}
-                                error={form.errors[field.name]}
-                            />
-                            {field.attention && <AttentionInput title={field.attention} />}
+                        <InputText
+                            type={field.type}
+                            label={field.label}
+                            value={form.values[field.name as keyof typeof form.values]}
+                            onChange={(e) => form.handleChange(field.name, e.target.value)}
+                            error={form.errors[field.name as keyof typeof form.errors]}
+                        />
+                        {field.attention && <AttentionInput title={field.attention} />}
                         </div>
                     ))}
                 </div>
 
             </div>
 
-            <div className="divider my_end_12 col-span-2"></div>   
+            <div className="divider my_15 col-span-2"></div>   
 
             <div className="flex_end_center my_start_12">
-                <button type="submit" className="btn primary lg" disabled={mutation.isPending}>
-                    {mutation.isPending 
-                        ? <span className="btn_loader"></span> 
-                        : <span className="text text_md"> Modéfier </span> 
-                    }
-                </button>
+                <SubmitButton isPending={mutation.isPending} type="update" />
             </div>
 
         </form>

@@ -12,7 +12,7 @@ export default function InputText({ type, label, value, onChange, error}: InputT
 
     return (
         <div className="input_group">
-            <div className="text text_lg my_end_6">{label}</div>
+            <div className="text text_md my_end_6">{label}</div>
             <input type={type} className="input_text" 
                     placeholder={label} value={value} 
                     onChange={onChange} />

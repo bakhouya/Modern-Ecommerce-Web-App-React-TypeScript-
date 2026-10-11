@@ -25,17 +25,18 @@
     flex-wrap       : nowrap  ;
 }
 
-
 @mixin text-ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@mixin transition($property: all, $duration: 0.2s, $ease: ease) {
-  transition: $property $duration $ease;
+// @mixin transition($property: all, $duration: 0.2s, $ease: ease) {
+//   transition: $property $duration $ease;
+// }
+@mixin transition() {
+  transition: all 0.5s ease-in-out;
 }
-
 
 
 

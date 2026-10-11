@@ -1,7 +1,13 @@
 
 
 
-
+.spaners_inset {
+  height: 100vh ;
+  position: fixed ;
+  inset: 0 ;
+  z-index: 1000 ;
+  background-color: rgba(0, 0, 0, 0.5) ;
+}
 .spaners_container {
     min-height: calc(100vh - calc($height_box + 70px)) ;
 }

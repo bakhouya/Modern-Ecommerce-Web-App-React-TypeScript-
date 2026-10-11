@@ -2,6 +2,18 @@
 
 $height : 54px ;
 
+
+.card {
+    background-color: $base_color ;
+}
+
+.card_form {
+    background-color: $base_color ;
+    padding: $padding_base ;
+    border-radius: $radius_base ;
+    border: 1px solid $border_color ;
+}
+
 .input_group {
     position: relative ; 
 }
@@ -11,10 +23,22 @@ $height : 54px ;
     .in_icon {
         position: absolute ;
         inset-inline-end: 12px ;
-        top : 50% ;
+        top : 55% ;
         transform: translateY(-50%) ;
+        display: inline-block ;
+    }
+    input {
+        &::placeholder {font-size: $size_sm ;}
     }
     
+}
+input[type="number"], input[type="datetime"] {
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 input {
     border: none ;
@@ -24,10 +48,16 @@ input {
     font-size: $size_md ;
     background-color: transparent ;
     color: $txt_color_base ;
+    resize: none ;
+    -webkit-appearance: none !important;
+    -moz-appearance: textfield !important;
+    &::-moz-calendar-picker-indicator {
+        display: none;
+    }
     &.input_text {
         border-radius: $radius_base ;
         min-height: $height !important;
-        border: 1.9px solid $border_color ;
+        border: 1.9px solid $border_input ;
         width: 100% ;
         &:focus {
             border-color: $primary ;
@@ -36,23 +66,23 @@ input {
     }
 
 }
-
-
 .custom-select {
     width: 100%;
 
     &__control {
         min-height: $height !important;
         border-radius: $radius_base !important;
-        border: 1px solid $border_color !important;
+        border: 1px solid $border_input  !important;
         box-shadow: none !important;
         font-size: $size_md;
         padding-inline-start: 6px;
         background-color: transparent !important;
         color: $txt_color_base !important;
+        font-size: $size_sm ;
 
         &--placeholder {
             color: $txt_color_base !important;
+            font-size: $size_sm !important ;
         }
 
         &--is-focused {
@@ -67,31 +97,29 @@ input {
         background-color: $base_color !important;
         color: $txt_color_base !important;
         padding-inline-start: 5px !important;
+        border: 1px solid $border_color ;
     }
     &__option {
         border-radius: $radius_base !important;
         transition: all 0.2s ease;
         padding: 10px 12px !important;
         cursor: pointer;
+        font-size: $size_sm ;
 
-        // حالة hover (المرور بالفأرة)
         &--is-focused {
             background-color: rgba($primary, 0.1) !important;
             color: $primary !important;
         }
 
-        // حالة التحديد (selected)
         &--is-selected {
             background-color: $primary !important;
-            color: white !important;
+            color: $white !important;
 
-            // عند hover فوق الخيار المحدد
             &:hover {
                 background-color: darken($primary, 5%) !important;
             }
         }
 
-        // hover عادي (غير محدد)
         &:hover {
             background-color: rgba($primary, 0.08) !important;
             color: $primary !important;
@@ -175,14 +203,12 @@ input {
     }
 }
 
-
-
 .input_search {
     width: 100% ;
     border-radius: $radius_base ;
-    height: 44px ;
-    background-color: $hover_color;
-    // margin-bottom: $padding_base ;
+    height: 46px ;
+    background-color: $hover_color ;
+    // border: 1px solid $border_color ;
 }
 
 
@@ -191,16 +217,18 @@ input {
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(3px);
+    background: $shadow_model ;
+    backdrop-filter: blur(3px) ;
     @include flex(center, center, 0);
     z-index: 1000;
     .modal-card {
         background: $base_color;
         border-radius: $radius_base ;
-        width: 90%;
+        width: 90% ;
         max-width: 500px;
         overflow: hidden;
+        border: 1px solid $border_color ;
+        box-shadow: $shadow_primary ;
         .modal-header {
             padding: $padding_base $padding;
             border-bottom: 1px solid $border_color;
@@ -214,11 +242,11 @@ input {
             }
         }
         .modal-body {
-            padding: 1.5rem;
+            padding: $padding ;
             .upload-area {
                 border: 2px dashed $border_color;
-                border-radius: 0.75rem;
-                padding: 1.5rem;
+                border-radius: $radius_base ;
+                padding: $padding ;
                 text-align: center;
                 cursor: pointer;
                 transition: 0.2s;
@@ -267,6 +295,39 @@ input {
         }
     }
 }
+.modal {
+    background: $base_color ;
+    border-radius: $radius_base ;
+    width: 630px ;
+    max-width: 90% ;
+    border: 1px solid $border_color ;
+    box-shadow: $shadow_primary ;
+    &.small {
+        width: 380px ;
+        max-width: 90% ;
+        padding: $padding_base ;
+    }
+}
+.header_model {
+    border-bottom: 1px solid $border_color;
+    padding: $padding_base $padding ;
+    @include flex(space-between, center, 0) ;
+    h3 { margin: 0; }
+}
+.body_model {
+    padding: $padding ;
+    max-height: 380px ;
+}
+.footer_model {
+    border-top: 1px solid $border_color;
+    padding: $padding_base $padding ;
+}
+.modalActions {
+    @include flex(flex-end, center, 0) ;
+    gap: $padding_base ;
+    margin-top: $padding_base ;
+}
+
 
 // mode single
 .file-uploader-single {
@@ -274,20 +335,19 @@ input {
     &__label { font-weight: 600; margin-bottom: 7px; }
     &__container {
         @include flex(space-between, center, 0) ;
-        
         position: relative ;
     }
-    .image-box {
-        height: 130px ; 
+    .image-box { 
         width: 100% ;
+        aspect-ratio: 5 / 1; 
         border-radius: $radius_base ;
         border: 2px dashed rgb($primary, 0.1) ;
         background-color: rgb($primary, 0.03) ;
         cursor: pointer;
-        padding: 35px ;
+        padding: 10px ;
         overflow: hidden;
         @include flex(center, center, 0) ;
-        img { height: 100%;}
+        img { height: 100%; border-radius: $radius_base ;}
         transition: all 0.5s ease-in-out;
         &:hover {
             border-color: rgb($primary, 0.14) ;
@@ -295,14 +355,14 @@ input {
         }
     }
     .change-box, .remove-box {
-        position: absolute;
+        position: absolute ;
         top: 8px ;
         inset-inline-end: 8px ;
         padding: 0.5rem 1rem ;
         border-radius: $radius_base ;
         background: rgb($primary, 1) ;
         cursor: pointer ;
-        color: white !important;
+        color: white !important ;
         font-size: $size_sm ;
         font-weight: 700 ;
         @include flex(center, center, 0) ;
@@ -311,7 +371,6 @@ input {
     .remove-box { background: $danger; color: white; &:hover { background: rgb($danger, 0.8); } }
     .error { color: #ef4444; font-size: 0.75rem; margin-top: 0.5rem; }
 }
-
 // mode multi
 .file-uploader-multi {
     margin-bottom: 1.5rem;
@@ -367,6 +426,9 @@ input {
     margin-bottom: $padding_base ;
     cursor: pointer;
     display: block ;
+    &:last-child{
+        margin: 0 ;
+    }
 }
 .switch {
     position: relative;
@@ -385,7 +447,7 @@ input {
         }
 
         &:checked + .slider:before {
-            transform: translateX(22px);
+            transform: translateX(21px);
         }
 
         &:disabled + .slider {
@@ -410,7 +472,7 @@ input {
             content: "";
             height: 18px;
             width: 18px;
-            left: 2px;
+            left: 3px;
             bottom: 3px;
             background-color: $base_color;
             transition: 0.3s;
@@ -425,4 +487,38 @@ input {
 
 // ==========================================================================
 
+
+/* form-textarea */
+.form-textarea {
+    width: 100%;
+    padding: $padding_base 15px ;
+    font-size: $size_md ;
+    font-family: inherit;
+    border: 1px solid $border_input ;
+    border-radius: $radius_base ;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out ;
+    //   resize: vertical; 
+    resize: none ; 
+    min-height: 140px ;
+    margin-top: 8px ;
+    color: $txt_color_base ;
+    &::placeholder {font-size: $size_sm ;}
+    
+}
+.form-textarea:focus {
+    outline: none;
+    border-color: $primary ;
+    background-color: rgb($primary, 0.05) ;
+}
+.form-textarea.error {
+   border-color: $danger ;
+}
+.form-textarea.error:focus {
+  border-color: $danger ;
+}
+.form-textarea:disabled {
+  background-color: transparent ;
+  cursor: not-allowed;
+}
 

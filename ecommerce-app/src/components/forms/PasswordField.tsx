@@ -19,6 +19,7 @@ export default function PasswordField({ label, value, onChange, error}: Password
 
     return (
         <div className="input_group">
+            <div className="text text_lg my_end_6">{label}</div>
             <input type={type} 
                     className="input_text" 
                     placeholder={label} 

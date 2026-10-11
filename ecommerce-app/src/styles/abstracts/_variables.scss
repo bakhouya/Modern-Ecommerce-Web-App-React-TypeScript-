@@ -1,42 +1,55 @@
+@import "./dark", "./light";
 
-$primary    : #0f8a8a;
-$secondary  : #159abb;
+$accent_color   : #ff6b6b;
+
+$accent_color   : #ffda08 ;  
+$secondary      : #0f918a ;
+
+$accent_color   : #097583 ;
+$secondary      : #fc9a09 ;
+
+$accent_color   : rgb(8, 130, 134) ;
+$secondary      : #FFC042 ;
+
+$primary    : $accent_color ;
+// $secondary  : #019E81 ;
 $success    : #4caf50;
 $danger     : #d13f3f;
 $warning    : #ff9800;
-$dark       : #2b2d42;
+$dark       : #111213;
 $light      : #f8f9fa;
 
 
 
+// BG #0a0a0a #1a1a1a
+// $bg_color     : #0a0a0a ;
+// $base_color   : #161617 ;
+// $border_color : #1c1c1d ;
 
 
-$bg_color     : #0a0a0a ;
-$base_color   : #1a1a1a ;
-$border_color : rgb($dark, 0.5) ;
-// $hover_color  : #252525 ;
+
+$bg_color     : var(--bg_color);
+$base_color   : var(--base_color);
+$border_color : var(--border_color);
+$border_input : var(--border_input);
+$wrapper_color: var(--wrapper_color);
 $hover_color  : rgb($primary, 0.10)  ;
 
-$txt_color_title : #f0f0f0 ;
-$txt_color_base  : #c0c0c0 ;
-$txt_color_light : #827f7f ;
-$shadow : 0 10px 20px 2px rgb(18, 17, 17) ;
-// ++++++++++++++++++++++++++++++++++++
-$bg_color     : #ffffff ;
-$base_color   : #ffffff ;
-$border_color : #e7ebf1 ;
-$hover_color  : rgb($primary, 0.07);
+$txt_color_title : var(--txt_color_title);
+$txt_color_base  : var(--txt_color_base);
+$txt_color_light : var(--txt_color_light);
+
+$shadow           : var(--shadow);
+$shadow2          : var(--shadow2);
+$shadow_primary   : var(--shadow_primary);
+$shadow_model     : var(--shadow_model);
+
+$light:  #c1c6cc;
+$white:  #ffffff;
 
 
-$txt_color_title : #06080A ;
-$txt_color_base  : #262D30 ;
-$txt_color_light : #757f83 ;
-$shadow : 0 10px 20px 2px rgb(238, 233, 233) ;
-
-
-
-$gray-100   : #f8f9fa;
-$gray-200   : #e9ecef;
+$gray-100   : #ffffff;
+$gray-200   : #edf1f5;
 $gray-800   : #343a40;
 
 $colors: (
@@ -48,30 +61,65 @@ $colors: (
   dark      : $dark,
   light     : $light,
   default   : $base_color,
+  base      : $hover_color ,
 );
 
 
 
 $size_base    : 17px ;
 
-$size_xs      : 11.3px ;
-$size_sm      : 13.4px ;
-$size_md      : 15.4px ;
-$size_lg      : 17px ;
-$size_xl      : 24px ;
+$size_xs      : 14px ;
+$size_sm      : 16px ;
+$size_md      : 18px ;
+$size_lg      : 21px ;
+$size_xl      : 26px ;
 $size_xxl     : 27px ;
 
+// $size_xs      : 13.5px ;
+// $size_sm      : 15.4px ;
+// $size_md      : 17.7px ;
+// $size_lg      : 23px ;
+// $size_xl      : 27px ;
+// $size_xxl     : 33px ;
 
 
 
 $sidebar_bg   : $bg_color ;
-$open_sidbar  : 350px ;
-$close_sidbar : 70px ;
-$height_box   : 65px ;
+$open_sidbar  : 310px;
+$close_sidbar : 67px ;
+$height_box   : 60px ;
 
-// Montserrat? Nunito Outfit Unageo
+// @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+// @import url(https://fonts.googleapis.com/earlyaccess/thabit.css);
+// @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: 'Nivella';
+  src: url('../../assets/fonts/Nivella-gwWj1.otf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+// COC132@mostafa.ma
+// Montserrat? Nunito Outfit Unageo  el Messiri SST arabic Mulish
+// General Sans Fredoka Comic Sans MS     
 $family       : "Unageo", "Nunito", "Outfit", 'Unageo', system-ui, sans-serif ;
-// $family       : Montserrat, sans-serif, "Spline Sans Mono", monospace ;
+$family       : "Plus Jakarta Sans", "Nunito", "Lato", "open sans", "Google Sans", "Comic Sans MS",  sans-serif ;
+// $family       : "Scheherazade", serif ;
+// $family       : "segoe ui", "", sans-serif ;
+// $family       : "Arial", sans-serif ;
+// $family       : "Nivella", sans-serif ;
+// $family: system-ui, -apple-system, BlinkMacSystemFont, \.SFNSText-Regular, Helvetica, Arial, sans-serif;
+// $family       : "Public Sans", "Rubik", "Mulish","Libre Franklin",  sans-serif ;
 
 $weight_100 : 100 ;
 $weight_200 : 200 ;
@@ -83,7 +131,9 @@ $weight_700 : 700 ;
 $weight_800 : 800 ;
 $weight_900 : 900 ;
 
-$radius_base: 5px ;
+$radius_base: 8px ;
+$radius_base_web: 30px ;
+$radius_full: 30px ;
 $spacer: 1rem ;
 
 $breakpoints: (
@@ -103,6 +153,11 @@ $box_shadow_md: 0 4px 6px rgba(0,0,0,0.07);
 
 
 $padding_base : 12px ;
-$space        : 50px ;
-$padding      : 25px ;
+$space        : 120px ;
+$padding      : 20px ;
 
+
+
+.vh_100 {
+  height: 100vh ;
+}

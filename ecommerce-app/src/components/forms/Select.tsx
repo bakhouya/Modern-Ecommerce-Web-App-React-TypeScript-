@@ -36,8 +36,10 @@ export default function Select({options, value, onChange, error, multiple = fals
           }
           onChange={(selected) => {
             if (multiple) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               onChange((selected as any[])?.map(item => item.value) || []);
             } else {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               onChange((selected as any)?.value || '');
             }
           }}

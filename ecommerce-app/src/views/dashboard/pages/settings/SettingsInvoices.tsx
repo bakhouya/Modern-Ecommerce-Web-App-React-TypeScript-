@@ -1,20 +1,40 @@
 
 
 
-import { motion } from "framer-motion";
-import { SettingsIcon, PhoneIcon, Share2Icon, SearchIcon} from "lucide-react";
-import { useMemo, useState } from "react";
+import { ShoppingCartIcon, TruckIcon, ReceiptIcon} from "lucide-react";
+import { useMemo, useState } from "react" ;
+import { useTranslation } from 'react-i18next';
 
 import { AnimatedTransition } from "../../../../components/boxs/AnimatedTransition";
 import UpdateSettingsOrderInvoices from "../../../../widgets/dashboard/settings/OrderInvoiceSettingView";
+import UpdateSettingsDeliveryInvoices from "../../../../widgets/dashboard/settings/DeliveryInvoiceSettingView";
+import UpdateSettingsSalesInvoices from "../../../../widgets/dashboard/settings/SalesInvoiceSettingView";
+
 import { OrderInvoiceSettingsProvider } from "../../../../context/settings/OrderInvoiceSettingsContext";
+import { DeliveryInvoiceSettingsProvider } from "../../../../context/settings/DeliveryInvoiceSettingsContext";
+import { SalesInvoiceSettingsProvider } from "../../../../context/settings/SalesInvoiceSettingsContext";
+import { SearchInput } from "../../../../components/ui/SearchInput";
+import TabListBlock from "../../../../components/forms/AnimatedTabList";
 
 export default function SettingsInvoices() {
-
+    const { t } = useTranslation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const menuItems = [
-        { id: 1, label: "Bon de commandes", icon: <SettingsIcon size={17} /> },
-        { id: 2, label: "Bon de livraison", icon: <PhoneIcon size={17} /> },
-        { id: 3, label: "factoration de vents", icon: <Share2Icon size={17} /> },
+        {
+            id: 1,
+            label: t('orderSettings.pageTitle'),
+            icon: <ShoppingCartIcon size={17} />,
+        },
+        {
+            id: 2,
+            label: t('deliverySettings.pageTitle'),
+            icon: <TruckIcon size={17} />,
+        },
+        {
+            id: 3,
+            label: t('salesSettings.pageTitle'),
+            icon: <ReceiptIcon size={17} />,
+        },
     ];
 
     const [screen, setScreen] = useState(1);
@@ -22,7 +42,7 @@ export default function SettingsInvoices() {
 
     const filteredMenuItems = useMemo(() => {
         return menuItems.filter(item => item.label.toLowerCase().includes(search.toLowerCase()));
-    }, [search]);
+    }, [search, menuItems]);
 
     const selectedLabel = menuItems.find(item => item.id === screen)?.label || "";
 
@@ -30,61 +50,28 @@ export default function SettingsInvoices() {
         <section className="wrapper_page">
 
             <aside className="nav_container">
-
-                <div className="box_input">
-                    <input
-                        type="search"
-                        className="input_search"
-                        placeholder="Rechercher..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-
-                    <div className="in_icon text text_sm"><SearchIcon size={16} /></div>
+                <div className="nav_body">
+                    <SearchInput placeholder={t('search.placeholder')} value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    <TabListBlock items={filteredMenuItems} activeItem={screen} onChange={setScreen}/>
                 </div>
-
-                <div style={{ position: "relative" }}>
-
-                    {filteredMenuItems.length > 0 ? (
-                        filteredMenuItems.map((item) => (
-                            <motion.div
-                                key={item.id}
-                                className="link_item flex_between_center"
-                                onClick={() => setScreen(item.id)}
-                                style={{cursor: "pointer", position: "relative", zIndex: 2}}>
-                                <div className="flex_start_center gap_12 link_item__content">
-                                    {item.icon}
-                                    <span className="text text_md">{item.label}</span>
-                                </div>
-
-                                {screen === item.id && (
-                                    <motion.div
-                                        layoutId="highlight"
-                                        className="active_background"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{type: "spring", stiffness: 300, damping: 30}}
-                                        style={{ zIndex: 1 }}
-                                    />
-                                )}
-                            </motion.div>
-                        ))
-                    ) : (<div className="text text_sm p_12 text_center"> Aucun résultat trouvé </div>)}
-
-                </div>
-
             </aside>
 
             <div className="flex_container">
+
                 <AnimatedTransition transitionKey={`screen-${screen}`} direction="up" duration={0.2}>
+
                     <OrderInvoiceSettingsProvider>
                         {screen == 1 && (<UpdateSettingsOrderInvoices pageTitle={selectedLabel}/>)}
                     </OrderInvoiceSettingsProvider>
 
+                    <DeliveryInvoiceSettingsProvider>
+                        {screen == 2 && (<UpdateSettingsDeliveryInvoices pageTitle={selectedLabel}/>)}
+                    </DeliveryInvoiceSettingsProvider>
 
-
-                    {screen == 2 && (<UpdateSettingsOrderInvoices pageTitle={selectedLabel}/>)}
-                    {screen == 3 && (<UpdateSettingsOrderInvoices pageTitle={selectedLabel}/>)}                    
+                    <SalesInvoiceSettingsProvider>
+                        {screen == 3 && (<UpdateSettingsSalesInvoices pageTitle={selectedLabel}/>)} 
+                    </SalesInvoiceSettingsProvider>
+                                      
                 </AnimatedTransition>
             </div>
 

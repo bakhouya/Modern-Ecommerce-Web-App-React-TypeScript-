@@ -27,21 +27,20 @@ button {
     top                : 0 ;
     transition         : all 0.3s ease-in-out ;
     z-index            : 999 ;
-    background-color   : $bg_color ;
+    background-color   : $base_color ;
     // color              : white ;
-    // background-color   : #333539 ;
-    // .text {color              : white ;}
+    .svg, .text {transition      : all 0.2s ease-in-out ;}
 
     &.collapsed{
         width:$close_sidbar;
         .sidebar__top{
             @include flex(center, center, 0) ;
-            padding  : 0 10px ;
+            padding  : 0 8px ;
             margin: auto ;
             img{
-                height : 40px !important;
-                width : 40px !important;
-                border-radius: 50% ;
+                height : 42px !important;
+                width : 42px !important;
+                border-radius: $radius_base ;
             }
         }
     }
@@ -49,7 +48,7 @@ button {
     .sidebar__top{
         height   : $height_box ;
         @include flex(space-between, center, 0) ;
-        padding  : 0 $space ;
+        padding  : 0 calc($space - 10px)  ;
         .sidebar__logo{
             @include flex(start, center, 10px) ;
             img{
@@ -61,12 +60,11 @@ button {
 
 .toggle_sidebar {
     position        : absolute ;
-    top             : 13px ;
-    inset-inline-end: -60px ;   
-    // transform       : translateY(-50%);
+    top             : 8px ;
+    inset-inline-end: -50px ;   
     color           : $txt_color_light ;
-    width           : 38px ;
-    height          : 38px ;
+    width           : 43px ;
+    height          : 43px ;
     border-radius   : $radius_base ;
     transition      : all 0.2s ease-in-out ;
     @include flex(center, center, 0) ;
@@ -93,12 +91,13 @@ button {
     }
 
 }
-.sidebar_section_title{margin: 15px 12px 10px 5px;}
 
 .sidebar__nav{
+    margin-top: 0 !important;
     height     : calc(100vh - $height_box) ;
-    padding    : 0 $padding 0px $space ;
-
+    padding-block    : 0  ;
+    padding-inline-end: calc($padding ) ;
+    padding-inline-start : calc($space - 10px)  ;
     .sidebar_link{
         height          : 45px ;
         @include flex(space-between, center, 0) ;
@@ -107,12 +106,14 @@ button {
         text-decoration : none ;
         margin-bottom   : 3px ;
         transition      : all 0.2s ease-in-out ;
-
+        border          : 1px solid transparent ;
+        color           : $txt_color_base ;
         &:hover, &.active{
             background: $hover_color ;
             color : $primary ;
             .text {color : $primary ;}
         }
+
 
         .sidebar_link_left{
             @include flex(start, center, $padding_base) ;
@@ -133,15 +134,35 @@ button {
 
 .collapsed {
     .sidebar__nav{
-        padding : 0 0px 5px 10px ;
+        padding : 0 ;
+        padding-inline: 8px ;
+        .text {
+            position: absolute ;
+            inset-inline-start: 105% ;
+            width: max-content ;
+            // border: 1px solid $border_color ;
+            background-color: $base_color ;
+            box-shadow: $shadow_model ;
+            padding: 8px 15px ;
+            border-radius: $radius_base ;
+            display: none ;
+            font-size: $size_sm ;
+        }
         .sidebar_link{
-            height: 45px ;
+            // color   : $txt_color_light ;
+            height  : 44px ;
             @include flex(center, center, 0) ;
+            &:hover {
+                .text {
+                    display: inline-block ; 
+                    color: $txt_color_light ;
+                }
+            }
         }
     }
     .sidebar_back_button {
         margin-inline: auto ;
-        height : 47px  ;
+        height : 44px  ;
         width : 47px  ;
         @include flex_center();
         background-color: rgb($primary, 0.08) ;
@@ -159,11 +180,10 @@ button {
 .sidebar_submenu{
     display:flex ;
     flex-direction:column ;
-    gap: 10px ;
 }
 .sidebar_back_button{
     width:100%;
-    height:48px;
+    height:44px;
     @include flex(start, center, $padding_base) ;
     border:none;
     background:transparent;

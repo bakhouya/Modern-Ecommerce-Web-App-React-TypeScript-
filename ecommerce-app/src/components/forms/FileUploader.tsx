@@ -1,8 +1,10 @@
 
 
 
-
+import { X, Upload } from 'lucide-react';
 import React, { useRef, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
 interface Props {
     label: string;
     previews: string[];          
@@ -13,7 +15,7 @@ interface Props {
     multiple?: boolean;
 }
 export function FileUploader({label, previews, initialPreviews = [], error, onAddFiles, onRemoveFile, multiple = false}: Props) {
-
+    const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     const [tempPreviews, setTempPreviews] = useState<string[]>([]);
@@ -45,17 +47,17 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
         const valid: File[] = [];
         for (const file of newFiles) {
             if (!file.type.startsWith('image/')) {
-                alert('Veuillez sélectionner uniquement des fichiers image');
+                alert(t('fileUploader.errors.onlyImages'));
                 return;
             }
             if (file.size > 2 * 1024 * 1024) {
-                alert('La taille maximale par fichier est de 2 Mo');
+                alert(t('fileUploader.errors.maxSize'));
                 return;
             }
             valid.push(file);
         }
         if (!multiple && valid.length > 1) {
-            alert('Vous ne pouvez sélectionner qu\'un seul fichier');
+            alert(t('fileUploader.errors.onlyOne'));
             return;
         }
 
@@ -98,7 +100,7 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                     })}
                     <div className="add-card" onClick={openModal}>
                         <span>+</span>
-                        <span>Add {label}</span>
+                        <span>{t('fileUploader.addLabel', { label })}</span>
                     </div>
                 </div>
                 {error && <p className="error">{error}</p>}
@@ -108,14 +110,15 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                     <div className="modal-overlay" onClick={closeModal}>
                         <div className="modal-card" onClick={e => e.stopPropagation()}>
                             <div className="modal-header">
-                                <h3>Ajouter des images</h3>
+                                <h3 className='text text_xxl'>{t('fileUploader.addImages')}</h3>
                                 <button className="close" onClick={closeModal}>✕</button>
                             </div>
                             <div className="modal-body">
                                 <div className="upload-area" onClick={() => fileInputRef.current?.click()}>
                                     <div>📁</div>
-                                    <p>Choisissez des fichiers ou glissez-les</p>
-                                    <small>JPEG, PNG, WEBP (2 Mo max par fichier)</small>
+                                    <p>{t('fileUploader.chooseFiles')}</p>
+                                    <small>{t('fileUploader.fileTypes')}</small>
+
                                     <input
                                         ref={fileInputRef}
                                         type="file"
@@ -136,9 +139,9 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                                 )}
                             </div>
                             <div className="modal-footer">
-                                <button className="btn-secondary" onClick={closeModal}>Annuler</button>
+                                <button className="btn-secondary" onClick={closeModal}>{t('common.cancel')}</button>
                                 <button className="btn-primary" onClick={confirmChange} disabled={selectedFiles.length === 0}>
-                                    Confirmer
+                                    {t('common.confirm')}
                                 </button>
                             </div>
                         </div>
@@ -159,14 +162,19 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                         {displayedImage ? (
                             <img src={displayedImage} alt={label} />
                         ) : (
-                            <div className="placeholder"> Not found Image </div>
+                            <div className="flex_center_center">
+                                <div className="placeholder text_center">
+                                    <Upload size={38} strokeWidth={1.5} className="text text_sm"/> 
+                                    <div className="text text_sm">{t('fileUploader.notFound')}</div>
+                                </div>
+                            </div>
                         )}
                     </div>
                     <div className="">
 
                         {previews.length > 0 && (
-                            <div className="remove-box" onClick={() => onRemoveFile(0)}>
-                                <span className='text'> Suprimer </span>
+                            <div className="remove-box btn sm danger" onClick={() => onRemoveFile(0)}>
+                                <span className='text text_sm'> {t('fileUploader.delete')} </span>
                             </div>
                         )}
 
@@ -179,14 +187,14 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                 <div className="modal-overlay" onClick={closeModal}>
                     <div className="modal-card" onClick={e => e.stopPropagation()}>
                         <div className="modal-header">
-                            <h3>Changer {label}</h3>
-                            <button className="close" onClick={closeModal}>✕</button>
+                            <div className='text text_xxl'>{t('fileUploader.changeLabel', { label })}</div>
+                            <button className="close text text_md" onClick={closeModal}> <X size={20}/>  </button>
                         </div>
                         <div className="modal-body">
                             <div className="upload-area" onClick={() => fileInputRef.current?.click()}>
                                 <div className="text text_lg">📁</div>
-                                <div className='text text_md'>Cliquez pour choisir une nouvelle image</div>
-                                <small className='text text_sm'>JPEG, PNG, WEBP jusqu'à 2 Mo</small>
+                                <div className="text text_md">{t('fileUploader.clickToChoose')}</div>
+                                <small className="text text_sm">{t('fileUploader.fileTypesShort')}</small>
                                 <input
                                     ref={fileInputRef}
                                     type="file"
@@ -202,9 +210,11 @@ export function FileUploader({label, previews, initialPreviews = [], error, onAd
                             )}
                         </div>
                         <div className="modal-footer">
-                            <button className="btn-secondary" onClick={closeModal}>Annuler</button>
-                            <button className="btn-primary" onClick={confirmChange} disabled={selectedFiles.length === 0}>
-                                Confirmer
+                            <button className="btn-secondary btn base sm" onClick={closeModal}>
+                                <div className="text text_sm"> {t('common.cancel')} </div>
+                            </button>
+                            <button className="btn-primary btn primary sm" onClick={confirmChange} disabled={selectedFiles.length === 0}>
+                                <div className="text text_sm"> {t('common.confirm')}  </div>
                             </button>
                         </div>
                     </div>

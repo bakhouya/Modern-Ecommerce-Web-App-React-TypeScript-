@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { BellIcon, CheckCircleIcon, XCircleIcon } from "lucide-react";
 import { useDropdown } from "../../../hooks/useDropdown";
 
-export default function Notifications() {
+export default function Notification() {
   const { isOpen, toggle, dropdownRef, triggerRef } = useDropdown();
 
   const [notifications, setNotifications] = useState([

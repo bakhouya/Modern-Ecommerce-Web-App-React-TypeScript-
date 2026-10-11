@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-
+// import {getInitials} from "../../helpers/utils"
 interface CheckboxProps {
     label?: string;
     desc?: string;
@@ -19,9 +19,16 @@ export const Checkbox: React.FC<CheckboxProps> = ({ label, desc, checked, onChan
     return (
         <label className={`switch-container ${className}`} htmlFor={`checkbox-${label}`}>
             <div className="flex_between_center">
-                <div className="flex-1">
-                    {label && <div className="text text_lg">{label}</div>}
-                    <div className="text_sm text-gray-500 mt-1"> {desc} </div>
+                <div className="flex_start_center gap_15">
+                    {/* <div className="avatars md radius_8 bg_2_primary"> 
+                        <div className="text text_lg weight_700">
+                            {getInitials(label)}
+                        </div>
+                    </div> */}
+                    <div className="flex-1">
+                        {label && <div className="text text_lg">{label}</div>}
+                        <div className="text_sm text-gray-500 p_limit_1"> {desc} </div>
+                    </div>
                 </div>
 
                 <label className="switch" htmlFor={`checkbox-${label}`}>

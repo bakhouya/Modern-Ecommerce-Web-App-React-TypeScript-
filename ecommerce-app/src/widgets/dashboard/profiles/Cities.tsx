@@ -2,11 +2,12 @@
 import Select from '../../../components/forms/Select';
 import { useQuery } from '@tanstack/react-query';
 import { ActiveCitiesService } from '../../../services/dashboard/accountService';
-import type { CityType } from '../../../types/dashboard/profile';
+import type { CityType } from '../../../types/dashboard/city';
 
 
 interface CitiesProps {
   value?: string | string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (value: any) => void;
   error?: string;
   multi?: boolean;   

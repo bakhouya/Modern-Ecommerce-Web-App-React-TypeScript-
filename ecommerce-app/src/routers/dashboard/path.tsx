@@ -23,6 +23,11 @@ const ROUTES = {
 
     // ================= MARKETING =================
     MARKETING: "/admin/marketing",
+    SLIDERS: "/admin/marketing/sliders",
+    COUPONS: "/admin/marketing/coupons",
+    OFFERS: "/admin/marketing/offers",
+    CREATE: "/admin/marketing/offers/creation",
+    
     NOTIFICATIONS: "/admin/notifications",
 
     // ================= CONTENT =================
@@ -30,7 +35,7 @@ const ROUTES = {
     THEMES: "/admin/themes",
 
     // ================= LOGISTICS =================
-    SHIPPING: "/admin/shipping",
+    SHIPPING: "/admin/partners/shipping",
     EXPENSES: "/admin/expenses",
 
     // ================= ANALYTICS =================
@@ -42,6 +47,15 @@ const ROUTES = {
     SETTINGS: "/admin/settings/platform",
     SETTING_INVOICES: "/admin/settings/invoices",
     USERS: "/admin/users",
+    CITIES: "/admin/cities",
+    POLICY: "/admin/policies",
+    SERVICE: "/admin/services",
+    ROLES: "admin/roles" ,
+
+    SUPPLIER: "/admin/suppliers",
+    BRANCHES: "/admin/branches",
+
+
     ADMIN: "/admin/administration",
 };
 

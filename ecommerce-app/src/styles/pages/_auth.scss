@@ -9,12 +9,13 @@
 }
 .login_card {
     position: relative;
-    width: 380px;
+    width: 430px;
     padding: 40px;
     border-radius: $radius_base;
     overflow: hidden;
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 50px $box_shadow_md;
+    border: 1px solid $border_color ;
     z-index: 1;
     background: transparent;
     animation: fadeIn 0.8s ease forwards;
@@ -43,7 +44,7 @@
 .toggle_type_password {
     position: absolute ;
     inset-inline-end: 8px ;
-    top: 11px ;
+    bottom: 11px ;
     &svg { transition:all 0.2s ease-in-out;}
     &:hover svg {transform: scale(1.05);}
 }

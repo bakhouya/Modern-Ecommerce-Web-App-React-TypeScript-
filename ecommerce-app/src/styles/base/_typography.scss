@@ -78,5 +78,21 @@ p {margin-bottom: $spacer;}
         }
     }
 }
+.text_underline {
+  color: #888686;
+  font-size: 14px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+@for $i from 1 through 100 {
+    .p_limit_#{$i}{
+        display: -webkit-box;
+        -webkit-line-clamp: $i;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
 
 

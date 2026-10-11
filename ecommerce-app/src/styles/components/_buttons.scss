@@ -1,10 +1,13 @@
 
 
 @function text-color($bg) {
+    @if type-of($bg) == "string" and str-slice($bg, 1, 4) == "var(" {
+        @return #fff; 
+    }
     @if (lightness($bg) > 60) {
-            @return #1a1a1a; 
+        @return #1a1a1a;
     } @else {
-            @return #ffffff; 
+        @return #ffffff;
     }
 }
 $icon-sizes: (
@@ -13,6 +16,10 @@ $icon-sizes: (
     lg: (height: 46px, icon: 22px),
     xl: (height: 52px, icon: 26px)  
 );
+
+button {
+    font-family: $family ;
+}
 
 .btn_icon {
     @include flex(center, center, 0) ;
@@ -37,17 +44,24 @@ $icon-sizes: (
             }
         }
     } 
+    @each $name, $color in $colors {
+        &.#{$name} {
+            background: $color !important ;
+            color: text-color($color) ;
+        }
+    }
 }
 .btn {
     padding     : 15px ;
-    border-radius: $radius_base ;
+    border-radius: $radius_base !important;
     border      : none ;
     background  : $primary ;
     color       : white ;
-    font-weight : bold ;
+    font-weight : $weight_500 ;
     cursor      : pointer ;
-    transition  : all 0.3s ease-in-out ;
+    transition  : all 0.5s ease-in-out ;
     @include flex(center, center, 6px) ;
+    // box-shadow: 0 12px 40px rgba($primary, 0.08), 0 4px 16px rgba($primary, 0.04);
     &:disabled {opacity: 0.7; cursor: not-allowed;}
     &.w_full {width: 100% !important ;}
     &.w_max {width: max-content }
@@ -56,31 +70,36 @@ $icon-sizes: (
     @each $size, $values in $icon-sizes {
         &.#{$size} {
             height: map-get($values, height);
-            svg {
-                width: map-get($values, icon);
-                height: map-get($values, icon);
-            }
         }
     }
 
 }
-
 .btn_icon, .btn{
     @each $name, $color in $colors {
         &.#{$name} {
-            background: $color;
-            color: text-color($color);
+            // @if type-of($color) == "string" and str-slice($color, 1, 4) == "var(" {
+            //     background: $color ;
+            // } @else {
+            //     background: linear-gradient(145deg, $color 0%, lighten($color, 15%) 40%, $color 70%, darken($color, 10%) 100%);
+            // }
+            background: $color ;
+            .text {color: text-color($color) ;}
+            color: text-color($color) ;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             &:hover {
-                background: rgb($color, 0.4);
+                background: linear-gradient(-135deg, $color, rgb($color, 0.4) 60%, $color, rgb($color, 0.4));
+                box-shadow: 0 12px 40px rgba($primary, 0.08), 0 4px 16px rgba($primary, 0.04);
             }
         }
         &.#{$name}_outline {
             background: transparent;
             border: 1px solid $color;
-            color: $color;
+            color: $color !important ;
+            .text {color: $color !important ;}
             &:hover {
                 background: $color;
-                color: text-color($color);
+                color: text-color($color) !important;
+                .text {color: text-color($color) !important ;}
             }
         }
     } 

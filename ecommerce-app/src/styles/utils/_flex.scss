@@ -31,3 +31,8 @@
         flex-wrap: wrap ;
     }
 }
+
+
+@for $i from 1 through 50 {
+    .flex_#{$i} { flex : $i ; }
+}

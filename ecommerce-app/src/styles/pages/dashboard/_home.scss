@@ -1,5 +1,98 @@
 
 
+.accordion-filter {
+    border: 1px solid $border_color ;
+    border-radius: $radius_base ;
+    // background-color: $base_color ;
+
+    .accordion-header {
+        @include flex(space-between, center, 0) ;
+        padding: 12px $padding_base ;
+        height: 47px ;
+        cursor: pointer;
+        transition: background 0.2s ;
+        user-select: none ;
+        border-radius: $radius_base $radius_base 0 0;
+        .accordion-chevron {
+            transition: all 0.25s ease-in-out;
+            margin-top: 6px ;
+            color: $txt_color_light !important ;
+            &.open {
+                transform: rotate(180deg);
+                margin-top: 0px ;
+            }
+        }
+    }
+
+    .accordion-body {
+        // padding: 8px 16px 16px;
+        padding: 6px 6px  6px ;
+        border-top: 1px solid $border_color ;
+
+        .accordion_item {
+            padding: 8px ;
+            cursor: pointer ;
+            border-radius: $radius_base ;
+            &.select-all {
+                border-bottom: 1px dashed $border_color ;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+            &:hover {
+                background-color: $hover_color ;
+            }
+        }
+    }
+}
+
+.boolean-pill-filter {
+    margin-block: 12px;
+    // background: $base_color ;
+    border-radius: $radius_base ;
+    transition: background 0.2s;
+
+  .boolean-pill-group {
+    display: flex;
+    gap: 10px ;
+    flex-wrap: wrap;
+
+    .boolean-pill {
+      flex: 1 ;
+      min-width: 50px ;
+      padding: 8px 12px;
+      border: 1.5px solid $border_color ;
+      background-color: $base_color ;
+      border-radius: $radius_base;
+      cursor: pointer;
+      transition: all 0.2s ease ;
+      text-align: center ;
+
+      &:hover {
+            background: $hover_color ;
+            border-color: $hover_color ;
+            transform: translateY(-1px);
+      }
+
+      &.active {
+        background: $primary ;
+        border-color: $primary;
+        .text {color: white ;}
+        &:hover {
+            background: $primary ;
+            border-color: $primary;
+        }
+      }
+      &.active:last-child {
+        background: $primary ;
+        border-color: $primary;
+        .text {color: white ;}
+      }
+    }
+  }
+}
+
+
+
 
 
 

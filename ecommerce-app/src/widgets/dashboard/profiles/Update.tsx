@@ -1,21 +1,27 @@
 
-import InputText from "../../../components/forms/InputText"
-import { SectionHeader } from "../../../components/ui/SectionHeader"  
-import AttentionInput from "../../../components/ui/AttentionInput"  
 
-import { useFieldText } from "../../../hooks/useFieldText"
-import { useFieldSelect } from "../../../hooks/useFieldSelect"
-import { UpdateProfileSchema } from "../../../validations/profileSchema"
-import { useProfile } from "../../../context/admins/ProfileContext"
 import { useEffect } from "react"
 import toast from "react-hot-toast";
 import { useMutation } from "@tanstack/react-query"
-import { UpdateProfile as UpdateProfileService } from '../../../services/dashboard/accountService'
+import { useTranslation } from 'react-i18next';
+
+import InputText from "../../../components/forms/InputText"
+import { SectionHeader } from "../../../components/ui/SectionHeader"  
+import AttentionInput from "../../../components/ui/AttentionInput" 
+import { SubmitButton } from "../../../components/ui/SubmitButton" 
 import Cities from "./Cities"
+
+import { useFieldText } from "../../../hooks/useFieldText"
+import { useFieldSelect } from "../../../hooks/useFieldSelect"
+
+import { UpdateProfileSchema } from "../../../validations/profileSchema"
+import { useProfile } from "../../../context/admins/ProfileContext"
+import { UpdateProfile as UpdateProfileService } from '../../../services/dashboard/accountService'
 import { handleBackendErrors } from "../../../helpers/handleValidationErrors"
 
-export default function UpdateProfile() {
 
+export default function UpdateProfile() {
+    const { t } = useTranslation();
     const { profileQuery, refetchProfile } = useProfile();
     const { data } = profileQuery;
     
@@ -49,7 +55,7 @@ export default function UpdateProfile() {
         mutationFn : UpdateProfileService,
         onSuccess  : () => {
             refetchProfile();
-            toast.success("Modifié avec succès");
+            toast.success(t('profile.messages.updateSuccess'));
             form.setErrors({});
         },
         onError: (error: unknown) => {
@@ -70,40 +76,37 @@ export default function UpdateProfile() {
 
     return (
         <>
-            <form className="py_start_15 py_end_5" onSubmit={Update}>
-                {/* Section Informations personnelles */}
-                <SectionHeader
-                    title="Informations personnelles"
-                    description="Modifiez votre nom d'utilisateur et votre nom complet. Ces informations seront affichées publiquement."
-                />
+        <form className=" py_end_5" onSubmit={Update}>
+
+            <div className="">
+   
+                <SectionHeader title={t('profile.sections.personal.title')} description={t('profile.sections.personal.description')}/>
                 <div className="box_input">
                     <InputText
                         type="text"
-                        label="Nom d'utilisateur"
+                        label={t('profile.fields.username')}
                         value={form.values.username}
                         onChange={(e) => form.handleChange("username", e.target.value)}
                         error={form.errors.username}
                     />
-                    <AttentionInput 
-                        title="Ce nom d'utilisateur sera utilisé pour vous connecter à votre compte. Choisissez un nom unique et facile à retenir. Il peut contenir des lettres, chiffres et certains caractères spéciaux." 
-                    />
+                    <AttentionInput title={t('profile.attention.username')} />
                 </div>
+
                 <div className="box_input">
                     <InputText
                         type="text"
-                        label="Nom complet"
+                        label={t('profile.fields.fullName')}
                         value={form.values.full_name}
                         onChange={(e) => form.handleChange("full_name", e.target.value)}
                         error={form.errors.full_name}
                     />
                 </div>
+            </div>
 
-                {/* Section Adresse */}
-                <div className="divider my_end_12"></div>
-                <SectionHeader
-                    title="Adresse"
-                    description="Vous pouvez modifier votre adresse et contrôler qui peut la voir."
-                />
+            <div className="divider my_end_12"></div>
+
+            <div className="">
+                <SectionHeader title={t('profile.sections.address.title')} description={t('profile.sections.address.description')}/>
                 <div className="box_input">
                     <Cities
                         value={city.value}
@@ -116,54 +119,51 @@ export default function UpdateProfile() {
                 <div className="box_input">
                     <InputText
                         type="text"
-                        label="Adresse"
+                        label={t('profile.fields.address')}
                         value={form.values.address}
                         onChange={(e) => form.handleChange("address", e.target.value)}
                         error={form.errors.address}
                     />
                 </div>
+            </div>
 
-                {/* Section Contact */}
-                <div className="divider my_end_12"></div>
+            <div className="divider my_end_12"></div>
 
-                <SectionHeader title="Contact"
-                    description="Ajoutez un numéro de téléphone personnel ou officiel pour rester connecté facilement et permettre la récupération de votre compte."
-                />
+            <div className="">
+                <SectionHeader title={t('profile.sections.contact.title')} description={t('profile.sections.contact.description')}/>
 
                 <div className="box_input">
                     <InputText
-                        type="tel"
-                        label="Téléphone"
+                        type="text"
+                        label={t('profile.fields.phone')}
                         value={form.values.phone}
                         onChange={(e) => form.handleChange("phone", e.target.value)}
                         error={form.errors.phone}
                     />
-                    <AttentionInput title="Ce numéro de téléphone doit être confirmé pour garantir son authenticité avant d'être associé à votre profil."/>
-
+                    <AttentionInput title={t('profile.attention.phone')} />
                 </div>
 
                 <div className="box_input">
                     <InputText
                         type="email"
-                        label="Adresse e-mail"
+                        label={t('profile.fields.email')}
                         value={form.values.email}
                         onChange={(e) => form.handleChange("email", e.target.value)}
                         error={form.errors.email}
                     />
                 </div>
-            </form>
-
-            <div className="divider"></div>
-
-            <div className="flex_end_center my_start_12">
-                <button className="btn primary lg w_max" type="button"
-                    onClick={Update}
-                    disabled={Mutation.isPending}>
-                    {Mutation.isPending
-                        ? <span className="btn_loader"></span>
-                        : <div className="text text_md"> Modifer </div>}
-                </button>
             </div>
+
+            <div className="divider my_15"></div>
+
+            <div className="flex_end_center">
+                <SubmitButton isPending={Mutation.isPending} type="update" />
+            </div>
+
+        </form>
+
+
         </>
     );
+
 }

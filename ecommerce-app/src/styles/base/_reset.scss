@@ -21,22 +21,36 @@ html {
     -webkit-font-smoothing: antialiased;
     text-size-adjust: 100%;
 }
+body.dark {@include  dark() ;}
+
 body {
     font-family     : $family ;
-    font-size       : $size_base ;
-    font-weight     : $weight_500 ;
+    font-size       : $size_md ;
+    // font-weight     : $weight_500 !important;
     line-height     : 1.5 ;
     color           : $txt_color_base ;
     background-color: $bg_color ;
+    font-optical-sizing: auto ;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0 ;  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+
+    background:
+        radial-gradient(ellipse at 0% 0%,rgba(191, 219, 254, 0.48),transparent 38%),
+        radial-gradient( ellipse at 100% 10%, rgba(221, 214, 254, 0.42), transparent 35%),
+        linear-gradient(135deg,#ffffff 0%,#f8faff 50%,#f8f7ff 100%);
+    background-attachment: fixed;
+
 }
 .scroll {
     position: relative;
     margin-inline-end: 1px;
     margin-block: 2px;
-    overflow: auto;
+    overflow-y: auto ;
 
     // --- Firefox ---
-    scrollbar-width: 2px ;
+    scrollbar-width: 1px ;
     scrollbar-color: $border_color transparent;
     scrollbar-gutter: stable; 
 
@@ -68,6 +82,7 @@ body {
 a {
     text-decoration: none;
     color: inherit ;
+    font-family: $family ;
 }
 ul, ol {
     list-style  : none;
@@ -85,7 +100,7 @@ img {
 
 
 .pages_panel{
-  display:flex;
+  display: flex ;
 }
 .container{
     width     : 100% ;
@@ -104,7 +119,6 @@ img {
     padding-block: $padding_base ;
     height: 80px ;
 }
-
 
 .link_item {
     @include flex(start, center, 10px) ;
@@ -132,15 +146,32 @@ img {
         border-radius: $radius_base ;
     }
 }
-
-
-
-
 .nav_container .flex_start_start {
     position: relative;
     display: flex;
     gap: 12px;
 }
 
+.slash_dark {
+    height: 15px ;
+    width: 1px ;
+    border-radius: $radius_base ;
+    background-color: rgb($primary, 0.35) ;
+}
 
+
+
+
+
+.shape {
+    position: fixed ;
+    inset-block-start: -200px ;
+    inset-inline-end: -240px ;
+    width: 60%;
+    height: 70% ;
+    background: $hover_color ;
+    border-radius: 37% 63% 70% 30% / 45% 40% 60% 55%;
+    //   box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.18);
+    transform: rotate(-12deg);
+}
 
