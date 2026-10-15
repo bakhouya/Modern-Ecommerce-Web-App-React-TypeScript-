@@ -2,10 +2,12 @@
 import type { AddToCartPayload, Cart, CartResponse, CartSummary, CheckoutResponse, OrderTrackingResponse, OrderTrackStatus, UpdateCartItemPayload} from "../../types/cartTypes";
 import type { CheckoutFormType } from "../../validations/checkoutSchema";
 import api from "../axiosInstance";
-import { StoreApi } from "../storeApi";
+import { initCsrf, StoreApi } from "../storeApi";
 
 
-
+// export const initCsrf = async (): Promise<void> => {
+//   await StoreApi.get("csrf/");
+// };
 
 export const cartService = {
 
@@ -19,8 +21,13 @@ export const cartService = {
         return response.data;
     },
 
+    // addItem: async (payload: AddToCartPayload): Promise<CartResponse> => {
+    //     const response = await StoreApi.post<CartResponse>("public/cart/add/", payload, {withCredentials: true});
+    //     return response.data;
+    // },
     addItem: async (payload: AddToCartPayload): Promise<CartResponse> => {
-        const response = await StoreApi.post<CartResponse>("public/cart/add/", payload, {withCredentials: true});
+        await initCsrf();
+        const response = await StoreApi.post<CartResponse>("public/cart/add/", payload, { withCredentials: true });
         return response.data;
     },
 

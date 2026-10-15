@@ -5,6 +5,7 @@ import ProductsList from "../../widgets/web/products/ProductsList";
 import { NotFound } from "../../components/ui/NoutFound";
 import ProductsFilter from "../../widgets/web/products/ProductsFilter";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ProductFilterParams {
     category?: string;
@@ -19,6 +20,7 @@ export const ProductsCategory = () => {
     /* Constract Category ID from URL path  */
     /* --------------------------------------------------------------------------------------------------- */
     const { catID } = useParams();
+    const { t } = useTranslation();
     /* --------------------------------------------------------------------------------------------------- */
     const [filterParams, setFilterParams] = useState<ProductFilterParams>({category: catID});
     useEffect(() => {setFilterParams({category: catID});}, [catID]);
@@ -60,18 +62,16 @@ export const ProductsCategory = () => {
 
                 <div className="products-category__hero-content">
 
-                    <span className="products-category__eyebrow text text_xs text_primary">Collection</span>
-                    <h1>Découvrez nos produits</h1>
-                    <p className="text text_sm">Explorez notre sélection de produits disponibles dans cette catégorie.</p>
+                    <span className="products-category__eyebrow text text_xs text_primary">{t("store.productsCategory.eyebrow")}</span>
+                    <h1>{t("store.productsCategory.heroTitle")}</h1>
+                    <p className="text text_sm">{t("store.productsCategory.heroDescription")}</p>
 
                 </div>
 
                 <div className="products-category__count">
                     <span>{homePageProducts.length}</span>
                     <small>
-                        {homePageProducts.length > 1
-                            ? "produits"
-                            : "produit"}
+                        {t("store.productsCategory.productCount", {count: homePageProducts.length})}
                     </small>
                 </div>
 
@@ -82,8 +82,8 @@ export const ProductsCategory = () => {
                 <div className="products-category__top">
 
                     <div>
-                        <h2 className="text text_xl weight_600"> Nos produits</h2>
-                        <p className="text text_sm">Une sélection pensée pour répondre à vos besoins.</p>
+                        <h2 className="text text_xl weight_600"> {t("store.productsCategory.sectionTitle")} </h2>
+                        <p className="text text_sm">{t("store.productsCategory.sectionDescription")}</p>
                     </div>
 
                     <ProductsFilter resultCount={homePageProducts.length} onApply={handleFilter}/>

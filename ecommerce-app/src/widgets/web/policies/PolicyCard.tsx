@@ -3,6 +3,9 @@
 import { ChevronDown, Clock3, FileText } from "lucide-react";
 import type { PolicyTypes } from "../../../types/policyTypes";
 import { useTranslation } from "react-i18next";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 
 const formatDate = (date: string) => {
   const parsedDate = new Date(date);
@@ -39,7 +42,18 @@ export default function PolicyCard({ policy, index, expanded, onToggle}: Props) 
         {expanded && (
             <div id={`policy-content-${policy.id}`}className="policy-card__content"> 
                 <div className="policy-card__divider" />
-                <p className="policy-card__description">{policy.description}</p>
+                <div className="policy-card__description">
+                    <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                            a: ({ href, children }) => (
+                                <a href={href} target="_blank" rel="noopener noreferrer"> {children}</a>
+                            ),
+                        }}
+                    >
+                        {policy.description ?? ""}
+                    </ReactMarkdown>
+                </div>
             </div>
         )}
         </article>

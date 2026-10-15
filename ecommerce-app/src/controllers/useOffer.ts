@@ -5,8 +5,8 @@
 import { createCrudHooks } from './CrudController';
 import type { TFunction } from 'i18next';
 // import { useQuery } from '@tanstack/react-query';
-import { OfferService, PublicOffers } from '../services/marketings/offerServices';
-import type { OfferFilterTypes, OfferFormData, OfferPaginatedResponse } from '../types/offersTypes';
+import { GetPoductsOffer, OfferService, PublicOffers } from '../services/marketings/offerServices';
+import type { OfferFilterTypes, OfferFormData, OfferPaginatedResponse, OfferWithPrudctsTypes } from '../types/offersTypes';
 import { useQuery } from '@tanstack/react-query';
 /* ---------------------------------------------------------------------------------*/
 
@@ -48,4 +48,19 @@ export const usePublicOffers = () => {
 };
 /* ---------------------------------------------------------------------------------*/
 
+/* ----------------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------*/
+export const useProductsOffer = (id?: string) => {
+  return useQuery<OfferWithPrudctsTypes>({
+    queryKey: ["products-Offer", id],
+    queryFn: () => GetPoductsOffer(id!),
+    enabled: !!id,
+    staleTime: 5 * 60 * 1000,
+    retry: 3,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    placeholderData: (prev) => prev,
+  });
+};
+/* ----------------------------------------------------------------------------------*/
 

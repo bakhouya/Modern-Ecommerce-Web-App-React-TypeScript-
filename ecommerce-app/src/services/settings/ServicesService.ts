@@ -69,7 +69,7 @@ export const ServicesService = {
 /* ---------------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------------*/
 export const PublicServices = async (): Promise<ServiceTypes[]> => {
-  const response = await StoreApi.get('/public/services//');
+  const response = await StoreApi.get('/public/services/');
   return response.data;
 };
 /* ---------------------------------------------------------------------------------*/

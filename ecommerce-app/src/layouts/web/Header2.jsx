@@ -41,7 +41,7 @@ function Header() {
                     <span className="announcement__separator">•</span>
                     <span className="text text_xs ">{t("store.header.announcement.easyReturns")}</span>
                     <span className="announcement__separator">•</span>
-                    <span className="text text_xs ">{t("store.header.announcement.trackOrder")}</span>
+                    <Link to={WEBROUTES.TRACKORDER} className="text text_xs ">{t("store.header.announcement.trackOrder")}</Link>
                 </div>
             </div>
 
@@ -107,27 +107,6 @@ function Header() {
                 </div>
             </div>
 
-            {/* <nav className="navigation">
-                <div className="navigation__inner web_container">
-                    <div className="flex_between_center">
-
-                        <CategoryMenu categories={categoriesParents}/>
-
-                        <div className="navigation__links">
-                            {categories.map((category, index) => (  
-                            <Link to={"#"} key={category} className={`link_menu`}>
-                                <div className="text text_sm">  {category}   </div>
-                            </Link>
-                            ))}
-                        </div>
-
-                    </div>
-                    <Link to={"#"} className="links_offers">
-                        <div className="text text_sm white"> {t("header.navigation.offers")} </div>
-                    </Link> 
-
-                </div>
-            </nav> */}
 
         </header>
 

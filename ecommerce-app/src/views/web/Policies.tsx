@@ -102,7 +102,7 @@ const Policies = () => {
 
                             <button type="button" className="policies-state__button" onClick={() => void refetch()} disabled={isFetching}>
                                 <RotateCcw size={16} />
-                                {isFetching ? t("store.policies.loadingButton") : t("store.policies.retry")}
+                                <div className="text text_xs"> {isFetching ? t("store.policies.loadingButton") : t("store.policies.retry")} </div>
                             </button>
                         </div>
                     ) : filteredPolicies.length > 0 ? (

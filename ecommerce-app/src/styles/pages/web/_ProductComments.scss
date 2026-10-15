@@ -76,10 +76,9 @@
         min-height: 220px;
         padding: 30px 20px;
         text-align: center;
-        border: 1px dashed #dce3e9;
-        border-radius: 18px;
+        border-radius: $radius_base ;
         background: #fbfcfd;
-        border: 1px solid red ;
+        border: 1px dashed $border_color ;
 
         > svg {
              margin-bottom: 14px;
@@ -92,14 +91,6 @@
             font-weight: 750;
         }
 
-        p {
-            max-width: 360px;
-            margin: 0;
-            color: var(--comments-muted);
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
     button {
         display: inline-flex;
         align-items: center;
@@ -108,9 +99,9 @@
         margin-top: 18px;
         padding: 10px 16px;
         border: 0;
-        border-radius: 10px;
+        border-radius: $radius_base ;
         color: #fff;
-        background: var(--comments-primary);
+        background: $primary ;
         font: inherit;
         font-size: 13px;
         font-weight: 650;
@@ -118,7 +109,7 @@
         transition: background 0.2s ease, transform 0.2s ease;
 
         &:hover:not(:disabled) {
-            background: #0c928c;
+            background: rgb($primary, 0.5);
             transform: translateY(-1px);
         }
 
@@ -133,7 +124,7 @@
 .product-comment {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 15px ;
   padding: 14px 0;
   border-bottom: 1px solid $border_color ;
 
@@ -191,9 +182,6 @@
     }
 }
 
-
-
-
 .product-comment-skeleton {
   display: flex;
   gap: 15px;
@@ -242,13 +230,11 @@
     }
   }
 }
-
 @keyframes comment-skeleton-loading {
   to {
     background-position: -200% 0;
   }
 }
-
 @media (max-width: 576px) {
   .product-comments {
     &__heading {
@@ -297,7 +283,6 @@
     }
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .product-comment-skeleton__avatar,
   .product-comment-skeleton__content span {

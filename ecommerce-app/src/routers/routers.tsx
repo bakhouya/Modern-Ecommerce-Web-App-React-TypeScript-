@@ -1,5 +1,5 @@
 
-import { createBrowserRouter} from 'react-router-dom';
+import { createBrowserRouter, Navigate} from 'react-router-dom';
 import ROUTES from "./dashboard/path"
 
 import RootLayout from "./dashboard/AppRouter"
@@ -44,6 +44,7 @@ import { ProductsCategory } from '../views/web/ProductsWithCategory';
 import TrackOrder from '../views/web/TrackOrder';
 import SearchPage from '../views/web/SearchPage';
 import Policies from '../views/web/Policies';
+import ProductsOffer from '../views/web/ProductsOffer';
 // ====================================================================
 
  
@@ -104,6 +105,7 @@ const RouterUrl = createBrowserRouter([
                 { path: WEBROUTES.CATEGORY(":catID"), element: <ProductsCategory />},
                 { path: WEBROUTES.TRACKORDER, element: <TrackOrder />},
                 { path: WEBROUTES.POLICY, element: <Policies />},
+                { path: WEBROUTES.PRODUCTSOFFER(":id"), element: <ProductsOffer />},
                 
 
             ]
@@ -111,7 +113,8 @@ const RouterUrl = createBrowserRouter([
        ]
     },
     { path: WEBROUTES.SEARCHING, element: <SearchPage />},
-    {path: WEBROUTES.CHECKOUT, element: <Checkout/>}   
+    {path: WEBROUTES.CHECKOUT, element: <Checkout/>},
+    {path: "*", element: <Navigate to={WEBROUTES.HOME} replace />} 
 
 ]);
 // ====================================================================

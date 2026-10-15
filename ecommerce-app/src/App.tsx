@@ -15,7 +15,11 @@ import { useTranslation } from 'react-i18next';
 export default function App() {
     const { i18n } = useTranslation();
     useEffect(() => {AOS.init({duration: 400,});}, []); 
-    useEffect(() => {document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';}, [i18n.language]);
+    useEffect(() => {
+        const lang = i18n.language.startsWith("ar") ? "ar" : "fr";
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    }, [i18n.language]);
     
     return (
         <SettingsProvider>

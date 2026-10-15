@@ -6,7 +6,7 @@
 /* ---------------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------------*/
 import api from '../axiosInstance'; 
-import type { OfferFilterTypes, OfferFormData, OfferPaginatedResponse, OfferTypes } from '../../types/offersTypes';
+import type { OfferFilterTypes, OfferFormData, OfferPaginatedResponse, OfferTypes, OfferWithPrudctsTypes } from '../../types/offersTypes';
 import { StoreApi } from '../storeApi';
 /* ---------------------------------------------------------------------------------*/
 
@@ -79,6 +79,14 @@ export const OfferService = {
 /* ---------------------------------------------------------------------------------*/
 export const PublicOffers = async (): Promise<OfferTypes[]> => {
     const response = await StoreApi.get('/public/offers/');
+    return response.data ;
+};
+/* ---------------------------------------------------------------------------------*/
+
+/* ---------------------------------------------------------------------------------*/
+/* ---------------------------------------------------------------------------------*/
+export const GetPoductsOffer = async (id: string ): Promise<OfferWithPrudctsTypes> => {
+    const response = await StoreApi.get(`/public/offers/${id}/`);
     return response.data ;
 };
 /* ---------------------------------------------------------------------------------*/

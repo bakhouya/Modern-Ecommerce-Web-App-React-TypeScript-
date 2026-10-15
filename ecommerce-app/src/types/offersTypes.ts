@@ -1,4 +1,5 @@
 import type { PaginationTypes } from "./basicTypes";
+import type { IApiProduct } from "./productTypes";
 
 /* ---------------------------------------------------------------------------------*/
 /*  Product Detail (from products_detials) 
@@ -91,4 +92,21 @@ export interface ProductOffer {
     discount_fixed_amount: number | null;
     discount_percentage: number | null;
     variants: OfferVariantTypes[];
+}
+
+export interface OfferWithPrudctsTypes {
+    id: string;
+    title: string;
+    description: string;
+    image: string | null;
+    start_date: string;
+    end_date: string;
+    slug: string;
+    discount_type: string;
+    condition_type: string;
+    min_order_price: number | null;
+    discount_fixed_amount: number | null;
+    discount_percentage: number | null;
+    variants: OfferVariantTypes[];
+    products_detials?: IApiProduct[] ;
 }

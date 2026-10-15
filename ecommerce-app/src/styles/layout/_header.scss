@@ -184,7 +184,7 @@
 .btns_lang {
     padding: 2px ;
     border-radius: $radius_base ;
-    background-color: $hover_color ;
+    border: 1px solid $border_color ;
 }
 .lang_btn {
     border-radius: $radius_base ;
@@ -193,8 +193,8 @@
     font-size: $size_xs !important ;
     color: $txt_color_base !important ;
     &.active {
-        background-color: $primary ;
-        color: $white !important ;
+        background-color: $hover_color ;
+        // color: $white !important ;
     }
 }
 
@@ -275,7 +275,7 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
 
 
 .logo_header {
-   height: 50px ;
+   height: 47px ;
    object-fit: cover ;
 }
 .store-header {
@@ -324,6 +324,10 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
         align-items: center;
         gap: 5px;
         opacity: 0.85;
+    }
+    .text { color: $txt_color_base ;}
+    a:hover {
+        color: $primary ;
     }
 }
 .header-main {

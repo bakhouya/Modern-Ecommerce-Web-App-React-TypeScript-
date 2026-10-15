@@ -74,11 +74,10 @@
 
 .product-service-info {
     margin-top: $padding ;
-    padding: $padding_base ;
+    padding: 6px ;
     background: $base_color ;
     border: 1px solid $border_color ;
     border-radius: $radius_base;
-    // box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
     &__services {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -88,18 +87,18 @@
 .product-service-info__service {
     border-radius: $radius_base;
     text-align: center ;
-    padding: 8px ;
+    padding: 10px ;
     cursor: pointer;
     &:hover {background-color: $hover_color ;}
 }
 .product-service-info__icon {
     margin: auto ;
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     flex-shrink: 0;
     @include flex(center, center, 0) ;
     overflow: hidden;
-    background: $hover_color ;
+    // background: $hover_color ;
     border-radius: $radius_base ;
 }
 .product-service-info__icon img {

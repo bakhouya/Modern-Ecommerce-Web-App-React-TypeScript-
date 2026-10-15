@@ -5,7 +5,7 @@ $accent_color   : #ff6b6b;
 $accent_color   : #ffda08 ;  
 $secondary      : #0f918a ;
 
-$accent_color   : #097583 ;
+$accent_color   : #1194ac ;
 $secondary      : #fc9a09 ;
 
 $accent_color   : rgb(8, 130, 134) ;
@@ -65,7 +65,6 @@ $colors: (
 );
 
 
-
 $size_base    : 17px ;
 
 $size_xs      : 14px ;
@@ -109,6 +108,7 @@ $height_box   : 60px ;
   font-display: swap;
 }
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
 // COC132@mostafa.ma
 // Montserrat? Nunito Outfit Unageo  el Messiri SST arabic Mulish
 // General Sans Fredoka Comic Sans MS     
@@ -117,9 +117,11 @@ $family       : "Plus Jakarta Sans", "Nunito", "Lato", "open sans", "Google Sans
 // $family       : "Scheherazade", serif ;
 // $family       : "segoe ui", "", sans-serif ;
 // $family       : "Arial", sans-serif ;
-// $family       : "Nivella", sans-serif ;
+// $family       : "Calibri", "Nivella", sans-serif ;
 // $family: system-ui, -apple-system, BlinkMacSystemFont, \.SFNSText-Regular, Helvetica, Arial, sans-serif;
-// $family       : "Public Sans", "Rubik", "Mulish","Libre Franklin",  sans-serif ;
+// $family       : "Poppins", "Rubik", "Mulish","Libre Franklin",  sans-serif ;
+$family_ar: "IBM Plex Sans Arabic", sans-serif;
+
 
 $weight_100 : 100 ;
 $weight_200 : 200 ;
@@ -131,7 +133,7 @@ $weight_700 : 700 ;
 $weight_800 : 800 ;
 $weight_900 : 900 ;
 
-$radius_base: 8px ;
+$radius_base: 16px ;
 $radius_base_web: 30px ;
 $radius_full: 30px ;
 $spacer: 1rem ;
@@ -153,7 +155,7 @@ $box_shadow_md: 0 4px 6px rgba(0,0,0,0.07);
 
 
 $padding_base : 12px ;
-$space        : 120px ;
+$space        : 100px ;
 $padding      : 20px ;
 
 

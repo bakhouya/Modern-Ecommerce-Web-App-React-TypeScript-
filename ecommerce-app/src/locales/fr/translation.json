@@ -1,4 +1,5 @@
 {
+    
     "store": {
         "header": {
             "announcement": {
@@ -112,6 +113,11 @@
                 "loadingInvoice": "Préparation de votre facture..."
             }
         },
+        "productsSection": {
+            "titleStart": "Découvrez",
+            "titleHighlight": "nos produits",
+            "description": "Explorez notre sélection de produits soigneusement choisis pour vous offrir qualité, style et satisfaction au quotidien."
+        },
         "product": {
             "rating": "Note",
             "noRating": "Aucune note",
@@ -129,7 +135,7 @@
             "relatedProducts": "Produits similaires",
             "selectedOptionPlaceholder": "—",
             "tabs": {
-                "description": "Description",
+                "description": "Avis Riviews",
                 "details": "Détails du produit",
                 "products": "Produits similaires"
             }
@@ -155,6 +161,50 @@
             "availableToOrder": "Disponible à la commande",
             "unavailable": "Indisponible",
             "unavailableDescription": "Cette sélection est momentanément indisponible. Veuillez choisir une autre option pour poursuivre votre commande."
+        },
+        "productComments": {
+            "client": "Client",
+            "fallbackComment": "Aucun commentaire disponible.",
+            "attachedImageAlt": "Image jointe au commentaire",
+            "attachedImageLabel": "Voir l’image jointe au commentaire",
+            "heading": "Avis des clients",
+            "description": "Découvrez les retours des clients sur ce produit.",
+            "ratingLabel": "Note de {{rating}} sur 5",
+            "singleReview": "avis client",
+            "multipleReviews": "avis clients",
+            "loading": "Chargement...",
+            "loadingReviews": "Chargement des avis",
+            "errorTitle": "Impossible de charger les avis",
+            "errorDescription": "Une erreur est survenue. Veuillez réessayer.",
+            "retry": "Réessayer",
+            "emptyTitle": "Aucun avis pour le moment",
+            "emptyDescription": "Soyez le premier à partager votre expérience avec ce produit."
+        },
+        "productsCategory": {
+            "eyebrow": "Collection",
+            "heroTitle": "Découvrez nos produits",
+            "heroDescription": "Explorez notre sélection de produits disponibles dans cette catégorie.",
+            "productCount_one": "{{count}} produit",
+            "productCount_other": "produits",
+            "sectionTitle": "Nos produits",
+            "sectionDescription": "Une sélection pensée pour répondre à vos besoins."
+        },
+        "productsFilter": {
+            "open": "Filtrer",
+            "title": "Filtrer les produits",
+            "description": "Affinez votre recherche selon vos préférences.",
+            "close": "Fermer le panneau de filtres",
+            "brand": "Marque",
+            "allBrands": "Toutes les marques",
+            "selectBrand": "Sélectionner une marque...",
+            "mainCategory": "Catégorie principale",
+            "allCategories": "Toutes les catégories",
+            "selectCategory": "Sélectionner une catégorie...",
+            "price": "Prix",
+            "minPrice": "Prix min",
+            "maxPrice": "Prix max",
+            "reset": "Réinitialiser",
+            "showResults": "Afficher les résultats"
         },
         "trackOrder": {
             "title": "Suivre ma commande",
@@ -223,7 +273,122 @@
             "promotionalOffer": "Offre promotionnelle",
             "validFrom": "Valable dès",
             "purchase": "d’achat"
-        }      
+        },
+        
+        "offer": {
+        "breadcrumbLabel": "Fil d’Ariane",
+        "home": "Accueil",
+        "specialOffers": "Offres spéciales",
+        "backToShop": "Retour à la boutique",
+        "loading": "Chargement de l’offre",
+
+        "status": {
+            "active": {
+            "label": "Offre en cours",
+            "description": "Profitez des avantages de cette offre dès maintenant."
+            },
+            "upcoming": {
+            "label": "Bientôt disponible",
+            "description": "Cette offre n’a pas encore commencé."
+            },
+            "expired": {
+            "label": "Offre terminée",
+            "description": "La période de cette offre est terminée."
+            },
+            "unknown": {
+            "label": "Disponibilité à confirmer",
+            "description": "Les dates de cette offre doivent être vérifiées."
+            }
+        },
+
+        "hero": {
+            "eyebrow": "OFFRE SPÉCIALE",
+            "yourBenefit": "Votre avantage",
+            "startDate": "Début de l’offre",
+            "endDate": "Fin de l’offre",
+            "discoverProducts": "Découvrir les produits",
+            "upcomingAction": "Offre bientôt disponible",
+            "expiredAction": "Offre terminée",
+            "unknownAction": "Disponibilité à confirmer",
+            "noProductsAction": "Aucun produit disponible",
+            "oneProductAvailable": "produit disponible",
+            "productsAvailable": "produits disponibles",
+            "placeholder": "Une offre rien que pour vous",
+            "imageLabel": "SÉLECTION SPÉCIALE",
+            "dedicatedOffer": "Offre dédiée",
+            "conditions": "Découvrez les conditions"
+        },
+
+        "tiers": {
+            "eyebrow": "LES CONDITIONS",
+            "title": "Plus vous achetez, plus vous profitez",
+            "description": "Découvrez les paliers et les avantages proposés par cette offre.",
+            "topTier": "Palier supérieur",
+            "tierNumber": "PALIER {{number}}",
+            "minimumArticle": "article minimum",
+            "minimumArticles": "articles minimum",
+            "benefit": "Avantage proposé",
+            "conditionsApply": "Selon les conditions",
+            "fromArticles": "À partir de {{count}} article(s)",
+            "disclaimer": "Les conditions exactes et le calcul de la remise dépendent de la configuration de cette offre."
+        },
+
+        "products": {
+            "eyebrow": "LA SÉLECTION",
+            "title": "Les produits de cette offre",
+            "description": "Retrouvez les articles concernés et choisissez vos préférés.",
+            "totalProducts": "produits au total",
+            "available": "disponibles",
+            "noneAvailableTitle": "Aucun produit disponible pour le moment",
+            "noneAvailableDescription": "Les produits de cette sélection sont momentanément indisponibles. Revenez plus tard pour découvrir les nouveautés.",
+            "emptyTitle": "Cette offre ne contient pas encore de produits",
+            "emptyDescription": "La sélection sera affichée ici dès que des produits seront associés à cette offre.",
+            "backToShop": "Explorer la boutique"
+        },
+
+        "benefits": {
+            "dedicated": {
+            "title": "Offres dédiées",
+            "description": "Des conditions spécifiques pour chaque sélection."
+            },
+            "selection": {
+            "title": "Sélection de produits",
+            "description": "Retrouvez tous les articles liés à cette offre."
+            },
+            "transparent": {
+            "title": "Conditions transparentes",
+            "description": "Consultez les paliers avant de passer commande."
+            }
+        },
+
+        "error": {
+            "title": "Impossible d’afficher cette offre",
+            "description": "Cette offre est introuvable ou une erreur est survenue pendant le chargement. Veuillez réessayer.",
+            "retry": "Réessayer",
+            "backHome": "Retour à l’accueil"
+        }
+        },
+        "footer": {
+            "brandDescription": "Découvrez notre sélection de produits et profitez d’une expérience d’achat simple et agréable.",
+            "boutique": "Boutique",
+            "home": "Accueil",
+            "products": "Nos produits",
+            "offers": "Offres",
+            "assistance": "Assistance",
+            "trackOrder": "Suivre ma commande",
+            "helpCenter": "Centre d’aide",
+            "terms": "Conditions générales",
+            "contact": "Contact",
+            "social": {
+                "facebook": "Facebook",
+                "instagram": "Instagram",
+                "youtube": "YouTube",
+                "linkedin": "LinkedIn",
+                "x": "X"
+            },
+            "copyright": "© {{year}} {{title}}"
+        }
+   
     },
 
 

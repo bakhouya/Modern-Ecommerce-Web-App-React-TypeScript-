@@ -19,6 +19,7 @@ import InputText from "../../components/forms/InputText";
 import { Textarea } from "../../components/forms/Textarea";
 
 import ImagePlaceholder from '../../assets/images/placeholder_product.png' ;
+import { LoadingDisplay } from "../../components/ui/LoadingDisplay";
 
 export default function Checkout() {
     /* --------------------------------------------------------------------------------------------- */
@@ -34,7 +35,7 @@ export default function Checkout() {
     const city                          = useFieldSelect<string | string>({initialValue: '',}); // InitialValue City field
     const [successData, setSuccessData] = useState<CheckoutResponse | null>(null);              // state for checkout sucessfuly
     const checkoutMutation              = useCheckout();
-    const {data: cart }                 = useCart();
+    const { data: cart, isLoading: isCartLoading} = useCart();
     const { settingsQuery }             = useSettings();
     const settings                      = settingsQuery.data ;
     /* --------------------------------------------------------------------------------------------- */
@@ -84,7 +85,7 @@ export default function Checkout() {
 
     };
     /* --------------------------------------------------------------------------------------------- */
-
+    if (!successData && isCartLoading) {return (<LoadingDisplay />);}
     /* --------------------------------------------------------------------------------------------- */
     /* --------------------------------------------------------------------------------------------- */
     if (!successData && (!cart || cart.products.length === 0)) {
@@ -114,8 +115,7 @@ export default function Checkout() {
     return (
 
         <section className="chechout_page">
-            <div className="policies-hero__decoration policies-hero__decoration--one" />
-            <div className="policies-hero__decoration policies-hero__decoration--two" />
+          
             {successData && (
                 <SuccessModal data={successData} customerName={form.values.name} onClose={() => {setSuccessData(null); navigate(WEBROUTES.HOME);}}/>
             )}

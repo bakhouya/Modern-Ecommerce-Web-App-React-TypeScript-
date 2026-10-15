@@ -117,10 +117,7 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   border-radius: $radius_base ;
-  // padding: 8px ;
-  // background-color: $base_color ;
-  // box-shadow: 0 8px 28px rgba(31, 41, 55, 0.05);
-  // transition: transform 0.25s ease, box-shadow 0.25s ease;
+
 
   &:hover {
     img {transform: scale(1.15) rotate(2deg);}
@@ -180,7 +177,6 @@
     }
   }
   &__content {
-    // padding: 20px 18px 25px;
     padding-top: 7px ;
     position: relative;
   }
@@ -275,9 +271,9 @@
         }
     }
     &__icon-wrapper {
-        width: 70% ;
+        width: 60% ;
         aspect-ratio: 1/1 ;
-        // background: linear-gradient(135deg, $primary, $secondary) ;
+        background: rgb($secondary, 0.2)  ;
         @include flex(center, center, 0) ;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
         margin-bottom: 12px ;
@@ -287,19 +283,19 @@
         // border-radius:  40% 60% 40% 70% / 50% 40% 60% 50% ;
         // border-radius: 45% 55% 35% 65% / 55% 45% 65% 35% ;
         // border-radius: 40% 30% 40% 30% / 40% 30% 40% 30%  ;
-        // border-radius: 50% ;
+        border-radius: 50% ;
         // overflow: hidden ;
     }
     &__icon {
-        width: 100%;
+        width: 70%;
         aspect-ratio: 1/1 ;
         object-fit: cover ;
         @include transition() ;
         position: relative;
         z-index: 1;
+        // transform: scale(1.6);
     }
 }
-
 
 
 .filter_products {
@@ -334,24 +330,7 @@
     > div { min-width: 0;}
 
 }
-// @media (max-width: 1100px) {
-//   .products_list {
-//     grid-template-columns: repeat(3, minmax(0, 1fr));
-//     gap: 20px;
-//   }
-// }
-// @media (max-width: 800px) {
-//   .products_list {
-//     grid-template-columns: repeat(2, minmax(0, 1fr));
-//     gap: 16px;
-//   }
-// }
-// @media (max-width: 500px) {
-//   .products_list {
-//     grid-template-columns: 1fr;
-//     gap: 16px;
-//   }
-// }
+
 
 
 
@@ -666,7 +645,8 @@
     justify-content: center;
     gap: 8px;
     overflow: hidden ;
-    background-color: $hover_color ;
+    background-color: rgb($hover_color, 0.05) ;
+    border: 1px solid $border_color ;
     border-radius: $radius_base ;
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;

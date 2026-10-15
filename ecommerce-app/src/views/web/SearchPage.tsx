@@ -77,7 +77,7 @@ export default function SearchPage() {
               </section>
             )}
 
-            {data.brands.length > 0 && (
+            {/* {data.brands.length > 0 && (
               <section className="search-section">
                 <h2 className="text text_lg">Brands</h2>
                 <div className="search-grid search-grid--entities">
@@ -86,7 +86,7 @@ export default function SearchPage() {
                   ))}
                 </div>
               </section>
-            )}
+            )} */}
 
             {data.products.length > 0 && (
               <section className="search-section">

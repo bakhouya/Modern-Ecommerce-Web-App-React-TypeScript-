@@ -7,10 +7,9 @@ import { useAddToCart } from "../../controllers/useCart";
 import { LoadingDisplay } from "../../components/ui/LoadingDisplay";
 import ProductCard from "../../widgets/web/products/ProductCard";
 import { NotFound } from "../../components/ui/NoutFound";
-// import ImagePlaceholder from '../../assets/images/placeholder_product.png' ;
 import toast from "react-hot-toast";
 import ProductGallery from "../../widgets/web/products/ProductGallery";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, MessageCircle  } from "lucide-react";
 import ProductServiceInfo from "../../widgets/web/products/ProductServiceInfo";
 import ProductStock from "../../widgets/web/products/ProductStock";
 import ProductShare from "../../widgets/web/products/ProductShare";
@@ -28,7 +27,10 @@ export default function ProductPage() {
     /* --------------------------------------------------------------------------------------------------- */
     /* --------------------------------------------------------------------------------------------------- */
     const { data: product, isLoading, isError } = useProduct(id);
-    const { data: products }            = useHomePageProducts();
+    const categoryId = product?.main_category_details?.id;
+    const { data: products }            = useHomePageProducts(
+        {main_category: categoryId}
+    );
     const { data: offer }               = useProductOffers(id);
     const addToCartMutation             = useAddToCart();
     const { settingsQuery }             = useSettings();
@@ -40,7 +42,7 @@ export default function ProductPage() {
     // const [selectedImage, setSelectedImage] = useState(0);
     const [selectedValues, setSelectedValues] = useState<Record<string, string>>({});
     const [quantity, setQuantity] = useState(1);
-    const [activeTab, setActiveTab] = useState<"description" | "details" | "products">("products");
+    const [activeTab, setActiveTab] = useState<"description" | "details" | "products">("description");
     useEffect(() => {window.scrollTo({top: 0, behavior: "instant"});}, []);
     /* --------------------------------------------------------------------------------------------------- */
 
@@ -169,7 +171,31 @@ export default function ProductPage() {
         });
     };
     /* --------------------------------------------------------------------------------------------------- */
-
+    const handleWhatsAppOrder = () => {
+        if (!selectedVariant || currentStock <= 0) {
+            toast.error("Veuillez sélectionner une variante disponible.");
+            return;
+        }
+        const whatsappNumber = settings?.phone ;
+        const variantDetails = selectedVariant.values_details?.map((item) => `${item.attribute_title}: ${item.value}`) .join("\n") || "Variante par défaut";
+        const message = [
+            "Bonjour, je souhaite commander ce produit :",
+            "",
+            `Produit : ${product.title}`,
+            `Référence : ${selectedVariant.id}`,
+            `Variante :`,
+            variantDetails,
+            `Quantité : ${quantity}`,
+            `Prix unitaire : ${(currentPrice / quantity).toFixed(2)} ${settings?.currency_symbol ?? ""}`,
+            `Total : ${currentPrice.toFixed(2)} ${settings?.currency_symbol ?? ""}`,
+            "",
+            `Lien du produit : ${window.location.href}`,
+            "",
+            "Merci de me confirmer la disponibilité et la livraison."
+        ].join("\n");
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    };
 
 
     /* --------------------------------------------------------------------------------------------------- */
@@ -277,7 +303,7 @@ export default function ProductPage() {
 
                     <button
                         type="button"
-                        className="btn primary xl radius_30"
+                        className="btn primary lg radius_30"
                         disabled={isAddToCartDisabled || addToCartMutation.isPending}
                         onClick={handleAddToCart}>
                         {addToCartMutation.isPending && (<div className="btn_loader"></div>)}
@@ -288,6 +314,18 @@ export default function ProductPage() {
                             {addToCartMutation.isPending ? t("store.product.addingToCart") : t("store.product.addToCart") }
                         </div>
                     </button>
+
+                    <button
+                        type="button"
+                        className="btn secondary lg radius_30 my_start_12"
+                        disabled={!selectedVariant || currentStock <= 0}
+                        onClick={handleWhatsAppOrder}>
+                        <MessageCircle size={20} strokeWidth={2.2} />
+                        <span className="text text_sm">Commander via WhatsApp</span>
+                    </button>
+
+
+
 
                     <ProductServiceInfo />
 
@@ -308,7 +346,7 @@ export default function ProductPage() {
                             className={
                             activeTab === "description" ? "product-tabs__tab active" : "product-tabs__tab"}
                             onClick={() => setActiveTab("description")}>
-                            <div className="text text_md"> {t("store.product.tabs.description")} </div>
+                            <div className="text text_md"> {t("store.productComments.heading")} </div>
                         </button>
 
                         <button
@@ -331,9 +369,6 @@ export default function ProductPage() {
                         
                     <div className="product-tabs__content">
                         {activeTab === "description" && (
-                            // <div className="product-tabs__panel text text_sm">
-                            //     {renderProductText(product.description)}
-                            // </div>
                             <div className="product-tabs__panel">
                                 <ProductComments productId={String(product.id)} />
                             </div>

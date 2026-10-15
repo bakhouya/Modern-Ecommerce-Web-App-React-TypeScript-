@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { OfferTypes } from '../../../types/offersTypes';
+import { Link } from 'react-router-dom';
+import WEBROUTES from '../../../routers/web/path';
 
 
 
@@ -43,19 +45,9 @@ export default function OffersBanner({ offers, autoRotate = true, interval = 100
   return (
     <section className="category_index row web_container">
       {selectedOffers.map((offer, index) => (
-        <div key={offer.id} className={`col_2 index_category_item ${index === 0 ? 'offer_1_card' : 'offer_2_card'}`}>
-          <img src={offer.image} alt={offer.title}/>
-
-          {/* <div className="content_z_index">
-            <div>
-
-              <div className="text text_xl weight_600 text_primary p_limit_1">50% { offer.title }</div>
-              <div className="text text_sm white p_limit_2">{ offer.description }</div> 
-
-            </div>
-          </div> */}
-          
-        </div>
+        <Link to={WEBROUTES.PRODUCTSOFFER(offer.id)} key={offer.id} className={`col_2 index_category_item ${index === 0 ? 'offer_1_card' : 'offer_2_card'}`}>
+          <img src={offer?.image || ""} alt={offer.title} loading="lazy"/>         
+        </Link>
       ))}
     </section>
   );

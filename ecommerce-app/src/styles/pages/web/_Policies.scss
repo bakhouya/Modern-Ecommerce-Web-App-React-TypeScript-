@@ -12,7 +12,6 @@ $policy-radius: 20px;
 .policies-page {
   min-height: 100vh;
   overflow: hidden;
-  font-family: inherit ;
   button, input {font: inherit;}
   button {-webkit-tap-highlight-color: transparent;}
 }
@@ -25,6 +24,7 @@ $policy-radius: 20px;
   isolation: isolate;
   overflow: hidden;
   padding: 50px 0 45px;
+  font-family: $family ;
   background:
     radial-gradient(ellipse at 8% 0%,rgba(17, 168, 161, 0.15),transparent 42%),
     radial-gradient(ellipse at 100% 100%,rgba(255, 192, 66, 0.12),transparent 35%),
@@ -196,7 +196,7 @@ $policy-radius: 20px;
     border-radius: $radius_base ;
     box-shadow: 0 5px 20px rgba(22, 44, 66, 0.025);
     transition: border-color 180ms ease;
-    &:focus-within {border-color: $primary ;}
+    &:focus-within {border-color: $secondary ;}
     > svg {flex-shrink: 0;}
 
     input {
@@ -245,7 +245,7 @@ $policy-radius: 20px;
   transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 
   &:hover {
-    border-color: $primary ;
+    border-color: $secondary ;
     box-shadow: 0 9px 28px rgba(22, 44, 66, 0.055);
   }
   &.is-expanded {
@@ -342,12 +342,109 @@ $policy-radius: 20px;
     overflow-wrap: anywhere;
   }
 }
+.policy-card__description {
+    font-size: $size_sm ;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $txt_color_base ;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border_color ;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: $size_sm ;
+        margin: 0 ;
+        // line-height: 1.4;
+    }
+
+    ul, ol {
+        padding: 0;
+        padding-inline-start: 20px;
+        margin: 6px 0 10px !important;
+        border: none;
+        line-height: 1.4;
+    }
+
+    li {
+        padding: 0;
+        margin: 0 !important;
+        font-size: $size_sm;
+        line-height: 1.4;
+        border: none;
+
+        &::marker {
+            color: $accent_color;
+        }
+    }
+
+
+    a {
+        color: #11a8a1;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        overflow-wrap: anywhere;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #0d827d;
+        }
+    }
+
+    strong {
+        color: #1e293b;
+        font-weight: 700;
+    }
+
+    blockquote {
+        margin: 18px 0;
+        padding: 12px 16px;
+        border-left: 3px solid #11a8a1;
+        background: #f0fdfa;
+        border-radius: 0 8px 8px 0;
+        border: 1px solid green ;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid $border_color ;
+        margin: 10px 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
 @keyframes policy-content-enter {
   from { opacity: 0; transform: translateY(-5px);}
   to {opacity: 1; transform: translateY(0);}
 }
-
-
 
 
 
@@ -444,6 +541,12 @@ $policy-radius: 20px;
             color: #b45309;
             background: #fff7e8;
         }
+    }
+    &__button {
+      padding: 10px 15px ;
+      border-radius: $radius_base ;
+      border: 1px solid $border_color ;
+      @include flex(center, center, 6px) ;
     }
 
 }

@@ -1,116 +1,395 @@
 {
-"store": {
-"header": {
-"announcement": {
-"freeShipping": "توصيل مجاني للطلبات ابتداءً من 75 درهمًا",
-"easyReturns": "إمكانية إرجاع المنتجات خلال 7 أيام",
-"trackOrder": "تتبع طلبي"
-},
-"search": {
-"placeholder": "ابحث عن منتج أو علامة تجارية أو فئة...",
-"ariaLabel": "البحث في المتجر",
-"openCategories": "تصفح الفئات"
-},
-"account": {
-"title": "حسابي",
-"ariaLabel": "الدخول إلى حسابي",
-"language": {
-"french": "الفرنسية",
-"arabic": "العربية",
-"selectLanguage": "اختر اللغة"
-},
-"trackOrders": "تتبع طلباتي",
-"help": "مركز المساعدة",
-"terms": "شروط الاستخدام"
-},
-"favorites": {
-"title": "المفضلة",
-"ariaLabel": "عرض المنتجات المفضلة"
-},
-"cart": {
-"title": "سلة التسوق",
-"ariaLabel": "فتح سلة التسوق",
-"empty": "سلة التسوق فارغة",
-"items": "منتجات"
-},
-"navigation": {
-"judicialAuctions": "المزادات القضائية",
-"supermarket": "السوبرماركت",
-"nationalAid": "المساعدات الوطنية",
-"couponCenter": "مركز القسائم",
-"categories": "جميع الفئات",
-"offers": "عروض استثنائية بخصومات تصل إلى 50٪"
-}
-},
-"bottomNativagation": {
-"menu": "القائمة",
-"search": "البحث",
-"home": "الرئيسية",
-"cart": "السلة",
-"account": "حسابي"
-},
-"drops": {
-"catalogMenu": "قائمة المنتجات والفئات",
-"myCart": "سلة التسوق",
-"items": "منتجات",
-"subtotal": "المجموع الفرعي",
-"savings": "إجمالي التوفير",
-"checkout": "إتمام الطلب",
-"shareProduct": "مشاركة هذا المنتج",
-"shareDescription": "شارك هذا المنتج مع أصدقائك وأفراد عائلتك",
-"close": "إغلاق",
-"copied": "تم نسخ الرابط بنجاح!",
-"copyLink": "نسخ الرابط",
-"linkReady": "الرابط جاهز للمشاركة",
-"copyProductLink": "نسخ رابط المنتج",
-"shareVia": "المشاركة عبر",
-"otherShareOptions": "خيارات مشاركة أخرى",
-"shareFooter": "شارك هذا المنتج في ثوانٍ معدودة",
-"shareWhatsApp": "المشاركة عبر واتساب",
-"shareFacebook": "المشاركة عبر فيسبوك",
-"shareTelegram": "المشاركة عبر تيليغرام",
-"shareX": "المشاركة عبر X",
-"shareLinkedIn": "المشاركة عبر لينكدإن",
-"shareEmail": "المشاركة عبر البريد الإلكتروني",
-"copyError": "تعذر نسخ الرابط. يرجى المحاولة مرة أخرى.",
-"shareError": "تعذرت مشاركة المنتج. يرجى المحاولة مرة أخرى."
-},
-"checkout": {
-"emptyCartTitle": "سلة التسوق فارغة",
-"emptyCartDescription": "لم تتم إضافة أي منتجات إلى سلة التسوق حتى الآن.",
-"backToHome": "العودة إلى الصفحة الرئيسية",
-"pageTitle": "إتمام الطلب",
-"personalInformation": "المعلومات الشخصية",
-"deliveryInformation": "لإتمام طلبك، يرجى إدخال معلومات التوصيل أدناه.",
-"fullName": "الاسم الكامل",
-"phone": "رقم الهاتف",
-"address": "عنوان التوصيل",
-"note": "ملاحظات (اختياري)",
-"orderSummary": "ملخص الطلب",
-"reviewOrder": "يرجى مراجعة تفاصيل طلبك قبل تأكيده.",
-"quantity": "الكمية",
-"totalItems": "إجمالي المنتجات",
-"discount": "الخصم",
-"delivery": "التوصيل",
-"total": "المجموع الإجمالي",
-"confirmOrder": "تأكيد الطلب",
-"termsNotice": "بالضغط على «تأكيد الطلب»، فإنك توافق على الشروط والأحكام الخاصة بالبيع وتؤكد عملية الشراء.",
-"selectCity": "يرجى اختيار المدينة.",
-"orderSuccess": "تم تأكيد طلبك بنجاح!",
-"orderError": "حدث خطأ أثناء تأكيد طلبك. يرجى المحاولة مرة أخرى.",
-"success": {
-    "title": "شكراً لك",
-    "message": "تم تسجيل طلبك بنجاح. سنتواصل معك قريباً لتأكيد الطلب وترتيب عملية التوصيل.",
-    "orderCode": "رقم الطلب",
-    "date": "التاريخ",
-    "status": "حالة الطلب",
-    "total": "المجموع الإجمالي",
-    "close": "إغلاق",
-    "downloadInvoice": "تحميل الفاتورة",
-    "loadingInvoice": "جارٍ تجهيز الفاتورة..."
-}
-}
-},
+
+    "store": {
+        "header": {
+            "announcement": {
+                "freeShipping": "توصيل مجاني للطلبات ابتداءً من 75 درهم",
+                "easyReturns": "إرجاع سهل خلال 7 أيام",
+                "trackOrder": "تتبع طلبي"
+            },
+            "search": {
+                "placeholder": "ابحث عن منتج، علامة تجارية أو فئة...",
+                "ariaLabel": "البحث في المتجر",
+                "openCategories": "تصفح الفئات"
+            },
+            "account": {
+                "title": "حسابي",
+                "ariaLabel": "الوصول إلى حسابي",
+                "language": {
+                    "french": "Français",
+                    "arabic": "العربية",
+                    "selectLanguage": "اختر اللغة"
+                },
+                "trackOrders": "تتبع طلباتي",
+                "help": "مركز المساعدة",
+                "terms": "شروط الاستخدام"
+            },
+            "favorites": {
+                "title": "مفضلاتي",
+                "ariaLabel": "عرض المنتجات المفضلة"
+            },
+            "cart": {
+                "title": "سلة التسوق",
+                "ariaLabel": "فتح سلة التسوق",
+                "empty": "سلة التسوق فارغة",
+                "items": "منتجات"
+            },
+            "navigation": {
+                "judicialAuctions": "المزادات القضائية",
+                "supermarket": "السوبرماركت",
+                "nationalAid": "المساعدات الوطنية",
+                "couponCenter": "مركز الكوبونات",
+                "categories": "جميع الفئات",
+                "offers": "عروض استثنائية حتى -50٪"
+            }
+        },
+        "bottomNativagation": {
+            "menu": "القائمة",
+            "search": "البحث",
+            "home": "الرئيسية",
+            "cart": "السلة",
+            "account": "الحساب"
+        },
+        "drops": {
+            "catalogMenu": "قائمة الكتالوج",
+            "myCart": "سلة التسوق",
+            "items": "منتجات",
+            "subtotal": "المجموع الفرعي",
+            "savings": "التوفير",
+            "checkout": "إتمام الطلب",
+
+            "shareProduct": "شارك هذا المنتج",
+            "shareDescription": "أخبر أصدقاءك عن هذا المنتج",
+            "close": "إغلاق",
+            "copied": "تم نسخ الرابط!",
+            "copyLink": "نسخ الرابط",
+            "linkReady": "الرابط جاهز للمشاركة",
+            "copyProductLink": "نسخ رابط المنتج",
+            "shareVia": "شارك عبر",
+            "otherShareOptions": "خيارات مشاركة أخرى",
+            "shareFooter": "شارك هذا المنتج في ثوانٍ",
+            "shareWhatsApp": "شارك على واتساب",
+            "shareFacebook": "شارك على فيسبوك",
+            "shareTelegram": "شارك على تيليجرام",
+            "shareX": "شارك على X",
+            "shareLinkedIn": "شارك على لينكد إن",
+            "shareEmail": "شارك عبر البريد الإلكتروني",
+            "copyError": "تعذر نسخ الرابط. حاول مرة أخرى.",
+            "shareError": "لم تتم المشاركة بنجاح."
+            
+        },
+        "checkout": {
+            "emptyCartTitle": "سلة التسوق فارغة",
+            "emptyCartDescription": "لم تتم إضافة أي منتج إلى سلتك بعد.",
+            "backToHome": "العودة إلى الرئيسية",
+            "pageTitle": "إتمام الطلب",
+            "personalInformation": "المعلومات الشخصية",
+            "deliveryInformation": "لإتمام طلبك، يرجى إدخال معلومات التوصيل أدناه.",
+            "fullName": "الاسم الكامل",
+            "phone": "الهاتف",
+            "address": "العنوان",
+            "note": "ملاحظة (اختياري)",
+            "orderSummary": "ملخص الطلب",
+            "reviewOrder": "راجع تفاصيل طلبك قبل التأكيد.",
+            "quantity": "الكمية",
+            "totalItems": "إجمالي المنتجات",
+            "discount": "الخصم",
+            "delivery": "التوصيل",
+            "total": "المجموع",
+            "confirmOrder": "تأكيد الطلب",
+            "termsNotice": "بالنقر على «تأكيد الطلب»، فإنك توافق على الشروط العامة للبيع وتؤكد عملية الشراء.",
+            "selectCity": "يرجى اختيار مدينة.",
+            "orderSuccess": "تم تأكيد طلبك بنجاح!",
+            "orderError": "حدث خطأ أثناء تأكيد طلبك.",
+            "success": {
+                "title": "شكراً لك",
+                "message": "تم تسجيل طلبك بنجاح. سنتواصل معك قريباً لتأكيده وترتيب التوصيل.",
+                "orderCode": "رقم الطلب",
+                "date": "التاريخ",
+                "status": "الحالة",
+                "total": "المجموع",
+                "close": "إغلاق",
+                "downloadInvoice": "تحميل الفاتورة",
+                "loadingInvoice": "جارٍ تحضير فاتورتك..."
+            }
+        },
+        "productsSection": {
+            "titleStart": "اكتشف",
+            "titleHighlight": "منتجاتنا",
+            "description": "استكشف مجموعتنا المختارة بعناية لتمنحك الجودة والأناقة والرضا كل يوم."
+        },
+        "product": {
+            "rating": "التقييم",
+            "noRating": "لا يوجد تقييم",
+            "reviews": "تقييمات",
+            "discount": "خصم",
+            "limitedTimeOffer": "عرض لفترة محدودة",
+            "quantity": "الكمية",
+            "decreaseQuantity": "تقليل الكمية",
+            "increaseQuantity": "زيادة الكمية",
+            "addToCart": "أضف إلى السلة",
+            "addingToCart": "جارٍ الإضافة...",
+            "addedToCart": "تمت إضافة المنتج إلى السلة بنجاح!",
+            "description": "الوصف",
+            "details": "تفاصيل المنتج",
+            "relatedProducts": "منتجات مشابهة",
+            "selectedOptionPlaceholder": "—",
+            "tabs": {
+                "description": "التقييمات",
+                "details": "تفاصيل المنتج",
+                "products": "منتجات مشابهة"
+            }
+        },
+        "productGallery": {
+            "openImages": "افتح معرض صور {{productTitle}}",
+            "zoomHint": "انقر للتكبير",
+            "productImages": "صور المنتج",
+            "viewImage": "عرض الصورة {{index}}",
+            "imageGallery": "معرض صور {{productTitle}}",
+            "closeViewer": "إغلاق المعرض",
+            "previousImage": "الصورة السابقة",
+            "nextImage": "الصورة التالية",
+            "reduce": "+ تصغير",
+            "enlarge": "- تكبير",
+            "zoomInstructions": "اضغط للتكبير · اسحب للاستكشاف",
+            "navigationInstructions": "استخدم الأسهم لتغيير الصورة",
+            "closeInstructions": "اضغط على Escape للإغلاق"
+        },
+        "productStock": {
+            "available": "متوفر",
+            "lowStock": "بقي {{count}} فقط",
+            "availableToOrder": "متاح للطلب",
+            "unavailable": "غير متوفر",
+            "unavailableDescription": "هذا الخيار غير متوفر مؤقتاً. يرجى اختيار خيار آخر لمتابعة طلبك."
+        },
+        "productComments": {
+            "client": "عميل",
+            "fallbackComment": "لا يوجد تعليق متاح.",
+            "attachedImageAlt": "صورة مرفقة بالتعليق",
+            "attachedImageLabel": "عرض الصورة المرفقة بالتعليق",
+            "heading": "آراء العملاء",
+            "description": "اكتشف تجارب العملاء مع هذا المنتج.",
+            "ratingLabel": "تقييم {{rating}} من 5",
+            "singleReview": "تقييم عميل",
+            "multipleReviews": "تقييمات عملاء",
+            "loading": "جارٍ التحميل...",
+            "loadingReviews": "جارٍ تحميل التقييمات",
+            "errorTitle": "تعذر تحميل التقييمات",
+            "errorDescription": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+            "retry": "إعادة المحاولة",
+            "emptyTitle": "لا توجد تقييمات بعد",
+            "emptyDescription": "كن أول من يشارك تجربته مع هذا المنتج."
+        },
+        "productsCategory": {
+            "eyebrow": "المجموعة",
+            "heroTitle": "اكتشف منتجاتنا",
+            "heroDescription": "استكشف مجموعتنا من المنتجات المتوفرة في هذه الفئة.",
+            "productCount_one": "{{count}} منتج",
+            "productCount_other": "منتجات",
+            "sectionTitle": "منتجاتنا",
+            "sectionDescription": "مجموعة مختارة لتلبية احتياجاتك."
+        },
+        "productsFilter": {
+            "open": "تصفية",
+            "title": "تصفية المنتجات",
+            "description": "حدد بحثك حسب تفضيلاتك.",
+            "close": "إغلاق لوحة التصفية",
+            "brand": "العلامة التجارية",
+            "allBrands": "جميع العلامات التجارية",
+            "selectBrand": "اختر علامة تجارية...",
+            "mainCategory": "الفئة الرئيسية",
+            "allCategories": "جميع الفئات",
+            "selectCategory": "اختر فئة...",
+            "price": "السعر",
+            "minPrice": "الحد الأدنى",
+            "maxPrice": "الحد الأقصى",
+            "reset": "إعادة تعيين",
+            "showResults": "عرض النتائج"
+        },
+        "trackOrder": {
+            "title": "تتبع طلبي",
+            "subtitle": "أدخل رقم طلبك لتتبع حالته في الوقت الفعلي.",
+            "inputPlaceholder": "أدخل رمز الطلب...",
+            "searching": "جارٍ البحث...",
+            "trackButton": "تتبع",
+            "notFoundTitle": "لم يتم العثور على الطلب",
+            "notFoundMessage": "لا يوجد طلب مطابق لهذا الرمز.",
+            "orderNumber": "رقم الطلب",
+            "currentStatus": "الحالة الحالية",
+            "emptyTitle": "أين طلبي؟",
+            "emptyDescription": "أدخل رمز طلبك أعلاه لمعرفة حالته.",
+            "step": "الخطوة {{number}}"
+        },
+        "policies": {
+            "heroBadge": "الشفافية والثقة",
+            "heroTitle": "سياساتنا",
+            "heroTitleHighlight": "بكل شفافية.",
+            "heroDescription": "تجد هنا جميع المعلومات الأساسية المتعلقة بشروط الاستخدام، الإرجاع، الاسترداد وحماية بياناتك.",
+            "trustTitle": "حقوقك أولويتنا",
+            "trustDescription": "معلومات واضحة وفي متناول الجميع.",
+            "sectionTitle": "الوثائق والشروط",
+            "sectionDescription": "اطلع على المعلومات التي تنظم تجربتك في متجرنا.",
+            "documentCount_one": "متاح",
+            "documentCount_other": "متاحة",
+            "searchPlaceholder": "ابحث عن سياسة...",
+            "searchLabel": "البحث في السياسات",
+            "clearSearch": "مسح البحث",
+            "clear": "مسح",
+            "document": "وثيقة",
+            "updatedAt": "آخر تحديث في {{date}}",
+            "loading": "جارٍ تحميل السياسات",
+            "loadErrorTitle": "تعذر تحميل السياسات",
+            "loadErrorDescription": "حدث خطأ أثناء التحميل. يرجى المحاولة بعد قليل.",
+            "retry": "إعادة المحاولة",
+            "loadingButton": "جارٍ التحميل...",
+            "noResultsTitle": "لا توجد نتائج",
+            "noResultsDescription": "جرب كلمة مفتاحية أخرى أو تحقق من بحثك.",
+            "emptyTitle": "لا توجد سياسات متاحة",
+            "emptyDescription": "سيتم عرض الوثائق هنا بمجرد توفرها.",
+            "helpTitle": "هل لديك سؤال حول سياساتنا؟",
+            "helpDescription": "اطلع على المعلومات أعلاه لفهم الشروط المطبقة على طلبك بشكل أفضل."
+        },
+        "productOffers": {
+            "ariaLabel": "العروض الترويجية",
+            "title": "عروض خاصة",
+            "subtitle": "استفد من خصومات مميزة على هذا المنتج.",
+            "promo": "ترويج",
+            "congratulations": "خبر سار!",
+            "bestDiscountMessage": "أنت تستفيد حالياً من أفضل خصم متاح.",
+            "unlockedTier": "تم الوصول إلى المستوى",
+            "quantityOffer": "خصم على الكمية",
+            "from": "ابتداءً من",
+            "piece": "قطعة",
+            "pieces": "قطع",
+            "discountActivated": "تم تطبيق الخصم",
+            "piecesRemaining": "بقي {{count}} قطعة للاستفادة من هذا العرض.",
+            "piecesRemaining_plural": "بقيت {{count}} قطع للاستفادة من هذا العرض.",
+            "nextTier": "المستوى التالي",
+            "progressLabel": "التقدم نحو العرض التالي",
+            "addToUnlock": "أضف",
+            "toUnlockNext": "لفتح الخصم التالي.",
+            "lastTierReached": "تهانينا! أنت تستفيد من أفضل مستوى خصم.",
+            "specialOffer": "عرض خاص",
+            "promotionalOffer": "عرض ترويجي",
+            "validFrom": "صالح ابتداءً من",
+            "purchase": "شراء"
+        },
+        
+        "offer": {
+        "breadcrumbLabel": "مسار التنقل",
+        "home": "الرئيسية",
+        "specialOffers": "عروض خاصة",
+        "backToShop": "العودة إلى المتجر",
+        "loading": "جارٍ تحميل العرض",
+
+        "status": {
+            "active": {
+            "label": "العرض جارٍ",
+            "description": "استفد من مزايا هذا العرض الآن."
+            },
+            "upcoming": {
+            "label": "قريباً",
+            "description": "لم يبدأ هذا العرض بعد."
+            },
+            "expired": {
+            "label": "انتهى العرض",
+            "description": "انتهت فترة هذا العرض."
+            },
+            "unknown": {
+            "label": "التوفر قيد التأكيد",
+            "description": "يجب التحقق من تواريخ هذا العرض."
+            }
+        },
+
+        "hero": {
+            "eyebrow": "عرض خاص",
+            "yourBenefit": "ميزتك",
+            "startDate": "بداية العرض",
+            "endDate": "نهاية العرض",
+            "discoverProducts": "اكتشف المنتجات",
+            "upcomingAction": "العرض قريباً",
+            "expiredAction": "انتهى العرض",
+            "unknownAction": "التوفر قيد التأكيد",
+            "noProductsAction": "لا توجد منتجات متاحة",
+            "oneProductAvailable": "منتج متاح",
+            "productsAvailable": "منتجات متاحة",
+            "placeholder": "عرض خصيصاً لك",
+            "imageLabel": "اختيار خاص",
+            "dedicatedOffer": "عرض مخصص",
+            "conditions": "اكتشف الشروط"
+        },
+
+        "tiers": {
+            "eyebrow": "الشروط",
+            "title": "كلما اشتريت أكثر، استفدت أكثر",
+            "description": "اكتشف المستويات والمزايا التي يقدمها هذا العرض.",
+            "topTier": "المستوى الأعلى",
+            "tierNumber": "المستوى {{number}}",
+            "minimumArticle": "منتج كحد أدنى",
+            "minimumArticles": "منتجات كحد أدنى",
+            "benefit": "الميزة المقدمة",
+            "conditionsApply": "حسب الشروط",
+            "fromArticles": "ابتداءً من {{count}} منتج/منتجات",
+            "disclaimer": "تعتمد الشروط الدقيقة وحساب الخصم على إعدادات هذا العرض."
+        },
+
+        "products": {
+            "eyebrow": "الاختيار",
+            "title": "منتجات هذا العرض",
+            "description": "اكتشف المنتجات المعنية واختر المفضلة لديك.",
+            "totalProducts": "منتج إجمالاً",
+            "available": "متاح",
+            "noneAvailableTitle": "لا توجد منتجات متاحة حالياً",
+            "noneAvailableDescription": "منتجات هذا الاختيار غير متوفرة مؤقتاً. عد لاحقاً لاكتشاف الجديد.",
+            "emptyTitle": "هذا العرض لا يحتوي على منتجات بعد",
+            "emptyDescription": "سيتم عرض الاختيار هنا بمجرد ربط منتجات بهذا العرض.",
+            "backToShop": "استكشف المتجر"
+        },
+
+        "benefits": {
+            "dedicated": {
+            "title": "عروض مخصصة",
+            "description": "شروط خاصة لكل اختيار."
+            },
+            "selection": {
+            "title": "اختيار المنتجات",
+            "description": "اكتشف جميع المنتجات المرتبطة بهذا العرض."
+            },
+            "transparent": {
+            "title": "شروط شفافة",
+            "description": "اطلع على المستويات قبل إتمام الطلب."
+            }
+        },
+
+        "error": {
+            "title": "تعذر عرض هذا العرض",
+            "description": "هذا العرض غير موجود أو حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.",
+            "retry": "إعادة المحاولة",
+            "backHome": "العودة إلى الرئيسية"
+        }
+        },
+        "footer": {
+            "brandDescription": "اكتشف مجموعتنا من المنتجات واستمتع بتجربة تسوق بسيطة وممتعة.",
+            "boutique": "المتجر",
+            "home": "الرئيسية",
+            "products": "منتجاتنا",
+            "offers": "العروض",
+            "assistance": "المساعدة",
+            "trackOrder": "تتبع طلبي",
+            "helpCenter": "مركز المساعدة",
+            "terms": "الشروط العامة",
+            "contact": "اتصل بنا",
+            "social": {
+                "facebook": "فيسبوك",
+                "instagram": "إنستغرام",
+                "youtube": "يوتيوب",
+                "linkedin": "لينكد إن",
+                "x": "X"
+            },
+            "copyright": "© {{year}} {{title}}"
+        }
+
+    },
 
 
 

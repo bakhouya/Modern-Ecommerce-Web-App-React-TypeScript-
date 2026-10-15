@@ -85,7 +85,7 @@ button {
             background: $color ;
             .text {color: text-color($color) ;}
             color: text-color($color) ;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             &:hover {
                 background: linear-gradient(-135deg, $color, rgb($color, 0.4) 60%, $color, rgb($color, 0.4));
                 box-shadow: 0 12px 40px rgba($primary, 0.08), 0 4px 16px rgba($primary, 0.04);

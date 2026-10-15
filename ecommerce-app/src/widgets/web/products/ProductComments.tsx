@@ -1,31 +1,33 @@
-import { MessageSquare, Star, UserRound, RefreshCw } from "lucide-react";
+import { MessageSquare, Star, RefreshCw } from "lucide-react";
 import { useComment } from "../../../controllers/useComment";
 import type { ProductCommentTypes } from "../../../types/commentTypes";
-
+import { useTranslation } from "react-i18next";
 interface ProductCommentsProps {productId: string;}
 
-const formatDate = (date?: string) => {
-    if (!date) return "";
-    const parsedDate = new Date(date);
-    if (Number.isNaN(parsedDate.getTime())) return "";
-    return new Intl.DateTimeFormat("fr-FR", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-    }).format(parsedDate);
-};
 
-const RatingStars = ({ rating }: { rating: number }) => (
-  <div className="product-comments__stars" aria-label={`Note de ${rating} sur 5`}>
-    {Array.from({ length: 5 }, (_, index) => (
-      <Star key={index} size={16} fill={index < rating ? "currentColor" : "none"} className={index < rating ? "is-filled" : ""}/>
-    ))}
-  </div>
-);
+
+const RatingStars = ({ rating }: { rating: number }) => {
+  const { t } = useTranslation();
+
+  return (
+    <div
+      className="product-comments__stars" aria-label={t("store.productComments.ratingLabel", { rating })}>
+      {Array.from({ length: 5 }, (_, index) => (
+        <Star
+          key={index}
+          size={16}
+          fill={index < rating ? "currentColor" : "none"}
+          className={index < rating ? "is-filled" : ""}
+        />
+      ))}
+    </div>
+  );
+};
 
 
 
 const CommentCard = ({ comment }: { comment: ProductCommentTypes }) => {
+  const { t } = useTranslation();
   return (
     <article className="product-comment">
       <div className="product-comment__avatar"> 
@@ -37,15 +39,15 @@ const CommentCard = ({ comment }: { comment: ProductCommentTypes }) => {
 
       <div className="product-comment__body">
         <div className="product-comment__header">
-          <div className="text text_md weight_600"> Client </div>
+          <div className="text text_md weight_600"> {t("store.productComments.client")} </div>
           <RatingStars rating={Math.max(0, Math.min(5, comment.rating || 0))} />
         </div>
 
-        <div className="text text_sm"> {comment.comment || "Aucun commentaire disponible."}</div>
+        <div className="text text_sm"> {comment.comment || t("store.productComments.fallbackComment")}</div>
 
         {comment.image && (
-          <div className="product-comment__image-link" aria-label="Voir l’image jointe au commentaire">
-                <img src={comment.image} alt="Image jointe au commentaire" className="product-comment__image" loading="lazy"/>
+          <div className="product-comment__image-link" aria-label={t("store.productComments.attachedImageLabel")}>
+                <img src={comment.image} alt={t("store.productComments.attachedImageAlt")} className="product-comment__image" loading="lazy"/>
           </div>
         )}
       </div>
@@ -57,6 +59,7 @@ const CommentCard = ({ comment }: { comment: ProductCommentTypes }) => {
 
 
 const ProductComments = ({ productId }: ProductCommentsProps) => {
+  const { t } = useTranslation();
   const { data: comments = [], isLoading, isError, refetch, isFetching,} = useComment(productId);
 
   const averageRating =
@@ -73,8 +76,8 @@ const ProductComments = ({ productId }: ProductCommentsProps) => {
         </div>
 
         <div>
-          <div className="text text_md weight_600">Avis des clients</div>
-          <div className="text text_sm">Découvrez les retours des clients sur ce produit.</div>
+          <div className="text text_md weight_600">{t("store.productComments.heading")}</div>
+          <div className="text text_sm">{t("store.productComments.description")}</div>
         </div>
       </header>
 
@@ -85,14 +88,14 @@ const ProductComments = ({ productId }: ProductCommentsProps) => {
             <RatingStars rating={Math.round(averageRating)} />
             <span>
               {comments.length}{" "}
-              {comments.length > 1 ? "avis clients" : "avis client"}
+              {comments.length > 1 ? t("store.productComments.multipleReviews") : t("store.productComments.singleReview")}
             </span>
           </div>
         </div>
       )}
 
       {isLoading ? (
-        <div className="product-comments__list" aria-label="Chargement des avis">
+        <div className="product-comments__list" aria-label={t("store.productComments.loadingReviews")}>
           {Array.from({ length: 3 }, (_, index) => (
             <div className="product-comment-skeleton" key={index}>
               <div className="product-comment-skeleton__avatar" />
@@ -105,32 +108,34 @@ const ProductComments = ({ productId }: ProductCommentsProps) => {
           ))}
         </div>
       ) : isError ? (
-        <div className="product-comments__state" role="alert">
-          <MessageSquare size={30} />
-          <h4>Impossible de charger les avis</h4>
-          <p>Une erreur est survenue. Veuillez réessayer.</p>
 
-          <button
-            type="button"
-            onClick={() => void refetch()}
-            disabled={isFetching}
-          >
-            <RefreshCw size={16} />
-            {isFetching ? "Chargement..." : "Réessayer"}
-          </button>
+        <div className="product-comments__state" role="alert">
+            <MessageSquare size={30} />
+            <div className="text text_xl weight_700">{t("store.productComments.errorTitle")}</div>
+            <div className="text text_sm">{t("store.productComments.errorDescription")}</div>
+
+            <button type="button" onClick={() => void refetch()} disabled={isFetching}>
+              <RefreshCw size={16} />
+              {isFetching ? t("store.productComments.loading") : t("store.productComments.retry")}
+            </button>
         </div>
+
       ) : comments.length > 0 ? (
+
         <div className="product-comments__list">
           {comments.map((comment) => (
             <CommentCard key={comment.id} comment={comment} />
           ))}
         </div>
+
       ) : (
+
         <div className="product-comments__state">
           <MessageSquare size={32} />
-          <h4>Aucun avis pour le moment</h4>
-          <p>Soyez le premier à partager votre expérience avec ce produit.</p>
+          <div className="text text_xl weight_700">{t("store.productComments.emptyTitle")}</div>
+          <div className="text text_sm">{t("store.productComments.emptyDescription")}</div>
         </div>
+
       )}
     </section>
   );

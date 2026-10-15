@@ -8,6 +8,7 @@ const WEBROUTES = {
     POLICY      : "/v1/policies/",
     CATEGORY    : (catID: string) => `/v1/categories/products/${catID}/`,
     PRODUCT     : (id: string) => `/v1/products/${id}/`,
+    PRODUCTSOFFER     : (id: string) => `/v1/offer/products/${id}/`,
   
 };
 
