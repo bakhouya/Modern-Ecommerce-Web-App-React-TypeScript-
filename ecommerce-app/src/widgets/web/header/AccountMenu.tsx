@@ -34,17 +34,17 @@ const AccountMenu = ({isOpen, onClose }: AcountProps) => {
 
             <div className="dropdown_divider" />
 
-            <Link to={WEBROUTES.TRACKORDER} className="dropdown_item">
+            <Link to={WEBROUTES.TRACKORDER} className="dropdown_item" onClick={() =>onClose()}>
                 <Package size={18} />
                 <div className="text text_sm">{t("store.header.account.trackOrders")}</div>
             </Link>
 
-            <Link to="/help" className="dropdown_item">
+            <Link to={WEBROUTES.HOME} className="dropdown_item" onClick={() =>onClose()}>
                 <CircleHelp size={18} />
                 <div className="text text_sm"> {t("store.header.account.help")} </div>
             </Link>
 
-            <Link to={WEBROUTES.POLICY} className="dropdown_item">
+            <Link to={WEBROUTES.POLICY} className="dropdown_item" onClick={() =>onClose()}>
                 <ShieldCheck size={18} />
                 <div className="text text_sm">{t("store.header.account.terms")}</div>
             </Link>

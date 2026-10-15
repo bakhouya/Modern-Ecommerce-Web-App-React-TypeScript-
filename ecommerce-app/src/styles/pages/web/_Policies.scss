@@ -12,6 +12,7 @@ $policy-radius: 20px;
 .policies-page {
   min-height: 100vh;
   overflow: hidden;
+  padding: 0 ;
   button, input {font: inherit;}
   button {-webkit-tap-highlight-color: transparent;}
 }
@@ -124,9 +125,9 @@ $policy-radius: 20px;
     }
   }
 }
-.policies-content {
-  padding: 50px 0 50px;
-}
+// .policies-content {
+//   padding: 50px 0 50px;
+// }
 .policies-toolbar {
   @include flex(space-between, center, 24px) ;
   margin-bottom: 20px;
@@ -550,8 +551,6 @@ $policy-radius: 20px;
     }
 
 }
-
-
 .policies-note {
   display: flex;
   align-items: flex-start;
@@ -596,11 +595,9 @@ $policy-radius: 20px;
 
 
 @media (max-width: 768px) {
-  .policies-container {
-    width: min(100% - 32px, 600px);
-  }
   .policies-hero {
-    padding: 59px 0 53px;
+    
+    padding: $padding_base 0 $padding_base !important;
     &__title {
       margin-top: 23px;
       font-size: clamp(34px, 7vw, 46px);
@@ -616,30 +613,28 @@ $policy-radius: 20px;
   }
 
   .policies-content {
-    padding: 43px 0 55px;
+    padding: 8px 0 15px !important;
   }
 
   .policies-toolbar {
     align-items: flex-start;
     flex-direction: column;
-    gap: 17px;
-
-    h2 {
-      font-size: 25px;
-    }
+    padding: 0 ;
+    gap: 12px;
+    margin-bottom: $padding_base ;
+    h2 {font-size: 25px;}
   }
 
   .policy-card {
     &__trigger {
-      gap: 13px;
+      gap: 12px;
       min-height: 100px;
-      padding: 18px;
+      padding: 12px;
     }
-
     &__icon {
       width: 45px;
       height: 45px;
-      border-radius: 13px;
+      border-radius:  $radius_base ;
     }
 
     &__title {
@@ -665,168 +660,172 @@ $policy-radius: 20px;
     min-height: 100px;
     padding: 18px;
   }
-
-  .policies-note {
-    padding: 19px;
-  }
-}
-@media (max-width: 480px) {
-  .policies-container {
-    width: calc(100% - 28px);
-  }
-
-  .policies-hero {
-    padding: 46px 0 43px;
-
-    &__badge {
-      gap: 7px;
-      padding: 8px 11px;
-      font-size: 9px;
-      letter-spacing: 0.8px;
-    }
-
-    &__title {
-      font-size: 34px;
-      line-height: 1.2;
-      letter-spacing: -1.2px;
-    }
-
-    &__trust {
-      width: 100%;
-      padding: 12px;
-    }
-  }
-
-  .policies-content {
-    padding: 35px 0 43px;
-  }
-
-  .policies-toolbar {
-    margin-bottom: 20px;
-
-    h2 {
-      font-size: 23px;
-    }
-
-    p {
-      font-size: 13px;
-    }
-  }
-
-  .policies-count {
-    padding: 7px 10px;
-
-    &__number {
-      min-width: 28px;
-      height: 28px;
-    }
-  }
-
   .policies-search {
-    min-height: 54px;
-    gap: 10px;
-    padding-inline: 13px;
-
-    input {
-      height: 52px;
-      font-size: 13px;
-    }
-  }
-
-  .policy-card {
-    border-radius: 15px;
-
-    &__trigger {
-      gap: 10px;
-      min-height: 91px;
-      padding: 15px 12px;
-    }
-
-    &__icon {
-      width: 39px;
-      height: 39px;
-      border-radius: 11px;
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    &__eyebrow {
-      font-size: 8px;
-    }
-
-    &__title {
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    &__date {
-      gap: 4px;
-      font-size: 10px;
-    }
-
-    &__chevron {
-      width: 29px;
-      height: 29px;
-      border-radius: 9px;
-
-      svg {
-        width: 17px;
-        height: 17px;
-      }
-    }
-
-    &__content {
-      padding: 0 14px 18px;
-    }
-  }
-
-  .policy-skeleton {
-    gap: 10px;
-    min-height: 91px;
-    padding: 15px 12px;
-
-    &__icon {
-      width: 39px;
-      height: 39px;
-    }
-  }
-
-  .policies-state {
-    padding: 42px 17px;
-
-    h3 {
-      font-size: 17px;
-    }
+    margin-bottom: $padding_base ;
   }
 
   .policies-note {
-    gap: 11px;
-    padding: 16px 13px;
-
-    &__icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    h3 {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    p {
-      font-size: 11px;
-    }
+    padding: 12px;
+    margin-top: $padding_base ;
   }
 }
+// @media (max-width: 480px) {
+//   // .policies-container {
+//   //   width: calc(100% - 28px);
+//   // }
+
+//   .policies-hero {
+//     padding: 46px 0 43px;
+
+//     &__badge {
+//       gap: 7px;
+//       padding: 8px 11px;
+//       font-size: 9px;
+//       letter-spacing: 0.8px;
+//     }
+
+//     &__title {
+//       font-size: 34px;
+//       line-height: 1.2;
+//       letter-spacing: -1.2px;
+//     }
+
+//     &__trust {
+//       width: 100%;
+//       padding: 12px;
+//     }
+//   }
+
+//   .policies-content {
+//     padding: 35px 0 43px;
+//   }
+
+//   .policies-toolbar {
+//     margin-bottom: 20px;
+
+//     h2 {
+//       font-size: 23px;
+//     }
+
+//     p {
+//       font-size: 13px;
+//     }
+//   }
+
+//   .policies-count {
+//     padding: 7px 10px;
+
+//     &__number {
+//       min-width: 28px;
+//       height: 28px;
+//     }
+//   }
+
+//   .policies-search {
+//     min-height: 54px;
+//     gap: 10px;
+//     padding-inline: 13px;
+
+//     input {
+//       height: 52px;
+//       font-size: 13px;
+//     }
+//   }
+
+//   .policy-card {
+//     border-radius: 15px;
+
+//     &__trigger {
+//       gap: 10px;
+//       min-height: 91px;
+//       padding: 15px 12px;
+//     }
+
+//     &__icon {
+//       width: 39px;
+//       height: 39px;
+//       border-radius: 11px;
+
+//       svg {
+//         width: 20px;
+//         height: 20px;
+//       }
+//     }
+
+//     &__eyebrow {
+//       font-size: 8px;
+//     }
+
+//     &__title {
+//       font-size: 13px;
+//       line-height: 1.5;
+//     }
+
+//     &__date {
+//       gap: 4px;
+//       font-size: 10px;
+//     }
+
+//     &__chevron {
+//       width: 29px;
+//       height: 29px;
+//       border-radius: 9px;
+
+//       svg {
+//         width: 17px;
+//         height: 17px;
+//       }
+//     }
+
+//     &__content {
+//       padding: 0 14px 18px;
+//     }
+//   }
+
+//   .policy-skeleton {
+//     gap: 10px;
+//     min-height: 91px;
+//     padding: 15px 12px;
+
+//     &__icon {
+//       width: 39px;
+//       height: 39px;
+//     }
+//   }
+
+//   .policies-state {
+//     padding: 42px 17px;
+
+//     h3 {
+//       font-size: 17px;
+//     }
+//   }
+
+//   .policies-note {
+//     gap: 11px;
+//     padding: 16px 13px;
+
+//     &__icon {
+//       width: 38px;
+//       height: 38px;
+//       border-radius: 10px;
+
+//       svg {
+//         width: 20px;
+//         height: 20px;
+//       }
+//     }
+
+//     h3 {
+//       font-size: 13px;
+//       line-height: 1.6;
+//     }
+
+//     p {
+//       font-size: 11px;
+//     }
+//   }
+// }
 @media (prefers-reduced-motion: reduce) {
   .policies-page *,
   .policies-page *::before,

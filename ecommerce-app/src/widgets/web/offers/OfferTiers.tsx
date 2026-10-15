@@ -23,8 +23,8 @@ export default function OfferTiers({ tiers }: OfferTiersProps) {
           </div>
 
           <div>
-            <div className="text text_xl weight_600">{t("store.offer.tiers.title")}</div>
-            <div className="text text_sm">{t("store.offer.tiers.description")}</div>
+            <div className="text text_xl weight_600 p_limit_1">{t("store.offer.tiers.title")}</div>
+            <div className="text text_sm p_limit_2">{t("store.offer.tiers.description")}</div>
           </div>
         </div>
 
