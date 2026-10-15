@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export interface AccordionSelectItem<T = string> {
@@ -13,7 +13,7 @@ interface AccordionSelectProps<T> {
   items: AccordionSelectItem<T>[];
   selectedIds: T[];
   onChange: (selected: T[]) => void;
-  multi?: boolean;          // false => اختيار مفرد (radio)
+  multi?: boolean;         
   isLoading?: boolean;
   showCount?: boolean;
 }

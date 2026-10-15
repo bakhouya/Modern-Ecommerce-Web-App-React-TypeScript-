@@ -10,7 +10,7 @@ interface ErrorDisplayProps {
 
 export const ErrorDisplay = ({ error, refetch}: ErrorDisplayProps) => {
     let statusCode: number | undefined;
-    let errorMessage: string;
+    let errorMessage: string = "Une erreur est survenue.";
 
     if (error) {
         errorMessage = error.message || "Une erreur inconnue est survenue.";

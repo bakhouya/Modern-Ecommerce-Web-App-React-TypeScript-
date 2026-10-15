@@ -7,10 +7,11 @@
 import { createContext, useContext, type ReactNode } from 'react';
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
 import { fetchDelivryInvoiceSettings} from '../../services/settings/settingsService';
-import type { OrderInvoicesSettings} from '../../types/settingsTypes';
+// import type { OrderInvoicesSettings} from '../../types/settingsTypes';
 
 import { LoadingDisplay } from '../../components/ui/LoadingDisplay';
 import { ErrorDisplay } from '../../components/ui/ErrorDisplay';
+import type { DeliveryInvoiceSettings } from '../../types/settingsTypes';
 
 interface SettingsContextValue {
     settingsQuery: UseQueryResult<DeliveryInvoiceSettings, Error>;

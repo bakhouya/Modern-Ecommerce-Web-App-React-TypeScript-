@@ -6,10 +6,7 @@ const moneyString = z
   .regex(/^\d+(\.\d{1,2})?$/, 'Invalid amount (e.g. 100.00)')
   .nullable();
 
-const positiveMoney = moneyString.refine(
-  (val) => val === null || parseFloat(val) > 0,
-  { message: 'Must be > 0' }
-);
+// const positiveMoney = moneyString.refine((val) => val === null || parseFloat(val) > 0, { message: 'Must be > 0' });
 
 const percentage = z.number().min(0).max(100).nullable();
 
@@ -49,7 +46,7 @@ export const offerSchema = z.object({
     const isPrice = data.condition_type === 'PRICE';
     const isQuantity = data.condition_type === 'QUANTITY';
     const isFixed = data.discount_type === 'FIXED';
-    const isPercent = !isFixed;
+    // const isPercent = !isFixed;
 
     // -------- PRICE --------
     if (isPrice) {

@@ -2,10 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SectionHeader } from '../../../../components/ui/SectionHeader';
 import { LoadingDisplay } from '../../../../components/ui/LoadingDisplay';
-import type { Product } from '../../../../services/products/productServices';
+import type { ProductForCreate } from '../../../../types/productTypes';
+// import type { Product } from '../../../../services/products/productServices';
 
 interface Props {
-  products: Product[];
+  products: ProductForCreate[];
   selectedIds: string[];
   isLoading: boolean;
   error: unknown;
@@ -13,14 +14,7 @@ interface Props {
   description?: string;
 }
 
-export const ProductsStep: React.FC<Props> = ({
-  products,
-  selectedIds,
-  isLoading,
-  error,
-  onToggle,
-  description,
-}) => {
+export const ProductsStep: React.FC<Props> = ({ products, selectedIds, isLoading, error, onToggle, description}) => {
   const { t } = useTranslation();
 
   if (isLoading) return <LoadingDisplay />;
@@ -39,9 +33,9 @@ export const ProductsStep: React.FC<Props> = ({
             <div className="flex_between_center">
 
               <div className="flex_start_center gap_12">
-                {product.image?.[0]?.image ? (
+                {product?.image?.[0]?.image ? (
                   <div className="image_sm">
-                    <img src={product.image[0].image} alt={product.title} />
+                    <img src={product?.image[0].image} alt={product.title} />
                   </div>
                 ) : (
                   <div className="image_sm text text_lg">L</div>

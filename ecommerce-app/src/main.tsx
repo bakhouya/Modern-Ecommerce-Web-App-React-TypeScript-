@@ -18,8 +18,10 @@ const queryClient = new QueryClient({
     },
   },
 });
+const rootElement = document.getElementById("root");
 
-createRoot(document.getElementById('root')).render( 
+if (!rootElement) {throw new Error('Root element "#root" not found');}
+createRoot(rootElement).render( 
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
             <ToastProvider /><App />

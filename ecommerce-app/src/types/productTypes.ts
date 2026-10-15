@@ -88,6 +88,7 @@ export interface VariantDetail {
 }
 export interface CategoryDetail { id: string; title: string }
 export interface BrandDetail { id: string; title: string }
+
 export interface Product {
     id: string;
     variants_details: VariantDetail[];

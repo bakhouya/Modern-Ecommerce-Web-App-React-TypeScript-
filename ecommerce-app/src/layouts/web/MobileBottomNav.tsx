@@ -1,5 +1,4 @@
 
-import { Home, Search, ShoppingCart, User, Menu} from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import WEBROUTES from "../../routers/web/path";

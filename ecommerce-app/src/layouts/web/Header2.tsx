@@ -23,12 +23,12 @@ function Header() {
     const {data: cart }                 = useCart();
     const { settingsQuery }             = useSettings();
     const settings                      = settingsQuery.data ;
-    const categories = [
-        { key: "judicialAuctions", label: t("store.header.navigation.judicialAuctions") },
-        { key: "supermarket", label: t("store.header.navigation.supermarket") },
-        { key: "nationalAid", label: t("store.header.navigation.nationalAid") },
-        { key: "couponCenter", label: t("store.header.navigation.couponCenter") }
-    ];
+    // const categories = [
+    //     { key: "judicialAuctions", label: t("store.header.navigation.judicialAuctions") },
+    //     { key: "supermarket", label: t("store.header.navigation.supermarket") },
+    //     { key: "nationalAid", label: t("store.header.navigation.nationalAid") },
+    //     { key: "couponCenter", label: t("store.header.navigation.couponCenter") }
+    // ];
 
 
     return (
@@ -60,7 +60,7 @@ function Header() {
                                     stroke-width="1.5" d="M3.891 20.109C5.282 21.5 7.521 21.5 12 21.5c4.478 0 6.718 0 8.109-1.391S21.5 16.479 21.5 12c0-4.478 0-6.718-1.391-8.109S16.479 2.5 12 2.5c-4.478 0-6.718 0-8.109 1.391S2.5 7.521 2.5 12c0 4.478 0 6.718 1.391 8.109M7 8h10M7 12h10M7 16h10"/>
                             </svg>
                         </button>
-                        <CategoryMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} categories={categoriesParents}/>
+                        <CategoryMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} categories={categoriesParents ?? []}/>
                         <Link to={WEBROUTES.SEARCHING} className="search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path d="M6.75 3.27093C8.14732 2.46262 9.76964 2 11.5 2C16.7467 2 21 6.25329 21 11.5C21 16.7467 16.7467 21 11.5 21C6.25329 21 2 16.7467 2 11.5C2 9.76964 2.46262 8.14732 3.27093 6.75"/>
@@ -99,7 +99,7 @@ function Header() {
                             <div className="badge_actions">{cart?.items ?? 0}</div>
                         </button>
 
-                        <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} cart={cart}/>
+                        <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} cart={cart || null}/>
                         
 
                     </div>
@@ -111,7 +111,7 @@ function Header() {
         </header>
 
 
-        <MobileBottomNav categories={categoriesParents} cart={cart}/>
+        <MobileBottomNav categories={categoriesParents ?? []} cart={cart || null}/>
         </>
     );
 
