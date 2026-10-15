@@ -5,3 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 })
+
+export default {
+  server: {
+    proxy: {
+      '/api-blackbox': {
+        target: 'https://www.useblackbox.io',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api-blackbox/, ''),
+      },
+    },
+  },
+};

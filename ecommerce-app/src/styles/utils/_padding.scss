@@ -1,0 +1,21 @@
+
+
+@for $i from 1 through 100 {
+    .p_#{$i}{ padding: #{$i}px ;}
+}
+
+
+@for $i from 1 through 100 {
+    .py_#{$i}{padding-block : #{$i}px ;}
+    .px_#{$i}{padding-inline: #{$i}px ;}
+
+    .px_start_#{$i}{padding-inline-start : #{$i}px ;}
+    .px_end_#{$i}{padding-inline-end : #{$i}px ;}
+
+    .py_start_#{$i}{padding-block-start : #{$i}px ;}
+    .py_end_#{$i}{padding-block-end : #{$i}px ;}
+}
+
+.p_auto { padding: auto !important; }
+.px_auto { padding-inline: auto !important; }
+.py_auto { padding-block: auto !important; }

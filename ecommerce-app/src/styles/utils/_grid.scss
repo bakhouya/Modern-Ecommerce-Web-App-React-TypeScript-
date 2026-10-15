@@ -1,0 +1,47 @@
+
+// ============================================
+// 1. CONFIGURATION (Change les valeurs ici)
+// ============================================
+$grid-gap: $padding_base ; 
+$grid-columns: 4 ; 
+$breakpoints: (
+  "xs": 468px,
+  "sm": 768px,
+  "md": 868px,
+  "lg": 1024px,
+  "xl": 1280px
+);
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $grid-gap; 
+}
+.col_1 {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+// Génération automatique pour col_2, col_3, col_4 (sur mobile)
+@for $i from 2 through $grid-columns {
+  .col_#{$i} {
+    flex: 0 0 calc((100% / #{$i}) - (#{$grid-gap} * (#{$i} - 1) / #{$i}));
+    width: calc((100% / #{$i}) - (#{$grid-gap} * (#{$i} - 1) / #{$i}));
+  }
+}
+
+// --- COLONNES RESPONSIVES (md:, lg:, xl:) ---
+@each $name, $bp in $breakpoints {
+  @media (min-width: $bp) {
+    @for $i from 1 through $grid-columns {
+      .#{$name}\:col_#{$i} {
+        flex: 0 0 calc((100% / #{$i}) - (#{$grid-gap} * (#{$i} - 1) / #{$i}));
+        width: calc((100% / #{$i}) - (#{$grid-gap} * (#{$i} - 1) / #{$i}));
+      }
+    }
+  }
+}
+
+
+

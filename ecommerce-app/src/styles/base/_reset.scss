@@ -1,0 +1,206 @@
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2) format('woff2');
+    unicode-range: U +0900 -097F, U +1CD0 -1CF9, U +200C -200D, U +20A8, U +20B9, U +20F0, U +25CC, U + A830-A839, U + A8E0-A8FF, U +11B00 -11B09;
+}
+
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    font-family     : $family ;
+}
+html[lang="ar"] {
+  font-family: $family_ar !important;
+  h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, select, strong {
+    font-family: $family_ar !important;
+  }
+}
+
+html[lang="ar"] body,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+  font-family: $family_ar !important;
+}
+
+html[lang="fr"] body,
+html[lang="fr"] button,
+html[lang="fr"] input,
+html[lang="fr"] textarea,
+html[lang="fr"] select {
+  font-family: $family;
+}
+
+
+
+
+
+body.dark {@include  dark() ;}
+
+body {
+    font-size       : $size_md ;
+    // font-weight     : $weight_500 !important;
+    line-height     : 1.5 ;
+    color           : $txt_color_base ;
+    background-color: $bg_color ;
+    font-optical-sizing: auto ;
+    font-style: normal;
+    font-variation-settings: "GRAD" 0 ;  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+
+    background:
+        radial-gradient(ellipse at 0% 0%,rgba(191, 219, 254, 0.48),transparent 38%),
+        radial-gradient( ellipse at 100% 10%, rgba(221, 214, 254, 0.42), transparent 35%),
+        linear-gradient(135deg,#ffffff 0%,#f8faff 50%,#f8f7ff 100%);
+    background-attachment: fixed;
+
+}
+.scroll {
+    position: relative;
+    margin-inline-end: 1px;
+    margin-block: 2px;
+    overflow-y: auto ;
+
+    // --- Firefox ---
+    scrollbar-width: 1px ;
+    scrollbar-color: $border_color transparent;
+    scrollbar-gutter: stable; 
+
+    &::-webkit-scrollbar {
+        width: 1px ;
+        height: 1px ;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 2.5px ;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $border_color ;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background: $hover_color ;
+    }
+
+}
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: inherit ;
+    font-family: $family ;
+}
+ul, ol {
+    list-style  : none;
+    padding     : 0 ;
+    margin      : 0 ;
+}
+img {
+    max-width   : 100%;
+    height      : auto;
+    display     : block;
+    object-fit  : cover ;
+}
+
+
+
+
+.pages_panel{
+  display: flex ;
+}
+.container{
+    width     : 100% ;
+    margin-inline-start : $open_sidbar;
+    transition: all 0.3s ease-in-out ;
+    min-height: 100vh ;
+    background:$bg_color ;
+    &.collapsed{
+        margin-inline-start : $close_sidbar ;
+    }
+    .page_content{
+        position: relative;
+    }
+}
+.header_box {
+    padding-block: $padding_base ;
+    height: 80px ;
+}
+
+.link_item {
+    @include flex(start, center, 10px) ;
+    padding: 9px $padding_base ;
+    cursor: pointer ;
+    border-radius: $radius_base ;
+    transition: background-color 0.2s ease-in-out ;
+    &__content {
+        z-index: 2 ;
+    }
+    &.active {
+        background-color: $hover_color;
+    }
+
+    &--danger {
+        color: $danger;
+        &:hover {
+            background-color: rgba($danger, 0.1);
+        }
+    }
+    .active_background {
+        position: absolute ;
+        inset: 0 ;
+        background-color:  $hover_color ;
+        border-radius: $radius_base ;
+    }
+}
+.nav_container .flex_start_start {
+    position: relative;
+    display: flex;
+    gap: 12px;
+}
+
+.slash_dark {
+    height: 15px ;
+    width: 1px ;
+    border-radius: $radius_base ;
+    background-color: rgb($primary, 0.35) ;
+}
+
+
+
+
+
+.shape {
+    position: fixed ;
+    inset-block-start: -200px ;
+    inset-inline-end: -240px ;
+    width: 60%;
+    height: 70% ;
+    background: $hover_color ;
+    border-radius: 37% 63% 70% 30% / 45% 40% 60% 55%;
+    //   box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.18);
+    transform: rotate(-12deg);
+}
+

@@ -1,0 +1,218 @@
+
+
+
+
+.overlay_menu {
+    position: fixed ;
+    inset: 0;
+    z-index: 9999 ;
+    @include flex(start, center, 0) ;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: cartOverlayIn 0.2s ease ;
+}
+.category_dropdown {
+    position: relative ;
+    display: flex ;
+    height: 100vh !important ;
+    background: $base_color ;
+    border-radius: 0 ;
+    overflow: visible ;
+    animation  : categoryDropdown 0.2s ease ;
+}
+.category_dropdown__parents {
+    width: 350px ;
+    padding: 10px;
+    background: $base_color ;
+    border-radius: $radius_base ;
+    overflow-y: auto;
+    height: 100% ;
+}
+.category_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: $radius_base ;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    img {
+      width: 20px ;
+      height: 20px ;
+      border-radius: $radius_base ;
+    }
+    svg {
+        flex-shrink: 0;
+        color: #94a3b8;
+        transition: transform 0.2s ease;
+    }
+    &:hover, &.active {
+        color: $primary ;
+        background: $hover_color ;
+        svg {
+            color:$primary ;
+            transform: translateX(-2px);
+        }
+    }
+
+}
+.category_dropdown__children {
+    right: 100%;
+    top: 0;
+    width: 420px !important ;
+    height: 100vh ;
+    padding: 10px $padding_base ;
+    background: $base_color ;
+    border-inline-start: 1px solid $border_color ;
+    animation: childrenPanel 0.18s ease;
+}
+
+
+.children_header {
+  padding-bottom: 14px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid $border_color ;
+}
+.children_list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.child_category {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: $radius_base ;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, padding 0.2s ease;
+  &:hover {
+    padding-left: 17px;
+    background: $hover_color ;
+  }
+}
+@keyframes categoryDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes childrenPanel {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 800px) {
+  .category_dropdown {
+    width: 100% ;
+    max-height: 100vh ;
+    height: 100vh ;
+  }
+
+  .category_dropdown__parents {
+    width: 100% ;
+  }
+
+  .category_dropdown__children {
+    width: 100% ;
+  }
+}
+@media (max-width: 768px) {
+    .overlay_menu{
+        @include flex(center, end, 0) ;
+        inset: 0 !important ;
+    }
+    .category_dropdown {
+        position: relative ;
+        width: 100% ;
+        height: 80vh !important ;
+        border-radius: $radius_base $radius_base 0 0 ;
+        box-shadow:0 20px 50px rgba(0, 0, 0, 0.15), 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    .category_dropdown__parents {
+        width: 100%;
+        max-height: 100vh ;
+        height: 100vh ;
+    }
+    .category_dropdown__children {
+        position: absolute ;
+        inset: 0 ;
+        width: 100%;
+        min-height: auto;
+        border: none;
+        border-top: 0 ;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .account-menu__dropdown {
+        position: fixed !important ;
+        width: 100% !important ;
+        top: auto !important ;
+        left: 0 !important; right: 0 !important;
+        inset-block-end: calc(0) !important ;
+        border-radius: $radius_base $radius_base  0 0 ;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10) !important ;
+    }
+}
+
+
+.account-menu__dropdown {
+        position: absolute ;
+        top: calc(100% + 10px);
+        inset-inline-end: 0 ;
+        width: 270px ;
+        padding: 8px ;
+        background: $base_color ;
+        border: 1px solid $border_color ;
+        border-radius: $radius_base ;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+        z-index: 100;
+        animation: accountDropdown 0.18s ease;
+
+        .dropdown_item {
+            @include flex(start, center, $padding_base);
+            width: 100%;
+            padding: 11px 12px;
+            text-decoration: none;
+            border-radius: $radius_base ;
+            transition: background 0.2s ease, color 0.2s ease;
+
+            svg {
+                flex-shrink: 0;
+            }
+
+            &:hover {
+                background: $hover_color ;
+                color: $primary ;
+            }
+        }
+        .dropdown_divider {
+            height: 1px;
+            margin: 6px 4px;
+            background: $border_color ;
+        }
+}
+
+@keyframes accountDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

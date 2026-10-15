@@ -1,0 +1,198 @@
+
+.hidden {
+    display: none ;
+}
+input {
+    font-family: $family ;
+}
+button {
+    -webkit-border: none ;
+    -moz-border : none ;
+    border: none ;
+
+    -webkit-background: transparent ;
+    -moz-background : transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+.sidebar{
+
+    width              : $open_sidbar;
+    height             : 100vh ;
+    border-inline-end  : 1px solid $border_color;
+    position           : fixed;
+    inset-inline-start : 0 ;
+    top                : 0 ;
+    transition         : all 0.3s ease-in-out ;
+    z-index            : 999 ;
+    background-color   : $base_color ;
+    // color              : white ;
+    .svg, .text {transition      : all 0.2s ease-in-out ;}
+
+    &.collapsed{
+        width:$close_sidbar;
+        .sidebar__top{
+            @include flex(center, center, 0) ;
+            padding  : 0 8px ;
+            margin: auto ;
+            img{
+                height : 42px !important;
+                width : 42px !important;
+                border-radius: $radius_base ;
+            }
+        }
+    }
+
+    .sidebar__top{
+        height   : $height_box ;
+        @include flex(space-between, center, 0) ;
+        padding  : 0 calc($space - 10px)  ;
+        .sidebar__logo{
+            @include flex(start, center, 10px) ;
+            img{
+                height : calc($height_box - 25px) ;
+            }
+        }
+    }
+}
+
+.toggle_sidebar {
+    position        : absolute ;
+    top             : 8px ;
+    inset-inline-end: -50px ;   
+    color           : $txt_color_light ;
+    width           : 43px ;
+    height          : 43px ;
+    border-radius   : $radius_base ;
+    transition      : all 0.2s ease-in-out ;
+    @include flex(center, center, 0) ;
+
+    &:hover {
+        background-color: $hover_color ;
+        &::after {display           : inline-block ;}
+    }
+
+    &::after {
+        content           : attr(title) ;
+        position          : absolute ;
+        inset-inline-start: 110% ;
+        top               : 50% ;
+        transform         : translateY(-50%);
+        background-color  : $base_color ;
+        box-shadow        : $box_shadow_md;
+        font-size         : $size_sm;
+        width             : max-content ;
+        padding           : 6px ;
+        border-radius     : 8px ;
+        display           : none ;
+        transition        : all 0.2s ease-in-out ;
+    }
+
+}
+
+.sidebar__nav{
+    margin-top: 0 !important;
+    height     : calc(100vh - $height_box) ;
+    padding-block    : 0  ;
+    padding-inline-end: calc($padding ) ;
+    padding-inline-start : calc($space - 10px)  ;
+    .sidebar_link{
+        height          : 45px ;
+        @include flex(space-between, center, 0) ;
+        padding         : 0 $padding_base ;
+        border-radius   : $radius_base ; 
+        text-decoration : none ;
+        margin-bottom   : 3px ;
+        transition      : all 0.2s ease-in-out ;
+        border          : 1px solid transparent ;
+        color           : $txt_color_base ;
+        &:hover, &.active{
+            background: $hover_color ;
+            color : $primary ;
+            .text {color : $primary ;}
+        }
+
+
+        .sidebar_link_left{
+            @include flex(start, center, $padding_base) ;
+        }
+        
+        .sidebar_badge{
+            min-width       :19px;
+            height          :19px ;
+            padding         :0 6px ;
+            border-radius   : 50% ;
+            background      : $primary ;
+            color           : white ;
+            font-size       : $size_xs ;
+            @include flex(center, center, 0) ;
+        }
+    }
+}
+
+.collapsed {
+    .sidebar__nav{
+        padding : 0 ;
+        padding-inline: 8px ;
+        .text {
+            position: absolute ;
+            inset-inline-start: 105% ;
+            width: max-content ;
+            // border: 1px solid $border_color ;
+            background-color: $base_color ;
+            box-shadow: $shadow_model ;
+            padding: 8px 15px ;
+            border-radius: $radius_base ;
+            display: none ;
+            font-size: $size_sm ;
+        }
+        .sidebar_link{
+            // color   : $txt_color_light ;
+            height  : 44px ;
+            @include flex(center, center, 0) ;
+            &:hover {
+                .text {
+                    display: inline-block ; 
+                    color: $txt_color_light ;
+                }
+            }
+        }
+    }
+    .sidebar_back_button {
+        margin-inline: auto ;
+        height : 44px  ;
+        width : 47px  ;
+        @include flex_center();
+        background-color: rgb($primary, 0.08) ;
+        border-radius: $radius_base ;
+        margin-bottom: 5px ;
+    }
+
+}
+.pointer {
+    cursor: pointer;
+}
+
+
+
+.sidebar_submenu{
+    display:flex ;
+    flex-direction:column ;
+}
+.sidebar_back_button{
+    width:100%;
+    height:44px;
+    @include flex(start, center, $padding_base) ;
+    border:none;
+    background:transparent;
+    color:inherit;
+    cursor:pointer;
+}
+.sidebar_submenu_links{
+    display:flex;
+    flex-direction:column;
+}
+
+

@@ -1,0 +1,580 @@
+
+
+
+// ----------------------------------------------------------------------
+// admin style header
+// ----------------------------------------------------------------------
+.panel_header {
+    height          : calc($height_box) ;
+    position        : sticky;
+    top             : 0 ;
+    z-index         : 10 ;
+    padding-inline-end  : $space ;
+    padding-inline-start: $padding ;
+    background-color: $bg_color ;
+    border-block-end: 1px solid $border_color ;
+    box-shadow: $shadow2 ;
+    @include flex(space-between, center, 0) ;
+
+    &__actions { @include flex(flex-end, center, 20px);}
+
+    &__notification {
+            position: relative;
+            background: none;
+            border: none ;
+            cursor: pointer;
+            width: 37px;
+            height: 37px;
+            border-radius: 50% ;
+            color: $txt_color_base;
+            transition: all 0.2s;
+            @include flex_center ;
+            &:hover {
+                background-color: $hover_color;
+            }
+
+            .badge {
+                position: absolute;
+                top: -1px;
+                right: -2px;
+                background-color: $danger;
+                color: white ;
+                font-size: 0.7rem;
+                font-weight: bold;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    }
+    &__avatar {
+            width: 36px ;
+            height: 36px ;
+            border-radius: 50% ;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid $primary ;
+            background-color: $primary ;
+            .text {color: white ;}
+            .avatar-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    }
+
+    .box_search_header {
+        width: 40% ;
+        margin-inline-start: 50px ;
+        margin-block-start: 3px ;
+        .box_input {
+            margin: 0 ;
+        }
+    }
+
+}
+.dropdown_menu, .notifications-dropdown {
+    position: absolute;
+    top: calc(100% - 0.1rem) ;
+    inset-inline-end: $space ;
+    width: 300px ;
+    background-color: $base_color ;
+    border-radius: $radius_base ;
+    box-shadow: 0 4px 12px $box_shadow_md ;
+    z-index: 11 ;
+    overflow: hidden ;
+    padding : 8px ;
+    animation: dropdownFadeIn 0.15s ease;
+    border: 1px solid $border_color ;
+    box-shadow: $shadow ;
+    .header_dropdown {
+        background-color: $hover_color ;
+        border-radius: $radius_base ;
+    }
+
+    &__item {
+        @include flex(start, center, 10px) ;
+        &.flex_between_center {
+            @include flex(space-between, center, 10px) ;
+        }
+        padding: 8px $padding_base ;
+        cursor: pointer ;
+        border-radius: $radius_base ;
+        transition: background-color 0.2s ease-in-out ;
+
+        &:hover {
+            background-color: $hover_color;
+        }
+
+    &--danger {
+      color: $danger;
+      &:hover {
+        background-color: rgba($danger, 0.1);
+      }
+    }
+    }
+}
+.notifications-dropdown {
+    width: 380px ;
+
+    &__header {
+        @include flex(space-between, center, 0) ;
+        padding: calc($padding_base - 5px) $padding_base $padding_base $padding_base;
+        background-color: $base_color ;
+    }
+
+    &__list {
+        max-height: 400px;
+        overflow-y: auto ;
+    }
+
+    &__footer {
+        padding: 5px 0 0 0;
+        margin-top: 5px ;
+        text-align: center ;
+        border-top: 1px solid $border_color ;
+        cursor: pointer ;
+        .show_more {
+            padding:  8px $padding_base ;
+            color: $primary ;
+            text-decoration: none;
+            border-radius: $radius_base  ;
+            display: block ;
+            &:hover { 
+                background-color: $hover_color ;
+            }
+        }
+    }
+}
+.notification_item {
+    @include flex(space-between, center, $padding_base) ;
+    padding: 8px ;
+    transition: background-color 0.2s ;
+    border-radius: $radius_base ;
+    cursor: pointer;
+
+    &:hover {background-color: $hover_color;}
+
+    &.unread {
+        background-color: rgba($primary, 0.05);
+    }
+
+    &__content {
+        flex: 1 ;
+    }
+}
+.divider {
+    height: 1px ;
+    background-color: $border_color;
+    // margin: 0.25rem 0;
+}
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// ----------------------------------------------------------------------
+.btns_lang {
+    padding: 2px ;
+    border-radius: $radius_base ;
+    border: 1px solid $border_color ;
+}
+.lang_btn {
+    border-radius: $radius_base ;
+    padding: 8px ;
+    text-align: center ;
+    font-size: $size_xs !important ;
+    color: $txt_color_base !important ;
+    &.active {
+        background-color: $hover_color ;
+        // color: $white !important ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$border_primary : 1px solid rgb($secondary, 0.14)  ;
+.web_container {
+    margin: 0 auto;
+    padding: 0 $space ;
+}
+
+
+.categories_tabs {
+    // @include flex(start, center, 0px) ;
+    padding: 6px 0;
+    flex-wrap: nowrap;
+    position: relative;
+
+    .link_item {
+        padding: 8px 12px ;
+        border-radius: $radius_base ;
+        cursor: pointer;
+        position: relative;
+        z-index: 2 ;
+        white-space: nowrap;
+        svg {color: $secondary;}
+
+        // &:hover {
+        //     color: $secondary ;
+        //     .text {color: $secondary ;}     
+        // }
+
+        .link_item__content {
+            display: flex;
+            align-items: center;
+            gap: 5px ;
+        }
+    }
+    .link_active {
+        color: $primary ;
+        .text, .white, svg {color: $primary ;}
+    }
+    .active_background {
+        position: absolute;
+        inset: 0;
+        background: $secondary ; 
+        border-radius: $radius_base ;
+        z-index: 1;
+        text-transform: capitalize ;
+    }
+
+    .all_menu {
+        background: $secondary ;
+        color: $primary ;
+        .text, svg {color: $primary ;}
+        border-radius: $radius_base ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.logo_header {
+   height: 47px ;
+   object-fit: cover ;
+}
+.store-header {
+    width: 100% ;
+    background: $primary ;
+    top: 0 ;
+    z-index: 100 ;
+    button, input { font: inherit;}
+    border-bottom: 1px solid $border_color ;
+    button {
+        border: 0;
+        background: none;
+        cursor: pointer;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+@media (max-width: 600px) {
+    .store-header {
+        display: none ;
+    }
+    .web_container {
+        padding-inline: 15px !important ; 
+    }
+}
+
+.announcement {
+    min-height: 36px ;
+    background: $secondary ;
+    color : $white ;
+    letter-spacing: 0.03em;
+    @include flex(center, center, 0) ;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    &__separator {
+        opacity: 0.4;
+    }
+    &__location {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.85;
+    }
+    .text { color: $txt_color_base ;}
+    a:hover {
+        color: $primary ;
+    }
+}
+.header-main {
+    background-color: $base_color ;
+  &__inner {
+    min-height: 74px;
+    @include flex(space-between, center, 30px ) ;
+  }
+}
+.searchBox__web {
+    flex: 1;
+    // min-width: 180px;
+    // max-width: 560px ;
+    position: relative ;
+    @include flex(start, center, $padding_base) ;
+}
+.search {
+    height: 46px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: 1.4px solid $border_color ;
+    padding-inline-start: 15px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    border-radius: $radius_base ;
+
+    svg {flex-shrink: 0; color: $txt_color_light ;}
+    &:focus-within {
+        border-color: $primary ;
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 0 13px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font-size: $size_sm ;
+
+        // &::placeholder {color: $light ;}
+    }
+}
+.category_button {
+    height: 45px;
+    width: 45px ;
+    @include flex(center, center, 0) ;
+    border-radius: $radius_base ;
+    background-color: $hover_color !important ;
+    svg { 
+        color: $txt_color_base ;
+    }
+}
+.header-actions {
+    @include flex(start, center, 20px ) ;
+    .action {
+        position: relative !important ;
+        display: block !important ;
+        svg { 
+            transition: transform 0.2s ease;
+            color: $txt_color_base ;
+        }
+        .text {
+            margin-top: -7px ;
+        }
+        &:hover { svg { transform: translateY(-2px);}}
+        .badge_actions {
+            position: absolute ;
+            top: -6px ;
+            inset-inline-end: 0px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 4px;
+            display: grid ;
+            place-items: center;
+            border-radius: 50%;
+            background: $danger ;
+            color: $white ;
+            font-size: 11px;
+            font-weight: 700 ;
+        }
+    }
+}
+.navigation {
+    display: none ;
+    &__inner {
+        min-height: 54px;
+        @include flex(space-between, center, $space ) ;
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        @include flex(start, center, 30px) ;
+        // margin-left: 10px ;
+        .link_menu {
+            position: relative;
+            @include flex(start, center, 3px) ;
+            transition: color 0.2s ease;
+            padding: 8px 0px ;
+            border-radius: $radius_base ;
+            .text {color: $white ;}
+            &:hover, &.active {
+                color: $primary ; background-color: $hover_color ;
+                .text {color: $secondary ;}
+            }
+        }
+    }
+    .links_offers {
+        color: $white !important ;
+    }
+}
+.category-button {
+    position: relative ;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-block: 10px ;
+    // margin-inline-end: 30px ;
+    .text, svg {color: $white ;}
+    svg:last-child {
+        margin-left: 8px;
+    }
+}
+.new-label {
+  position: absolute;
+  top: 4px;
+  right: -12px ;
+  font-size: 10px ;
+  letter-spacing: 0.05em ;
+  color: $danger ;
+  font-weight: 700 ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile-bottom-nav {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+        position: fixed ;
+        left: 0;
+        right: 0;
+        bottom: 0 ;
+        z-index: 999;
+        padding: 4px 10px calc(8px + env(safe-area-inset-bottom));
+        background: $base_color ;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-top: 1px solid $border_color ;
+        box-shadow: 0 -8px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    &__inner {
+        // max-width: 520px;
+        height: 58px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        // position: relative;
+    }
+
+    &__item {
+        position: relative ;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        span {
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        svg {
+            stroke-width: 1.9;
+        }
+
+        &:hover {
+            color: $accent_color;
+        }
+
+        &.active {
+            color: $accent_color;
+
+            svg {
+                stroke-width: 2.3;
+            }
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__cart-icon {
+        position: relative;
+        display: flex;
+    }
+
+    &__badge {
+        position: absolute;
+
+        top: -8px;
+        right: -10px;
+
+        min-width: 16px;
+        height: 16px;
+
+        padding: 0 4px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50px;
+
+        background: $secondary;
+        color: #1f2937;
+
+        font-size: 8px !important;
+        font-weight: 800 !important;
+
+        border: 2px solid #ffffff;
+    }
+}
+
+
+
+
+
+
+
+

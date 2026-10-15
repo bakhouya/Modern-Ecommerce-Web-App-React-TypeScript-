@@ -1,0 +1,1019 @@
+// ============================================================
+// Variables (dyalek nta)
+// ============================================================
+
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+
+// .etaps_items {
+//     margin-top : 100px ;
+//     .etaps_item {
+//         @include flex(space-between, center, $padding_base) ;
+//         padding: 6px 10px ;
+//         border-radius: $radius_base ;
+//         border: none;
+//         background: transparent;
+//         cursor: pointer;
+//         width: 100% ;
+//         text-align: start ;
+//         transition: all 0.2s ease;
+//         color: $txt_color_base ;
+//         margin-bottom: 8px ;
+//         &:hover, &.active {
+//             background-color: $hover_color ;
+//         }
+//         &.completed {
+//             background: rgba($primary, 0.05);
+//             color: $txt_color_light;
+//             .etaps_number {
+//                 background: $primary ;
+//             }
+//             .etaps_check {
+//                 color: $primary ;
+//             }
+//         }
+//         .etaps_number {
+//             @include flex(center, center, $padding_base) ;
+//             width: 35px;
+//             height: 35px;
+//             border-radius: $radius_base ;
+//             background: $base_color ;
+//             font-weight: 600;
+//             font-size: 0.8rem ;
+//             flex-shrink: 0;
+//             transition: all 0.2s ;
+//             border: 1px solid $border_color ;
+//         }
+//     }
+// }
+.etaps_items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px ;
+  // padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  padding : 0 $padding_base ;
+  padding-inline-end: 0 ;
+  position: relative ;
+
+  &::before {
+      content: '';
+      position: absolute;
+      left: -2px ;
+      top: 20px;
+      bottom: 20px ;
+      width: 3px;
+      background: linear-gradient(to bottom, $border_color 0%, $border_color 60%, $border_color 100%);
+      border-radius: $radius_base ;
+      opacity: 0.6 ;
+  }
+
+  .etaps_item {
+    position: relative ;
+    @include flex(start, center, $padding_base) ;
+    padding: 8px 8px ;
+    border-radius: $radius_base;
+    border: none;
+    background: transparent ;
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    color: $txt_color_base;
+    z-index: 1;
+
+    // Effet de fond au survol
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: $radius_base;
+        background: rgba($primary, 0.04);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+    .etaps_number {
+        @include flex_center() ;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 50% ;
+        background: $base_color;
+        border: 1px solid $border_color ;
+        font-weight: 700;
+        font-size: 0.85rem ;
+        color: $txt_color_light ;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        flex-shrink: 0;
+        position: relative;
+    }
+    .etaps_check {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $primary;
+        opacity: 0;
+        transform: scale(0.5) rotate(-90deg);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        margin-left: auto;
+        flex-shrink: 0;
+        width: 24px;
+        text-align: center;
+    }
+    &.active {
+        background: rgba($primary, 0.08);
+        // box-shadow: 0 0 0 1px rgba($primary, 0.15), 0 4px 12px rgba($primary, 0.06);
+        // transform: translateX(4px);
+
+        .etaps_number {
+          border-color: $primary;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            left: - calc($padding_base + 2px) ;
+            top: 20%;
+            height: 60%;
+            width: 5px;
+            border-radius: $radius_base ;
+            background: $primary ;
+            box-shadow: 0 2px 8px rgba($primary, 0.3);
+            animation: slideBar 0.3s ease;
+        }
+
+    }
+    &.completed {
+        .etaps_number {
+          border-color: $primary;
+          background: rgba($primary, 0.12);
+          color: $primary;
+          &::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              right: -2px;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: $primary;
+              border: 2px solid $border_color ;
+              box-shadow: 0 2px 6px rgba($primary, 0.3);
+          }
+        }
+        .etaps_check {
+          opacity: 1 ;
+          transform: scale(1) rotate(0deg);
+        }
+    }
+    &:not(.active):not(.completed):hover {
+      .etaps_number {
+        border-color: rgba($primary, 0.3);
+        transform: scale(1.02);
+        background: rgba($primary, 0.04);
+      }
+    }
+
+    @keyframes slideBar {
+      0% { transform: scaleY(0); opacity: 0; }
+      100% { transform: scaleY(1); opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      padding: 0.6rem 0.8rem 0.6rem 0.3rem;
+
+      .etaps_number {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 0.75rem;
+      }
+
+      .etaps_label {
+        font-size: 0.8rem;
+      }
+
+      &.active {
+        transform: translateX(2px);
+      }
+
+      &.active::after {
+        left: -0.3rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .etaps_label {
+        font-size: 0.75rem;
+      }
+      .etaps_number {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 0.7rem;
+      }
+    }
+
+  }
+
+}
+
+// .select_cards {
+//     // margin-top: 100px ;
+//     .select_card {
+//         background-color: $base_color ;
+//         border: 1px solid $border_color ;
+//         padding: $padding ;
+//         border-radius: $radius_base ;
+//         cursor: pointer;
+//         // min-width: 500px ;
+//         // box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+//         .select_card_image {
+//             // width: 50px ;
+//             // height: 50px ;
+//             font-size: 100px ;
+//             text-align: center ;
+//             margin: auto ;
+//         }
+//         &:hover, &.active {
+//             border-color: $primary ;
+//             background: rgba($primary, 0.04);
+//         }
+//     }
+// }
+.select_cards {
+
+  .select_card {
+    position: relative;
+    background: $base_color;
+    border: 1px solid $border_color;
+    padding: $padding;
+    padding: 2rem 1.5rem;
+    border-radius: $radius_base;
+    width: 360px ;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+
+    // Effet de fond au survol
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba($primary, 0.05), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    // Effet de bordure lumineuse
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, transparent 40%, rgba($primary, 0.3) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    // Icône
+    .select_card_image {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    // État hover
+    &:hover {
+      border-color: rgba($primary, 0.4);
+      transform: translateY(-4px);
+      // box-shadow: 0 12px 40px rgba($primary, 0.08), 0 4px 16px rgba($primary, 0.04);
+      &::before {opacity: 1;}
+      .select_card_image {transform: scale(1.08) rotate(-2deg);}
+    }
+
+    // État active (sélectionné)
+    &.active {
+      border-color: $primary;
+      background: rgba($primary, 0.04);
+      // box-shadow: 0 0 0 4px rgba($primary, 0.08), 0 8px 32px rgba($primary, 0.12);
+      transform: translateY(-2px);
+
+      &::before {
+        opacity: 1;
+        background: linear-gradient(135deg, rgba($primary, 0.08), transparent 60%);
+      }
+
+      &::after {
+        opacity: 1;
+      }
+
+      .select_card_image {
+        transform: scale(1.05);
+        filter: drop-shadow(0 4px 8px rgba($primary, 0.2));
+      }
+
+      .text_lg {
+        color: $primary;
+      }
+
+      .text_sm {
+        color: $txt_color_base;
+      }
+
+      // Badge de sélection
+      & .select_card_badge {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    // Badge "sélectionné"
+    .select_card_badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      background: $primary;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 12px rgba($primary, 0.3);
+
+      &::after {
+        content: '✓';
+      }
+    }
+
+    // Accessibilité: focus
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
+  }
+
+      // Responsive
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        .select_card {
+          padding: 1.5rem 1rem;
+
+          .select_card_image {
+            font-size: 2.8rem;
+          }
+        }
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+}
+
+.box_select {
+    height: calc(100vh - calc($height_box * 4.10)) ;
+    @include flex(center, center, 0) ;
+}
+.block_form {
+  min-height: calc(100vh - $height_box * 2.65) ;
+}
+.offer-form-nav {
+    @include flex(center, center, 0) ;
+    position: sticky ;
+    bottom: 0 ;
+    margin-top: $padding ;
+    padding: $padding_base 0 ;
+    border-top: 1px solid $border_color ;
+    background-color: $bg_color ;
+}
+
+
+
+
+// ============================================================
+// Step Buttons in Aside
+// ============================================================
+.offer-form-step-btn {
+     @include flex(start, center, $padding_base) ;
+    padding: 8px ;
+    border-radius: $radius_base ;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    text-align: start ;
+    transition: all 0.2s ease;
+    color: $txt_color_base;
+
+  &:hover {
+    background: $hover_color;
+  }
+
+  &.active {
+    background: rgba($primary, 0.05);
+    color: $primary;
+  }
+
+  &.completed {
+    background: rgba($primary, 0.05);
+    color: $txt_color_light;
+  }
+
+  .offer-form-step-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        background: $base_color ;
+        color: $gray-600;
+        font-weight: 600;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+        transition: all 0.2s ;
+
+        .offer-form-step-btn.active & {
+        background: $primary;
+        color: #fff ;
+        }
+
+        .offer-form-step-btn.completed & {
+            background: rgba($success, 0.15);
+            color: $success;
+        }
+  }
+
+  .offer-form-step-label {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .offer-form-step-check {
+    color: $success;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+}
+
+// ============================================================
+// MAIN CONTENT (Right side)
+// ============================================================
+.offer-form-main {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border_color;
+  }
+}
+
+.offer-form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $txt_color_title;
+  margin: 0;
+}
+
+.offer-form-step-indicator {
+  font-size: 0.85rem;
+  color: $txt_color_light;
+  background: $gray-100;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+// ============================================================
+// Cards
+// ============================================================
+
+
+// ============================================================
+// Radio Cards (Condition & Discount)
+// ============================================================
+.offer-form-radio-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.offer-form-radio-card {
+  border: 2px solid $border_color;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: $base_color ;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+  }
+
+  &.active {
+    border-color: $primary;
+    background: rgba($primary, 0.04);
+    box-shadow: 0 0 0 4px rgba($primary, 0.08);
+  }
+
+  &-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: $txt_color_title;
+  }
+
+  &-desc {
+    font-size: 0.8rem;
+    color: $txt_color_light;
+    margin-top: 0.2rem;
+  }
+}
+
+// ============================================================
+// Form Fields
+// ============================================================
+.offer-form-field {
+  margin-bottom: 1.2rem;
+
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: $txt_color_base;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid $border_input;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border 0.2s, box-shadow 0.2s;
+    background: #fff;
+    color: $txt_color_base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.12);
+    }
+
+    &::placeholder {
+      color: $txt_color_light;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+}
+
+.offer-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.offer-form-error {
+  color: $danger;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+// ============================================================
+// Checkbox
+// ============================================================
+.offer-form-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+
+  input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.1rem;
+    accent-color: $primary;
+    cursor: pointer;
+  }
+}
+
+.offer-form-checkbox-label {
+  font-weight: 500;
+  color: $txt_color_title;
+}
+
+.offer-form-checkbox-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: $txt_color_light;
+  font-weight: 400;
+}
+
+// ============================================================
+// Products
+// ============================================================
+.offer-form-products-hint {
+  color: $txt_color_light;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.offer-form-product-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: $primary;
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: $txt_color_base;
+  }
+}
+
+// ============================================================
+// Variants
+// ============================================================
+.offer-form-variant-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offer-form-variant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $gray-100;
+  border: 1px solid $border_color;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+
+.offer-form-variant-info {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  span {
+    font-size: 0.9rem;
+    color: $txt_color_base;
+  }
+}
+
+.offer-form-variant-label {
+  color: $txt_color_light;
+  margin-right: 0.2rem;
+}
+
+.offer-form-btn-delete {
+  background: $danger;
+  color: #fff;
+  border: none;
+  padding: 0.2rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.2s;
+
+  &:hover {
+    background: darken($danger, 10%);
+  }
+}
+
+.offer-form-btn-add {
+  background: $gray-100;
+  border: 1px dashed $gray-400;
+  color: $gray-700;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background: darken($gray-100, 5%);
+  }
+}
+
+.offer-form-add-variant {
+  background: $gray-100;
+  border: 1px solid $border_color;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.8rem;
+
+  .offer-form-row {
+    grid-template-columns: 1fr 1fr auto;
+  }
+}
+
+.offer-form-add-variant-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: end;
+  padding-bottom: 0.15rem;
+}
+
+.offer-form-btn-save {
+  background: $primary;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
+}
+
+.offer-form-btn-cancel {
+  background: transparent;
+  border: 1px solid $border_input;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: $txt_color_base;
+
+  &:hover {
+    background: $gray-100;
+  }
+}
+
+// ============================================================
+// Navigation Buttons (Bottom)
+// ============================================================
+// .offer-form-nav {
+// //   display: flex;
+// //   justify-content: space-between;
+// //   align-items: center;
+// //   padding-top: 1.5rem;
+// //   margin-top: 0.5rem;
+//   border-top: 1px solid $border_color;
+// }
+
+.offer-form-btn {
+  padding: 0.6rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &-primary {
+    background: $primary;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: darken($primary, 8%);
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    border: 1px solid $border_input;
+    color: $txt_color_base;
+
+    &:hover:not(:disabled) {
+      background: $gray-100;
+    }
+  }
+
+  &-success {
+    background: $success;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: darken($success, 8%);
+    }
+  }
+}
+
+// ============================================================
+// Responsive
+// ============================================================
+@media (max-width: 768px) {
+  .offer-form-page {
+    flex-direction: column;
+  }
+
+  .offer-form-aside {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid $border_color;
+
+    &-steps {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+  }
+
+  .offer-form-step-btn {
+    flex: 1;
+    min-width: 80px;
+    justify-content: center;
+    padding: 0.5rem;
+
+    .offer-form-step-label {
+      display: none;
+    }
+
+    .offer-form-step-check {
+      display: none;
+    }
+  }
+
+  .offer-form-main {
+    padding: 1rem;
+  }
+
+  .offer-form-radio-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-form-add-variant .offer-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-form-nav {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .offer-form-nav .offer-form-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+.form_variants {
+    border-radius: $radius_base;
+    padding: $padding ;
+    border: 1px solid $border_color ;
+    backgound-color: $base_color ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Container principal de la liste
+.check_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px  ;
+}
+.check_item_card {
+    display: block ;
+    padding: 5px ;
+    padding-inline-end: 8px ;
+    border-radius: $radius_base ;
+    cursor: pointer ;
+    transition: background-color 0.5s ease;
+    border: 1px solid $border_color ;
+    background-color: $hover_color ;
+    background: $base_color ;
+    backdrop-filter: blur(10px) ;
+    &.p_add {
+      padding: $padding_base 14px;
+    }
+    &:hover {
+      background-color: rgb($primary, 0.04);
+      border-color: $primary ;
+    }
+    .image_sm {
+      width: 60px ;
+      height: 60px ;
+      border-radius: $radius_base ;
+      background-color: $hover_color ;
+      @include flex_center() ;
+      img {
+        width: 100% ;
+        height: 100% ;
+        border-radius: $radius_base ;
+        object-fit: cover ;
+      }
+    }
+
+    &:has(input:checked) {
+      background-color: rgb($primary, 0.04);
+      border-color: $primary;
+    }
+}
+

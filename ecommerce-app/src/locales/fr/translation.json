@@ -1,0 +1,1307 @@
+{
+    
+    "store": {
+        "header": {
+            "announcement": {
+                "freeShipping": "Livraison offerte dès 75 MAD d’achat",
+                "easyReturns": "Retours faciles sous 7 jours",
+                "trackOrder": "Suivre ma commande"
+            },
+            "search": {
+                "placeholder": "Rechercher un produit, une marque ou une catégorie...",
+                "ariaLabel": "Rechercher dans la boutique",
+                "openCategories": "Parcourir les catégories"
+            },
+            "account": {
+                "title": "Mon compte",
+                "ariaLabel": "Accéder à mon compte",
+                "language": {
+                    "french": "Français",
+                    "arabic": "arabic",
+                    "selectLanguage": "Choisir la langue"
+                },
+                "trackOrders": "Suivre mes commandes",
+                "help": "Centre d’aide",
+                "terms": "Conditions d’utilisation"
+            },
+            "favorites": {
+                "title": "Mes favoris",
+                "ariaLabel": "Voir mes produits favoris"
+            },
+            "cart": {
+                "title": "Mon panier",
+                "ariaLabel": "Ouvrir mon panier",
+                "empty": "Votre panier est vide",
+                "items": "articles"
+            },
+            "navigation": {
+                "judicialAuctions": "Ventes judiciaires",
+                "supermarket": "Supermarché",
+                "nationalAid": "Aides nationales",
+                "couponCenter": "Centre de coupons",
+                "categories": "Toutes les catégories",
+                "offers": "Offres exceptionnelles jusqu’à -50 %"
+            }
+        },
+        "bottomNativagation": {
+            "menu": "Menu",
+            "search": "Recherche",
+            "home": "Accueil",
+            "cart": "Panier",
+            "account": "Compte"
+        },
+        "drops": {
+            "catalogMenu": "Menu du catalogue",
+            "myCart": "Mon panier",
+            "items": "articles",
+            "subtotal": "Sous-total",
+            "savings": "Économies",
+            "checkout": "Commander",
+
+            "shareProduct": "Partager ce produit",
+            "shareDescription": "Faites découvrir ce produit à vos proches",
+            "close": "Fermer",
+            "copied": "Lien copié !",
+            "copyLink": "Copier le lien",
+            "linkReady": "Le lien est prêt à être partagé",
+            "copyProductLink": "Copier le lien du produit",
+            "shareVia": "Partager via",
+            "otherShareOptions": "Autres options de partage",
+            "shareFooter": "Partagez ce produit en quelques secondes",
+            "shareWhatsApp": "Partager sur WhatsApp",
+            "shareFacebook": "Partager sur Facebook",
+            "shareTelegram": "Partager sur Telegram",
+            "shareX": "Partager sur X",
+            "shareLinkedIn": "Partager sur LinkedIn",
+            "shareEmail": "Partager par e-mail",
+            "copyError": "Impossible de copier le lien. Réessayez.",
+            "shareError": "Le partage n’a pas pu être effectué."
+            
+        },
+        "checkout": {
+            "emptyCartTitle": "Votre panier est vide",
+            "emptyCartDescription": "Aucun article n’a été ajouté à votre panier pour le moment.",
+            "backToHome": "Retour à l’accueil",
+            "pageTitle": "Finaliser la commande",
+            "personalInformation": "Informations personnelles",
+            "deliveryInformation": "Pour finaliser votre commande, veuillez renseigner vos informations de livraison ci-dessous.",
+            "fullName": "Prénom et nom",
+            "phone": "Téléphone",
+            "address": "Adresse",
+            "note": "Note (optionnel)",
+            "orderSummary": "Résumé de la commande",
+            "reviewOrder": "Vérifiez les détails de votre commande avant de la confirmer.",
+            "quantity": "Quantité",
+            "totalItems": "Total des articles",
+            "discount": "Réduction",
+            "delivery": "Livraison",
+            "total": "Total",
+            "confirmOrder": "Confirmer la commande",
+            "termsNotice": "En cliquant sur « Confirmer la commande », vous acceptez nos conditions générales de vente et confirmez votre achat.",
+            "selectCity": "Veuillez sélectionner une ville.",
+            "orderSuccess": "Votre commande a été confirmée avec succès !",
+            "orderError": "Une erreur est survenue lors de la confirmation de votre commande.",
+            "success": {
+                "title": "Merci",
+                "message": "Votre commande a bien été enregistrée. Nous vous contacterons très bientôt pour la confirmer et organiser la livraison.",
+                "orderCode": "Numéro de commande",
+                "date": "Date",
+                "status": "Statut",
+                "total": "Total",
+                "close": "Fermer",
+                "downloadInvoice": "Télécharger la facture",
+                "loadingInvoice": "Préparation de votre facture..."
+            }
+        },
+        "productsSection": {
+            "titleStart": "Découvrez",
+            "titleHighlight": "nos produits",
+            "description": "Explorez notre sélection de produits soigneusement choisis pour vous offrir qualité, style et satisfaction au quotidien."
+        },
+        "product": {
+            "rating": "Note",
+            "noRating": "Aucune note",
+            "reviews": "avis",
+            "discount": "de réduction",
+            "limitedTimeOffer": "Offre à durée limitée",
+            "quantity": "Quantité",
+            "decreaseQuantity": "Diminuer la quantité",
+            "increaseQuantity": "Augmenter la quantité",
+            "addToCart": "Ajouter au panier",
+            "addingToCart": "Ajout en cours...",
+            "addedToCart": "Produit ajouté au panier avec succès !",
+            "description": "Description",
+            "details": "Détails du produit",
+            "relatedProducts": "Produits similaires",
+            "selectedOptionPlaceholder": "—",
+            "tabs": {
+                "description": "Avis Riviews",
+                "details": "Détails du produit",
+                "products": "Produits similaires"
+            }
+        },
+        "productGallery": {
+            "openImages": "Ouvrir la galerie d’images de {{productTitle}}",
+            "zoomHint": "Cliquez pour agrandir",
+            "productImages": "Images du produit",
+            "viewImage": "Voir l’image {{index}}",
+            "imageGallery": "Galerie d’images de {{productTitle}}",
+            "closeViewer": "Fermer la galerie",
+            "previousImage": "Image précédente",
+            "nextImage": "Image suivante",
+            "reduce": "+ Réduire",
+            "enlarge": "- Agrandir",
+            "zoomInstructions": "Pincez pour zoomer · Faites glisser pour explorer",
+            "navigationInstructions": "Utilisez les flèches pour changer d’image",
+            "closeInstructions": "Appuyez sur Échap pour fermer"
+        },
+        "productStock": {
+            "available": "En stock",
+            "lowStock": "Plus que {{count}} en stock",
+            "availableToOrder": "Disponible à la commande",
+            "unavailable": "Indisponible",
+            "unavailableDescription": "Cette sélection est momentanément indisponible. Veuillez choisir une autre option pour poursuivre votre commande."
+        },
+        "productComments": {
+            "client": "Client",
+            "fallbackComment": "Aucun commentaire disponible.",
+            "attachedImageAlt": "Image jointe au commentaire",
+            "attachedImageLabel": "Voir l’image jointe au commentaire",
+            "heading": "Avis des clients",
+            "description": "Découvrez les retours des clients sur ce produit.",
+            "ratingLabel": "Note de {{rating}} sur 5",
+            "singleReview": "avis client",
+            "multipleReviews": "avis clients",
+            "loading": "Chargement...",
+            "loadingReviews": "Chargement des avis",
+            "errorTitle": "Impossible de charger les avis",
+            "errorDescription": "Une erreur est survenue. Veuillez réessayer.",
+            "retry": "Réessayer",
+            "emptyTitle": "Aucun avis pour le moment",
+            "emptyDescription": "Soyez le premier à partager votre expérience avec ce produit."
+        },
+        "productsCategory": {
+            "eyebrow": "Collection",
+            "heroTitle": "Découvrez nos produits",
+            "heroDescription": "Explorez notre sélection de produits disponibles dans cette catégorie.",
+            "productCount_one": "{{count}} produit",
+            "productCount_other": "produits",
+            "sectionTitle": "Nos produits",
+            "sectionDescription": "Une sélection pensée pour répondre à vos besoins."
+        },
+        "productsFilter": {
+            "open": "Filtrer",
+            "title": "Filtrer les produits",
+            "description": "Affinez votre recherche selon vos préférences.",
+            "close": "Fermer le panneau de filtres",
+            "brand": "Marque",
+            "allBrands": "Toutes les marques",
+            "selectBrand": "Sélectionner une marque...",
+            "mainCategory": "Catégorie principale",
+            "allCategories": "Toutes les catégories",
+            "selectCategory": "Sélectionner une catégorie...",
+            "price": "Prix",
+            "minPrice": "Prix min",
+            "maxPrice": "Prix max",
+            "reset": "Réinitialiser",
+            "showResults": "Afficher les résultats"
+        },
+        "trackOrder": {
+            "title": "Suivre ma commande",
+            "subtitle": "Entrez votre numéro de commande pour suivre son statut en temps réel.",
+            "inputPlaceholder": "Entrez votre code de commande...",
+            "searching": "Recherche...",
+            "trackButton": "Suivre",
+            "notFoundTitle": "Commande introuvable",
+            "notFoundMessage": "Aucune commande ne correspond à ce code.",
+            "orderNumber": "Numéro de commande",
+            "currentStatus": "Statut actuel",
+            "emptyTitle": "Où est ma commande ?",
+            "emptyDescription": "Saisissez votre code de commande ci-dessus pour connaître son statut.",
+            "step": "Étape {{number}}"
+        },
+        "policies": {
+            "heroBadge": "TRANSPARENCE & CONFIANCE",
+            "heroTitle": "Nos politiques",
+            "heroTitleHighlight": "en toute transparence.",
+            "heroDescription": "Retrouvez toutes les informations essentielles concernant nos conditions d’utilisation, les retours, les remboursements et la protection de vos données.",
+            "trustTitle": "Vos droits, notre priorité",
+            "trustDescription": "Des informations claires et accessibles.",
+            "sectionTitle": "Documents et conditions",
+            "sectionDescription": "Consultez les informations qui encadrent votre expérience sur notre boutique.",
+            "documentCount_one": "disponible",
+            "documentCount_other": "disponibles",
+            "searchPlaceholder": "Rechercher une politique...",
+            "searchLabel": "Rechercher dans les politiques",
+            "clearSearch": "Effacer la recherche",
+            "clear": "Effacer",
+            "document": "DOCUMENT",
+            "updatedAt": "Mis à jour le {{date}}",
+            "loading": "Chargement des politiques",
+            "loadErrorTitle": "Impossible de charger les politiques",
+            "loadErrorDescription": "Une erreur est survenue lors du chargement. Veuillez réessayer dans quelques instants.",
+            "retry": "Réessayer",
+            "loadingButton": "Chargement...",
+            "noResultsTitle": "Aucun résultat trouvé",
+            "noResultsDescription": "Essayez un autre mot-clé ou vérifiez votre recherche.",
+            "emptyTitle": "Aucune politique disponible",
+            "emptyDescription": "Les documents seront affichés ici dès qu’ils seront disponibles.",
+            "helpTitle": "Une question concernant nos politiques ?",
+            "helpDescription": "Consultez les informations ci-dessus pour mieux comprendre les conditions applicables à votre commande."
+        },
+        "productOffers": {
+            "ariaLabel": "Offres promotionnelles",
+            "title": "Offres spéciales",
+            "subtitle": "Profitez de remises avantageuses sur ce produit.",
+            "promo": "Promotion",
+            "congratulations": "Bonne nouvelle !",
+            "bestDiscountMessage": "Vous bénéficiez actuellement de la meilleure remise disponible.",
+            "unlockedTier": "Palier atteint",
+            "quantityOffer": "Remise sur quantité",
+            "from": "À partir de",
+            "piece": "pièce",
+            "pieces": "pièces",
+            "discountActivated": "Remise appliquée",
+            "piecesRemaining": "Encore {{count}} pièce pour profiter de cette offre.",
+            "piecesRemaining_plural": "Encore {{count}} pièces pour profiter de cette offre.",
+            "nextTier": "Prochain palier",
+            "progressLabel": "Progression vers la prochaine offre",
+            "addToUnlock": "Ajoutez",
+            "toUnlockNext": "pour débloquer la prochaine remise.",
+            "lastTierReached": "Félicitations ! Vous profitez du meilleur palier de remise.",
+            "specialOffer": "Offre spéciale",
+            "promotionalOffer": "Offre promotionnelle",
+            "validFrom": "Valable dès",
+            "purchase": "d’achat"
+        },
+        
+        "offer": {
+        "breadcrumbLabel": "Fil d’Ariane",
+        "home": "Accueil",
+        "specialOffers": "Offres spéciales",
+        "backToShop": "Retour à la boutique",
+        "loading": "Chargement de l’offre",
+
+        "status": {
+            "active": {
+            "label": "Offre en cours",
+            "description": "Profitez des avantages de cette offre dès maintenant."
+            },
+            "upcoming": {
+            "label": "Bientôt disponible",
+            "description": "Cette offre n’a pas encore commencé."
+            },
+            "expired": {
+            "label": "Offre terminée",
+            "description": "La période de cette offre est terminée."
+            },
+            "unknown": {
+            "label": "Disponibilité à confirmer",
+            "description": "Les dates de cette offre doivent être vérifiées."
+            }
+        },
+
+        "hero": {
+            "eyebrow": "OFFRE SPÉCIALE",
+            "yourBenefit": "Votre avantage",
+            "startDate": "Début de l’offre",
+            "endDate": "Fin de l’offre",
+            "discoverProducts": "Découvrir les produits",
+            "upcomingAction": "Offre bientôt disponible",
+            "expiredAction": "Offre terminée",
+            "unknownAction": "Disponibilité à confirmer",
+            "noProductsAction": "Aucun produit disponible",
+            "oneProductAvailable": "produit disponible",
+            "productsAvailable": "produits disponibles",
+            "placeholder": "Une offre rien que pour vous",
+            "imageLabel": "SÉLECTION SPÉCIALE",
+            "dedicatedOffer": "Offre dédiée",
+            "conditions": "Découvrez les conditions"
+        },
+
+        "tiers": {
+            "eyebrow": "LES CONDITIONS",
+            "title": "Plus vous achetez, plus vous profitez",
+            "description": "Découvrez les paliers et les avantages proposés par cette offre.",
+            "topTier": "Palier supérieur",
+            "tierNumber": "PALIER {{number}}",
+            "minimumArticle": "article minimum",
+            "minimumArticles": "articles minimum",
+            "benefit": "Avantage proposé",
+            "conditionsApply": "Selon les conditions",
+            "fromArticles": "À partir de {{count}} article(s)",
+            "disclaimer": "Les conditions exactes et le calcul de la remise dépendent de la configuration de cette offre."
+        },
+
+        "products": {
+            "eyebrow": "LA SÉLECTION",
+            "title": "Les produits de cette offre",
+            "description": "Retrouvez les articles concernés et choisissez vos préférés.",
+            "totalProducts": "produits au total",
+            "available": "disponibles",
+            "noneAvailableTitle": "Aucun produit disponible pour le moment",
+            "noneAvailableDescription": "Les produits de cette sélection sont momentanément indisponibles. Revenez plus tard pour découvrir les nouveautés.",
+            "emptyTitle": "Cette offre ne contient pas encore de produits",
+            "emptyDescription": "La sélection sera affichée ici dès que des produits seront associés à cette offre.",
+            "backToShop": "Explorer la boutique"
+        },
+
+        "benefits": {
+            "dedicated": {
+            "title": "Offres dédiées",
+            "description": "Des conditions spécifiques pour chaque sélection."
+            },
+            "selection": {
+            "title": "Sélection de produits",
+            "description": "Retrouvez tous les articles liés à cette offre."
+            },
+            "transparent": {
+            "title": "Conditions transparentes",
+            "description": "Consultez les paliers avant de passer commande."
+            }
+        },
+
+        "error": {
+            "title": "Impossible d’afficher cette offre",
+            "description": "Cette offre est introuvable ou une erreur est survenue pendant le chargement. Veuillez réessayer.",
+            "retry": "Réessayer",
+            "backHome": "Retour à l’accueil"
+        }
+        },
+        "footer": {
+            "brandDescription": "Découvrez notre sélection de produits et profitez d’une expérience d’achat simple et agréable.",
+            "boutique": "Boutique",
+            "home": "Accueil",
+            "products": "Nos produits",
+            "offers": "Offres",
+            "assistance": "Assistance",
+            "trackOrder": "Suivre ma commande",
+            "helpCenter": "Centre d’aide",
+            "terms": "Conditions générales",
+            "contact": "Contact",
+            "social": {
+                "facebook": "Facebook",
+                "instagram": "Instagram",
+                "youtube": "YouTube",
+                "linkedin": "LinkedIn",
+                "x": "X"
+            },
+            "copyright": "© {{year}} {{title}}"
+        }
+   
+    },
+
+
+
+
+
+
+    "common": {
+        "total": "Total",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "update": "Mettre à jour",
+        "add": "Ajouter",
+        "create": "Créer",
+        "search": "Rechercher",
+        "filter": "Filtrer",
+        "export": "Exporter",
+        "import": "Importer",
+        "refresh": "Actualiser",
+        "close": "Fermer",
+        "back": "Retour",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "confirm": "Confirmer",
+        "submit": "Valider",
+        "reset": "Réinitialiser",
+        "loading": "Chargement...",
+        "noData": "Aucune donnée trouvée",
+        "noDadaDesc": "Aucune donnée ne correspond à votre recherche.",
+        "actions": "Actions",
+        "status": "Statut",
+        "active": "Actif",
+        "inactive": "Inactif",
+        "all": "Tous",
+        "selectAll": "Tous",
+        "details": "Détails",
+        "view": "Voir",
+        "selectOption": "Select Option ...",
+        "yes": "Oui",
+        "no": "Non"
+    },
+    "navigation": {
+        "accueil": "Accueil",
+        "clients": "Clients",
+        "catalogue": "Catalogue",
+        "articles": "Articles",
+        "categories": "Catégories",
+        "marques": "Marques",
+        "attributs": "Attributs",
+        "valeurs_attributs": "Valeurs d'attributs",
+        "ventes": "Ventes",
+        "commandes": "Commandes",
+        "factures": "Factures",
+        "fournisseurs": "Fournisseurs",
+        "transporteurs": "Transporteurs",
+        "rapports": "Rapports",
+        "ventes_rapport": "Ventes",
+        "visites": "Visites",
+        "transactions": "Transactions financières",
+        "revenus": "Revenus",
+        "depenses": "Dépenses",
+        "types_depenses": "Types de dépenses",
+        "parametres": "Paramètres",
+        "param_generaux": "Paramètres généraux",
+        "expedition": "Expédition",
+        "facturation": "Facturation",
+        "politiques": "Politiques de la plateforme",
+        "services": "Services",
+        "administration": "Administration",
+        "sidebar": {
+            "open": "Overe navigation",
+            "close": "Close navigation"
+        }
+    },
+    "crud": {
+        "addNew": "Ajouter nouveau",
+        "editItem": "Modifier l'élément",
+        "deleteItem": "Supprimer l'élément",
+        "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer cet élément ?",
+        "deleteSuccess": "Élément supprimé avec succès",
+        "saveSuccess": "Enregistré avec succès",
+        "updateSuccess": "Mis à jour avec succès",
+        "createSuccess": "Créé avec succès",
+        "operationFailed": "Échec de l'opération",
+
+        "deleteTitle": "Supprimer",
+        "deleteConfirmationWithName": "Voulez-vous supprimer {{entity}} « {{name}} » ?",
+        "bulkDeleteTitle": "Suppression groupée",
+        "bulkDeleteConfirmation": "Supprimer {{count}} {{entity}}(s) ?",
+        "deleteSingleConfirmation": "Voulez-vous supprimer cette {{entity}} ?"
+
+    },
+    "messages": {
+        "create": {
+            "success": "Enregistré avec succès",
+            "error": "Échec de l'enregistrement. Veuillez réessayer."
+        },
+        "update": {
+            "success": "Mis à jour avec succès",
+            "error": "Échec de la mise à jour. Veuillez réessayer."
+        },
+        "delete": {
+            "success": "Supprimé avec succès",
+            "error": "Échec de la suppression. Veuillez réessayer."
+        },
+        "general": {
+            "success": "Opération réussie",
+            "error": "Une erreur est survenue. Veuillez réessayer."
+        },
+        "confirm": {
+            "delete": "Voulez-vous vraiment supprimer cet élément ?",
+            "discard": "Voulez-vous vraiment annuler les modifications ?"
+        }
+    },
+    "form": {
+        "required": "Ce champ est obligatoire",
+        "invalidEmail": "Adresse email invalide",
+        "invalidPhone": "Numéro de téléphone invalide",
+        "minLength": "La longueur minimale est de {{count}} caractères",
+        "maxLength": "La longueur maximale est de {{count}} caractères",
+        "passwordMismatch": "Les mots de passe ne correspondent pas",
+        "selectOption": "Sélectionnez une option",
+        "uploadImage": "Télécharger une image",
+        "dragDrop": "Glissez-déposez ou cliquez pour télécharger"
+    },
+    "modal": {
+        "titleAdd": "Ajouter {{entity}}",
+        "titleEdit": "Modifier {{entity}}",
+        "confirmDelete": "Confirmer la suppression"
+    },
+    "table": {
+        "rowsPerPage": "Lignes par page",
+        "page": "Page",
+        "of": "de",
+        "first": "Première",
+        "last": "Dernière"
+    },
+    "filters": {
+        "title": "Filtres"
+    },
+    "search": {
+        "placeholder": "Rechercher..."
+    },
+    "entities": {
+        "city": "Ville",
+        "user": "Utilisateur",
+        "group": "Groupe",
+        "product": "Produit",
+        "category": "Catégorie",
+        "brand": "Marque",
+        "attribute": "Attribut",
+        "supplier": "Fournisseur",
+        "value": "Valeur",
+        "permission": "Permission",
+        "policy": "Politique",
+        "branch": "Branche",
+        "visitor": "Visiteur",
+        "service": "Service",
+        "company": "Entreprise",
+        "shipping": "Expédition"
+    },
+    "device": {
+        "title": "Type d'appareil",
+        "desktop": "Ordinateur",
+        "mobile": "Mobile",
+        "tablet": "Tablette"
+    },
+    "models": {
+        "visit": {
+            "singular": "Visite",
+            "plural": "Visites"
+        },
+        "city": {
+            "singular": "Ville",
+            "plural": "Villes",
+            "desc": "Gérer les villes et localités pour les adresses de livraison"
+        },
+        "user": {
+            "singular": "Utilisateur",
+            "plural": "Utilisateurs",
+            "desc": "Administrer les comptes utilisateurs et leurs permissions"
+        },
+        "group": {
+            "singular": "Groupe",
+            "plural": "Groupes",
+            "desc": "Organiser les utilisateurs en groupes pour la gestion des droits"
+        },
+        "product": {
+            "singular": "Produit",
+            "plural": "Produits",
+            "desc": "Gérer le catalogue complet des produits et leurs variantes"
+        },
+        "category": {
+            "singular": "Catégorie",
+            "plural": "Catégories",
+            "desc": "Organiser les produits par catégories et sous-catégories"
+        },
+        "brand": {
+            "singular": "Marque",
+            "plural": "Marques",
+            "desc": "Gérer les marques et fabricants des produits"
+        },
+        "attribute": {
+            "singular": "Attribut",
+            "plural": "Attributs",
+            "desc": "Définir les caractéristiques et spécifications des produits"
+        },
+        "supplier": {
+            "singular": "Fournisseur",
+            "plural": "Fournisseurs",
+            "desc": "Gérer les fournisseurs et leurs informations de contact"
+        },
+        "value": {
+            "singular": "Valeur",
+            "plural": "Valeurs",
+            "desc": "Définir les valeurs possibles pour les attributs des produits"
+        },
+        "permission": {
+            "singular": "Permission",
+            "plural": "Permissions",
+            "desc": "Configurer les droits d'accès et autorisations des utilisateurs"
+        },
+        "policy": {
+            "singular": "Politique",
+            "plural": "Politiques",
+            "desc": "Gérer les politiques de confidentialité et conditions d'utilisation"
+        },
+        "branch": {
+            "singular": "Branche",
+            "plural": "Branches",
+            "desc": "Administrer les succursales et points de vente physiques"
+        },
+        "visitor": {
+            "singular": "Visiteur",
+            "plural": "Visiteurs",
+            "desc": "Suivre et analyser les visiteurs du site web"
+        },
+        "service": {
+            "singular": "Service",
+            "plural": "Services",
+            "desc": "Gérer les services et prestations proposés aux clients"
+        },
+        "company": {
+            "singular": "Entreprise",
+            "plural": "Entreprises",
+            "desc": "Administrer les informations des entreprises clientes"
+        },
+        "shipping": {
+            "singular": "Expédition",
+            "plural": "Expéditions",
+            "desc": "Gérer les modes de livraison et frais d'expédition"
+        },
+
+
+        "slider": {
+            "singular": "Slider",
+            "plural": "Sliders",
+            "desc": "Gérer les bannières et diaporamas du site"
+        },
+        "coupon": {
+            "singular": "Coupon de réduction",
+            "plural": "Coupons de réduction",
+            "desc": "Gérer les codes promotionnels et réductions"
+        },
+        "offer": {
+            "singular": "Offre promotionnelle",
+            "plural": "Offres promotionnelles",
+            "desc": "Gérer les offres spéciales et promotions"
+        },
+        "role": {
+            "singular": "Rôle",
+            "plural": "Rôles",
+            "desc": "Gérer les rôles et permissions des utilisateurs"
+        },
+        "permissions": {
+            "singular": "Permission",
+            "plural": "Permissions",
+            "desc": "Gérer les droits d'accès et autorisations"
+        }
+
+    },
+    "welcome": "Bienvenue sur notre site web",
+    "greeting": "Bonjour, {{name}} !",
+    "profile": {
+        "sections": {
+        "personal": {
+            "title": "Informations personnelles",
+            "description": "Modifiez votre nom d'utilisateur et votre nom complet. Ces informations seront affichées publiquement."
+        },
+        "address": {
+            "title": "Adresse",
+            "description": "Vous pouvez modifier votre adresse et contrôler qui peut la voir."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Ajoutez un numéro de téléphone personnel ou officiel pour rester connecté facilement et permettre la récupération de votre compte."
+        },
+        "password": {
+            "title": "Changer le mot de passe",
+            "description": "Pour des raisons de sécurité, veuillez renseigner votre ancien mot de passe, puis saisir deux fois votre nouveau mot de passe."
+        }
+        },
+        "fields": {
+        "username": "Nom d'utilisateur",
+        "fullName": "Nom complet",
+        "address": "Adresse",
+        "phone": "Téléphone",
+        "email": "Adresse e-mail",
+        "oldPassword": "Ancien mot de passe",
+        "newPassword": "Nouveau mot de passe",
+        "confirmPassword": "Confirmer le mot de passe"
+        },
+        "attention": {
+        "username": "Ce nom d'utilisateur sera utilisé pour vous connecter à votre compte. Choisissez un nom unique et facile à retenir. Il peut contenir des lettres, chiffres et certains caractères spéciaux.",
+        "phone": "Ce numéro de téléphone doit être confirmé pour garantir son authenticité avant d'être associé à votre profil.",
+        "confirmPassword": "Pour des raisons de sécurité, veuillez saisir à nouveau votre nouveau mot de passe. Il doit correspondre exactement au champ « Nouveau mot de passe »."
+        },
+        "messages": {
+        "updateSuccess": "Profil modifié avec succès",
+        "updateError": "Erreur lors de la mise à jour du profil",
+        "passwordChangeSuccess": "Mot de passe changé avec succès",
+        "passwordChangeError": "Erreur lors du changement de mot de passe"
+        },
+        "menu": {
+            "editProfile": "Modifier le profil",
+            "changePassword": "Modifier le mot de passe"
+        },
+        "avatar": {
+            "myProfile": "Mon profil",
+            "viewStore": "Voir le store",
+            "settings": "Paramètres",
+            "logout": "Déconnexion"
+        }
+    },
+    "salesSettings": {
+        "pageTitle": "Factures de vente",
+        "pageDescription": "Paramétrer l'apparence des factures de vente standard",
+        "labels": {
+        "invoiceTitle": "Titre de la facture",
+        "footerMessage": "Message de pied de page"
+        },
+        "sectionTitles": {
+        "company": "Informations société",
+        "customer": "Informations client",
+        "invoice": "Informations de la facture",
+        "footer": "Pied de page"
+        },
+        "companyFields": {
+        "show_logo": {
+            "label": "Afficher le logo",
+            "desc": "Affiche le logo de votre entreprise en haut de la facture de vente"
+        },
+        "show_company_name": {
+            "label": "Nom de la société",
+            "desc": "Affiche le nom légal de votre entreprise sur la facture"
+        },
+        "show_company_address": {
+            "label": "Adresse de la société",
+            "desc": "Affiche l’adresse complète (rue, code postal, ville)"
+        },
+        "show_company_phone": {
+            "label": "Téléphone de la société",
+            "desc": "Affiche le numéro de téléphone du service commercial"
+        },
+        "show_company_email": {
+            "label": "Email de la société",
+            "desc": "Affiche l’email professionnel pour le suivi des factures"
+        }
+        },
+        "customerFields": {
+        "show_customer_name": {
+            "label": "Nom du client",
+            "desc": "Affiche le nom complet du client (particulier ou entreprise)"
+        },
+        "show_customer_address": {
+            "label": "Adresse du client",
+            "desc": "Affiche l’adresse de facturation du client"
+        },
+        "show_customer_phone": {
+            "label": "Téléphone du client",
+            "desc": "Affiche le numéro de téléphone du client"
+        },
+        "show_customer_city": {
+            "label": "Ville du client",
+            "desc": "Affiche la ville du client"
+        }
+        },
+        "invoiceFields": {
+        "show_invoice_number": {
+            "label": "Numéro de facture",
+            "desc": "Affiche le numéro unique de la facture"
+        },
+        "show_issue_date": {
+            "label": "Date d’émission",
+            "desc": "Affiche la date d’émission de la facture"
+        },
+        "show_order_reference": {
+            "label": "Référence commande",
+            "desc": "Affiche la référence de la commande associée"
+        },
+        "show_payment_method": {
+            "label": "Mode de paiement",
+            "desc": "Affiche le moyen de paiement (carte, virement, etc.)"
+        },
+        "show_payment_status": {
+            "label": "Statut de paiement",
+            "desc": "Affiche si la facture est payée, en attente ou impayée"
+        }
+        },
+        "footerField": {
+        "show_footer": {
+            "label": "Pied de page",
+            "desc": "Affiche un message personnalisé en bas de la facture (ex: \"Merci de votre confiance\")"
+        }
+        }
+    },
+    "orderSettings": {
+        "pageTitle": "Factures de commandes",
+        "pageDescription": "Configurer l'affichage des factures liées aux commandes clients",
+
+        "labels": {
+        "invoiceTitle": "Nom de facturation",
+        "footerMessage": "Message de pied de page"
+        },
+
+        "sectionTitles": {
+        "company": "Informations société",
+        "customer": "Informations client",
+        "order": "Informations commande",
+        "total": "Informations total facturation"
+        },
+
+        "companyFields": {
+        "show_logo": {
+            "label": "Afficher le logo",
+            "desc": "Affiche le logo de votre entreprise en haut du document (si téléchargé)"
+        },
+        "show_company_name": {
+            "label": "Nom société",
+            "desc": "Affiche le nom légal de votre entreprise tel qu'enregistré"
+        },
+        "show_company_address": {
+            "label": "Adresse société",
+            "desc": "Affiche l'adresse complète (rue, code postal, ville)"
+        },
+        "show_company_phone": {
+            "label": "Téléphone société",
+            "desc": "Affiche le numéro de téléphone pour joindre votre service client"
+        },
+        "show_company_email": {
+            "label": "Email société",
+            "desc": "Affiche l'adresse email professionnelle pour les contacts"
+        }
+        },
+
+        "customerFields": {
+        "show_customer_name": {
+            "label": "Nom client",
+            "desc": "Affiche le nom complet du client (particulier ou société)"
+        },
+        "show_customer_phone": {
+            "label": "Téléphone client",
+            "desc": "Affiche le numéro de téléphone du client pour le livrer ou le contacter"
+        },
+        "show_shipping_address": {
+            "label": "Adresse livraison",
+            "desc": "Affiche l'adresse exacte de livraison (avec points de repère si nécessaire)"
+        },
+        "show_customer_city": {
+            "label": "Ville client",
+            "desc": "Affiche la ville du client pour faciliter l'acheminement"
+        }
+        },
+
+        "orderFields": {
+        "show_order_number": {
+            "label": "Numéro commande",
+            "desc": "Affiche le numéro unique de commande (référence de suivi)"
+        },
+        "show_order_date": {
+            "label": "Date commande",
+            "desc": "Affiche la date de création de la commande (jour/mois/année)"
+        },
+        "show_payment_method": {
+            "label": "Mode paiement",
+            "desc": "Affiche le moyen de paiement choisi par le client (carte, virement, etc.)"
+        },
+        "show_status": {
+            "label": "Statut",
+            "desc": "Affiche l'état actuel de la commande (en cours, expédiée, livrée)"
+        }
+        },
+
+        "totalFields": {
+        "show_subtotal": {
+            "label": "Sous-total",
+            "desc": "Affiche le montant hors frais de livraison et remises"
+        },
+        "show_shipping_cost": {
+            "label": "Frais livraison",
+            "desc": "Affiche le coût de livraison (forfait ou selon poids/distance)"
+        },
+        "show_discount": {
+            "label": "Remise",
+            "desc": "Affiche la réduction accordée (pourcentage ou montant fixe)"
+        },
+        "show_total": {
+            "label": "Total",
+            "desc": "Affiche le montant final à payer (sous-total + livraison - remise)"
+        },
+        "show_footer": {
+            "label": "Pied de page",
+            "desc": "Affiche un message personnalisé en bas du document (ex: \"Merci de votre confiance\")"
+        }
+        }
+    },
+    "deliverySettings": {
+        "pageTitle": "Bons de livraison",
+        "pageDescription": "Personnaliser les bons de livraison (signatures, adresses, produits)",
+
+        "labels": {
+        "documentTitle": "Titre du document",
+        "footerMessage": "Message de pied de page"
+        },
+
+        "sectionTitles": {
+        "company": "Informations société",
+        "customer": "Informations client",
+        "document": "Informations document",
+        "products": "Colonnes produits",
+        "totals": "Totaux",
+        "signatures": "Signatures et tampon",
+        "footer": "Pied de page"
+        },
+
+        "companyFields": {
+        "show_logo": {
+            "label": "Afficher le logo",
+            "desc": "Affiche le logo de votre entreprise sur le bon de livraison"
+        },
+        "show_company_name": {
+            "label": "Nom société",
+            "desc": "Affiche le nom de votre entreprise"
+        },
+        "show_company_address": {
+            "label": "Adresse société",
+            "desc": "Affiche l’adresse complète de l’entreprise"
+        },
+        "show_company_phone": {
+            "label": "Téléphone société",
+            "desc": "Affiche le numéro de téléphone de l’entreprise"
+        },
+        "show_company_email": {
+            "label": "Email société",
+            "desc": "Affiche l’email de contact"
+        }
+        },
+
+        "customerFields": {
+        "show_customer_name": {
+            "label": "Nom client",
+            "desc": "Affiche le nom du client destinataire"
+        },
+        "show_customer_phone": {
+            "label": "Téléphone client",
+            "desc": "Affiche le téléphone du client (utile pour le livreur)"
+        },
+        "show_shipping_address": {
+            "label": "Adresse de livraison",
+            "desc": "Affiche l’adresse exacte de livraison (avec points de repère)"
+        },
+        "show_customer_city": {
+            "label": "Ville client",
+            "desc": "Affiche la ville de livraison"
+        }
+        },
+
+        "documentFields": {
+        "show_delivery_note_number": {
+            "label": "Numéro de bon de livraison",
+            "desc": "Affiche le numéro unique du bon de livraison"
+        },
+        "show_order_reference": {
+            "label": "Référence commande",
+            "desc": "Affiche la référence de la commande d’origine"
+        },
+        "show_delivery_date": {
+            "label": "Date de livraison",
+            "desc": "Affiche la date d’émission ou de livraison prévue"
+        },
+        "show_payment_method": {
+            "label": "Mode de paiement",
+            "desc": "Affiche le mode de paiement choisi"
+        },
+        "show_status": {
+            "label": "Statut",
+            "desc": "Affiche l’état du bon (en préparation, livré, etc.)"
+        }
+        },
+
+        "productFields": {
+        "show_product_image": {
+            "label": "Image produit",
+            "desc": "Affiche une vignette du produit"
+        },
+        "show_product_sku": {
+            "label": "SKU produit",
+            "desc": "Affiche la référence interne du produit"
+        },
+        "show_quantity": {
+            "label": "Quantité",
+            "desc": "Affiche la quantité commandée/livrée"
+        },
+        "show_unit_price": {
+            "label": "Prix unitaire",
+            "desc": "Affiche le prix unitaire hors taxes"
+        },
+        "show_line_total": {
+            "label": "Total ligne",
+            "desc": "Affiche le total par ligne (quantité × prix unitaire)"
+        }
+        },
+
+        "totalsFields": {
+        "show_subtotal": {
+            "label": "Sous-total",
+            "desc": "Affiche le montant hors frais et remises"
+        },
+        "show_shipping_cost": {
+            "label": "Frais de livraison",
+            "desc": "Affiche le coût de transport"
+        },
+        "show_discount": {
+            "label": "Remise",
+            "desc": "Affiche la réduction accordée"
+        },
+        "show_total": {
+            "label": "Total",
+            "desc": "Affiche le montant final à payer"
+        },
+        "show_offer": {
+            "label": "Offre spéciale",
+            "desc": "Affiche une offre promotionnelle si applicable"
+        }
+        },
+
+        "signatureFields": {
+        "show_customer_signature": {
+            "label": "Signature client",
+            "desc": "Affiche l’emplacement pour la signature du client à la réception"
+        },
+        "show_delivery_agent_signature": {
+            "label": "Signature livreur",
+            "desc": "Affiche l’emplacement pour la signature de l’agent de livraison"
+        },
+        "show_stamp_area": {
+            "label": "Emplacement tampon",
+            "desc": "Affiche une zone pour le tampon officiel de l’entreprise"
+        }
+        },
+
+        "footerField": {
+        "show_footer": {
+            "label": "Pied de page",
+            "desc": "Affiche un message personnalisé (ex: \"Bon de livraison à conserver\")"
+        }
+        }
+    },
+    "generalSettings": {
+        "pageDescription": "Titre, description et identité visuelle du site.",
+
+        "sections": {
+        "general": "Informations générales",
+        "contact": "Contact",
+        "social": "Réseaux sociaux",
+        "currency": "Devise",
+        "legal": "Informations légales",
+        "seo": "SEO & Analytics"
+        },
+
+        "sectionDescriptions": {
+        "general": "Titre, description et identité visuelle du site.",
+        "contact": "Email, téléphone, adresse et site web officiels.",
+        "social": "Liens vers vos pages officielles (Facebook, X, Instagram, WhatsApp, TikTok, Telegram).",
+        "currency": "Code et symbole monétaires utilisés sur le site (ex: MAD, EUR, $).",
+        "legal": "Statut juridique, ICE, IF, RC et patente de l'entreprise.",
+        "seo": "Balises meta, mots-clés et codes de suivi (Google Analytics, Facebook Pixel, TikTok Pixel)."
+        },
+
+        "fields": {
+        "title": "Titre de la plateforme",
+        "description": "Description",
+        "email": "Email",
+        "phone": "Téléphone",
+        "website": "Site web",
+        "address": "Adresse",
+        "currency_code": "Code devise",
+        "currency_symbol": "Symbole devise",
+        "company_legal_status": "Statut légal de l'entreprise",
+        "ice_number": "Identifiant Commun de l'Entreprise (ICE)",
+        "if_number": "Identifiant Fiscal (IF)",
+        "rc_number": "Numéro du Registre de Commerce (RC)",
+        "patente": "Numéro de Taxe Professionnelle (Patente)",
+        "meta_title": "Meta title",
+        "meta_description": "Meta description",
+        "meta_keywords": "Mots-clés",
+        "facebook_pixel": "Facebook Pixel ID",
+        "tiktok_pixel": "TikTok Pixel ID",
+        "google_analytics": "Google Analytics",
+        "facebook_url": "Facebook",
+        "x_url": "X (Twitter)",
+        "instagram_url": "Instagram",
+        "whatsapp_url": "WhatsApp",
+        "tiktok_url": "TikTok",
+        "telegram_url": "Telegram"
+        },
+
+        "attention": {
+        "currency_code": "Code international officiel de la devise en 3 lettres (ex : MAD, EUR, USD). Il est utilisé pour les paiements, les factures et les conversions monétaires.",
+        "currency_symbol": "Symbole affiché avec les prix sur le site (ex : د.م., €, $, £).",
+        "ice_number": "Numéro unique composé de 15 chiffres attribué aux entreprises marocaines.",
+        "patente": "Numéro utilisé dans certaines démarches administratives et fiscales.",
+        "meta_keywords": "Liste de mots-clés séparés par des virgules représentant les principaux sujets de votre activité ou de votre page.",
+        "google_analytics": "Identifiant de mesure Google Analytics 4 commençant généralement par \"G-\". Il permet de suivre les statistiques et le comportement des visiteurs."
+        },
+
+        "labels": {
+        "logo": "Logo",
+        "favicon": "Favicon",
+        "maintenance": "Activer le mode maintenance",
+        "maintenanceDesc": "Lorsque activé, seuls les administrateurs peuvent accéder au site."
+        }
+    },
+    "policy": {
+        "form": {
+            "title": "Titre de la politique",
+            "description": "Description",
+            "status": "Activer le statut",
+            "statusDesc": "Une fois activé, cet élément pourra être utilisé et affiché dans le système."
+        }
+    },
+    "city": {
+        "form": {
+            "title": "Nom de la ville",
+            "status": "Activer le statut de la ville",
+            "statusDesc": "Une fois activé, cet élément pourra être utilisé et affiché dans le système."
+        }
+    },
+    "coupons": {
+        "percentage": "Pourcentage",
+        "minimum_cart_total": "Montant du panier",
+        "starts_at": "Début",
+        "ends_at": "Fin"
+    },
+    "offer": {
+        "form": {
+            "conditionType": "Condition d'application",
+            "discountType": "Mode de réduction",
+            "basicInfo": "Informations générales",
+            "discountRules": "Conditions de la réduction",
+            "variants": "Variantes concernées",
+            "title": "Nom de l'offre",
+            "description": "Description",
+            "startDate": "Date de début",
+            "endDate": "Date de fin",
+            "status": "État",
+            "statusDesc": "Activer ou désactiver cette offre",
+            "minOrderPrice": "Montant minimum de commande",
+            "discountFixedAmount": "Montant de la réduction",
+            "discountPercentage": "Pourcentage de réduction"
+        }
+    },
+    "fileUploader": {
+        "addImages": "Ajouter des images",
+        "chooseFiles": "Choisissez des fichiers ou glissez-les",
+        "fileTypes": "JPEG, PNG, WEBP (2 Mo max par fichier)",
+        "addLabel": "Ajouter {{label}}",
+        "notFound": "Aucune image trouvée",
+        "changeLabel": "Changer {{label}}",
+        "clickToChoose": "Cliquez pour choisir une nouvelle image",
+        "fileTypesShort": "JPEG, PNG, WEBP jusqu'à 2 Mo",
+        "delete": "Supprimer",
+        "errors": {
+            "onlyImages": "Veuillez sélectionner uniquement des fichiers image",
+            "maxSize": "La taille maximale par fichier est de 2 Mo",
+            "onlyOne": "Vous ne pouvez sélectionner qu'un seul fichier"
+        }
+    },
+    "fields": {
+        "title": "Nom / Intitulé",
+        "description": "Description complète",
+        "phone": "Téléphone principal",
+        "email": "Email principal",
+        "whatsapp": "Lien WhatsApp",
+        "telegram": "Lien Telegram",
+        "web": "Lien Site Web",
+        "address": "Adresse complète",
+        "image": "Image principale",
+        "first_name": "Prénom",
+        "last_name": "Nom de famille",
+        "middle_name": "Deuxième prénom",
+        "gender": "Genre (Homme/Femme/Autre)",
+        "birth_date": "Date de naissance",
+        "age": "Âge",
+        "nationality": "Nationalité",
+        "phone_mobile": "Téléphone mobile",
+        "phone_landline": "Téléphone fixe",
+        "phone_work": "Téléphone professionnel",
+        "fax": "Fax",
+        "email_personal": "Email personnel",
+        "email_work": "Email professionnel",
+        "signal": "Lien Signal",
+        "wechat": "Lien WeChat",
+        "viber": "Lien Viber",
+        "line": "Lien Line",
+        "discord": "Lien Discord",
+        "imo": "Lien Imo",
+        "facebook": "Lien Facebook",
+        "instagram": "Lien Instagram",
+        "twitter_x": "Lien X (Twitter)",
+        "linkedin": "Lien LinkedIn",
+        "youtube": "Lien YouTube",
+        "tiktok": "Lien TikTok",
+        "snapchat": "Lien Snapchat",
+        "pinterest": "Lien Pinterest",
+        "github": "Lien GitHub",
+        "reddit": "Lien Reddit",
+        "threads": "Lien Threads",
+        "tumblr": "Lien Tumblr",
+        "blog": "Lien Blog",
+        "portfolio": "Lien Portfolio",
+        "rss": "Flux RSS",
+        "street": "Rue / Voie",
+        "city": "Ville",
+        "state": "État / Province",
+        "postal_code": "Code postal",
+        "country": "Pays",
+        "map_link": "Lien Google Maps / GPS",
+        "building_name": "Nom du bâtiment / Résidence",
+        "floor_number": "Numéro d'étage / Appartement",
+        "company_name": "Nom de l'entreprise / Société",
+        "job_title": "Titre du poste / Fonction",
+        "department": "Département / Service",
+        "industry": "Secteur d'activité",
+        "tax_number": "Numéro de TVA / ICE",
+        "registration_number": "Numéro d'enregistrement / RC",
+        "employee_count": "Nombre d'employés",
+        "establishment_date": "Date de création / Fondation",
+        "cover_image": "Image de couverture",
+        "logo": "Logo de l'entreprise",
+        "gallery": "Galerie d'images (multiple)",
+        "video_url": "Lien vidéo (YouTube/Vimeo)",
+        "short_description": "Brève description / Accroche",
+        "notes": "Notes internes / Remarques",
+        "slogan": "Slogan / Tagline",
+        "mission": "Mission / Objectifs",
+        "vision": "Vision / Perspectives",
+        "opening_hours": "Horaires d'ouverture",
+        "closing_hours": "Horaires de fermeture",
+        "timezone": "Fuseau horaire",
+        "languages_spoken": "Langues parlées",
+        "status": "Statut (Actif / Inactif)",
+        "category": "Catégorie principale",
+        "sub_category": "Sous-catégorie",
+        "tags": "Tags / Mots-clés",
+        "featured": "Mettre en avant (Oui/Non)",
+        "priority": "Priorité (1 à 10)",
+        "slug": "Identifiant unique (Slug)",
+        "created_at": "Date de création",
+        "updated_at": "Date de dernière mise à jour",
+
+
+        "position": "Position",
+        "url" : "Lien (URL)",
+
+        "coupon_code" : "Code de coupon",
+        "discount_percentage" : "Pourcentage de réduction",
+        "minimum_cart_total" : "Total minimum du panier",
+        "max_uses" : "Nombre maximum d'utilisateurs",
+        "start_date" : "Date de début",
+        "end_date" : "Date de fin",
+
+
+        "permissions" : "Permissions",
+
+
+        "avatar": "Avatar / Photo de profil",
+        "username": "Nom d'utilisateur",
+        "full_name": "Nom complet",
+        "password": "Mot de passe",
+        "can_view_all_branches": "Peut voir toutes les succursales",
+        "staff": "Personnel (Employés)",
+        "on_duty": "En service",
+        "busy": "Occupé (En réunion / En pause)",
+        "superuser": "Super Utilisateur",
+
+
+
+        "session_key": "Clé de session",
+        "user_agent": "Agent utilisateur",
+        "country_code": "Code pays",
+        "coordinates": "Coordonnées",
+        "referrer": "Référent",
+        "page_url": "URL de la page"
+
+
+
+    }
+
+}
+
+
+
+

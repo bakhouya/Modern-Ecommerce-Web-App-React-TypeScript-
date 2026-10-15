@@ -1,0 +1,198 @@
+
+
+
+.services {
+    width: 100%;
+    padding: $padding 0;
+    margin-top: 10px ;
+    background-color: rgb($hover_color, 0.07);
+    position: relative ;
+    &::after {
+      content: "" ;
+      position: absolute ;
+      width: 0px ;
+      height: 0px ;
+      border: 12px solid ;
+      left: 50% ;
+      transform: translateX(-50%) ;
+      top: -24px ;
+      border-color: transparent transparent  rgb($hover_color, 0.07) transparent ;
+   }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.1px ;
+    }
+}
+
+.service_card {
+    overflow: hidden;
+    background: $base_color ;
+    border: 1px solid $border_color ;
+    border-radius: $radius_base ;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    @include flex(start, center, $padding_base) ;
+    padding: 10px ;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-6px);
+        border-color: $primary ;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+        .service_card__image img {
+             transform: scale(1.05);
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 80px ;
+        aspect-ratio: 1/1 ;
+        border-radius: $radius_base ;
+        overflow: hidden ;
+        background: $hover_color ;
+
+        img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        }
+    }
+    &__content {
+        flex: 1 ;
+        min-width: 0 ;
+    }
+
+}
+
+
+
+
+.product-service-info {
+    margin-top: $padding ;
+    padding: 6px ;
+    background: $base_color ;
+    border: 1px solid $border_color ;
+    border-radius: $radius_base;
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2 ;
+    }
+}
+.product-service-info__service {
+    border-radius: $radius_base;
+    text-align: center ;
+    padding: 10px ;
+    cursor: pointer;
+    &:hover {background-color: $hover_color ;}
+}
+.product-service-info__icon {
+    margin: auto ;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    @include flex(center, center, 0) ;
+    overflow: hidden;
+    // background: $hover_color ;
+    border-radius: $radius_base ;
+}
+.product-service-info__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px ;
+}
+.product-service-info__body {
+    flex: 1;
+    min-width: 0;
+    margin-top: 6px ;
+}
+@media (max-width: 480px) {
+    .product-service-info {
+        margin-top: 16px;
+        padding: 14px;
+        border-radius: 13px;
+    }
+
+    .product-service-info__icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .product-service-info__body .product-service-info__date {
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+  .services {
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+@media (max-width: 650px) {
+  .services {
+    padding: 60px 0;
+
+    &__header {
+      margin-bottom: 35px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .service_card {
+    &__image {
+      height: 220px;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .services {
+    &__title {
+      font-size: 28px;
+    }
+  }
+
+  .service_card {
+    &__content {
+      padding: 20px;
+    }
+
+    &__image {
+      height: 200px;
+    }
+  }
+}

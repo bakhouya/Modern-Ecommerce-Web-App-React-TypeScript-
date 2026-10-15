@@ -1,0 +1,69 @@
+
+
+/* ABSTRACTS */
+@import "./abstracts/variables" ;  
+@import "./abstracts/mixins" ;
+
+/* BASE */
+@import "./base/reset";
+@import "./base/typography";
+
+/* COMPONENTS */
+@import "./components/forms";
+@import "./components/buttons";
+@import "./components/avatars";
+@import "./components/loader";
+@import "./components/cards";
+
+
+
+@import "./utils/margin";
+@import "./utils/padding";
+@import "./utils/flex";
+@import "./utils/border";
+@import "./utils/grid" ;
+@import "./utils/text" ;
+@import "./utils/colors" ;
+@import "./utils/radius" ;
+
+
+/* LAYOUT */
+@import "./layout/sidebar";
+@import "./layout/header";
+@import "./layout/footer";
+
+/* PAGES */
+@import "./pages/dashboard/home";
+@import "./pages/dashboard/profile";
+@import "./pages/dashboard/cities";
+@import "./pages/dashboard/user";
+@import "./pages/dashboard/visitor";
+@import "./pages/dashboard/offers";
+
+@import 'leaflet/dist/leaflet.css';
+
+
+@import "./pages/web/home";
+@import "./pages/web/product";
+@import "./pages/web/services";
+@import "./pages/web/menu";
+@import "./pages/web/cart";
+@import "./pages/web/category";
+@import "./pages/web/TrackOrder";
+@import "./pages/web/productGallery";
+@import "./pages/web/productChare";
+@import "./pages/web/search";
+@import "./pages/web/Policies";
+@import "./pages/web/ProductComments";
+@import "./pages/web/offers";
+
+@import "./pages/auth";
+
+
+
+
+
+
+
+
+

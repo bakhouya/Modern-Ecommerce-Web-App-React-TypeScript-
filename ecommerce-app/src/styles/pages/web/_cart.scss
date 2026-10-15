@@ -1,0 +1,354 @@
+
+
+
+.checkout_summary {
+  align-self: start;
+  padding: $padding_base ;
+  border: 1px solid $border_color ;
+  border-radius: $radius_base ;
+  background: $base_color ;
+}
+.checkout_products {
+  display: flex;
+  flex-direction: column;
+  gap: $padding_base ;
+  margin-top: $padding_base ;
+}
+.checkout_product {
+    display: flex ;
+    align-items: start ;
+    gap: 12px;
+    padding-bottom: $padding_base ;
+    border-bottom: 1px solid $border_color ;
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+.checkout_product_image {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: $radius_base;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+.checkout_product_info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.checkout_totals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: $padding_base ;
+  padding-top: $padding_base ;
+  border-top: 1px solid $border_color ;
+}
+.checkout_total_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  &.final {
+    margin-top: 5px;
+    padding-top: 14px;
+    border-top: 1px solid $border_color ;
+  }
+}
+
+
+
+.chechout_page {
+  .checkout_header {
+    z-index: 100 ;
+    position: sticky ;
+    top: 0 ;
+    height: 60px ;
+    padding-block: 10px ;
+    border-bottom: 1px solid $border_color ;
+    background-color: $base_color ;
+  }
+}
+.details_checkout_wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(400px, 1.1fr);
+    gap: 0 ;
+    align-items: start;
+    .checkout_form {
+        border-inline-end: 1px solid $border_color ;
+        padding-block: 30px ;
+        padding-inline-end: $padding ;
+        .checkout_card_form {
+            background-color: $base_color ;
+            border: 1px solid $border_color ;
+            padding: 15px ;
+            border-radius: $radius_base ;
+        }
+    }
+    .checkout_summary_wrapper {
+        padding-block: 30px ;
+        padding-inline-start: $padding ;
+        position: sticky ;
+        top: 30px ;
+    }
+}
+.hr_web {
+    margin-block: $padding_base ;
+    height: 1px ;
+    background-color: $border_color ;
+}
+
+@media (max-width: 768px) {
+    .details_checkout_wrapper {
+        margin: 0 auto;
+        display: column ;
+        grid-template-columns: 1fr ;
+        gap: 0 !important ;
+        .checkout_form {
+            border-inline-end: none ;
+            padding-block: $padding_base ;
+            padding-block-end: 0 ;
+            padding-inline-end: 0 ;
+        }
+        .checkout_summary_wrapper {
+            padding-block: 0 ;
+            margin-block-start: -14px ;
+            padding-inline-start: 0 ;
+            position: relative ;
+        }
+    }
+    .checkout_summary {order: -1;}
+}
+@media (max-width: 480px) {
+  .checkout_summary {
+    padding: 15px;
+  }
+  .checkout_section_title {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+$text: #1f2937;
+$muted: #6b7280;
+$radius: 20px;
+
+@keyframes overlayIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes modalIn {
+    0%   { opacity: 0; transform: translateY(24px) scale(0.9); }
+    60%  { transform: translateY(-4px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes iconPop {
+    0%   { transform: scale(0); }
+    70%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+@keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba($success, 0.45); }
+    100% { box-shadow: 0 0 0 22px rgba($success, 0); }
+}
+@keyframes confettiFall {
+    0%   { transform: translateY(-10vh) rotate(var(--rotate)); opacity: 1; }
+    100% { transform: translateY(105vh) rotate(calc(var(--rotate) + 720deg)); opacity: 0.9; }
+}
+
+.success_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(17, 24, 39, 0.55);
+    backdrop-filter: blur(4px);
+    animation: overlayIn 0.25s ease-out;
+}
+.confetti {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10000;
+}
+.confetti_piece {
+    position: absolute;
+    top: -20px;
+    left: var(--left);
+
+    width: var(--size);
+    height: calc(var(--size) * 0.5);
+
+    background: var(--color);
+    border-radius: 2px;
+
+    opacity: 1;
+
+    animation-name: confettiFall;
+    animation-duration: var(--duration);
+    animation-delay: var(--delay);
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.success_modal {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    padding: 32px 28px 28px;
+    text-align: center;
+    background: $base_color ;
+    border-radius: $radius_base;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    animation: modalIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.success_close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: $muted;
+    background: $border_color  ;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: $hover_color ; }
+}
+
+.success_icon {
+    display: grid;
+    place-items: center;
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 16px;
+    color: $success;
+    background: rgba($success, 0.12);
+    border-radius: 50%;
+    animation: pulseRing 1.6s ease-out 0.4s 2;
+
+    svg { animation: iconPop 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+}
+
+.success_title {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: $text;
+}
+.success_message {
+    margin: 0 0 20px;
+    font-size: $size_sm ;
+    line-height: 1.6;
+    color: $muted;
+}
+
+.success_details {
+    padding: 6px 16px;
+    margin-bottom: 22px;
+    text-align: left;
+    background: rgb($primary, 0.02) ;
+    border: 1px dashed $border_color ;
+    border-radius: $radius_base ;
+}
+
+.success_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: $size_sm ;
+    color: $muted;
+
+    & + & { border-top: 1px solid $border_color ; }
+
+    strong { color: $text; font-weight: 600; }
+
+    .code {
+        padding: 2px 8px;
+        letter-spacing: 0.5px;
+        color: $primary;
+        background: rgba($primary, 0.1);
+        border-radius: $radius_base ;
+        font-size: $size_sm ;
+    }
+
+    &.total {
+        strong { font-size: $size_sm ; color: $primary; }
+    }
+}
+
+.success_btn {
+    width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .confetti { display: none; }
+    .success_modal, .success_icon, .success_icon svg { animation: none; }
+}
+
+
+
+.empty_checkout {
+    height: 100vh;
+    @include flex(center, center, 0) ;
+
+    &_content {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        padding: 50px 30px;
+        background: $base_color ;
+        border: 1px solid $border_color ;
+        border-radius: $radius_base ;
+        // box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    &_icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        @include flex(center, center, 0) ;
+        font-size: 32px;
+        background: $hover_color ;
+        border-radius: 50%;
+    }
+
+    h2 {
+        margin: 0 0 10px;
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0 auto 28px;
+        max-width: 380px;
+        line-height: 1.6;
+    }
+
+}

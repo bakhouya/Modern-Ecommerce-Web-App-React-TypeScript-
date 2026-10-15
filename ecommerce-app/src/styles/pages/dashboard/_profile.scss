@@ -1,0 +1,54 @@
+
+
+
+.wrapper_page {
+    @include flex(start, start, 0) ;
+}
+.nav_container {
+    position: sticky ;
+    top : $height_box ;
+    min-width: calc($open_sidbar + 80px) ;
+    border-inline-end: 1px solid $border_color ;
+    min-height: calc(100vh - $height_box) ;
+    box-shadow: $shadow2 ;
+    display: flex;
+    flex-direction: column ;
+
+    .scroll {
+        max-height: calc(100vh - 208px ) ;
+        padding: $padding_base 11px 5px $padding ;
+    }
+    .nav_body {
+        padding: calc($padding_base + 6px) $padding 5px $padding ;
+    }
+}
+.header_filter {
+    padding: $padding_base calc($padding - 6px) $padding_base $padding ;
+}
+.box_add {
+    position: relative ;
+    margin-top: auto;
+    padding: $padding ;
+    padding-top: 0px ;
+    .full_width {
+        width: 100% ;
+        font-family: $family ;
+    }
+}
+.flex_container {
+    border-radius: $radius_base ;
+    flex: 1 ;
+    padding-inline-end: $space ;
+    padding-inline-start: $padding  ;
+    // padding-block-end: $padding  ;
+    padding-block-start: $padding_base  ;
+    background-color: $wrapper_color ;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%
+
+}
+
+
+

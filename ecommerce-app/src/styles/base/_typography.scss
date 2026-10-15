@@ -1,0 +1,98 @@
+
+
+h1, .h1 { font-size: 2rem;}
+h2, .h2 { font-size: 1.75rem;}
+h3, .h3 { font-size: 1.5rem; }
+h4, .h4 { font-size: 1.25rem;}
+h5, .h5 { font-size: 1.1rem;}
+h6, .h6 { font-size: 1rem;}
+
+p {margin-bottom: $spacer;}
+
+.text_primary { color: $primary !important; }
+.text_secondary { color: $secondary !important; }
+.text_success { color: $success !important; }
+.text_danger { color: $danger !important; }
+.text_muted { color: $gray-800 !important; }
+.text_light {color: white !important ;}
+.text_center { text-align: center; }
+.text_start { text-align: start; }
+.text_end { text-align: end; }
+
+
+
+.text {transition: all 0.2s ease-in-out;}
+.text_xs {font-size: $size_xs;  color: $txt_color_light; }
+.text_sm {font-size: $size_sm;  color: $txt_color_light; }
+.text_md {font-size: $size_md;  color: $txt_color_base;  }
+.text_lg {font-size: $size_lg;  color: $txt_color_title; }
+.text_xl {font-size: $size_xl;  color: $txt_color_title; }
+.text_xxl{font-size: $size_xxl; color: $txt_color_title; }
+
+.weight_100 {font-weight: $weight_100; }
+.weight_200 {font-weight: $weight_200; }
+.weight_300 {font-weight: $weight_300; }
+.weight_400 {font-weight: $weight_400; }
+.weight_500 {font-weight: $weight_500; }
+.weight_600 {font-weight: $weight_600; }
+.weight_700 {font-weight: $weight_700; }
+.weight_800 {font-weight: $weight_800; }
+.weight_900 {font-weight: $weight_900; }
+
+
+
+
+.avatars {
+    
+    &__lg {
+        width: 45px ;
+        height: 45px ;
+        @include flex_center ;
+        border-radius: $radius_base ;
+        background-color: rgba($primary, 0.07);
+    }
+
+
+    &__icon_render {
+        @include flex_center ;
+        border-radius: $radius_base ;
+        background-color: rgba($primary, 0.07);
+    }
+}
+
+
+.btns {
+    &.btn_sm {
+        position: relative;
+        background: none;
+        border: none ;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        border-radius: 50% ;
+        color: $txt_color_base;
+        transition: all 0.2s;
+        @include flex_center ;
+        &:hover {
+            background-color: $hover_color;
+        }
+    }
+}
+.text_underline {
+  color: #888686;
+  font-size: 14px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+@for $i from 1 through 100 {
+    .p_limit_#{$i}{
+        display: -webkit-box;
+        -webkit-line-clamp: $i;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+

@@ -1,0 +1,456 @@
+
+
+$heightY: 16/5 ;
+$height768: 16/8 ;
+
+
+
+
+.max_content {
+    width: max-content ;
+}
+.text_shadow {
+    text-shadow: 0 2px 12px rgba(201, 196, 196, 0.3);
+}
+.light {color: $light ;}
+.white {color: $white ;}
+
+
+// .main_page {
+//     background:
+//         radial-gradient(ellipse at 0% 0%,rgba(191, 219, 254, 0.48),transparent 38%),
+//         radial-gradient( ellipse at 100% 10%, rgba(221, 214, 254, 0.42), transparent 35%),
+//         linear-gradient(135deg,#ffffff 0%,#f8faff 50%,#f8f7ff 100%);
+//     background-attachment: fixed;
+//     color: #111827;
+// }
+// .main_page {
+//     background-color: $base_color ;
+// }
+
+
+
+
+
+.products-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 24px 16px 18px;
+  position: relative;
+
+
+  &__title {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(24px, 3.2vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    text-wrap: balance;
+
+    span {
+      position: relative;
+      display: inline-block;
+      color: $secondary;
+      isolation: isolate;
+      white-space: nowrap;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        bottom: 1px;
+        height: 9px;
+        border-radius: 10px;
+        background: rgba(255, 192, 66, 0.19);
+      }
+    }
+  }
+
+  &__description {
+    max-width: 590px;
+    margin: 0;
+    font-size: $size_xs ;
+    font-weight: 400;
+    line-height: 1.85;
+  }
+
+  &__decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 7px;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: rgba(8, 130, 134, 0.22);
+    }
+
+    span {
+      width: 42px;
+      height: 4px;
+      margin: 0 7px;
+      border-radius: 10px;
+      background: $accent_color;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: -2px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background: $secondary;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .products-section-heading {
+    gap: 10px;
+    padding: 18px 12px 12px;
+
+    &__title {
+      font-size: clamp(25px, 7vw, 32px);
+      letter-spacing: -0.7px;
+      line-height: 1.3;
+    }
+
+    &__description {
+      max-width: 100%;
+      font-size: $size_xs ;
+      line-height: 1.75;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.hero_home_page {
+    @include flex(start, center, $padding) ;
+    // padding-top: 18px ;
+    .menus {
+        flex: 0 0 350px;
+        border: 1px solid $border_color ;
+        height: $heightY ;
+        border-radius: $radius_base  ;
+        background-color: $base_color ;
+    }
+}
+.header_menus {
+    padding: 10px ;
+    height: 50px ;
+    border-bottom: 1px solid $border_color ;
+}
+.menus_list {
+    padding: 3px ;
+    // height: calc($heightY - 60px) ;
+    .menu_item {
+        @include flex(start, center, $padding) ;
+        padding: 10px ;
+        border-radius: $radius_base ;
+        @include transition() ;
+        cursor: pointer ;
+        .image_menu {
+            width: 18px ;
+            height: 18px ;
+            border-radius: $radius_base ;
+            object-fit: cover ;
+        }
+        &:hover {
+            background-color: $hover_color ;
+            color: $white ;
+        }
+    }
+}
+
+
+.store_home {
+    flex: 1 ;
+    min-width: 0 ;
+    padding: 0 !important ;
+    margin-top: $padding ;
+    &__slider {
+        position: relative ;
+        width: 100% ;
+        aspect-ratio: $heightY ;
+        // height: $heightY ;
+        border-radius: $radius_base  ;
+        overflow: hidden ;
+
+        .swiper-button-prev, .swiper-button-next {
+            position: absolute;
+            color: $white ;
+            width: 38px ;
+            height: 38px ;
+            padding: 8px ;
+            border-radius: 50% ;
+            font-size: 17px !important;
+            // backdrop-filter: blur(4px) ;
+            // background-color: darken($white, 20%) ;
+            background-color: $white ;
+            transition: background 0.5s ease-in-out ;
+            svg {font-size: 17px !important; color: $primary ;}
+            &::after {
+                font-size: 18px;
+                font-weight: 700;
+            }
+            &:hover {
+                background: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .swiper-button-next {
+            inset-inline-end: 15px !important;
+        }
+        .swiper-button-prev {
+            inset-inline-start: 15px !important;
+        }
+
+        .swiper-pagination {
+            @include flex(end, center, 2px) ;
+            // padding-inline-end : $space ;
+            margin-block-end: $padding_base ;
+            padding-inline-end: calc(50% - 35px) ;
+        }
+        .swiper-pagination-bullet {
+            width: 10px ;
+            height: 10px ;           
+            background: $border_color  ;
+            opacity: 0.6;
+            border-radius: 50% ;
+            transition: opacity 0.5s ease-in-out ;
+            &-active {
+                opacity: 1;
+                background: $primary ;
+            }
+        }
+    }
+}
+.slide_content {
+    position: relative ;
+    width: 100%;
+    height: 100% ;
+    @include flex(flex-start, center, 0) ;
+
+    &__bg {
+        position: absolute;
+        inset: 0 ;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(1.05);
+        transition: transform 8s ease;
+    }
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100% ;
+        // height: 100% ;
+        object-fit: cover ;
+        // object-fit: contain ;
+        z-index: 1;
+        transition: transform 8s ease; 
+        aspect-ratio: $heightY ;
+    }
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        // background: linear-gradient(135deg, rgba(0, 0, 0, 0.555) 0%, rgba(0, 0, 0, 0.445) 60%, transparent 100%);
+        // background: linear-gradient(135deg, darken($primary, 20%) 0%, rgb($primary, 0.185) 60%, transparent 100%);
+        z-index: 2 ;
+    }
+    &__text {
+        position: relative;
+        z-index: 3 ;
+        max-width: 70% ;
+        color: $white;
+        text-align: center ;
+        margin: auto ;
+        animation: slideText 0.8s ease;
+        @media (max-width: 768px) {
+            padding: 30px 24px;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+    &__title {
+        color: $white ;
+        font-size: 36px !important;
+        letter-spacing: -0.04em;
+        font-weight: 900px ;
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+        @media (max-width: 480px) {
+            font-size: 1.6rem;
+        }
+    }
+    &__description {
+        color: $white ;
+        margin-top: 28px;
+
+        @media (max-width: 768px) {
+            font-size: 0.95rem;
+            max-width: 100%;
+        }
+    }
+
+}
+@keyframes slideText {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+    .store_home {
+        &__slider {
+            aspect-ratio: $height768 ;
+        }
+        padding: 0 ;
+        margin-top: calc($padding_base + 4px) !important ;
+        .swiper-pagination {
+            margin-block-end: 8px !important ;
+        }
+        .swiper-button-prev, .swiper-button-next {
+            display: none !important; 
+        }
+    }
+    .slide_content {
+        img {aspect-ratio: $height768 ;}
+    }
+    .category_index  {
+        margin-block: $padding_base !important ;
+    }
+    .filters_products_as {
+        display: none !important ;
+    }
+    .products_list {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important ;
+    }
+    .footer {
+        display: none ;
+    }  
+
+
+    .category_menu {
+        width: auto ;
+        margin: auto ;
+    }
+    .overlay_menu {
+        position: absolute !important ;
+        inset: 0 !important ;
+    }
+
+
+    .cart_modal_overlay {
+        padding: 0 ;
+        align-items: flex-end !important ;
+        .cart_modal {
+            width: 100% ;
+            max-height: 90vh ;
+            border-radius: $radius_base $radius_base 0 0;
+            .cart_modal_header, .cart_modal_footer {
+                padding: 16px;
+            }
+            .cart_modal_body {
+                padding: 5px 16px;
+            }
+            .cart_item_image {
+                width: 60px;
+                height: 60px;
+                flex-basis: 60px;
+            }
+        }
+    }
+
+
+    
+
+}
+@media (max-width: 480px) {
+    .slide_content {
+        height: 300px;
+    }
+
+    .slide_content__text {
+        padding: 20px 16px;
+    }
+}
+
+
+.category_index {
+    // width: 380px ;
+    // gap: $padding_base !important ;
+    margin-top: $padding_base ;
+    .index_category_item {
+        position: relative !important;
+        border-radius: $radius_base ;
+        overflow: hidden;
+        aspect-ratio: 16/7 ;
+        cursor: pointer ;
+        @include transition();
+        cursor: pointer;
+
+        &::after {
+            width: 100% ;
+            aspect-ratio: 16/7 ;
+            content: "";
+            position: absolute ;
+            inset: 0 ;
+            // background: linear-gradient(135deg, rgba(0, 0, 0, 0.884) 0%,transparent 40%, transparent 70%,  rgba(0, 0, 0, 0.616)  100%);
+            z-index: 2 ;
+        }
+        img {
+            width: 100% ;
+            height: 100% ;
+            position: absolute ;
+            inset: 0 ;
+            z-index: 1 ;
+            @include transition();
+        }
+        .content_z_index {
+            padding: 30px ;
+            @include flex(start, center, 0) ;
+            height: 100% ;
+            position: relative ;
+            z-index: 3 ;
+        }
+        &:hover {
+            transform: scale(1.01);
+            img {
+                transform: scale(1.09);
+            }
+        }
+    }
+}
+
+
+
+
+

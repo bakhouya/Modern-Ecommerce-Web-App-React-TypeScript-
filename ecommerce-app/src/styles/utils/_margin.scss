@@ -1,0 +1,22 @@
+
+
+
+@for $i from 1 through 100 {
+    .m_#{$i}{margin: #{$i}px ;}
+}
+
+
+@for $i from 1 through 100 {
+    .my_#{$i}{margin-block : #{$i}px ;}
+    .mx_#{$i}{margin-inline: #{$i}px ;}
+
+    .mx_start_#{$i}{margin-inline-start : #{$i}px ;}
+    .mx_end_#{$i}{margin-inline-end : #{$i}px ;}
+
+    .my_start_#{$i}{margin-block-start : #{$i}px ;}
+    .my_end_#{$i}{margin-block-end : #{$i}px ;}
+}
+
+.m_auto { margin: auto !important; }
+.mx_auto { margin-inline: auto !important; }
+.my_auto { margin-block: auto !important; }

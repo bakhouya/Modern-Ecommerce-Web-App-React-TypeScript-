@@ -1,0 +1,1126 @@
+{
+
+    "store": {
+        "header": {
+            "announcement": {
+                "freeShipping": "توصيل مجاني للطلبات ابتداءً من 75 درهم",
+                "easyReturns": "إرجاع سهل خلال 7 أيام",
+                "trackOrder": "تتبع طلبي"
+            },
+            "search": {
+                "placeholder": "ابحث عن منتج، علامة تجارية أو فئة...",
+                "ariaLabel": "البحث في المتجر",
+                "openCategories": "تصفح الفئات"
+            },
+            "account": {
+                "title": "حسابي",
+                "ariaLabel": "الوصول إلى حسابي",
+                "language": {
+                    "french": "Français",
+                    "arabic": "العربية",
+                    "selectLanguage": "اختر اللغة"
+                },
+                "trackOrders": "تتبع طلباتي",
+                "help": "مركز المساعدة",
+                "terms": "شروط الاستخدام"
+            },
+            "favorites": {
+                "title": "مفضلاتي",
+                "ariaLabel": "عرض المنتجات المفضلة"
+            },
+            "cart": {
+                "title": "سلة التسوق",
+                "ariaLabel": "فتح سلة التسوق",
+                "empty": "سلة التسوق فارغة",
+                "items": "منتجات"
+            },
+            "navigation": {
+                "judicialAuctions": "المزادات القضائية",
+                "supermarket": "السوبرماركت",
+                "nationalAid": "المساعدات الوطنية",
+                "couponCenter": "مركز الكوبونات",
+                "categories": "جميع الفئات",
+                "offers": "عروض استثنائية حتى -50٪"
+            }
+        },
+        "bottomNativagation": {
+            "menu": "القائمة",
+            "search": "البحث",
+            "home": "الرئيسية",
+            "cart": "السلة",
+            "account": "الحساب"
+        },
+        "drops": {
+            "catalogMenu": "قائمة الكتالوج",
+            "myCart": "سلة التسوق",
+            "items": "منتجات",
+            "subtotal": "المجموع الفرعي",
+            "savings": "التوفير",
+            "checkout": "إتمام الطلب",
+
+            "shareProduct": "شارك هذا المنتج",
+            "shareDescription": "أخبر أصدقاءك عن هذا المنتج",
+            "close": "إغلاق",
+            "copied": "تم نسخ الرابط!",
+            "copyLink": "نسخ الرابط",
+            "linkReady": "الرابط جاهز للمشاركة",
+            "copyProductLink": "نسخ رابط المنتج",
+            "shareVia": "شارك عبر",
+            "otherShareOptions": "خيارات مشاركة أخرى",
+            "shareFooter": "شارك هذا المنتج في ثوانٍ",
+            "shareWhatsApp": "شارك على واتساب",
+            "shareFacebook": "شارك على فيسبوك",
+            "shareTelegram": "شارك على تيليجرام",
+            "shareX": "شارك على X",
+            "shareLinkedIn": "شارك على لينكد إن",
+            "shareEmail": "شارك عبر البريد الإلكتروني",
+            "copyError": "تعذر نسخ الرابط. حاول مرة أخرى.",
+            "shareError": "لم تتم المشاركة بنجاح."
+            
+        },
+        "checkout": {
+            "emptyCartTitle": "سلة التسوق فارغة",
+            "emptyCartDescription": "لم تتم إضافة أي منتج إلى سلتك بعد.",
+            "backToHome": "العودة إلى الرئيسية",
+            "pageTitle": "إتمام الطلب",
+            "personalInformation": "المعلومات الشخصية",
+            "deliveryInformation": "لإتمام طلبك، يرجى إدخال معلومات التوصيل أدناه.",
+            "fullName": "الاسم الكامل",
+            "phone": "الهاتف",
+            "address": "العنوان",
+            "note": "ملاحظة (اختياري)",
+            "orderSummary": "ملخص الطلب",
+            "reviewOrder": "راجع تفاصيل طلبك قبل التأكيد.",
+            "quantity": "الكمية",
+            "totalItems": "إجمالي المنتجات",
+            "discount": "الخصم",
+            "delivery": "التوصيل",
+            "total": "المجموع",
+            "confirmOrder": "تأكيد الطلب",
+            "termsNotice": "بالنقر على «تأكيد الطلب»، فإنك توافق على الشروط العامة للبيع وتؤكد عملية الشراء.",
+            "selectCity": "يرجى اختيار مدينة.",
+            "orderSuccess": "تم تأكيد طلبك بنجاح!",
+            "orderError": "حدث خطأ أثناء تأكيد طلبك.",
+            "success": {
+                "title": "شكراً لك",
+                "message": "تم تسجيل طلبك بنجاح. سنتواصل معك قريباً لتأكيده وترتيب التوصيل.",
+                "orderCode": "رقم الطلب",
+                "date": "التاريخ",
+                "status": "الحالة",
+                "total": "المجموع",
+                "close": "إغلاق",
+                "downloadInvoice": "تحميل الفاتورة",
+                "loadingInvoice": "جارٍ تحضير فاتورتك..."
+            }
+        },
+        "productsSection": {
+            "titleStart": "اكتشف",
+            "titleHighlight": "منتجاتنا",
+            "description": "استكشف مجموعتنا المختارة بعناية لتمنحك الجودة والأناقة والرضا كل يوم."
+        },
+        "product": {
+            "rating": "التقييم",
+            "noRating": "لا يوجد تقييم",
+            "reviews": "تقييمات",
+            "discount": "خصم",
+            "limitedTimeOffer": "عرض لفترة محدودة",
+            "quantity": "الكمية",
+            "decreaseQuantity": "تقليل الكمية",
+            "increaseQuantity": "زيادة الكمية",
+            "addToCart": "أضف إلى السلة",
+            "addingToCart": "جارٍ الإضافة...",
+            "addedToCart": "تمت إضافة المنتج إلى السلة بنجاح!",
+            "description": "الوصف",
+            "details": "تفاصيل المنتج",
+            "relatedProducts": "منتجات مشابهة",
+            "selectedOptionPlaceholder": "—",
+            "tabs": {
+                "description": "التقييمات",
+                "details": "تفاصيل المنتج",
+                "products": "منتجات مشابهة"
+            }
+        },
+        "productGallery": {
+            "openImages": "افتح معرض صور {{productTitle}}",
+            "zoomHint": "انقر للتكبير",
+            "productImages": "صور المنتج",
+            "viewImage": "عرض الصورة {{index}}",
+            "imageGallery": "معرض صور {{productTitle}}",
+            "closeViewer": "إغلاق المعرض",
+            "previousImage": "الصورة السابقة",
+            "nextImage": "الصورة التالية",
+            "reduce": "+ تصغير",
+            "enlarge": "- تكبير",
+            "zoomInstructions": "اضغط للتكبير · اسحب للاستكشاف",
+            "navigationInstructions": "استخدم الأسهم لتغيير الصورة",
+            "closeInstructions": "اضغط على Escape للإغلاق"
+        },
+        "productStock": {
+            "available": "متوفر",
+            "lowStock": "بقي {{count}} فقط",
+            "availableToOrder": "متاح للطلب",
+            "unavailable": "غير متوفر",
+            "unavailableDescription": "هذا الخيار غير متوفر مؤقتاً. يرجى اختيار خيار آخر لمتابعة طلبك."
+        },
+        "productComments": {
+            "client": "عميل",
+            "fallbackComment": "لا يوجد تعليق متاح.",
+            "attachedImageAlt": "صورة مرفقة بالتعليق",
+            "attachedImageLabel": "عرض الصورة المرفقة بالتعليق",
+            "heading": "آراء العملاء",
+            "description": "اكتشف تجارب العملاء مع هذا المنتج.",
+            "ratingLabel": "تقييم {{rating}} من 5",
+            "singleReview": "تقييم عميل",
+            "multipleReviews": "تقييمات عملاء",
+            "loading": "جارٍ التحميل...",
+            "loadingReviews": "جارٍ تحميل التقييمات",
+            "errorTitle": "تعذر تحميل التقييمات",
+            "errorDescription": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+            "retry": "إعادة المحاولة",
+            "emptyTitle": "لا توجد تقييمات بعد",
+            "emptyDescription": "كن أول من يشارك تجربته مع هذا المنتج."
+        },
+        "productsCategory": {
+            "eyebrow": "المجموعة",
+            "heroTitle": "اكتشف منتجاتنا",
+            "heroDescription": "استكشف مجموعتنا من المنتجات المتوفرة في هذه الفئة.",
+            "productCount_one": "{{count}} منتج",
+            "productCount_other": "منتجات",
+            "sectionTitle": "منتجاتنا",
+            "sectionDescription": "مجموعة مختارة لتلبية احتياجاتك."
+        },
+        "productsFilter": {
+            "open": "تصفية",
+            "title": "تصفية المنتجات",
+            "description": "حدد بحثك حسب تفضيلاتك.",
+            "close": "إغلاق لوحة التصفية",
+            "brand": "العلامة التجارية",
+            "allBrands": "جميع العلامات التجارية",
+            "selectBrand": "اختر علامة تجارية...",
+            "mainCategory": "الفئة الرئيسية",
+            "allCategories": "جميع الفئات",
+            "selectCategory": "اختر فئة...",
+            "price": "السعر",
+            "minPrice": "الحد الأدنى",
+            "maxPrice": "الحد الأقصى",
+            "reset": "إعادة تعيين",
+            "showResults": "عرض النتائج"
+        },
+        "trackOrder": {
+            "title": "تتبع طلبي",
+            "subtitle": "أدخل رقم طلبك لتتبع حالته في الوقت الفعلي.",
+            "inputPlaceholder": "أدخل رمز الطلب...",
+            "searching": "جارٍ البحث...",
+            "trackButton": "تتبع",
+            "notFoundTitle": "لم يتم العثور على الطلب",
+            "notFoundMessage": "لا يوجد طلب مطابق لهذا الرمز.",
+            "orderNumber": "رقم الطلب",
+            "currentStatus": "الحالة الحالية",
+            "emptyTitle": "أين طلبي؟",
+            "emptyDescription": "أدخل رمز طلبك أعلاه لمعرفة حالته.",
+            "step": "الخطوة {{number}}"
+        },
+        "policies": {
+            "heroBadge": "الشفافية والثقة",
+            "heroTitle": "سياساتنا",
+            "heroTitleHighlight": "بكل شفافية.",
+            "heroDescription": "تجد هنا جميع المعلومات الأساسية المتعلقة بشروط الاستخدام، الإرجاع، الاسترداد وحماية بياناتك.",
+            "trustTitle": "حقوقك أولويتنا",
+            "trustDescription": "معلومات واضحة وفي متناول الجميع.",
+            "sectionTitle": "الوثائق والشروط",
+            "sectionDescription": "اطلع على المعلومات التي تنظم تجربتك في متجرنا.",
+            "documentCount_one": "متاح",
+            "documentCount_other": "متاحة",
+            "searchPlaceholder": "ابحث عن سياسة...",
+            "searchLabel": "البحث في السياسات",
+            "clearSearch": "مسح البحث",
+            "clear": "مسح",
+            "document": "وثيقة",
+            "updatedAt": "آخر تحديث في {{date}}",
+            "loading": "جارٍ تحميل السياسات",
+            "loadErrorTitle": "تعذر تحميل السياسات",
+            "loadErrorDescription": "حدث خطأ أثناء التحميل. يرجى المحاولة بعد قليل.",
+            "retry": "إعادة المحاولة",
+            "loadingButton": "جارٍ التحميل...",
+            "noResultsTitle": "لا توجد نتائج",
+            "noResultsDescription": "جرب كلمة مفتاحية أخرى أو تحقق من بحثك.",
+            "emptyTitle": "لا توجد سياسات متاحة",
+            "emptyDescription": "سيتم عرض الوثائق هنا بمجرد توفرها.",
+            "helpTitle": "هل لديك سؤال حول سياساتنا؟",
+            "helpDescription": "اطلع على المعلومات أعلاه لفهم الشروط المطبقة على طلبك بشكل أفضل."
+        },
+        "productOffers": {
+            "ariaLabel": "العروض الترويجية",
+            "title": "عروض خاصة",
+            "subtitle": "استفد من خصومات مميزة على هذا المنتج.",
+            "promo": "ترويج",
+            "congratulations": "خبر سار!",
+            "bestDiscountMessage": "أنت تستفيد حالياً من أفضل خصم متاح.",
+            "unlockedTier": "تم الوصول إلى المستوى",
+            "quantityOffer": "خصم على الكمية",
+            "from": "ابتداءً من",
+            "piece": "قطعة",
+            "pieces": "قطع",
+            "discountActivated": "تم تطبيق الخصم",
+            "piecesRemaining": "بقي {{count}} قطعة للاستفادة من هذا العرض.",
+            "piecesRemaining_plural": "بقيت {{count}} قطع للاستفادة من هذا العرض.",
+            "nextTier": "المستوى التالي",
+            "progressLabel": "التقدم نحو العرض التالي",
+            "addToUnlock": "أضف",
+            "toUnlockNext": "لفتح الخصم التالي.",
+            "lastTierReached": "تهانينا! أنت تستفيد من أفضل مستوى خصم.",
+            "specialOffer": "عرض خاص",
+            "promotionalOffer": "عرض ترويجي",
+            "validFrom": "صالح ابتداءً من",
+            "purchase": "شراء"
+        },
+        
+        "offer": {
+        "breadcrumbLabel": "مسار التنقل",
+        "home": "الرئيسية",
+        "specialOffers": "عروض خاصة",
+        "backToShop": "العودة إلى المتجر",
+        "loading": "جارٍ تحميل العرض",
+
+        "status": {
+            "active": {
+            "label": "العرض جارٍ",
+            "description": "استفد من مزايا هذا العرض الآن."
+            },
+            "upcoming": {
+            "label": "قريباً",
+            "description": "لم يبدأ هذا العرض بعد."
+            },
+            "expired": {
+            "label": "انتهى العرض",
+            "description": "انتهت فترة هذا العرض."
+            },
+            "unknown": {
+            "label": "التوفر قيد التأكيد",
+            "description": "يجب التحقق من تواريخ هذا العرض."
+            }
+        },
+
+        "hero": {
+            "eyebrow": "عرض خاص",
+            "yourBenefit": "ميزتك",
+            "startDate": "بداية العرض",
+            "endDate": "نهاية العرض",
+            "discoverProducts": "اكتشف المنتجات",
+            "upcomingAction": "العرض قريباً",
+            "expiredAction": "انتهى العرض",
+            "unknownAction": "التوفر قيد التأكيد",
+            "noProductsAction": "لا توجد منتجات متاحة",
+            "oneProductAvailable": "منتج متاح",
+            "productsAvailable": "منتجات متاحة",
+            "placeholder": "عرض خصيصاً لك",
+            "imageLabel": "اختيار خاص",
+            "dedicatedOffer": "عرض مخصص",
+            "conditions": "اكتشف الشروط"
+        },
+
+        "tiers": {
+            "eyebrow": "الشروط",
+            "title": "كلما اشتريت أكثر، استفدت أكثر",
+            "description": "اكتشف المستويات والمزايا التي يقدمها هذا العرض.",
+            "topTier": "المستوى الأعلى",
+            "tierNumber": "المستوى {{number}}",
+            "minimumArticle": "منتج كحد أدنى",
+            "minimumArticles": "منتجات كحد أدنى",
+            "benefit": "الميزة المقدمة",
+            "conditionsApply": "حسب الشروط",
+            "fromArticles": "ابتداءً من {{count}} منتج/منتجات",
+            "disclaimer": "تعتمد الشروط الدقيقة وحساب الخصم على إعدادات هذا العرض."
+        },
+
+        "products": {
+            "eyebrow": "الاختيار",
+            "title": "منتجات هذا العرض",
+            "description": "اكتشف المنتجات المعنية واختر المفضلة لديك.",
+            "totalProducts": "منتج إجمالاً",
+            "available": "متاح",
+            "noneAvailableTitle": "لا توجد منتجات متاحة حالياً",
+            "noneAvailableDescription": "منتجات هذا الاختيار غير متوفرة مؤقتاً. عد لاحقاً لاكتشاف الجديد.",
+            "emptyTitle": "هذا العرض لا يحتوي على منتجات بعد",
+            "emptyDescription": "سيتم عرض الاختيار هنا بمجرد ربط منتجات بهذا العرض.",
+            "backToShop": "استكشف المتجر"
+        },
+
+        "benefits": {
+            "dedicated": {
+            "title": "عروض مخصصة",
+            "description": "شروط خاصة لكل اختيار."
+            },
+            "selection": {
+            "title": "اختيار المنتجات",
+            "description": "اكتشف جميع المنتجات المرتبطة بهذا العرض."
+            },
+            "transparent": {
+            "title": "شروط شفافة",
+            "description": "اطلع على المستويات قبل إتمام الطلب."
+            }
+        },
+
+        "error": {
+            "title": "تعذر عرض هذا العرض",
+            "description": "هذا العرض غير موجود أو حدث خطأ أثناء التحميل. يرجى المحاولة مرة أخرى.",
+            "retry": "إعادة المحاولة",
+            "backHome": "العودة إلى الرئيسية"
+        }
+        },
+        "footer": {
+            "brandDescription": "اكتشف مجموعتنا من المنتجات واستمتع بتجربة تسوق بسيطة وممتعة.",
+            "boutique": "المتجر",
+            "home": "الرئيسية",
+            "products": "منتجاتنا",
+            "offers": "العروض",
+            "assistance": "المساعدة",
+            "trackOrder": "تتبع طلبي",
+            "helpCenter": "مركز المساعدة",
+            "terms": "الشروط العامة",
+            "contact": "اتصل بنا",
+            "social": {
+                "facebook": "فيسبوك",
+                "instagram": "إنستغرام",
+                "youtube": "يوتيوب",
+                "linkedin": "لينكد إن",
+                "x": "X"
+            },
+            "copyright": "© {{year}} {{title}}"
+        }
+
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    "common": {
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "delete": "حذف",
+        "edit": "تعديل",
+        "update": "تحديث",
+        "add": "إضافة",
+        "create": "إنشاء",
+        "search": "بحث",
+        "filter": "تصفية",
+        "export": "تصدير",
+        "import": "استيراد",
+        "refresh": "تحديث",
+        "close": "إغلاق",
+        "back": "رجوع",
+        "next": "التالي",
+        "previous": "السابق",
+        "confirm": "تأكيد",
+        "submit": "إرسال",
+        "reset": "إعادة تعيين",
+        "loading": "جاري التحميل...",
+        "noData": "لا توجد بيانات",
+        "actions": "إجراءات",
+        "status": "الحالة",
+        "active": "نشط",
+        "inactive": "غير نشط",
+        "all": "الكل",
+        "selectAll": "تحديد الكل",
+        "details": "تفاصيل",
+        "view": "عرض"
+    },
+    "navigation": {
+        "accueil": "الرئيسية",
+        "clients": "العملاء",
+        "catalogue": "الكتالوج",
+        "articles": "المنتجات",
+        "categories": "التصنيفات",
+        "marques": "العلامات التجارية",
+        "attributs": "الخصائص",
+        "valeurs_attributs": "قيم الخصائص",
+        "ventes": "المبيعات",
+        "commandes": "الطلبات",
+        "factures": "الفواتير",
+        "fournisseurs": "الموردون",
+        "transporteurs": "شركات الشحن",
+        "rapports": "التقارير",
+        "ventes_rapport": "المبيعات",
+        "visites": "الزيارات",
+        "transactions": "المعاملات المالية",
+        "revenus": "الإيرادات",
+        "depenses": "المصروفات",
+        "types_depenses": "أنواع المصروفات",
+        "parametres": "الإعدادات",
+        "param_generaux": "الإعدادات العامة",
+        "expedition": "الشحن",
+        "facturation": "الفواتير",
+        "politiques": "سياسات المنصة",
+        "services": "الخدمات",
+        "administration": "الإدارة"
+    },
+    "crud": {
+        "addNew": "إضافة جديد",
+        "editItem": "تعديل العنصر",
+        "deleteItem": "حذف العنصر",
+        "deleteConfirmation": "هل أنت متأكد من حذف هذا العنصر؟",
+        "deleteSuccess": "تم الحذف بنجاح",
+        "saveSuccess": "تم الحفظ بنجاح",
+        "updateSuccess": "تم التحديث بنجاح",
+        "createSuccess": "تم الإنشاء بنجاح",
+        "operationFailed": "فشلت العملية",
+
+        "deleteTitle": "تأكيد الحذف",
+        "deleteConfirmationWithName": "هل أنت متأكد من حذف {{entity}} «{{name}}»؟",
+        "bulkDeleteTitle": "تأكيد حذف متعدد",
+        "bulkDeleteConfirmation": "هل أنت متأكد من حذف {{count}} من عناصر {{entity}}؟",
+        "deleteSingleConfirmation": "هل أنت متأكد من حذف هذا {{entity}}؟"
+    },
+    "messages": {
+        "create": {
+            "success": "تم الحفظ بنجاح",
+            "error": "فشل الحفظ. يرجى المحاولة مرة أخرى."
+        },
+        "update": {
+            "success": "تم التحديث بنجاح",
+            "error": "فشل التحديث. يرجى المحاولة مرة أخرى."
+        },
+        "delete": {
+            "success": "تم الحذف بنجاح",
+            "error": "فشل الحذف. يرجى المحاولة مرة أخرى."
+        },
+        "general": {
+            "success": "تمت العملية بنجاح",
+            "error": "حدث خطأ. يرجى المحاولة مرة أخرى."
+        },
+        "confirm": {
+            "delete": "هل أنت متأكد من حذف هذا العنصر؟",
+            "discard": "هل أنت متأكد من إلغاء التغييرات؟"
+        }
+    },
+    "form": {
+        "required": "هذا الحقل مطلوب",
+        "invalidEmail": "البريد الإلكتروني غير صحيح",
+        "invalidPhone": "رقم الهاتف غير صحيح",
+        "minLength": "الحد الأدنى للأحرف هو {{count}} حرفاً",
+        "maxLength": "الحد الأقصى للأحرف هو {{count}} حرفاً",
+        "passwordMismatch": "كلمتا المرور غير متطابقتين",
+        "selectOption": "اختر خياراً",
+        "uploadImage": "رفع صورة",
+        "dragDrop": "اسحب وأفلت أو انقر للرفع"
+    },
+    "modal": {
+        "titleAdd": "إضافة {{entity}}",
+        "titleEdit": "تعديل {{entity}}",
+        "confirmDelete": "تأكيد الحذف"
+    },
+    "table": {
+        "rowsPerPage": "صفوف لكل صفحة",
+        "page": "صفحة",
+        "of": "من",
+        "first": "الأولى",
+        "last": "الأخيرة"
+    },
+    "filters": {
+        "title": "عوامل التصفية"
+    },
+    "search": {
+        "placeholder": "بحث..."
+    },
+    "entities": {
+        "city": "مدينة",
+        "user": "مستخدم",
+        "group": "مجموعة",
+        "product": "منتج",
+        "category": "فئة",
+        "brand": "علامة تجارية",
+        "attribute": "خاصية",
+        "supplier": "مورد",
+        "value": "قيمة",
+        "permission": "صلاحية",
+        "policy": "سياسة",
+        "branch": "فرع",
+        "visitor": "زائر",
+        "service": "خدمة",
+        "company": "شركة",
+        "shipping": "شحن"
+    },
+    "welcome": "مرحباً بكم في موقعنا",
+    "greeting": "مرحباً، {{name}} !",
+
+    "profile": {
+        "sections": {
+        "personal": {
+            "title": "المعلومات الشخصية",
+            "description": "قم بتعديل اسم المستخدم والاسم الكامل. ستظهر هذه المعلومات للعامة."
+        },
+        "address": {
+            "title": "العنوان",
+            "description": "يمكنك تعديل عنوانك والتحكم في من يمكنه رؤيته."
+        },
+        "contact": {
+            "title": "جهات الاتصال",
+            "description": "أضف رقم هاتف شخصي أو رسمي لتسهيل التواصل واستعادة حسابك."
+        },
+        "password": {
+            "title": "تغيير كلمة المرور",
+            "description": "لأسباب أمنية، يرجى إدخال كلمة المرور القديمة، ثم إدخال كلمة المرور الجديدة مرتين."
+        }
+        },
+        "fields": {
+        "username": "اسم المستخدم",
+        "fullName": "الاسم الكامل",
+        "address": "العنوان",
+        "phone": "رقم الهاتف",
+        "email": "البريد الإلكتروني",
+        "oldPassword": "كلمة المرور القديمة",
+        "newPassword": "كلمة المرور الجديدة",
+        "confirmPassword": "تأكيد كلمة المرور"
+        },
+        "attention": {
+        "username": "سيُستخدم اسم المستخدم هذا لتسجيل الدخول إلى حسابك. اختر اسماً فريداً وسهل التذكر. يمكن أن يحتوي على أحرف وأرقام وبعض الرموز الخاصة.",
+        "phone": "يجب تأكيد رقم الهاتف هذا للتحقق من صحته قبل ربطه بملفك الشخصي.",
+        "confirmPassword": "لأسباب أمنية، يرجى إعادة إدخال كلمة المرور الجديدة. يجب أن تتطابق تماماً مع حقل «كلمة المرور الجديدة»."
+        },
+        "messages": {
+        "updateSuccess": "تم تعديل الملف الشخصي بنجاح",
+        "updateError": "حدث خطأ أثناء تحديث الملف الشخصي",
+        "passwordChangeSuccess": "تم تغيير كلمة المرور بنجاح",
+        "passwordChangeError": "حدث خطأ أثناء تغيير كلمة المرور"
+        },
+        "menu": {
+            "editProfile": "تعديل الملف الشخصي",
+            "changePassword": "تغيير كلمة المرور"
+        },
+        "avatar": {
+            "myProfile": "ملفي الشخصي",
+            "viewStore": "عرض المتجر",
+            "settings": "الإعدادات",
+            "logout": "تسجيل الخروج"
+        }
+    },
+
+    "salesSettings": {
+        "pageTitle": "فواتير البيع",
+        "pageDescription": "تخصيص مظهر فواتير البيع القياسية",   
+        "labels": {
+        "invoiceTitle": "عنوان الفاتورة",
+        "footerMessage": "رسالة التذييل"
+        },
+        "sectionTitles": {
+        "company": "معلومات الشركة",
+        "customer": "معلومات العميل",
+        "invoice": "معلومات الفاتورة",
+        "footer": "تذييل الصفحة"
+        },
+        "companyFields": {
+        "show_logo": {
+            "label": "إظهار الشعار",
+            "desc": "يعرض شعار شركتك أعلى فاتورة البيع"
+        },
+        "show_company_name": {
+            "label": "اسم الشركة",
+            "desc": "يعرض الاسم القانوني لشركتك على الفاتورة"
+        },
+        "show_company_address": {
+            "label": "عنوان الشركة",
+            "desc": "يعرض العنوان الكامل (الشارع، الرمز البريدي، المدينة)"
+        },
+        "show_company_phone": {
+            "label": "هاتف الشركة",
+            "desc": "يعرض رقم هاتف قسم المبيعات"
+        },
+        "show_company_email": {
+            "label": "البريد الإلكتروني للشركة",
+            "desc": "يعرض البريد الإلكتروني المهني لمتابعة الفواتير"
+        }
+        },
+        "customerFields": {
+        "show_customer_name": {
+            "label": "اسم العميل",
+            "desc": "يعرض الاسم الكامل للعميل (فرد أو شركة)"
+        },
+        "show_customer_address": {
+            "label": "عنوان العميل",
+            "desc": "يعرض عنوان إصدار الفاتورة الخاص بالعميل"
+        },
+        "show_customer_phone": {
+            "label": "هاتف العميل",
+            "desc": "يعرض رقم هاتف العميل"
+        },
+        "show_customer_city": {
+            "label": "مدينة العميل",
+            "desc": "يعرض مدينة العميل"
+        }
+        },
+        "invoiceFields": {
+        "show_invoice_number": {
+            "label": "رقم الفاتورة",
+            "desc": "يعرض الرقم الفريد للفاتورة"
+        },
+        "show_issue_date": {
+            "label": "تاريخ الإصدار",
+            "desc": "يعرض تاريخ إصدار الفاتورة"
+        },
+        "show_order_reference": {
+            "label": "مرجع الطلب",
+            "desc": "يعرض مرجع الأمر المرتبط"
+        },
+        "show_payment_method": {
+            "label": "طريقة الدفع",
+            "desc": "يعرض وسيلة الدفع (بطاقة، تحويل بنكي، إلخ)"
+        },
+        "show_payment_status": {
+            "label": "حالة الدفع",
+            "desc": "يعرض ما إذا كانت الفاتورة مدفوعة، معلقة، أو غير مدفوعة"
+        }
+        },
+        "footerField": {
+        "show_footer": {
+            "label": "تذييل الصفحة",
+            "desc": "يعرض رسالة مخصصة أسفل الفاتورة (مثال: \"شكراً لثقتكم\")"
+        }
+        }
+    },
+    "orderSettings": {
+        "pageTitle": "فواتير الطلبات",
+        "pageDescription": "تخصيص مظهر الفواتير المرتبطة بطلبات العملاء",
+
+        "labels": {
+        "invoiceTitle": "اسم الفاتورة",
+        "footerMessage": "رسالة التذييل"
+        },
+
+        "sectionTitles": {
+        "company": "معلومات الشركة",
+        "customer": "معلومات العميل",
+        "order": "معلومات الطلب",
+        "total": "معلومات إجمالي الفاتورة"
+        },
+
+        "companyFields": {
+        "show_logo": {
+            "label": "إظهار الشعار",
+            "desc": "يعرض شعار شركتك أعلى المستند (إذا تم تحميله)"
+        },
+        "show_company_name": {
+            "label": "اسم الشركة",
+            "desc": "يعرض الاسم القانوني لشركتك كما هو مسجل"
+        },
+        "show_company_address": {
+            "label": "عنوان الشركة",
+            "desc": "يعرض العنوان الكامل (الشارع، الرمز البريدي، المدينة)"
+        },
+        "show_company_phone": {
+            "label": "هاتف الشركة",
+            "desc": "يعرض رقم الهاتف للتواصل مع خدمة العملاء"
+        },
+        "show_company_email": {
+            "label": "البريد الإلكتروني للشركة",
+            "desc": "يعرض البريد الإلكتروني المهني للتواصل"
+        }
+        },
+
+        "customerFields": {
+        "show_customer_name": {
+            "label": "اسم العميل",
+            "desc": "يعرض الاسم الكامل للعميل (فرد أو شركة)"
+        },
+        "show_customer_phone": {
+            "label": "هاتف العميل",
+            "desc": "يعرض رقم هاتف العميل للتوصيل أو التواصل"
+        },
+        "show_shipping_address": {
+            "label": "عنوان التوصيل",
+            "desc": "يعرض عنوان التوصيل الدقيق (مع معالم إن لزم)"
+        },
+        "show_customer_city": {
+            "label": "مدينة العميل",
+            "desc": "يعرض مدينة العميل لتسهيل الإرسال"
+        }
+        },
+
+        "orderFields": {
+        "show_order_number": {
+            "label": "رقم الطلب",
+            "desc": "يعرض رقم الطلب الفريد (مرجع التتبع)"
+        },
+        "show_order_date": {
+            "label": "تاريخ الطلب",
+            "desc": "يعرض تاريخ إنشاء الطلب (يوم/شهر/سنة)"
+        },
+        "show_payment_method": {
+            "label": "طريقة الدفع",
+            "desc": "يعرض وسيلة الدفع التي اختارها العميل (بطاقة، تحويل، إلخ)"
+        },
+        "show_status": {
+            "label": "الحالة",
+            "desc": "يعرض الحالة الحالية للطلب (قيد المعالجة، تم الشحن، تم التوصيل)"
+        }
+        },
+
+        "totalFields": {
+        "show_subtotal": {
+            "label": "المجموع الفرعي",
+            "desc": "يعرض المبلغ دون رسوم التوصيل والخصومات"
+        },
+        "show_shipping_cost": {
+            "label": "رسوم التوصيل",
+            "desc": "يعرض تكلفة التوصيل (مبلغ ثابت أو حسب الوزن/المسافة)"
+        },
+        "show_discount": {
+            "label": "الخصم",
+            "desc": "يعرض الخصم الممنوح (نسبة أو مبلغ ثابت)"
+        },
+        "show_total": {
+            "label": "الإجمالي",
+            "desc": "يعرض المبلغ النهائي للدفع (المجموع الفرعي + التوصيل - الخصم)"
+        },
+        "show_footer": {
+            "label": "تذييل الصفحة",
+            "desc": "يعرض رسالة مخصصة أسفل المستند (مثال: \"شكراً لثقتكم\")"
+        }
+        }
+    },
+    "deliverySettings": {
+        "pageTitle": "إيصالات التسليم",
+        "pageDescription": "تخصيص إيصالات التسليم (التوقيعات، العناوين، المنتجات)",
+
+        "labels": {
+        "documentTitle": "عنوان المستند",
+        "footerMessage": "رسالة التذييل"
+        },
+
+        "sectionTitles": {
+        "company": "معلومات الشركة",
+        "customer": "معلومات العميل",
+        "document": "معلومات المستند",
+        "products": "أعمدة المنتجات",
+        "totals": "الإجماليات",
+        "signatures": "التوقيعات والختم",
+        "footer": "تذييل الصفحة"
+        },
+
+        "companyFields": {
+        "show_logo": {
+            "label": "إظهار الشعار",
+            "desc": "يعرض شعار شركتك على إيصال التسليم"
+        },
+        "show_company_name": {
+            "label": "اسم الشركة",
+            "desc": "يعرض اسم شركتك"
+        },
+        "show_company_address": {
+            "label": "عنوان الشركة",
+            "desc": "يعرض العنوان الكامل للشركة"
+        },
+        "show_company_phone": {
+            "label": "هاتف الشركة",
+            "desc": "يعرض رقم هاتف الشركة"
+        },
+        "show_company_email": {
+            "label": "البريد الإلكتروني للشركة",
+            "desc": "يعرض البريد الإلكتروني للتواصل"
+        }
+        },
+
+        "customerFields": {
+        "show_customer_name": {
+            "label": "اسم العميل",
+            "desc": "يعرض اسم العميل المستلم"
+        },
+        "show_customer_phone": {
+            "label": "هاتف العميل",
+            "desc": "يعرض رقم هاتف العميل (مفيد للموصل)"
+        },
+        "show_shipping_address": {
+            "label": "عنوان التسليم",
+            "desc": "يعرض عنوان التسليم الدقيق (مع معالم إن لزم)"
+        },
+        "show_customer_city": {
+            "label": "مدينة العميل",
+            "desc": "يعرض مدينة التسليم"
+        }
+        },
+
+        "documentFields": {
+        "show_delivery_note_number": {
+            "label": "رقم إيصال التسليم",
+            "desc": "يعرض الرقم الفريد لإيصال التسليم"
+        },
+        "show_order_reference": {
+            "label": "مرجع الطلب",
+            "desc": "يعرض مرجع الطلب الأصلي"
+        },
+        "show_delivery_date": {
+            "label": "تاريخ التسليم",
+            "desc": "يعرض تاريخ الإصدار أو تاريخ التسليم المتوقع"
+        },
+        "show_payment_method": {
+            "label": "طريقة الدفع",
+            "desc": "يعرض طريقة الدفع المختارة"
+        },
+        "show_status": {
+            "label": "الحالة",
+            "desc": "يعرض حالة الإيصال (قيد التحضير، تم التسليم، إلخ)"
+        }
+        },
+
+        "productFields": {
+        "show_product_image": {
+            "label": "صورة المنتج",
+            "desc": "يعرض صورة مصغرة للمنتج"
+        },
+        "show_product_sku": {
+            "label": "SKU المنتج",
+            "desc": "يعرض الرمز الداخلي للمنتج"
+        },
+        "show_quantity": {
+            "label": "الكمية",
+            "desc": "يعرض الكمية المطلوبة/المسلمة"
+        },
+        "show_unit_price": {
+            "label": "سعر الوحدة",
+            "desc": "يعرض سعر الوحدة بدون ضرائب"
+        },
+        "show_line_total": {
+            "label": "إجمالي السطر",
+            "desc": "يعرض إجمالي السطر (الكمية × سعر الوحدة)"
+        }
+        },
+
+        "totalsFields": {
+        "show_subtotal": {
+            "label": "المجموع الفرعي",
+            "desc": "يعرض المبلغ بدون رسوم وخصومات"
+        },
+        "show_shipping_cost": {
+            "label": "رسوم التسليم",
+            "desc": "يعرض تكلفة النقل"
+        },
+        "show_discount": {
+            "label": "الخصم",
+            "desc": "يعرض الخصم الممنوح"
+        },
+        "show_total": {
+            "label": "الإجمالي",
+            "desc": "يعرض المبلغ النهائي للدفع"
+        },
+        "show_offer": {
+            "label": "عرض خاص",
+            "desc": "يعرض عرضاً ترويجياً إذا كان متاحاً"
+        }
+        },
+
+        "signatureFields": {
+        "show_customer_signature": {
+            "label": "توقيع العميل",
+            "desc": "يعرض مكان توقيع العميل عند الاستلام"
+        },
+        "show_delivery_agent_signature": {
+            "label": "توقيع الموصل",
+            "desc": "يعرض مكان توقيع وكيل التسليم"
+        },
+        "show_stamp_area": {
+            "label": "مكان الختم",
+            "desc": "يعرض مساحة للختم الرسمي للشركة"
+        }
+        },
+
+        "footerField": {
+        "show_footer": {
+            "label": "تذييل الصفحة",
+            "desc": "يعرض رسالة مخصصة (مثال: \"احتفظ بإيصال التسليم\")"
+        }
+        }
+    },
+
+    "generalSettings": {
+        "pageDescription": "العنوان والوصف والهوية البصرية للموقع.",
+
+        "sections": {
+        "general": "معلومات عامة",
+        "contact": "جهات الاتصال",
+        "social": "وسائل التواصل الاجتماعي",
+        "currency": "العملة",
+        "legal": "معلومات قانونية",
+        "seo": "تحسين محركات البحث والتحليلات"
+        },
+
+        "sectionDescriptions": {
+        "general": "العنوان والوصف والهوية البصرية للموقع.",
+        "contact": "البريد الإلكتروني، الهاتف، العنوان والموقع الرسمي.",
+        "social": "روابط إلى صفحاتك الرسمية (فيسبوك، X، إنستغرام، واتساب، تيك توك، تيليغرام).",
+        "currency": "رمز العملة ورمزها المستخدمين على الموقع (مثال: درهم، يورو، دولار).",
+        "legal": "الوضع القانوني، ICE، IF، السجل التجاري والضريبة المهنية.",
+        "seo": "العلامات الوصفية، الكلمات المفتاحية ورموز التتبع (جوجل أناليتكس، فيسبوك بكسل، تيك توك بكسل)."
+        },
+
+        "fields": {
+            "title": "عنوان المنصة",
+            "description": "الوصف",
+            "email": "البريد الإلكتروني",
+            "phone": "الهاتف",
+            "website": "الموقع الإلكتروني",
+            "address": "العنوان",
+            "currency_code": "رمز العملة",
+            "currency_symbol": "رمز العملة",
+            "company_legal_status": "الوضع القانوني للشركة",
+            "ice_number": "المعرف الموحد للمقاولات (ICE)",
+            "if_number": "المعرف الضريبي (IF)",
+            "rc_number": "رقم السجل التجاري (RC)",
+            "patente": "رقم الضريبة المهنية (Patente)",
+            "meta_title": "عنوان ميتا",
+            "meta_description": "وصف ميتا",
+            "meta_keywords": "الكلمات المفتاحية",
+            "facebook_pixel": "معرف فيسبوك بكسل",
+            "tiktok_pixel": "معرف تيك توك بكسل",
+            "google_analytics": "جوجل أناليتكس",
+            "facebook_url": "فيسبوك",
+            "x_url": "X (تويتر)",
+            "instagram_url": "إنستغرام",
+            "whatsapp_url": "واتساب",
+            "tiktok_url": "تيك توك",
+            "telegram_url": "تيليغرام"
+        },
+
+        "attention": {
+        "currency_code": "الرمز الدولي الرسمي للعملة المكون من 3 أحرف (مثال: درهم، يورو، دولار). يُستخدم في المدفوعات والفواتير وتحويلات العملات.",
+        "currency_symbol": "الرمز الذي يظهر مع الأسعار على الموقع (مثال: د.م., €, $, £).",
+        "ice_number": "رقم فريد مكون من 15 رقمًا يُمنح للشركات المغربية.",
+        "patente": "رقم يُستخدم في بعض الإجراءات الإدارية والضريبية.",
+        "meta_keywords": "قائمة كلمات مفتاحية مفصولة بفواصل تمثل الموضوعات الرئيسية لنشاطك التجاري أو صفحتك.",
+        "google_analytics": "معرف قياس جوجل أناليتكس 4 الذي يبدأ عادةً بـ \"G-\". يسمح بتتبع الإحصائيات وسلوك الزوار."
+        },
+
+        "labels": {
+        "logo": "الشعار",
+        "favicon": "أيقونة الموقع",
+        "maintenance": "تفعيل وضع الصيانة",
+        "maintenanceDesc": "عند التفعيل، يمكن للمسؤولين فقط الوصول إلى الموقع."
+        }
+    },
+    "policy": {
+        "form": {
+            "title": "عنوان السياسة",
+            "description": "الوصف",
+            "status": "تفعيل الحالة",
+            "statusDesc": "عند التفعيل، يمكن استخدام هذا العنصر وعرضه داخل النظام."
+        }
+    },
+    "city": {
+        "form": {
+            "title": "اسم المدينة",
+            "status": "تفعيل حالة المدينة",
+            "statusDesc": "عند التفعيل، يمكن استخدام هذا العنصر وعرضه داخل النظام."
+        }
+    },
+
+    "fileUploader": {
+        "addImages": "إضافة صور",
+        "chooseFiles": "اختر ملفات أو اسحبها هنا",
+        "fileTypes": "JPEG، PNG، WEBP (حد أقصى 2 ميجابايت لكل ملف)",
+        "addLabel": "إضافة {{label}}",
+        "notFound": "لا توجد صورة",
+        "changeLabel": "تغيير {{label}}",
+        "clickToChoose": "انقر لاختيار صورة جديدة",
+        "fileTypesShort": "JPEG، PNG، WEBP حتى 2 ميجابايت",
+        "delete": "حذف",
+        "errors": {
+            "onlyImages": "يرجى اختيار ملفات صور فقط",
+            "maxSize": "الحد الأقصى لكل ملف هو 2 ميجابايت",
+            "onlyOne": "يمكنك اختيار ملف واحد فقط"
+        }
+    },
+
+
+    "fields": {
+        "title": "الاسم / العنوان",
+        "description": "الوصف الكامل",
+        "phone": "الهاتف الرئيسي",
+        "email": "البريد الإلكتروني الرئيسي",
+        "whatsapp": "رابط واتساب",
+        "telegram": "رابط تيليغرام",
+        "web": "رابط الموقع الإلكتروني",
+        "address": "العنوان الكامل",
+        "image": "الصورة الرئيسية",
+        "first_name": "الاسم الأول",
+        "last_name": "اسم العائلة",
+        "middle_name": "الاسم الأوسط",
+        "gender": "الجنس (ذكر/أنثى/آخر)",
+        "birth_date": "تاريخ الميلاد",
+        "age": "العمر",
+        "nationality": "الجنسية",
+        "phone_mobile": "الهاتف المحمول",
+        "phone_landline": "الهاتف الثابت",
+        "phone_work": "الهاتف المهني",
+        "fax": "الفاكس",
+        "email_personal": "البريد الإلكتروني الشخصي",
+        "email_work": "البريد الإلكتروني المهني",
+        "signal": "رابط سيغنال",
+        "wechat": "رابط ويتشات",
+        "viber": "رابط فايبر",
+        "line": "رابط لاين",
+        "discord": "رابط ديسكورد",
+        "imo": "رابط إيمو",
+        "facebook": "رابط فيسبوك",
+        "instagram": "رابط إنستغرام",
+        "twitter_x": "رابط إكس (تويتر)",
+        "linkedin": "رابط لينكد إن",
+        "youtube": "رابط يوتيوب",
+        "tiktok": "رابط تيك توك",
+        "snapchat": "رابط سناب شات",
+        "pinterest": "رابط بينتيريست",
+        "github": "رابط غيت هاب",
+        "reddit": "رابط ريديت",
+        "threads": "رابط ثريدز",
+        "tumblr": "رابط تمبلر",
+        "blog": "رابط المدونة",
+        "portfolio": "رابط الأعمال السابقة (بورتفوليو)",
+        "rss": "خلاصة آر إس إس",
+        "street": "الشارع / الطريق",
+        "city": "المدينة",
+        "state": "الولاية / المحافظة",
+        "postal_code": "الرمز البريدي",
+        "country": "الدولة",
+        "map_link": "رابط خرائط Google / الموقع الجغرافي",
+        "building_name": "اسم المبنى / المجمع",
+        "floor_number": "رقم الطابق / الشقة",
+        "company_name": "اسم الشركة / المؤسسة",
+        "job_title": "المسمى الوظيفي",
+        "department": "القسم / الإدارة",
+        "industry": "قطاع النشاط",
+        "tax_number": "الرقم الضريبي / رقم المقاولة",
+        "registration_number": "رقم السجل التجاري",
+        "employee_count": "عدد الموظفين",
+        "establishment_date": "تاريخ التأسيس",
+        "cover_image": "صورة الغلاف",
+        "logo": "شعار الشركة",
+        "gallery": "معرض الصور (متعدد)",
+        "video_url": "رابط فيديو (يوتيوب/فيميو)",
+        "short_description": "وصف مختصر / شعار تعريفى",
+        "notes": "ملاحظات داخلية",
+        "slogan": "الشعار الإعلاني",
+        "mission": "الرسالة / الأهداف",
+        "vision": "الرؤية المستقبلية",
+        "opening_hours": "ساعات العمل (الافتتاح)",
+        "closing_hours": "ساعات الإغلاق",
+        "timezone": "المنطقة الزمنية",
+        "languages_spoken": "اللغات المتحدث بها",
+        "status": "الحالة (نشط / غير نشط / قيد الانتظار)",
+        "category": "الفئة الرئيسية",
+        "sub_category": "الفئة الفرعية",
+        "tags": "الكلمات المفتاحية (وسوم)",
+        "featured": "مميز (نعم / لا)",
+        "priority": "الأولوية (1 إلى 10)",
+        "slug": "المعرف الفريد (Slug)",
+        "created_at": "تاريخ الإنشاء",
+        "updated_at": "تاريخ آخر تحديث"
+    }
+
+
+
+}

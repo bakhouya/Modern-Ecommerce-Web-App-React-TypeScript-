@@ -1,0 +1,28 @@
+
+$border_width: 1px ;
+
+.border {border: $border_width solid $border_color !important;}
+
+.border_y_start {border-block-start : 1px solid $border_color  ;}
+.border_y_end {border-block-end : 1px solid $border_color  ;}
+.border_x_start {border-inline-start : 1px solid $border_color  ;}
+.border_x_end {border-inline-end : 1px solid $border_color  ;}
+
+.border_x {border-inline : 1px solid $border_color  ;}
+.border_y {border-block : 1px solid $border_color  ;}
+
+@each $name, $color in $colors {
+    .border_#{$name} { border-color: $color !important;}
+}
+
+@for $i from 1 through 100 {
+    .w_#{$i} { width: unquote("#{$i}0%")  !important;}
+    .h_#{$i} { height: unquote("#{$i}0%")  !important;}
+    .border_#{$i} {
+        border-width: #{$i}px !important ;
+    }
+}
+
+.w_full {width: 100% ;}
+.h_full {height: 100% ;}
+

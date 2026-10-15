@@ -1,0 +1,44 @@
+
+
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin flex_center($direction: row) {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction ;
+}
+
+@mixin flex($justify, $align, $gap) {
+    display         : flex    ;
+    justify-content : $justify;
+    align-items     : $align  ;
+    gap             : $gap    ;
+    flex-direction  : row  ;              
+    flex-wrap       : nowrap  ;
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// @mixin transition($property: all, $duration: 0.2s, $ease: ease) {
+//   transition: $property $duration $ease;
+// }
+@mixin transition() {
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
