@@ -295,14 +295,7 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
         text-decoration: none;
     }
 }
-@media (max-width: 600px) {
-    .store-header {
-        display: none ;
-    }
-    .web_container {
-        padding-inline: 15px !important ; 
-    }
-}
+
 
 .announcement {
     min-height: 36px ;
@@ -575,6 +568,17 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
 
 
 
+@media (max-width: 600px) {
+    body {
+        padding-block-end: 90px !important;
+    }
+    .store-header {
+        display: none ;
+    }
+    .web_container {
+        padding-inline: 15px !important ; 
+    }
+}
 
 
 

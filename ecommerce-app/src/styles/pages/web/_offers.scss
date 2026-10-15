@@ -1,4 +1,6 @@
 
+
+
 .offer-page {
   min-height: 100vh;
   overflow: clip;
@@ -757,35 +759,18 @@
 // =====================================================
 
 @media (max-width: 768px) {
-  .offer-page {
-    padding: 18px 0 42px;
-
-    &__container {
-      width: calc(100% - 30px);
-    }
-  }
-
-  .offer-breadcrumb {
-    gap: 7px;
-    margin-bottom: 19px;
-    font-size: 11px;
-
-    &__current {
-      max-width: 135px;
-    }
-  }
 
   .offer-hero {
     grid-template-columns: minmax(0, 1fr);
-    border-radius: 20px;
-
+    border-radius: $radius_base ;
     &__content {
-      padding: 27px 22px 25px;
+      padding: 22px 18px 20px;
+      width: 100% ;
     }
 
     &__topline {
       gap: 9px;
-      margin-bottom: 19px;
+      margin-bottom: $padding_base ;
     }
 
     &__title {
@@ -800,7 +785,7 @@
     }
 
     &__discount {
-      margin-top: 19px;
+      margin-top: $padding_base;
       padding: 12px 14px;
 
       > div > strong {
@@ -809,28 +794,29 @@
     }
 
     &__dates {
-      gap: 17px;
-      margin-top: 22px;
-      padding-top: 19px;
+      gap: 12px;
+      margin-top: $padding_base;
+      padding-top: $padding_base;
+      .offer-date {
+        width: 100% !important;
+      }
     }
 
     &__actions {
       align-items: flex-start;
-      gap: 15px;
-      margin-top: 23px;
+      gap: 12px;
+      margin-top: $padding_base ;
     }
 
     &__visual {
-      min-height: 320px;
+      min-height: 100%;
     }
-
     &__floating {
       top: 15px;
       right: 15px;
       max-width: calc(100% - 30px);
       padding: 10px 12px;
     }
-
     &__image-label {
       right: 20px;
       bottom: 20px;
@@ -854,7 +840,7 @@
   }
 
   .offer-tiers {
-    margin-top: 40px;
+    margin-top: $padding_base ;
 
     &__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -868,7 +854,7 @@
 
   .offer-section-heading {
     gap: 12px;
-    margin-bottom: 21px;
+    margin-bottom: $padding_base ;
 
     &__icon {
       width: 42px;
@@ -893,13 +879,13 @@
 
   .offer-tier {
     padding: 15px;
-    border-radius: 16px;
+    border-radius: $radius_base ;
 
     &__top {
       align-items: flex-start;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 21px;
+      margin-bottom: $padding_base ;
     }
 
     &__recommended {
@@ -935,14 +921,14 @@
   }
 
   .offer-products {
-    margin-top: 44px;
+    margin-top: $padding_base ;
 
     &__header {
       align-items: flex-start;
       flex-direction: column;
       gap: 18px;
-      margin-bottom: 22px;
-      padding-bottom: 20px;
+      margin-bottom: $padding_base;
+      padding-bottom: $padding_base;
     }
 
     &__heading h2 {
@@ -977,9 +963,9 @@
   .offer-benefits {
     grid-template-columns: minmax(0, 1fr);
     gap: 19px;
-    margin-top: 37px;
-    padding: 20px;
-    border-radius: 17px;
+    margin-top: $padding_base;
+    padding: $padding_base;
+    border-radius: $radius_base;
   }
 
   .offer-skeleton {
