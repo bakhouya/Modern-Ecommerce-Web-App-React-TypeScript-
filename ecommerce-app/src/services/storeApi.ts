@@ -14,6 +14,9 @@ let csrfToken: string | null = null;
 export const initCsrf = async (): Promise<void> => {
   const response = await StoreApi.get<{ csrfToken: string }>("csrf/");
   csrfToken = response.data.csrfToken;
+  if (csrfToken) {
+    console.log(csrfToken)
+  }
 };
 
 StoreApi.interceptors.request.use((config) => {

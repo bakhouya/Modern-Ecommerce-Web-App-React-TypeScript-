@@ -1,13 +1,9 @@
 
 import type { AddToCartPayload, Cart, CartResponse, CartSummary, CheckoutResponse, OrderTrackingResponse, OrderTrackStatus, UpdateCartItemPayload} from "../../types/cartTypes";
 import type { CheckoutFormType } from "../../validations/checkoutSchema";
-import api from "../axiosInstance";
 import { initCsrf, StoreApi } from "../storeApi";
 
 
-// export const initCsrf = async (): Promise<void> => {
-//   await StoreApi.get("csrf/");
-// };
 
 export const cartService = {
 
@@ -17,14 +13,11 @@ export const cartService = {
     },
 
     getSummary: async (): Promise<CartSummary> => {
+        // await initCsrf();
         const response = await StoreApi.get<CartSummary>("public/cart/summary/");
         return response.data;
     },
 
-    // addItem: async (payload: AddToCartPayload): Promise<CartResponse> => {
-    //     const response = await StoreApi.post<CartResponse>("public/cart/add/", payload, {withCredentials: true});
-    //     return response.data;
-    // },
     addItem: async (payload: AddToCartPayload): Promise<CartResponse> => {
         await initCsrf();
         const response = await StoreApi.post<CartResponse>("public/cart/add/", payload, { withCredentials: true });
@@ -32,6 +25,7 @@ export const cartService = {
     },
 
     updateItem: async (itemId: string, payload: UpdateCartItemPayload): Promise<Cart> => {
+        await initCsrf();
         const response = await StoreApi.patch<Cart>(`public/cart/${itemId}/update/`, payload, {
             withCredentials: true,
         });
@@ -39,19 +33,20 @@ export const cartService = {
     },
 
     removeItem: async (itemId: string): Promise<Cart> => {
+        await initCsrf();
         const response = await StoreApi.delete<Cart>(`public/cart/${itemId}/remove/`, {withCredentials: true});
         return response.data;
     },
 
     clear: async (): Promise<CartResponse> => {
+        await initCsrf();
         const response = await StoreApi.delete<CartResponse>("/cart/clear/", {withCredentials: true});
         return response.data;
     },
 
-
-
     checkout: async (data: CheckoutFormType): Promise<CheckoutResponse> => {
-        const response = await api.post<CheckoutResponse>("public/orders/checkout/", data, {
+        await initCsrf();
+        const response = await StoreApi.post<CheckoutResponse>("public/orders/checkout/", data, {
             withCredentials: true,
         });
         return response.data;
@@ -61,10 +56,12 @@ export const cartService = {
 
 
 export const trackOrder = async (orderCode: string): Promise<OrderTrackingResponse> => {
+    await initCsrf();
     const response = await StoreApi.get<OrderTrackingResponse>("public/order/track/", {params: {track: orderCode}});
     return response.data;
 };
 export const getOrderTrackStatuses = async (): Promise<OrderTrackStatus[]> => {
+    await initCsrf();
     const response = await StoreApi.get<OrderTrackStatus[]>("public/statuses/for-track/");
     return response.data;
 };

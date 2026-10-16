@@ -11,6 +11,7 @@ import { useState } from 'react';
 import OffersBanner from '../../widgets/web/offers/OffersBanner';
 import ProductServiceInfo from '../../widgets/web/products/ProductServiceInfo';
 import HomeSlider from "../../widgets/web/home/HomeSlider";
+import { usePublicCategory } from "../../controllers/useCategory";
 
 
 export default function StoreHome() {
@@ -18,14 +19,14 @@ export default function StoreHome() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [mainCategory] = useState<string | undefined>();
 
-    const { sliders, categories, offers } = useData();
+    const { sliders, offers } = useData();
     const { data: homePageProducts = []} = useHomePageProducts({main_category: mainCategory});
-    // const {data: categoriesParents }    = usePublicCategoryParents() ;
+    const {data: categories }    = usePublicCategory() ;
 
     return (
         <main className="main_page">
 
-            <CategorySlider categories={categories} />
+            <CategorySlider categories={categories ?? []} />
 
             <HomeSlider sliders={sliders} />
 

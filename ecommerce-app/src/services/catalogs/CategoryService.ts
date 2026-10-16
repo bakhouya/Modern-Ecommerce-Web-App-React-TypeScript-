@@ -82,7 +82,7 @@ export const CategoryParentForCreate = async (): Promise<CategoryPrentForCreateT
 /* ---------------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------------*/
 export const PublicCategory = async (): Promise<CategoryTypes[]> => {
-    const response = await StoreApi.get('/public/categories/');
+    const response = await StoreApi.get('/public/categories/', {params: {has_parent: true}});
     return response.data ;
 };
 /* ---------------------------------------------------------------------------------*/

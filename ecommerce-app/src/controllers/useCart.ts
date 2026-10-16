@@ -92,7 +92,7 @@ export const useCheckout = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: (data: CheckoutFormType) => orderService.checkout(data),
+        mutationFn: (data: CheckoutFormType) => cartService.checkout(data),
 
         onSuccess: () => {
             queryClient.invalidateQueries({

@@ -29,6 +29,13 @@ export const useCategoryParent = () => {
   return useQuery({
       queryKey: ['categoryParent', 'list'],
       queryFn: CategoryParentForCreate,
+
+      staleTime: 1000 * 60 * 30, 
+      gcTime: 1000 * 60 * 60,    
+
+      retry: 3,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
       placeholderData: (previousData) => previousData,
   });
 };
@@ -39,15 +46,18 @@ export const useCategoryParent = () => {
 /* ---------------------------------------------------------------------------------*/
 export const usePublicCategory = () => {
   return useQuery({
-    queryKey: ['publiccategory', 'list'],
+    queryKey: ['publiccategory', 'list', { has_parent: true }],
     queryFn: PublicCategory,
     retry: 3,
+    staleTime: 1000 * 60 * 30, 
+    gcTime: 1000 * 60 * 60, 
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     placeholderData: (previousData) => previousData,
   });
 };
 /* ---------------------------------------------------------------------------------*/
+
 
 
 /* ---------------------------------------------------------------------------------*/
@@ -57,6 +67,8 @@ export const usePublicCategoryParents = () => {
     queryKey: ['publiccategoryParents', 'list'],
     queryFn: PublicCategoryParents,
     retry: 3,
+    staleTime: 1000 * 60 * 30, 
+    gcTime: 1000 * 60 * 60, 
     refetchOnWindowFocus: false,
     refetchOnMount: false,
     placeholderData: (previousData) => previousData,

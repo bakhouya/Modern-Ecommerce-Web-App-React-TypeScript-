@@ -11,7 +11,7 @@ export const NotFound = () => {
             
             <div className="">
                 <div className="mx_auto my_end_10"> 
-                    <img src={Empty} alt="Empty Data" width={100} className="mx_auto"/> 
+                    <img src={Empty} alt="Empty Data" width={200} className="mx_auto"/> 
                 </div>
                 <div className="text text_xl text_center"> {t('common.noData')} </div>
                 <div className="text text_sm text_center"> {t('common.noDadaDesc')} </div>

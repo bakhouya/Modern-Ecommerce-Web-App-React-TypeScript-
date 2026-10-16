@@ -17,9 +17,26 @@ export const VisitorService = {
 
 
 export const TrackvisitorService = {
-  track: async (): Promise<TrackVisitorResponse> => {
-    const response = await StoreApi.get<TrackVisitorResponse>("/public/track/");
+
+
+  validate: async (visitorId: string): Promise<boolean> => {
+      const response = await StoreApi.post<{ exists: boolean }>("public/validate-visitor/", { visitor_id: visitorId });
+      return response.data.exists;
+  },
+
+
+
+  track: async (visitorId?: string): Promise<TrackVisitorResponse> => {
+    const response = await StoreApi.get<TrackVisitorResponse>("public/track/", {
+        params: visitorId ? { visitor_id: visitorId } : {},
+    });
 
     return response.data;
   },
+
+
 };
+
+
+
+
