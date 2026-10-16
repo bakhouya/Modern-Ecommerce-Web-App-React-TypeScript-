@@ -22,40 +22,40 @@ export default function PolicyCard({ policy, index, expanded, onToggle}: Props) 
 
     return (
         <article className={`policy-card ${expanded ? "is-expanded" : ""}`}>
-        <button type="button" className="policy-card__trigger" onClick={onToggle} aria-expanded={expanded} aria-controls={`policy-content-${policy.id}`}>
-            <span className="policy-card__icon" aria-hidden="true"><FileText size={23} strokeWidth={1.8} /></span>
+            <button type="button" className="policy-card__trigger" onClick={onToggle} aria-expanded={expanded} aria-controls={`policy-content-${policy.id}`}>
+                <span className="policy-card__icon" aria-hidden="true"><FileText size={23} strokeWidth={1.8} /></span>
 
-            <span className="policy-card__heading">
-                <span className="policy-card__eyebrow">
-                    {t("store.policies.document")}{" "}
-                    {String(index + 1).padStart(2, "0")}
+                <span className="policy-card__heading">
+                    <span className="policy-card__eyebrow">
+                        {t("store.policies.document")}{" "}
+                        {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="policy-card__title">{policy.title}</span>
+                    {date && (<span className="policy-card__date"><Clock3 size={14} /> 
+                        {t("store.policies.updatedAt", {date})} 
+                    </span>)}
                 </span>
-                <span className="policy-card__title">{policy.title}</span>
-                {date && (<span className="policy-card__date"><Clock3 size={14} /> 
-                    {t("store.policies.updatedAt", {date})} 
-                </span>)}
-            </span>
 
-            <span className="policy-card__chevron" aria-hidden="true"><ChevronDown size={20} /></span>
-        </button>
+                <span className="policy-card__chevron" aria-hidden="true"><ChevronDown size={20} /></span>
+            </button>
 
-        {expanded && (
-            <div id={`policy-content-${policy.id}`}className="policy-card__content"> 
-                <div className="policy-card__divider" />
-                <div className="policy-card__description">
-                    <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                            a: ({ href, children }) => (
-                                <a href={href} target="_blank" rel="noopener noreferrer"> {children}</a>
-                            ),
-                        }}
-                    >
-                        {policy.description ?? ""}
-                    </ReactMarkdown>
+            {expanded && (
+                <div id={`policy-content-${policy.id}`}className="policy-card__content"> 
+                    <div className="policy-card__divider" />
+                    <div className="policy-card__description">
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                                a: ({ href, children }) => (
+                                    <a href={href} target="_blank" rel="noopener noreferrer"> {children}</a>
+                                ),
+                            }}
+                        >
+                            {policy.description ?? ""}
+                        </ReactMarkdown>
+                    </div>
                 </div>
-            </div>
-        )}
+            )}
         </article>
     );
 };

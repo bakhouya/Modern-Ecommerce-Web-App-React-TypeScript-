@@ -38,16 +38,16 @@ export default function StoreHome() {
             <div className="">
                 
                 <div className="products-section-heading my_20 web_container">
-                    <h2 className="products-section-heading__title">
+                    <h2 className="products-section-heading__title" data-aos="zoom-in">
                         {t("store.productsSection.titleStart")}{" "}
                         <span>{t("store.productsSection.titleHighlight")}</span>
                     </h2>
 
-                    <p className="products-section-heading__description p_limit_2">
+                    <p className="products-section-heading__description p_limit_2" data-aos="fade-up-bottom">
                         {t("store.productsSection.description")}
                     </p>
 
-                    <div className="products-section-heading__decoration">
+                    <div className="products-section-heading__decoration" data-aos="zoom-in">
                         <span></span>
                     </div>
                 </div>

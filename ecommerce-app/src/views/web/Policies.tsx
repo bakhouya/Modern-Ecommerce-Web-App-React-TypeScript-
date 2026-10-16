@@ -40,12 +40,12 @@ const Policies = () => {
                         <span>{t("store.policies.heroBadge")}</span>
                     </div>
 
-                    <h1 className="policies-hero__title"> 
-                        {t("store.policies.heroTitle")}{" "}
-                        <span>{t("store.policies.heroTitleHighlight")}</span>
+                    <h1 className="policies-hero__title" data-aos="fade-up"> 
+                        {t("store.policies.heroTitle")}{" "}<span className="text text_secondary">{t("store.policies.heroTitleHighlight")}</span>
                     </h1>
 
-                    <p className="policies-hero__description"> {t("store.policies.heroDescription")} </p>
+
+                    <p className="policies-hero__description" data-aos="fade-up"> {t("store.policies.heroDescription")} </p>
 
                     <div className="policies-hero__trust">
                         <span className="policies-hero__trust-icon"> <ShieldCheck size={19} /></span>
@@ -61,8 +61,8 @@ const Policies = () => {
                 <div className="policies-container web_container">
                     <div className="policies-toolbar">
                         <div className="policies-toolbar__intro">
-                        <h2>{t("store.policies.sectionTitle")}</h2>
-                        <p>{t("store.policies.sectionDescription")}</p>
+                            <h2>{t("store.policies.sectionTitle")}</h2>
+                            <p>{t("store.policies.sectionDescription")}</p>
                         </div>
 
                         {!isLoading && !isError && (
@@ -112,7 +112,7 @@ const Policies = () => {
                             ))}
                         </div>
                     ) : (
-                        <div className="policies-state">
+                        <div className="policies-state" data-aos="zoom-up">
                             <span className="policies-state__icon"><SearchX size={27} /></span>
                             <h3>{search ? t("store.policies.noResultsTitle") : t("store.policies.emptyTitle")}</h3>
                             <p> {search ? t("store.policies.noResultsDescription") : t("store.policies.emptyDescription")}</p>
@@ -125,7 +125,7 @@ const Policies = () => {
                         </div>
                     )}
 
-                    <aside className="policies-note">
+                    <aside className="policies-note" data-aos="zoom-up">
                         <span className="policies-note__icon"><ShieldCheck size={23} /></span>
                         <div>
                             <h3>{t("store.policies.helpTitle")}</h3>

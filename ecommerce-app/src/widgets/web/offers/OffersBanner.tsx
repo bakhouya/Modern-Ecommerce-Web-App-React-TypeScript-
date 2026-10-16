@@ -45,7 +45,9 @@ export default function OffersBanner({ offers, autoRotate = true, interval = 100
   return (
     <section className="category_index row web_container">
       {selectedOffers.map((offer, index) => (
-        <Link to={WEBROUTES.PRODUCTSOFFER(offer.id)} key={offer.id} className={`col_2 index_category_item ${index === 0 ? 'offer_1_card' : 'offer_2_card'}`}>
+        <Link to={WEBROUTES.PRODUCTSOFFER(offer.id)} key={offer.id} 
+          className={`col_2 index_category_item ${index === 0 ? 'offer_1_card' : 'offer_2_card'}`}
+          data-aos="fade-in" data-aos-delay={100*index}>
           <img src={offer?.image || ""} alt={offer.title} loading="lazy"/>         
         </Link>
       ))}
