@@ -43,7 +43,11 @@ const ProductCard: React.FC<Props> = ({ product }) => {
     <div className="product_card" title={product?.title || ""}>
 
         <div className="product_card__badge_card_products">
-            {product?.has_offer && <span className="badge_sale"> -{discount}% </span>} 
+            {product?.has_offer && 
+              <span className="badge_sale">
+                -{discount}% 
+              </span>
+            } 
         </div>
 
         <Link to={WEBROUTES.PRODUCT(product.id)} className="product_card__image">

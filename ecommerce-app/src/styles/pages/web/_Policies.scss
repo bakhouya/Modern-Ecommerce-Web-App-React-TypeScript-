@@ -77,7 +77,6 @@ $policy-radius: 20px;
     font-weight: 850;
     letter-spacing: -2.1px;
     line-height: 1.12;
-    span {color: $secondary ;}
   }
   &__description {
     max-width: 650px;
@@ -458,8 +457,8 @@ $policy-radius: 20px;
     min-height: 112px;
     padding: 23px 25px;
     background: $policy-surface;
-    border: 1px solid $policy-border;
-    border-radius: $policy-radius;
+    border: 1px solid $border_color;
+    border-radius: $radius_base ;
 
     &__icon, &__text span {
         display: block;
@@ -471,7 +470,7 @@ $policy-radius: 20px;
         width: 53px;
         height: 53px;
         flex-shrink: 0;
-        border-radius: 15px;
+        border-radius: $radius_base ;
     }
     &__text {
         display: grid;

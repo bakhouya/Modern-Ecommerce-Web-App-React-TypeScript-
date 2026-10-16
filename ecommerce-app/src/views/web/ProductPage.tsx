@@ -16,6 +16,7 @@ import ProductShare from "../../widgets/web/products/ProductShare";
 import ProductOffers from "../../widgets/web/products/ProductOffers";
 import { useSettings } from "../../context/settings/PublicSettingsContext";
 import ProductComments from "../../widgets/web/products/ProductComments";
+import ProductSEO from "../../components/boxs/ProductSEO";
 
 export default function ProductPage() {
     /* --------------------------------------------------------------------------------------------------- */
@@ -202,7 +203,8 @@ export default function ProductPage() {
     /* --------------------------------------------------------------------------------------------------- */
     return (
         <section className="product-page">
-
+            <ProductSEO product={product} selectedVariant={selectedVariant} currencySymbol={settings?.currency_symbol ?? "MAD"} currentStock={currentStock}/>
+            
             <div className="product-page__container web_container">
 
                 <ProductGallery key={product.id} images={product.images_details ?? []} productTitle={product.title}/>
@@ -323,7 +325,6 @@ export default function ProductPage() {
                         <MessageCircle size={20} strokeWidth={2.2} />
                         <span className="text text_sm">Commander via WhatsApp</span>
                     </button>
-
 
 
 
