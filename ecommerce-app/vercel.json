@@ -1,8 +1,17 @@
+
+
+
 {
   "rewrites": [
     {
+      "source": "/v1/api/image",
+      "destination": "/api/image"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ]
 }
+
+

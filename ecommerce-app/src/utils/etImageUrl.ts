@@ -62,7 +62,7 @@ export default function getImageUrl(image?: string | null): string {
     }
 
     // Production: use the Vercel Function
-    return `/api/image?path=${encodeURIComponent(imagePath)}`;
+    return `/v1/api/image?path=${encodeURIComponent(imagePath)}`;
   } catch {
     return "";
   }

@@ -1,6 +1,4 @@
 
-
-
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const allowedExtensions = /\.(png|jpe?g|webp|gif|avif|svg)$/i;
@@ -14,10 +12,11 @@ export default async function handler(
     return res.status(405).end();
   }
 
-  const backendUrl = process.env.BACKEND_URL;
+  // Use the existing environment variable
+  const apiUrl = process.env.VITE_API_URL;
 
-  if (!backendUrl) {
-    return res.status(500).send("BACKEND_URL is not configured");
+  if (!apiUrl) {
+    return res.status(500).send("VITE_API_URL is not configured");
   }
 
   const rawPath = req.query.path;
@@ -36,7 +35,9 @@ export default async function handler(
   }
 
   try {
-    const backendOrigin = new URL(backendUrl).origin;
+    const apiBase = new URL(apiUrl);
+    const backendOrigin = apiBase.origin;
+
     const safePath = imagePath
       .split("/")
       .map((part) => encodeURIComponent(part))
