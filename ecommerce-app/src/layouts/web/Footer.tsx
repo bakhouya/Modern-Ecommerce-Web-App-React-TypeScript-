@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaXTwitter} from "react-icons/fa6";
 import { useSettings } from "../../context/settings/PublicSettingsContext";
 import WEBROUTES from "../../routers/web/path";
+import getImageUrl from "../../utils/etImageUrl";
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -44,7 +45,7 @@ const Footer = () => {
             <div className="footer__container">
                <div className="footer__brand">
                     <div className="footer__logo">
-                        <img src={settings?.logo} alt={settings?.title} />
+                        <img src={getImageUrl(settings?.logo)} alt={settings?.title} />
                     </div>
                     <div className="text text_sm"> {settings?.description} </div>
                 </div>

@@ -5,6 +5,7 @@ import type { IProductImage } from "../../../types/productTypes";
 import ImagePlaceholder from "../../../assets/images/placeholder_product.png";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import getImageUrl from "../../../utils/etImageUrl";
 
 interface ProductGalleryProps {images: IProductImage[]; productTitle: string;}
 
@@ -32,14 +33,19 @@ export default function ProductGallery({images, productTitle}: ProductGalleryPro
 
     const currentImage = images[safeIndex];
 
+   
     const getImageSrc = useCallback(
-        (image?: IProductImage) => {
+        (image?: IProductImage): string => {
             if (!image?.image) return ImagePlaceholder;
             if (failedImages.has(image.image)) return ImagePlaceholder;
-            return image.image;
+
+            const imageUrl = getImageUrl(image.image);
+
+            return imageUrl || ImagePlaceholder;
         },
         [failedImages]
     );
+
 
     const resetZoom = useCallback(() => {
         setZoom(MIN_ZOOM);

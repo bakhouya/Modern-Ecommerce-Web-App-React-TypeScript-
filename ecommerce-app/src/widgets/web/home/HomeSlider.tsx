@@ -7,6 +7,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper/modules";
+import getImageUrl from "../../../utils/etImageUrl";
 
 
 export interface HomeSliderItem {
@@ -29,46 +30,46 @@ const HomeSlider = ({ sliders }: HomeSliderProps) => {
   return (
     <section className="hero_home_page web_container">
         <section className="store_home">
-        <Swiper
-            key={i18n.language}
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation={sliders.length > 1}
-            pagination={
-            sliders.length > 1 ? { clickable: true } : false
-            }
-            autoplay={
-            sliders.length > 1
-                ? {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }
-                : false
-            }
-            loop={sliders.length > 1}
-            speed={800}
-            observer
-            observeParents
-            watchOverflow
-            dir={i18n.dir()}
-            className="store_home__slider"
-        >
-            {sliders.map((slide) => (
-            <SwiperSlide key={slide.id}>
-                <Link to={slide.url} className="slide_content">
-                <img
-                    src={slide.image}
-                    alt={slide.title || ""}
-                    loading="eager"
-                    draggable={false}
-                />
+          <Swiper
+              key={i18n.language}
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation={sliders.length > 1}
+              pagination={
+              sliders.length > 1 ? { clickable: true } : false
+              }
+              autoplay={
+              sliders.length > 1
+                  ? {
+                      delay: 3000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                  }
+                  : false
+              }
+              loop={sliders.length > 1}
+              speed={800}
+              observer
+              observeParents
+              watchOverflow
+              dir={i18n.dir()}
+              className="store_home__slider"
+          >
+              {sliders.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                  <Link to={slide.url} className="slide_content">
+                  <img
+                      src={getImageUrl(slide.image)}
+                      alt={slide.title || ""}
+                      loading="eager"
+                      draggable={false}
+                  />
 
-                <div className="slide_content__bg" />
-                <div className="slide_content__overlay" />
-                </Link>
-            </SwiperSlide>
-            ))}
-        </Swiper>
+                  <div className="slide_content__bg" />
+                  <div className="slide_content__overlay" />
+                  </Link>
+              </SwiperSlide>
+              ))}
+          </Swiper>
         </section>
     </section>
   );

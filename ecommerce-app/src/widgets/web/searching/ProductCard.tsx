@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import type { SearchProduct } from "../../../types/searchTypes";
 import ImagePlaceholder from '../../../assets/images/placeholder_product.png' ;
 import WEBROUTES from "../../../routers/web/path";
+import getImageUrl from "../../../utils/etImageUrl";
 
 const money = (v: string | null) => v === null ? null : Number(v).toLocaleString("fr-MA", { style: "currency", currency: "MAD" });
 
@@ -15,7 +16,7 @@ export default function ProductCard({ product: p }: { product: SearchProduct }) 
     return (
         <Link to={WEBROUTES.PRODUCT(p.id)} className="product-card">
             <div className="product-card__media">
-                <img src={p.image || ImagePlaceholder} alt={p.title} loading="lazy" />
+                <img src={getImageUrl(p.image) || ImagePlaceholder} alt={p.title} loading="lazy" />
             </div>
 
             <div className="product-card__body">

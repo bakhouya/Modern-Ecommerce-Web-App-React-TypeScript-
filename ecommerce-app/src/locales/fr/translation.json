@@ -128,6 +128,7 @@
             "decreaseQuantity": "Diminuer la quantité",
             "increaseQuantity": "Augmenter la quantité",
             "addToCart": "Ajouter au panier",
+            "commandeViaWhatsapp": "Commander via whatsapp",
             "addingToCart": "Ajout en cours...",
             "addedToCart": "Produit ajouté au panier avec succès !",
             "description": "Description",
@@ -386,7 +387,7 @@
                 "linkedin": "LinkedIn",
                 "x": "X"
             },
-            "copyright": "© {{year}} {{title}}"
+            "copyright": "{{year}} {{title}}"
         }
    
     },

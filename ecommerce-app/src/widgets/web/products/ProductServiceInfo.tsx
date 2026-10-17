@@ -4,6 +4,7 @@
 
 
 import { usePublicServices } from "../../../controllers/useServices";
+import getImageUrl from "../../../utils/etImageUrl";
 
 export default function ProductServiceInfo() {
     const {data: services} = usePublicServices();
@@ -21,7 +22,7 @@ export default function ProductServiceInfo() {
                         return (
                             <div className="product-service-info__service" key={service.id ?? service.title}>
                                 <div className="product-service-info__icon">
-                                    <img src={service.image} alt="" loading="lazy"/>
+                                    <img src={getImageUrl(service.image)} alt="" loading="lazy"/>
                                 </div>
 
                                 <div className="product-service-info__body">

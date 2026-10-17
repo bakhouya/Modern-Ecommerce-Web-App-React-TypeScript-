@@ -6,6 +6,7 @@ import type { CategoryTypesParents } from "../../../types/categoryTypes";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import WEBROUTES from "../../../routers/web/path";
+import getImageUrl from "../../../utils/etImageUrl";
 
 interface CategoryMenuProps {isOpen: boolean; onClose: () => void; categories: CategoryTypesParents[]; }
 
@@ -33,7 +34,7 @@ const CategoryMenu = ({ categories, isOpen, onClose }: CategoryMenuProps) => {
                     {categories?.map((category) => (
                         <div key={category.id} className="category_item flex_between_center" onClick={() => setActiveCategory(category)}>
                             <div className="flex_start_center gap_12">
-                                <img src={category.image} alt="" loading="lazy" width="20"/>
+                                <img src={getImageUrl(category.image)} alt="" loading="lazy" width="20"/>
                                 <span className="text text_sm"> {category.title} </span>
                             </div>
                             {category.children?.length > 0 && ( <ChevronRight size={16} /> )}

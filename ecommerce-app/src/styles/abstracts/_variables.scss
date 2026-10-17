@@ -1,4 +1,4 @@
-@import "./dark", "./light";
+@import "./dark", "./light", "./fonts";
 
 $accent_color   : #ff6b6b;
 
@@ -8,7 +8,7 @@ $secondary      : #0f918a ;
 $accent_color   : #1194ac ;
 $secondary      : #fc9a09 ;
 
-$accent_color   : rgb(8, 130, 134) ;
+$accent_color   : #0a9797 ;
 $secondary      : #FFC042 ;
 
 $primary    : $accent_color ;
@@ -88,28 +88,7 @@ $open_sidbar  : 310px;
 $close_sidbar : 67px ;
 $height_box   : 60px ;
 
-// @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-// @import url(https://fonts.googleapis.com/earlyaccess/thabit.css);
-// @import url(https://fonts.googleapis.com/earlyaccess/scheherazade.css);
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@font-face {
-  font-family: 'Nivella';
-  src: url('../../assets/fonts/Nivella-gwWj1.otf') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
-// COC132@mostafa.ma   20261016-0003
 // Montserrat? Nunito Outfit Unageo  el Messiri SST arabic Mulish
 // General Sans Fredoka Comic Sans MS     
 $family       : "Unageo", "Nunito", "Outfit", 'Unageo', system-ui, sans-serif ;

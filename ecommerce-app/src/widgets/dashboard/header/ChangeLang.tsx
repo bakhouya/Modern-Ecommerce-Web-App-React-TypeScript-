@@ -10,14 +10,14 @@ function LanguageSwitcher() {
 
   return (
     <div className='flex_start_center btns_lang gap_10 row'>
-      <button className={`lang_btn col_2 ${i18n.language === 'fr' ? "active" : ""}`} onClick={() => changeLanguage('fr')}
+      <div className={`lang_btn col_2 ${i18n.language === 'fr' ? "active" : ""}`} onClick={() => changeLanguage('fr')}
           aria-label={t("store.header.account.language.selectLanguage")}>
           {t("store.header.account.language.french")}
-      </button>
-      <button className={`lang_btn col_2 ${i18n.language === 'ar' ? "active" : ""}`} onClick={() => changeLanguage('ar')}
+      </div>
+      <div className={`lang_btn col_2 ${i18n.language === 'ar' ? "active" : ""}`} onClick={() => changeLanguage('ar')}
           aria-label={t("store.header.account.language.selectLanguage")}>
           {t("store.header.account.language.arabic")}
-      </button>
+      </div>
     </div>
   );
 }

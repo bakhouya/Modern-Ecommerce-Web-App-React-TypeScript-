@@ -13,7 +13,6 @@ export const useTrackVisitor = () => {
     mutationFn: (visitorId?: string) => TrackvisitorService.track(visitorId),
 
     onSuccess: (data) => {
-        console.log("VISITOR FROM SERVER:", data.visitor);
         visitorStorage.set(data.visitor);
         setVisitor(data.visitor);
     },

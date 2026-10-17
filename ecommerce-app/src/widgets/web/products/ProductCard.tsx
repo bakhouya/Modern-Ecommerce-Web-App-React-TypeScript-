@@ -4,6 +4,8 @@ import { useSettings } from '../../../context/settings/PublicSettingsContext';
 import { Link } from 'react-router-dom';
 import WEBROUTES from '../../../routers/web/path';
 import ImagePlaceholder from '../../../assets/images/placeholder_product.png' ;
+import { BadgeIcon } from 'lucide-react';
+import getImageUrl from '../../../utils/etImageUrl';
 
 
 /*-------------------------------------------------------------------------------------------*/
@@ -26,7 +28,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
   /*-------------------------------------------------------------------------------------------*/
   /*-------------------------------------------------------------------------------------------*/
-  const imageSrc = product.image && product.image.length > 0 ? product.image[0].image : ImagePlaceholder; 
+  const imageSrc = product.image && product.image.length > 0 ? product.image[0].image : null; 
   const regularPrice = product.price_regular ? parseFloat(product.price_regular) : 0;
   const salePrice = product.price_sale ? parseFloat(product.price_sale) : 0;
   const displayPrice = salePrice > 0 ? salePrice : regularPrice;
@@ -45,13 +47,14 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         <div className="product_card__badge_card_products">
             {product?.has_offer && 
               <span className="badge_sale">
-                -{discount}% 
+                {/* -{discount}%  */}
+                <BadgeIcon  size={18}/>
               </span>
             } 
         </div>
 
         <Link to={WEBROUTES.PRODUCT(product.id)} className="product_card__image">
-          <img src={imageSrc} alt={product.title} loading="lazy"/>
+          <img src={getImageUrl(imageSrc) || ImagePlaceholder} alt={product.title} loading="lazy"/>
         </Link>
 
         <div className="product_card__content">
