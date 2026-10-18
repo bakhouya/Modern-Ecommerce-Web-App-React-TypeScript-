@@ -1,4 +1,4 @@
-// widgets/dashboard/visitors/Card.tsx
+
 /* ---------------------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------------*/
 import { useState } from 'react';
@@ -17,6 +17,19 @@ interface Props {visitor: VisitorTypes;}
 export const VisitorCard = ({ visitor }: Props) => {
     const { t } = useTranslation();
     const [expanded, setExpanded] = useState(false);
+
+    const lat = visitor.latitude == null ? null : Number(visitor.latitude);
+    const lng = visitor.longitude == null ? null : Number(visitor.longitude);
+
+    const hasValidCoordinates =
+        lat !== null &&
+        lng !== null &&
+        Number.isFinite(lat) &&
+        Number.isFinite(lng) &&
+        lat >= -90 &&
+        lat <= 90 &&
+        lng >= -180 &&
+        lng <= 180;
 
     const getInitial = () => {
         if (visitor.city && visitor.city.length > 0) return visitor.city.charAt(0).toUpperCase();
@@ -66,12 +79,22 @@ export const VisitorCard = ({ visitor }: Props) => {
                 <div className="card-bottom">
 
                     <div className="map-wrapper">
-                        <VisitorMap
-                            lat={visitor.latitude}
-                            lng={visitor.longitude}
-                            city={visitor.city}
-                            country={visitor.country}
-                        />
+                        {hasValidCoordinates ? (
+                            <VisitorMap
+                                lat={lat}
+                                lng={lng}
+                                city={visitor.city}
+                                country={visitor.country}
+                            />
+                        ) : (
+                            <div className="map-unavailable">
+                                <MapPin size={24} />
+                                <p>Location coordinates are unavailable.</p>
+                                <span>
+                                    {visitor.city}, {visitor.country}
+                                </span>
+                            </div>
+                        )}
                     </div>
 
                     {visitor.visits.length > 0 && (
@@ -80,7 +103,7 @@ export const VisitorCard = ({ visitor }: Props) => {
                         <div className="visits-list">
                             {visitor.visits.map((visit) => (
                             <div key={visit.id} className="visit-entry">
-                                <span className="visit-page">{visit.page_url}</span>
+                                <span className="visit-page text text_sm">{visit.page_url}</span>
                                 <span className="visit-time"><RelativeDate date={visit.created_at} /></span>
                                 {visit.referrer && (<span className="visit-referrer">{t('fields.referrer')}: {visit.referrer}</span>)}
                             </div>

@@ -54,15 +54,16 @@ const HomeSlider = ({ sliders }: HomeSliderProps) => {
               dir={i18n.dir()}
               className="store_home__slider"
           >
-              {sliders.map((slide) => (
+              {sliders.map((slide, index) => (
               <SwiperSlide key={slide.id}>
                   <Link to={slide.url} className="slide_content">
                   <img
                       src={getImageUrl(slide.image)}
                       alt={slide.title || ""}
-                      loading="eager"
-                      draggable={false}
-                  />
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      decoding="async"
+                      draggable={false}/>
 
                   <div className="slide_content__bg" />
                   <div className="slide_content__overlay" />
