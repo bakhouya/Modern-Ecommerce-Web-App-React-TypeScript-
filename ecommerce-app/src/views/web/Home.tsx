@@ -13,6 +13,7 @@ import HomeSlider from "../../widgets/web/home/HomeSlider";
 import { usePublicCategory } from "../../controllers/useCategory";
 import ServicesHome from "../../widgets/web/services/homeServices/Services";
 import { usePublicServices } from "../../controllers/useServices";
+import ProductsList2 from "../../widgets/web/home/Poducts2";
 
 
 
@@ -34,10 +35,7 @@ export default function StoreHome() {
             <HomeSlider sliders={sliders} />
 
             <OffersBanner offers={offers}/>
-                   
-            {/* <section className="section_2">
-                <ProductSlider products={homePageProducts} categories={categoriesParents} onCategoryChange={setMainCategory} loading={loadingProducts} />
-            </section> */}
+
             <div className="">
                 
                 <div className="products-section-heading my_20 web_container">
@@ -59,6 +57,28 @@ export default function StoreHome() {
 
 
             <ServicesHome services={services || []}/>
+
+            <div className="">
+                
+                <div className="products-section-heading my_20 web_container">
+                    <h2 className="products-section-heading__title" data-aos="zoom-in">
+                        {t("store.featuredProductsSection.titleStart")}{" "}
+                        <span>{t("store.featuredProductsSection.titleHighlight")}</span>
+                    </h2>
+
+                    <p className="products-section-heading__description p_limit_2" data-aos="fade-up-bottom">
+                        {t("store.featuredProductsSection.description")}
+                    </p>
+
+                    <div className="products-section-heading__decoration" data-aos="zoom-in">
+                        <span></span>
+                    </div>
+                </div>
+                <ProductsList2 products={homePageProducts} />
+            </div>
+
+            
+
 
         </main>
     );

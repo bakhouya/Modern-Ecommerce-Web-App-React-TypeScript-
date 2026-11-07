@@ -118,6 +118,11 @@
             "titleHighlight": "nos produits",
             "description": "Explorez notre sélection de produits soigneusement choisis pour vous offrir qualité, style et satisfaction au quotidien."
         },
+        "featuredProductsSection": {
+            "titleStart": "Laissez-vous",
+            "titleHighlight": "inspirer",
+            "description": "Découvrez nos coups de cœur et laissez-vous séduire par des produits sélectionnés avec soin pour répondre à toutes vos envies."
+        },
         "product": {
             "rating": "Note",
             "noRating": "Aucune note",

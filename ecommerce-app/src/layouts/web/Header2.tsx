@@ -71,7 +71,7 @@ function Header() {
                             </svg>
                             <input type="text" placeholder={t("store.header.search.placeholder")} aria-label={t("store.header.search.ariaLabel")}/>
                             <button className="btn_search" type="button">
-                                Recherche
+                                {t('common.search')}
                             </button>
                         </Link>
                     </div>
