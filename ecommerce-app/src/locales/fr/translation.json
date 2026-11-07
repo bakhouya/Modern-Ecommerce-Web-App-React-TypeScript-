@@ -118,6 +118,11 @@
             "titleHighlight": "nos produits",
             "description": "Explorez notre sélection de produits soigneusement choisis pour vous offrir qualité, style et satisfaction au quotidien."
         },
+        "featuredProductsSection": {
+            "titleStart": "Laissez-vous",
+            "titleHighlight": "inspirer",
+            "description": "Découvrez nos coups de cœur et laissez-vous séduire par des produits sélectionnés avec soin pour répondre à toutes vos envies."
+        },
         "product": {
             "rating": "Note",
             "noRating": "Aucune note",
@@ -388,16 +393,99 @@
                 "x": "X"
             },
             "copyright": "{{year}} {{title}}"
-        }
+        },
+        "orders_today": "Commandes aujourd'hui",
+        "pending_orders": "Commandes en attente",
+        "visits_today": "Visites aujourd'hui",
+        "new_visitors": "Nouveaux visiteurs",
+        "vs_yesterday": "vs hier : {{value}}",
+        "pending_created_today": "{{value}} créées aujourd'hui"
    
     },
 
 
 
 
+    "home": {
+        "title": "Tableau de bord",
+        "subtitle": "Vue d'ensemble de votre activité"
+    },
+    "orders_overview": {
+        "title": "Aperçu des commandes",
+        "subtitle": "Commandes globales et activité récente",
+        "total": "Total",
+        "today": "Aujourd'hui",
+        "avg_daily": "Moy. / jour (30j)",
+        "cancellation_rate": "Taux d'annulation"
+    },
+    "order_status": {
+        "title": "Répartition par statut",
+        "subtitle": "Détail de toutes les commandes",
+        "empty": "Aucune donnée disponible"
+    },
+    "order_groups": {
+        "title": "Groupes de commandes",
+        "subtitle": "Vue regroupée par étape"
+    },
+    "status": {
+        "PENDING": "En attente",
+        "CONFIRMED": "Confirmée",
+        "PROCESSING": "En traitement",
+        "READY_TO_SHIP": "Prête à expédier",
+        "SHIPPED": "Expédiée",
+        "DELIVERED": "Livrée",
+        "CANCELLED": "Annulée",
+        "REFUNDED": "Remboursée",
+        "PAYMENT_PENDING": "Paiement en attente",
+        "PAYMENT_FAILED": "Paiement échoué"
+    },
+    "groups": {
+        "pending_confirmation": "En attente de confirmation",
+        "confirmed_and_processing": "Confirmées & en traitement",
+        "shipped_and_delivered": "Expédiées & livrées",
+        "cancelled": "Annulées"
+    },
+    "customers": {
+        "visitors_total": "Visiteurs (30j)",
+        "conversion_rate": "Taux de conversion : {{value}}%",
+        "purchasing": "Clients acheteurs",
+        "avg_orders": "Panier : {{value}} cmd/client",
+        "new": "Nouveaux clients",
+        "returning": "Clients fidèles",
+        "revenue_total": "Revenus (30j)"
+    },
+    "wallet": {
+        "title": "Portefeuille",
+        "subtitle": "Mouvements du mois en cours",
+        "credit_month": "Crédit du mois",
+        "debit_month": "Débit du mois",
+        "net_movement_month": "Mouvement net",
+        "transactions_month": "Transactions du mois"
+    },
+    "expenses": {
+        "title": "Dépenses",
+        "subtitle": "Suivi des charges opérationnelles",
+        "current_month": "Mois en cours",
+        "last_30_days": "30 derniers jours",
+        "transactions": "{{count}} transaction(s)",
+        "top_categories": "Top catégories"
+    },
+    "combined": {
+        "title": "Synthèse financière du mois",
+        "subtitle": "Vue consolidée des flux et charges",
+        "wallet_credit": "Crédit portefeuille",
+        "wallet_debit": "Débit portefeuille",
+        "operating_expenses": "Charges opérationnelles",
+        "outflows_plus_expenses": "Sorties + charges",
+        "previous_month": "Mois précédent"
+    },
+
+
+
 
 
     "common": {
+        "no_baseline": "Pas de base",
         "total": "Total",
         "save": "Enregistrer",
         "cancel": "Annuler",
@@ -1296,10 +1384,37 @@
         "coordinates": "Coordonnées",
         "referrer": "Référent",
         "page_url": "URL de la page"
+    },
 
-
-
+    "visitors_map": {
+        "title": "Carte des visiteurs",
+        "subtitle": "Visualisez les emplacements géographiques de vos visiteurs.",
+        "refresh": "Actualiser",
+        "total_visitors": "Total des visiteurs",
+        "all_records": "Tous les enregistrements",
+        "with_location": "Avec localisation",
+        "coordinates_available": "Coordonnées disponibles",
+        "without_location": "Sans localisation",
+        "coordinates_unavailable": "Coordonnées indisponibles",
+        "geographic_distribution": "Répartition géographique",
+        "visitors_displayed": "{{count}} visiteur(s) affiché(s) sur la carte",
+        "data_available": "Données disponibles",
+        "search_placeholder": "Rechercher une ville ou un pays...",
+        "all_countries": "Tous les pays",
+        "search_country_placeholder": "Rechercher un pays...",
+        "unknown_location": "Localisation inconnue",
+        "country_code_unavailable": "Code pays indisponible",
+        "no_visitor_found": "Aucun visiteur trouvé",
+        "modify_search_criteria": "Modifiez vos critères de recherche.",
+        "visitor_location": "Emplacement d'un visiteur",
+        "locations_count": "{{count}} emplacement(s)",
+        "recent_visitors": "Visiteurs récents",
+        "latest_visits": "Dernières visites enregistrées",
+        "unknown_city": "Ville inconnue",
+        "unknown_country": "Pays inconnu"
     }
+
+
 
 }
 

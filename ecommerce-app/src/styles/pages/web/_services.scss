@@ -1,5 +1,77 @@
 
 
+$gradient-service-1: linear-gradient(135deg, #00c9a7, #00a862); // green
+$gradient-service-2: linear-gradient(135deg, #f093fb, #f5576c); // pink
+$gradient-service-3: linear-gradient(135deg, #4facfe, #00f2fe); // blue
+
+
+
+
+
+.home_services {
+  margin-top: $padding_base ;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $padding_base ;
+  }
+}
+.home_service_card {
+  position: relative;
+  overflow: hidden;
+  height: 140px;
+  padding: 10px 15px;
+  @include radius() ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out ;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  /* ----- Content ----- */
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__emoji {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 70px;
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
+    width: 70px ;
+    aspect-ratio: 1;
+  }
+
+
+  &__0 {
+    background: $gradient_service_1;
+  }
+
+  &__1 {
+    background: $gradient_service_2;
+  }
+
+  &__2 {
+    background: $gradient_service_3;
+  }
+}
+
+
+
+
+
+
+
+
 
 .services {
     width: 100%;
@@ -30,7 +102,7 @@
     overflow: hidden;
     background: $base_color ;
     border: 1px solid $border_color ;
-    border-radius: $radius_base ;
+    @include radius() ;
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     @include flex(start, center, $padding_base) ;
@@ -77,7 +149,7 @@
     padding: 6px ;
     background: $base_color ;
     border: 1px solid $border_color ;
-    border-radius: $radius_base;
+    @include radius() ;
     &__services {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -85,7 +157,7 @@
     }
 }
 .product-service-info__service {
-    border-radius: $radius_base;
+    @include radius() ;
     text-align: center ;
     padding: 10px ;
     cursor: pointer;
@@ -116,13 +188,11 @@
     .product-service-info {
         margin-top: 16px;
         padding: 14px;
-        border-radius: 13px;
     }
 
     .product-service-info__icon {
         width: 38px;
         height: 38px;
-        border-radius: 10px;
     }
 
     .product-service-info__body .product-service-info__date {

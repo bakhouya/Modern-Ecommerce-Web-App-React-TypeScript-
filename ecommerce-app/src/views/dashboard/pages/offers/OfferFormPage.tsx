@@ -847,7 +847,7 @@ export const OfferFormPage = () => {
             isEdit={isEdit}
             onPrev={goPrev}
             onNext={goNext}
-            onSubmit={handleSubmit} // ✅ الآن النوع صحيح (e: React.FormEvent) => void
+            onSubmit={handleSubmit} 
           />
         </form>
       </main>

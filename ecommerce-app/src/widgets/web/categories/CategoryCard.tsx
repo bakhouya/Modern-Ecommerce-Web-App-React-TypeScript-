@@ -13,7 +13,7 @@ const CategoryCard: React.FC<Props> = ({ category, index }) => {
 
   return (
 
-    <Link to={WEBROUTES.CATEGORY(category.id)} className="category-card" style={{"--category-index": index} as React.CSSProperties}>
+    <Link to={WEBROUTES.CATEGORY(category.id)} className="category-card radius_primary" style={{"--category-index": index} as React.CSSProperties}>
       <div className="category-card__icon-wrapper">
         <img src={getImageUrl(category.image)} alt={category.title} className="category-card__icon" loading="lazy"/>
       </div>

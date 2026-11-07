@@ -8,9 +8,9 @@ import Layout from "../layouts/dashboard/Layout";
 // ====================================================================
 // imports pages for routers
 // ====================================================================
-import DashboardHome from "../views/dashboard/pages/Home";
+import HomeDashboard from "../views/dashboard/pages/Home";
 import Products from "../views/dashboard/pages/Products";
-import Orders from "../views/dashboard/pages/Orders";
+// import Orders from "../views/dashboard/pages/Orders";
 import Login from "../views/dashboard/auth/Login"
 
 import ProtectedRoute from "./dashboard/ProtectedRoute"
@@ -45,6 +45,9 @@ import TrackOrder from '../views/web/TrackOrder';
 import SearchPage from '../views/web/SearchPage';
 import Policies from '../views/web/Policies';
 import ProductsOffer from '../views/web/ProductsOffer';
+import VisitorsMap from '../views/dashboard/pages/visitors/VisitorsMap';
+import OrderDetailsPage from '../views/dashboard/pages/orders/OrderDetailsPage';
+import OrdersListPage from '../views/dashboard/pages/orders/OrdersListPage';
 // ====================================================================
 
  
@@ -60,9 +63,9 @@ const RouterUrl = createBrowserRouter([
             {
                 element: (<ProtectedRoute><Layout /></ProtectedRoute>),
                 children: [
-                    { path: ROUTES.HOME, element: <DashboardHome /> },
+                    { path: ROUTES.HOME, element: <HomeDashboard /> },
                     { path: ROUTES.PRODUCTS, element: <Products /> },
-                    { path: ROUTES.ORDERS, element: <Orders /> },
+                    // { path: ROUTES.ORDERS, element: <Orders /> },
 
                     { path: ROUTES.PROFILE, element: <AdminProfile /> },
                     { path: ROUTES.SETTINGS, element: <SettingsPlatform /> },
@@ -88,6 +91,10 @@ const RouterUrl = createBrowserRouter([
 
 
                     { path: ROUTES.VISITORS, element: <VisitorsPage /> }, 
+                    { path: ROUTES.VISITORS_MAP, element: <VisitorsMap /> }, 
+
+                    { path: ROUTES.ORDERS, element: <OrdersListPage /> }, 
+                    { path: ROUTES.ORDER_DETAILS(":id"), element: <OrderDetailsPage /> }, 
 
 
                 ]
@@ -114,10 +121,11 @@ const RouterUrl = createBrowserRouter([
     },
     { path: WEBROUTES.SEARCHING, element: <SearchPage />},
     {path: WEBROUTES.CHECKOUT, element: <Checkout/>},
-    {path: "*", element: <Navigate to={WEBROUTES.HOME} replace />} 
+    {path: "*", element: <Navigate to={WEBROUTES.HOME} replace />},
+
 
 ]);
 // ====================================================================
-// Exports the file routers 
+// Exports the file routers <BeamChat />
 // ====================================================================
 export default RouterUrl 

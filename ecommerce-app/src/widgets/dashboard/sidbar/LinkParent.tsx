@@ -16,7 +16,7 @@ export default function LinkSidebarParent({ icon, title, collapsed, onClick }: P
       <div className="sidebar_link_left">
         {icon}
         {/* {!collapsed && <span className="text text_md weight_500">{title}</span>} */}
-        <span className="text text_md weight_500">{title}</span>
+        <span className="text text_sm">{title}</span>
       </div>
 
       {!collapsed && <ChevronIcon size={16} className="chevron_icon" />}

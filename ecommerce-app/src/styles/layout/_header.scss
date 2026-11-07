@@ -23,9 +23,10 @@
             background: none;
             border: none ;
             cursor: pointer;
-            width: 37px;
-            height: 37px;
-            border-radius: 50% ;
+            width: 38px;
+            height: 38px;
+            background-color: $hover_color ;
+            border-radius: $radius_base ;
             color: $txt_color_base;
             transition: all 0.2s;
             @include flex_center ;
@@ -35,7 +36,7 @@
 
             .badge {
                 position: absolute;
-                top: -1px;
+                top: -2px;
                 right: -2px;
                 background-color: $danger;
                 color: white ;
@@ -50,19 +51,19 @@
             }
     }
     &__avatar {
-            width: 36px ;
-            height: 36px ;
-            border-radius: 50% ;
-            overflow: hidden;
-            cursor: pointer;
-            border: 2px solid $primary ;
-            background-color: $primary ;
-            .text {color: white ;}
-            .avatar-img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+        width: 38px ;
+        height: 38px ;
+        border-radius: $radius_base ;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid $primary ;
+        background-color: $primary ;
+        .text {color: $white ;}
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .box_search_header {
@@ -188,13 +189,14 @@
 }
 .lang_btn {
     border-radius: $radius_base ;
-    padding: 8px ;
-    text-align: center ;
+    @include flex_center() ;
+    height: 33px ;
     font-size: $size_xs !important ;
     color: $txt_color_base !important ;
+    padding: 5px 15px ;
+    cursor: pointer;
     &.active {
         background-color: $hover_color ;
-        // color: $white !important ;
     }
 }
 
@@ -214,7 +216,7 @@
 $border_primary : 1px solid rgb($secondary, 0.14)  ;
 .web_container {
     margin: 0 auto;
-    padding: 0 $space ;
+    padding: 0 $web_space ;
 }
 
 
@@ -332,8 +334,6 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
 }
 .searchBox__web {
     flex: 1;
-    // min-width: 180px;
-    // max-width: 560px ;
     position: relative ;
     @include flex(start, center, $padding_base) ;
 }
@@ -342,10 +342,11 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
     flex: 1;
     display: flex;
     align-items: center;
-    border: 1.4px solid $border_color ;
+    border: 1.4px solid $primary ;
     padding-inline-start: 15px;
+    overflow: hidden ;
     transition: border-color 0.2s ease, background 0.2s ease;
-    border-radius: $radius_base ;
+    @include radius_large() ;
 
     svg {flex-shrink: 0; color: $txt_color_light ;}
     &:focus-within {
@@ -362,12 +363,21 @@ $border_primary : 1px solid rgb($secondary, 0.14)  ;
 
         // &::placeholder {color: $light ;}
     }
+
+}
+.btn_search {
+    color: $white ;
+    @include flex_center() ;
+    background-color: $primary !important;
+    padding: 12px ;
+    border: 0 ;
+    font-size: $size_xs ;
 }
 .category_button {
     height: 45px;
     width: 45px ;
     @include flex(center, center, 0) ;
-    border-radius: $radius_base ;
+    @include radius_large() ;
     background-color: $hover_color !important ;
     svg { 
         color: $txt_color_base ;

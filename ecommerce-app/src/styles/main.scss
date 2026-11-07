@@ -32,13 +32,16 @@
 @import "./layout/header";
 @import "./layout/footer";
 
-/* PAGES */
+/* PAGES */ 
 @import "./pages/dashboard/home";
 @import "./pages/dashboard/profile";
 @import "./pages/dashboard/cities";
 @import "./pages/dashboard/user";
 @import "./pages/dashboard/visitor";
 @import "./pages/dashboard/offers";
+@import "./pages/dashboard/visitorsMap";
+@import "./pages/dashboard/dashboard";
+@import "./pages/dashboard/orders";
 
 @import 'leaflet/dist/leaflet.css';
 

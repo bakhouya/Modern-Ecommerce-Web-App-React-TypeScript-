@@ -74,7 +74,7 @@ export default function SuccessModal({ data, customerName, onClose }: Props) {
                 </div>
 
                 <button
-                    className="btn primary lg success_btn"
+                    className="btn primary lg success_btn radius_large"
                     type="button"
                     onClick={handleInvoice}
                     disabled={isInvoiceLoading}>

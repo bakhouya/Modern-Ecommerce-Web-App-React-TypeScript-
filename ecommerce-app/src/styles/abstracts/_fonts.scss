@@ -13,11 +13,79 @@
     src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2) format('woff2');
     unicode-range: U +0900 -097F, U +1CD0 -1CF9, U +200C -200D, U +20A8, U +20B9, U +20F0, U +25CC, U + A830-A839, U + A8E0-A8FF, U +11B00 -11B09;
 }
-
 @font-face {
   font-family: 'Nivella';
   src: url('../../assets/fonts/Nivella-gwWj1.otf') format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: "TT Norms Pro Trial Expanded";
+  src: url("../../assets/fonts/TTNormsPro/TT Norms Pro Trial Expanded Regular.ttf")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial Expanded";
+  src: url("../../assets/fonts/TTNormsPro/TT Norms Pro Trial Expanded Medium.ttf")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial Expanded";
+  src: url("../../assets/fonts/TTNormsPro/TT Norms Pro Trial Expanded Bold.ttf")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial Expanded";
+  src: url("../../assets/fonts/TTNormsPro/TT Norms Pro Trial Expanded ExtraBlack.ttf")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: "TT Norms Pro Trial";
+  src: url("../../assets/fonts/TTNormsTrial/TT Norms Pro Trial Regular.ttf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial";
+  src: url("../../assets/fonts/TTNormsTrial/TT Norms Pro Trial Norma.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial";
+  src: url("../../assets/fonts/TTNormsTrial/TT Norms Pro TrialExtraBold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms Pro Trial";
+  src: url("../../assets/fonts/TTNormsTrial/TT Norms Pro Trial  ExtraBlack.ttf")
+    format("woff2");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

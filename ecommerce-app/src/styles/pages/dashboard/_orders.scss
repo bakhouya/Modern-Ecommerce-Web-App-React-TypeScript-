@@ -1,0 +1,635 @@
+
+.orders_page {
+    display: flex;
+    .filter_orders {
+        width: 350px ;
+        height: calc(100vh - #{$height_box}) ;
+        border-inline-end: 1px solid $border_color ;
+        position: sticky ;
+        top: $height_box ;
+    }
+    .orders_content {
+        flex: 1 ;
+        padding: calc($padding_base - 5px) $padding ;
+    }
+}
+
+
+
+
+.wrapper_details_order_page {
+    padding: $padding_base $padding ;
+    border: 1px solid red ;
+    width: calc(100% - $close_sidbar ) ;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ---------- HEADER ----------
+.orders_header {
+  @include flex(space-between, center, $padding_base);
+  flex-wrap: wrap;
+  padding-bottom: $padding_base ;
+  border-bottom: 1px solid $border_color;
+
+//   &__left { display: flex; flex-direction: column; gap: 6px; }
+  &__actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+}
+
+.btn {
+  @include flex_center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: $radius_base;
+  font-size: $size_xs;
+  font-weight: $weight_600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+  font-family: $family;
+  letter-spacing: 0.2px;
+
+  &_primary {
+    background: $primary;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba($primary, 0.28);
+    &:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba($primary, 0.38); }
+    &:active { transform: translateY(0); }
+  }
+
+  &_ghost {
+    background: transparent;
+    color: $txt_color_base;
+    border-color: $border_input;
+    &:hover { background: $hover_color; border-color: $primary; color: $primary; }
+  }
+
+  &_danger {
+    background: $danger;
+    color: #fff;
+    &:hover { filter: brightness(1.08); }
+  }
+
+  &_sm { padding: 7px 12px; font-size: 13px; }
+
+  &:disabled { opacity: 0.55; cursor: not-allowed; transform: none !important; }
+}
+.orders_filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: $radius_base;
+  background: $base_color;
+  border: 1px solid $border_color;
+
+  &__field {
+    flex: 1;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-size: 11px;
+      font-weight: $weight_600;
+      color: $txt_color_light;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    input, select {
+      padding: 9px 12px;
+      font-size: $size_xs;
+      border-radius: $radius_base;
+      border: 1px solid $border_input;
+      background: $bg_color;
+      color: $txt_color_base;
+      outline: none;
+      transition: all 0.2s;
+      font-family: $family;
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.12);
+      }
+    }
+  }
+}
+
+
+
+
+.orders_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $padding_base ;
+  padding-block: $padding_base ;
+  transition: opacity 0.2s;
+
+  @include respond(md) { grid-template-columns: repeat(1, 1fr); }
+  @include respond(xl) { grid-template-columns: repeat(1, 1fr); }
+
+  &_dimmed { opacity: 0.55; pointer-events: none; }
+}
+.order_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $padding_base ;
+  padding: $padding_base ;
+  border-radius: $radius_base ;
+  background: $base_color;
+  border: 1px solid $border_color;
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  overflow: hidden;
+
+    .body_cart_order {
+        @include flex(space-between, center, $padding_base) ;
+    }
+    &:hover {
+        transform: translateY(-3px);
+        border-color: rgba($primary, 0.35);
+        box-shadow: 0 10px 30px -8px rgba($primary, 0.22);
+    }
+    &__top {
+        @include flex(space-between, center, 12px);
+        border-bottom: 1px dashed $border_color;
+        padding-bottom: $padding_base ;
+    }
+    &__client {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        flex: 1;
+        min-width: 0;
+    }
+    &__stats {
+        @include flex(space-between, center, 10px);
+    }
+    &__stat {
+        @include flex(center, center, 6px) ;
+    }
+
+
+    &__footer {
+        padding-top: 12px;
+        border-top: 1px dashed $border_color;
+    }
+
+
+    &__date {
+        padding-top: 6px;
+        @include flex(space-between, center, 8px);
+    }
+
+}
+
+
+.status_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: $radius_full;
+  font-size: 11.5px;
+  font-weight: $weight_600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $base_color ;
+    // box-shadow: 0 0 0 3px rgba(currentColor, 0.18);
+  }
+}
+.orders_empty {
+  @include flex_center(column);
+  gap: 12px;
+  padding: 70px 20px;
+  text-align: center;
+  color: $txt_color_light;
+
+  &__icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: $hover_color;
+    color: $primary;
+    @include flex_center;
+    font-size: 26px;
+  }
+
+  &__title { font-size: $size_md; font-weight: $weight_700; color: $txt_color_title; }
+  &__text  { font-size: $size_xs; max-width: 380px; line-height: 1.6; }
+}
+
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+
+
+.order_details_admin {
+    @include flex(start, start, $padding_base) ;
+    padding-block: $padding_base ;
+    border: 1px solid red ;
+    &__main {
+        flex: 1 ;
+        min-width: 0 ;
+        display: flex ;
+        flex-direction: column;
+        gap: $padding_base;
+    }
+    &__side {
+        width: 60% !important ;
+        display: flex;
+        flex-direction: column;
+        gap: $padding_base;
+        // @include respond(lg) { width: 300px; flex-shrink: 0; }
+    }
+}
+
+.panel {
+  background: $base_color;
+  border: 1px solid $border_color;
+  border-radius: $radius_base ;
+  overflow: hidden;
+
+  &__head {
+    @include flex(space-between, center, 12px);
+    padding: 14px 18px;
+    border-bottom: 1px solid $border_color;
+    // background: $wrapper_color;
+  }
+
+  &__title {
+    font-size: $size_sm;
+    font-weight: $weight_700;
+    color: $txt_color_title;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+
+  &__body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+// ---------- INFO LIST (flex, no table) ----------
+.info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed $border_color;
+
+    &:last-child { border-bottom: none; }
+
+    span:first-child {
+      font-size: 12px;
+      font-weight: $weight_600;
+      color: $txt_color_light;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+    span:last-child {
+      font-size: $size_xs;
+      font-weight: $weight_600;
+      color: $txt_color_title;
+      text-align: end;
+      word-break: break-word;
+    }
+  }
+}
+
+// ---------- SUMMARY ----------
+.summary_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__row {
+    @include flex(space-between, center, 8px);
+    font-size: $size_xs;
+    padding: 8px 0;
+    border-bottom: 1px dashed $border_color;
+
+    &:last-child { border-bottom: none; }
+
+    span:first-child { color: $txt_color_light; }
+    span:last-child { font-weight: $weight_600; color: $txt_color_title; }
+
+    &_total {
+      padding-top: 12px;
+      span:last-child {
+        font-size: $size_lg;
+        color: $primary;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: -0.5px;
+      }
+    }
+  }
+}
+
+// ---------- PRODUCT CARD ----------
+.product_card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid $border_color;
+  background: $wrapper_color;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    box-shadow: 0 4px 16px -6px rgba($primary, 0.15);
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__img {
+    width: 52px;
+    height: 52px;
+    border-radius: $radius_base;
+    object-fit: cover;
+    background: $bg_color;
+    flex-shrink: 0;
+    border: 1px solid $border_color;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__title {
+    font-size: $size_xs;
+    font-weight: $weight_700;
+    color: $txt_color_title;
+    @include text-ellipsis;
+  }
+
+  &__meta {
+    font-size: 12px;
+    color: $txt_color_light;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__offer {
+    font-size: 10.5px;
+    font-weight: $weight_700;
+    padding: 2px 8px;
+    border-radius: $radius_full;
+    background: rgba($secondary, 0.15);
+    color: $secondary;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
+
+    &-value {
+      font-family: "JetBrains Mono", monospace;
+      font-size: $size_sm;
+      font-weight: $weight_700;
+      color: $primary;
+      white-space: nowrap;
+    }
+    &-old {
+      font-size: 11.5px;
+      color: $txt_color_light;
+      text-decoration: line-through;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 4px;
+  }
+}
+
+// ---------- VARIANT ROW ----------
+.variant_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: $radius_base;
+  background: $base_color;
+  border: 1px solid $border_color;
+  flex-wrap: wrap;
+
+  &__info {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: $weight_600;
+    color: $txt_color_title;
+    @include text-ellipsis;
+  }
+
+  &__attrs { display: flex; gap: 5px; flex-wrap: wrap; }
+
+  &__attr {
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: $radius_full;
+    background: $hover_color;
+    color: $primary;
+    font-weight: $weight_600;
+    letter-spacing: 0.2px;
+  }
+
+  &__price {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: $weight_700;
+    color: $txt_color_title;
+    white-space: nowrap;
+  }
+
+  &__actions { display: flex; gap: 4px; }
+}
+
+// ---------- QUANTITY ----------
+.qty_ctrl {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $border_input;
+  border-radius: $radius_base;
+  overflow: hidden;
+  background: $bg_color;
+
+  button {
+    @include flex_center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: $txt_color_base;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    &:hover:not(:disabled) { background: $hover_color; color: $primary; }
+    &:disabled { opacity: 0.35; cursor: not-allowed; }
+  }
+
+  span {
+    min-width: 34px;
+    text-align: center;
+    font-weight: $weight_700;
+    font-size: 13px;
+    color: $txt_color_title;
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+// ---------- ICON BTN ----------
+.icon_btn {
+  @include flex_center;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius_base;
+  border: 1px solid $border_input;
+  background: $base_color;
+  color: $txt_color_base;
+  cursor: pointer;
+  transition: all 0.18s;
+  flex-shrink: 0;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+    background: $hover_color;
+  }
+  &_danger:hover {
+    border-color: $danger;
+    color: $danger;
+    background: rgba($danger, 0.08);
+  }
+}
+
+// ---------- MODAL ----------
+.modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 900;
+  @include flex_center;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+.modal {
+  width: 100%;
+  max-width: 460px;
+  background: $base_color;
+  border-radius: 14px;
+  border: 1px solid $border_color;
+  box-shadow: $shadow_model;
+  overflow: hidden;
+  animation: modalPop 0.24s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &__head {
+    @include flex(space-between, center, 12px);
+    padding: 16px 20px;
+    border-bottom: 1px solid $border_color;
+
+    h3 {
+      margin: 0;
+      font-size: $size_sm;
+      font-weight: $weight_700;
+      color: $txt_color_title;
+    }
+  }
+
+  &__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: $size_xs;
+    color: $txt_color_base;
+    line-height: 1.55;
+
+    select, input {
+      padding: 10px 12px;
+      font-size: $size_xs;
+      border-radius: $radius_base;
+      border: 1px solid $border_input;
+      background: $bg_color;
+      color: $txt_color_base;
+      font-family: $family;
+      outline: none;
+      transition: all 0.2s;
+      &:focus { border-color: $primary; box-shadow: 0 0 0 3px rgba($primary, 0.12); }
+    }
+  }
+
+  &__foot {
+    padding: 14px 20px;
+    border-top: 1px solid $border_color;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.94) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
