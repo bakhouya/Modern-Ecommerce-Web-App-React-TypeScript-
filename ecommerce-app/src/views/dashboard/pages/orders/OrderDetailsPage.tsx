@@ -1,32 +1,25 @@
 
 
-import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useAssignDelivery, useChangeOrderStatus, useDeleteOrderProduct, useDeleteOrderVariant, useOrderDetails, useStatuses, useUpdateVariantQuantity } from "../../../../controllers/useOrder";
+import { useOrderDetails, useUpdateVariantQuantity } from "../../../../controllers/useOrder";
 import { EmptyState } from "../../../../widgets/dashboard/orders/EmptyState";
 import { OrderStatusBadge } from "../../../../widgets/dashboard/orders/OrderStatusBadge";
 import { ProductCard } from "../../../../widgets/dashboard/orders/ProductCard";
-import { ChangeStatusModal } from "../../../../widgets/dashboard/orders/ChangeStatusModal";
-import { AssignDeliveryModal } from "../../../../widgets/dashboard/orders/AssignDeliveryModal";
-import { ConfirmDeleteModal } from "../../../../widgets/dashboard/orders/ConfirmDeleteModal";
 import { LoadingDisplay } from "../../../../components/ui/LoadingDisplay";
+import { useState } from "react";
 
 export default function OrderDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   const { data: order, isLoading } = useOrderDetails(id);
-  const { data: statuses = [] } = useStatuses();
 
-  const delProduct = useDeleteOrderProduct();
-  const delVariant = useDeleteOrderVariant();
   const updQty = useUpdateVariantQuantity();
-  const changeStat = useChangeOrderStatus();
-  const assignDel = useAssignDelivery();
 
   const [modal, setModal] = useState< | { type: "status" } | { type: "delivery" } | { type: "delProduct"; id: string } | { type: "delVariant"; id: string } | null>(null);
 
   if (isLoading) return <LoadingDisplay />;
+  if (modal) return "";
   if (!order) return <EmptyState title="Order not found" />;
 
   return (
@@ -120,56 +113,6 @@ export default function OrderDetailsPage() {
             </section>
         </aside>
       </div>
-
-
-{/* 
-      {modal?.type === "status" && (
-        <ChangeStatusModal
-          statuses={statuses}
-          currentId={order.status_details.id}
-          loading={changeStat.isPending}
-          onClose={() => setModal(null)}
-          onConfirm={(statusId) =>
-            changeStat.mutate(
-              { orderId: order.id, statusId },
-              { onSuccess: () => setModal(null) }
-            )
-          }
-        />
-      )}
-
-      {modal?.type === "delivery" && (
-        <AssignDeliveryModal
-          loading={assignDel.isPending}
-          onClose={() => setModal(null)}
-          onConfirm={(deliveryId) =>
-            assignDel.mutate(
-              { orderId: order.id, deliveryId },
-              { onSuccess: () => setModal(null) }
-            )
-          }
-        />
-      )}
-
-      {modal?.type === "delProduct" && (
-        <ConfirmDeleteModal
-          loading={delProduct.isPending}
-          onClose={() => setModal(null)}
-          onConfirm={() =>
-            delProduct.mutate(modal.id, { onSuccess: () => setModal(null) })
-          }
-        />
-      )}
-
-      {modal?.type === "delVariant" && (
-        <ConfirmDeleteModal
-          loading={delVariant.isPending}
-          onClose={() => setModal(null)}
-          onConfirm={() =>
-            delVariant.mutate(modal.id, { onSuccess: () => setModal(null) })
-          }
-        />
-      )} */}
 
     </section>
   );
