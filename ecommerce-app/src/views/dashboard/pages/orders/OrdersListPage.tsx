@@ -1,22 +1,21 @@
+
+
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useOrders, useStatuses } from "../../../../controllers/useOrder";
+import { useOrders } from "../../../../controllers/useOrder";
 import { OrdersHeader } from "../../../../widgets/dashboard/orders/OrdersHeader";
-import { OrdersFilters } from "../../../../widgets/dashboard/orders/OrdersFilters";
 import { OrdersSkeleton } from "../../../../widgets/dashboard/orders/LoadingSkeleton";
 import { EmptyState } from "../../../../widgets/dashboard/orders/EmptyState";
 import { OrdersGrid } from "../../../../widgets/dashboard/orders/OrdersGrid";
-// import { Pagination } from "../../../../widgets/dashboard/orders/Pagination";
 import ROUTES from "../../../../routers/dashboard/path";
 import { Pagination } from "../../../../components/ui/Pagination";
 
 export default function OrdersListPage() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [filters, setFilters] = useState<{search?: string;status?: string;order_type?: string;}>({});
+  const [filters] = useState<{search?: string;status?: string;order_type?: string;}>({});
   const params = useMemo(() => ({ page, ...filters }), [page, filters]);
   const { data, isLoading, isFetching } = useOrders(params);
-  const { data: statuses = [] } = useStatuses();
 
   const totalPages = Math.ceil((data?.pagination?.count || 0) / 10);
 
