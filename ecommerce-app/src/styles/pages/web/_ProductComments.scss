@@ -22,7 +22,7 @@
         flex-shrink: 0;
         width: 48px;
         height: 48px;
-        border-radius: $radius_base ;
+        @include radius_large() ;
         color: $primary ;
         background: $hover_color ;
     }
@@ -31,7 +31,7 @@
         padding: $padding_base ;
         margin-bottom: $padding_base ;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+        @include radius() ;
         background: linear-gradient(135deg, $base_color , $bg_color );
     }
 
@@ -76,7 +76,7 @@
         min-height: 220px;
         padding: 30px 20px;
         text-align: center;
-        border-radius: $radius_base ;
+        @include radius() ;
         background: #fbfcfd;
         border: 1px dashed $border_color ;
 
@@ -99,7 +99,7 @@
         margin-top: 18px;
         padding: 10px 16px;
         border: 0;
-        border-radius: $radius_base ;
+        @include radius_large() ;
         color: #fff;
         background: $primary ;
         font: inherit;
@@ -142,7 +142,7 @@
     flex-shrink: 0;
     width: 45px;
     height: 45px;
-    border-radius: $radius_base ;
+    @include radius_large() ;
     color: $primary ;
     background: $hover_color ;
     svg {color: $primary ;}
@@ -167,7 +167,7 @@
         display: inline-block;
         margin-top: 6px ;
         overflow: hidden;
-        border-radius: $radius_base ;
+        @include radius_large() ;
     }
 
     &__image {

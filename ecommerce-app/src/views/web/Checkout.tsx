@@ -226,7 +226,7 @@ export default function Checkout() {
 
 
                     <div className="row my_15">
-                        <button className="col_1 btn primary xl radius_30" type="button" onClick={handleSubmit}>
+                        <button className="col_1 btn primary xl radius_large" type="button" onClick={handleSubmit}>
                             <div className="text text_sm text_white weight_600"> {t("store.checkout.confirmOrder")} </div>
                             {checkoutMutation.isPending && <Loading />}
                         </button>

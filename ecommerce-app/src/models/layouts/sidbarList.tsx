@@ -56,6 +56,7 @@ export const getMenuItems = (t: TFunction, size: number): NavItem[] =>  [
       items: [
         { id: "ventes-rapport", title: t('navigation.ventes_rapport'), icon: <BarChart3Icon size={size} />, url: "/admin/reports/sales" },
         { id: "visites", title: t('navigation.visites'), icon: <EyeIcon size={size} />, url: ROUTES.VISITORS },
+        { id: "visitors-map", title: t('navigation.statistiques'), icon: <BarChart3Icon size={size} />, url: ROUTES.VISITORS_MAP },
       ],
     },
     { id: "branches", title: t('navigation.branches'), icon: <TruckIcon size={size} />, url: ROUTES.BRANCHES },

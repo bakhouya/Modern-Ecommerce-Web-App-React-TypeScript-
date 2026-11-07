@@ -57,11 +57,12 @@ body {
     font-variation-settings: "GRAD" 0 ;  
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;  
-    overflow-x: hidden ;
+    // overflow-x: hidden ;
     background:
         radial-gradient(ellipse at 0% 0%,rgba(191, 219, 254, 0.48),transparent 38%),
         radial-gradient( ellipse at 100% 10%, rgba(221, 214, 254, 0.42), transparent 35%),
         linear-gradient(135deg,#ffffff 0%,#f8faff 50%,#f8f7ff 100%);
+
     background-attachment: fixed;
 
 }
@@ -129,7 +130,7 @@ img {
     margin-inline-start : $open_sidbar;
     transition: all 0.3s ease-in-out ;
     min-height: 100vh ;
-    background:$bg_color ;
+    // background: $bg_color ;
     &.collapsed{
         margin-inline-start : $close_sidbar ;
     }

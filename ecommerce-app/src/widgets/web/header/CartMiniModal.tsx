@@ -84,7 +84,7 @@ const CartModal = ({ isOpen, onClose, cart}: CartModalProps) => {
                   </div>
 
                   <div className="action_cart">
-                        <Link to={WEBROUTES.CHECKOUT} type="button" className="full_width btn primary lg radius_30">
+                        <Link to={WEBROUTES.CHECKOUT} type="button" className="full_width btn primary lg radius_large">
                           <div className="text text_sm text_white weight_600"> {t("store.drops.checkout")} ({cart.discount}{settings?.currency_symbol}) </div>
                         </Link>
                   </div>

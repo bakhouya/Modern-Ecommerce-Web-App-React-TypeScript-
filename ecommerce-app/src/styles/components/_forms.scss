@@ -10,7 +10,7 @@ $height : 54px ;
 .card_form {
     background-color: $base_color ;
     padding: $padding_base ;
-    border-radius: $radius_base ;
+    @include radius() ;
     border: 1px solid $border_color ;
 }
 
@@ -55,7 +55,7 @@ input {
         display: none;
     }
     &.input_text {
-        border-radius: $radius_base ;
+        @include radius() ;
         min-height: $height !important;
         border: 1.9px solid $border_input ;
         width: 100% ;
@@ -91,7 +91,7 @@ input {
         }
     }
     &__menu {
-        border-radius: 12px;
+        @include radius() ;
         overflow: hidden;
         font-size: $size_md;
         background-color: $base_color !important;

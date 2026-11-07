@@ -42,9 +42,9 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   /*-------------------------------------------------------------------------------------------*/
   /*-------------------------------------------------------------------------------------------*/
   return (
-    <div className="product_card" title={product?.title || ""}>
+    <div className="product_item" title={product?.title || ""}>
 
-        <div className="product_card__badge_card_products">
+        <div className="product_item__badge_card_products">
             {product?.has_offer && 
               <span className="badge_sale">
                 {/* -{discount}%  */}
@@ -53,32 +53,27 @@ const ProductCard: React.FC<Props> = ({ product }) => {
             } 
         </div>
 
-        <Link to={WEBROUTES.PRODUCT(product.id)} className="product_card__image">
+        <Link to={WEBROUTES.PRODUCT(product.id)} className="product_item__image">
           <img src={getImageUrl(imageSrc) || ImagePlaceholder} alt={product.title} loading="lazy"/>
         </Link>
 
-        <div className="product_card__content">
+        <div className="product_item__content">
 
-          <div className="text text_sm p_limit_2 text_primary"> {product?.main_category} </div>
+          {/* <div className="text text_sm p_limit_2 text_primary"> {product?.main_category} </div> */}
           <div className="text text_sm p_limit_2"> {product.title} </div>
-          <div className="product_card__rating">
-              {'★'.repeat(fullStars)} {'☆'.repeat(emptyStars)}
-              <span>({product.rating.toFixed(1)})</span>
-            </div>
           <div className="flex_between_center">
-              
-              <div className="product_card__pricing">
+              <div className="product_item__pricing">
                 <span className="text text_sm weight_600">{displayPrice.toFixed(2)}{settings?.currency_symbol || "Dh"}</span>
                 {discount > 0 && (
                   <span className="old-price text"> {regularPrice.toFixed(2)}{settings?.currency_symbol || "Dh"}</span>
                 )}
               </div>
-
-              {/* <div className="product_card__rating">
-                {'★'.repeat(fullStars)} {'☆'.repeat(emptyStars)}
-                <span>({product.rating.toFixed(1)})</span>
-              </div> */}
-          </div>         
+          </div> 
+          <div className="product_item__rating">
+              {'★'.repeat(fullStars)} {'☆'.repeat(emptyStars)}
+              <span>({product.rating.toFixed(1)})</span>
+          </div>
+          <div className="text text_sm text_success"> Livraison gratuit </div>        
 
         </div>
 

@@ -54,7 +54,7 @@ function Header() {
                     </Link>
 
                     <div className="flex_start_center searchBox__web">
-                         <button type="button" className="category_button" onClick={() => setIsMenuOpen(true)}>
+                        <button type="button" className="category_button" onClick={() => setIsMenuOpen(true)}>
                             {/* <Menu size={21} /> */}
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                                 <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" 
@@ -70,6 +70,9 @@ function Header() {
                                 </g>
                             </svg>
                             <input type="text" placeholder={t("store.header.search.placeholder")} aria-label={t("store.header.search.ariaLabel")}/>
+                            <button className="btn_search" type="button">
+                                Recherche
+                            </button>
                         </Link>
                     </div>
                     

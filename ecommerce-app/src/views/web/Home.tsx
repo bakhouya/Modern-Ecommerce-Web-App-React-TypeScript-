@@ -9,9 +9,11 @@ import ProductsList from '../../widgets/web/products/ProductsList';
 import { useHomePageProducts } from '../../controllers/usePublicProducts';
 import { useState } from 'react';
 import OffersBanner from '../../widgets/web/offers/OffersBanner';
-import ProductServiceInfo from '../../widgets/web/products/ProductServiceInfo';
 import HomeSlider from "../../widgets/web/home/HomeSlider";
 import { usePublicCategory } from "../../controllers/useCategory";
+import ServicesHome from "../../widgets/web/services/homeServices/Services";
+import { usePublicServices } from "../../controllers/useServices";
+
 
 
 export default function StoreHome() {
@@ -22,6 +24,7 @@ export default function StoreHome() {
     const { sliders, offers } = useData();
     const { data: homePageProducts = []} = useHomePageProducts({main_category: mainCategory});
     const {data: categories }    = usePublicCategory() ;
+    const {data: services} = usePublicServices();
 
     return (
         <main className="main_page">
@@ -54,9 +57,8 @@ export default function StoreHome() {
                 <ProductsList products={homePageProducts} />
             </div>
 
-            <div className="web_container">
-                <ProductServiceInfo />
-            </div>
+
+            <ServicesHome services={services || []}/>
 
         </main>
     );

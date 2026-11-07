@@ -29,7 +29,7 @@ const HomeSlider = ({ sliders }: HomeSliderProps) => {
 
   return (
     <section className="hero_home_page web_container">
-        <section className="store_home">
+        <section className="store_home radius_primary">
           <Swiper
               key={i18n.language}
               modules={[Navigation, Pagination, Autoplay]}
@@ -52,21 +52,21 @@ const HomeSlider = ({ sliders }: HomeSliderProps) => {
               observeParents
               watchOverflow
               dir={i18n.dir()}
-              className="store_home__slider"
+              className="store_home__slider radius_primary"
           >
               {sliders.map((slide, index) => (
               <SwiperSlide key={slide.id}>
-                  <Link to={slide.url} className="slide_content">
-                  <img
-                      src={getImageUrl(slide.image)}
-                      alt={slide.title || ""}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      decoding="async"
-                      draggable={false}/>
+                  <Link to={slide.url} className="slide_content radius_primary">
+                    <img
+                        src={getImageUrl(slide.image)}
+                        alt={slide.title || ""}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : "auto"}
+                        decoding="async"
+                        draggable={false}/>
 
-                  <div className="slide_content__bg" />
-                  <div className="slide_content__overlay" />
+                    <div className="slide_content__bg" />
+                    <div className="slide_content__overlay" />
                   </Link>
               </SwiperSlide>
               ))}

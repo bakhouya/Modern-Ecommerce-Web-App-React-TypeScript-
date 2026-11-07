@@ -64,7 +64,7 @@ $policy-radius: 20px;
     padding: 9px 14px;
     background: $hover_color ;
     border: 2px solid $hover_color ;
-    border-radius: 999px;
+    @include radius_large() ;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1.15px;
@@ -93,7 +93,7 @@ $policy-radius: 20px;
     padding: 13px 18px 13px 13px ;
     background: $bg_color ;
     border: 1px solid $border_color ;
-    border-radius: $radius_base ;
+    @include radius() ;
     box-shadow: 0 8px 28px rgba(22, 44, 66, 0.035);
     > span:last-child {display: grid; gap: 3px;}
     strong {
@@ -112,7 +112,7 @@ $policy-radius: 20px;
     place-items: center;
     color: $primary ;
     background: $hover_color ;
-    border-radius: $radius_base ;
+    @include radius_large() ;
   }
   &__image {
     position: absolute ;
@@ -160,7 +160,7 @@ $policy-radius: 20px;
   padding: 10px ;
   background: $bg_color ;
   border: 1px solid $border_color ;
-  border-radius: $radius_base ;
+  @include radius_large() ;
   font-size: $size_xs ;
   font-weight: 600;
 
@@ -172,7 +172,7 @@ $policy-radius: 20px;
     place-items: center;
     color: $primary ;
     background: $hover_color ;
-    border-radius: $radius_base ;
+    @include radius_large() ;
     font-size: $size_xs ;
     font-weight: 850;
   }
@@ -193,7 +193,7 @@ $policy-radius: 20px;
     padding: 0 19px;
     background: $base_color ;
     border: 1px solid $border_color ;
-    border-radius: $radius_base ;
+    @include radius() ;
     box-shadow: 0 5px 20px rgba(22, 44, 66, 0.025);
     transition: border-color 180ms ease;
     &:focus-within {border-color: $secondary ;}
@@ -218,7 +218,7 @@ $policy-radius: 20px;
         @include flex(center, center, 0) ;
         background: $hover_color ;
         border: 0;
-        border-radius: $radius_base ;
+        @include radius() ;
         cursor: pointer;
         font-weight: 700 ;
         &:hover {background: $hover_color ;}
@@ -240,7 +240,7 @@ $policy-radius: 20px;
   overflow: hidden;
   background: $base_color ;
   border: 1px solid $border_color ;
-  border-radius: $radius_base ;
+  @include radius() ;
   box-shadow: 0 3px 12px rgba(22, 44, 66, 0.018);
   transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 
@@ -276,7 +276,7 @@ $policy-radius: 20px;
         &:focus-visible {
         outline: 3px solid $primary ;
         outline-offset: -4px;
-        border-radius: $radius_base ;
+        @include radius_large() ;
         }
   }
   &__icon {
@@ -287,7 +287,7 @@ $policy-radius: 20px;
     place-items: center;
     color: $primary ;
     background: $hover_color ;
-    border-radius: 15px;
+    @include radius_large() ;
     transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
   }
   &__heading {
@@ -458,7 +458,7 @@ $policy-radius: 20px;
     padding: 23px 25px;
     background: $policy-surface;
     border: 1px solid $border_color;
-    border-radius: $radius_base ;
+    @include radius() ;
 
     &__icon, &__text span {
         display: block;
@@ -470,7 +470,7 @@ $policy-radius: 20px;
         width: 53px;
         height: 53px;
         flex-shrink: 0;
-        border-radius: $radius_base ;
+        @include radius_large() ;
     }
     &__text {
         display: grid;
@@ -509,7 +509,7 @@ $policy-radius: 20px;
     text-align: center;
     background: $hover_color ;
     border: 1px dashed $border_color ;
-    border-radius: $radius_base ;
+    @include radius() ;
 
 
     &__icon {
@@ -520,7 +520,7 @@ $policy-radius: 20px;
         place-items: center;
         color: $primary ;
         background: $hover_color ;
-        border-radius: $radius_base ;
+        @include radius_large() ;
     }
 
     h3 {
@@ -544,7 +544,7 @@ $policy-radius: 20px;
     }
     &__button {
       padding: 10px 15px ;
-      border-radius: $radius_base ;
+      @include radius_large() ;
       border: 1px solid $border_color ;
       @include flex(center, center, 6px) ;
     }
@@ -558,7 +558,7 @@ $policy-radius: 20px;
   padding: 24px;
   background: linear-gradient( 110deg, rgba(17, 168, 161, 0.065), rgba(255, 255, 255, 0.95));
   border: 1px solid rgba(17, 168, 161, 0.15);
-  border-radius: $radius_base ;
+  @include radius() ;
 
   &__icon {
     display: grid;
@@ -568,7 +568,7 @@ $policy-radius: 20px;
     place-items: center;
     background: #ffffff;
     border: 1px solid rgba(17, 168, 161, 0.16);
-    border-radius: $radius_base ;
+    @include radius_large() ;
   }
 
   h3 {
@@ -633,7 +633,6 @@ $policy-radius: 20px;
     &__icon {
       width: 45px;
       height: 45px;
-      border-radius:  $radius_base ;
     }
 
     &__title {

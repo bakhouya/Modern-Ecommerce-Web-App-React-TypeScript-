@@ -1,4 +1,6 @@
+
 @import "./dark", "./light", "./fonts";
+@import "./tokens/radius" ;
 
 $accent_color   : #ff6b6b;
 
@@ -18,6 +20,8 @@ $danger     : #d13f3f;
 $warning    : #ff9800;
 $dark       : #111213;
 $light      : #f8f9fa;
+
+
 
 
 
@@ -98,7 +102,7 @@ $family       : "Plus Jakarta Sans", "Nunito", "Lato", "open sans", "Google Sans
 // $family       : "Arial", sans-serif ;
 // $family       : "Calibri", "Nivella", sans-serif ;
 // $family: system-ui, -apple-system, BlinkMacSystemFont, \.SFNSText-Regular, Helvetica, Arial, sans-serif;
-// $family       : "Poppins", "Rubik", "Mulish","Libre Franklin",  sans-serif ;
+$family       : "TT Norms Pro Trial", "TT Norms Pro Trial Expanded",  sans-serif ;
 $family_ar: "IBM Plex Sans Arabic", sans-serif;
 
 
@@ -112,7 +116,7 @@ $weight_700 : 700 ;
 $weight_800 : 800 ;
 $weight_900 : 900 ;
 
-$radius_base: 11px ;
+$radius_base: 7px ;
 $radius_base_web: 30px ;
 $radius_full: 30px ;
 $spacer: 1rem ;
@@ -132,10 +136,11 @@ $box_shadow_md: 0 4px 6px rgba(0,0,0,0.07);
 
 
 
-
-$padding_base : 12px ;
-$space        : 100px ;
 $padding      : 20px ;
+$padding_base : 12px ;
+$space        : $padding ;
+$web_space    : 100px ;
+
 
 
 

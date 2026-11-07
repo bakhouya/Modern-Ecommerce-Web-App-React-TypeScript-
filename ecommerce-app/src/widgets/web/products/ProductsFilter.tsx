@@ -179,7 +179,7 @@ const ProductsFilter = ({resultCount, onApply}: ProductsFilterProps) => {
             <div className="products-filter__footer row">
               <button
                 type="button"
-                className="col_2 btn secondary lg"
+                className="col_2 btn secondary lg radius_large"
                 onClick={handleReset}
               >
                 <RotateCcw size={20} />
@@ -190,7 +190,7 @@ const ProductsFilter = ({resultCount, onApply}: ProductsFilterProps) => {
 
               <button
                 type="button"
-                className="col_2 btn primary lg"
+                className="col_2 btn primary lg radius_large"
                 onClick={handleApply}
               >
                 <span className="text text_sm text_white">

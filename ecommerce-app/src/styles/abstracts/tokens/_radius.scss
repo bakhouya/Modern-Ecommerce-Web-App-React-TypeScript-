@@ -1,0 +1,38 @@
+
+
+//========================================================================================
+// TOKENS: BORDER RADIUS
+//========================================================================================
+$radius_none:            0;
+$radius_xs:              2px;
+$radius_sm:              clamp(3px, 0.15vw + 3px, 4px);
+$radius_md:              clamp(6px, 0.30vw + 5px, 8px);
+$radius_lg:              clamp(10px, 0.50vw + 8px, 14px);
+$radius_xl:              clamp(14px, 0.80vw + 11px, 20px);
+$radius_2xl:             clamp(20px, 1.20vw + 16px, 28px);
+$radius_3xl:             clamp(30px, 1.30vw + 22px, 34px);
+$radius_full:            9999px;
+
+
+$round      : round ;
+$squircle   : squircle ;
+$bevel      : bevel ;
+$scoop      : scoop ;
+$notch      : notch ;
+$square     : square ; 
+
+@mixin radius() {
+    border-radius: $radius_xl !important ;
+    corner-shape: $squircle !important ;
+}
+@mixin radius_large() {
+    border-radius: $radius_3xl !important ;
+    corner-shape: $squircle !important ;
+}
+.radius_primary {
+    @include radius() ;
+}
+.radius_large {
+  @include radius_large() ;
+}
+//========================================================================================

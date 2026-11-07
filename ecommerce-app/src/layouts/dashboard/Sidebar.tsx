@@ -27,7 +27,7 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
     return (
         <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
         <Logo collapsed={collapsed} />
-        <nav className="sidebar__nav my_start_15">
+        <nav className="sidebar__nav my_start_20">
             {!activeGroup ? (
             <ul className="sidebar__menu">
                 {menuItems.map((item) => {
@@ -61,10 +61,10 @@ export default function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
             <div className="sidebar_submenu">
                 <button className="sidebar_back_button" onClick={() => setActiveGroupId(null)}>
                 <div className="btn_icon sm flex_center_center radius_6">
-                    <ArrowIcon size={18} />
+                    <ArrowIcon size={22} />
                 </div>
                 {!collapsed && (
-                    <span className="text text_lg weight_700">{activeGroup.title}</span>
+                    <span className="text text_md">{activeGroup.title}</span>
                 )}
                 </button>
                 <div className="sidebar_submenu_links">

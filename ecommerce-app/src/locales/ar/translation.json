@@ -1,6 +1,12 @@
 {
 
     "store": {
+        "orders_today": "طلبات اليوم",
+        "pending_orders": "طلبات في الانتظار",
+        "visits_today": "زيارات اليوم",
+        "new_visitors": "زوار جدد",
+        "vs_yesterday": "مقارنة بالأمس: {{value}}",
+        "pending_created_today": "{{value}} تم إنشاؤها اليوم",
         "header": {
             "announcement": {
                 "freeShipping": "توصيل مجاني للطلبات ابتداءً من 75 درهم",
@@ -393,6 +399,80 @@
     },
 
 
+    "home": {
+        "title": "لوحة التحكم",
+        "subtitle": "نظرة عامة على نشاطك"
+    },
+    "orders_overview": {
+        "title": "نظرة عامة على الطلبات",
+        "subtitle": "إجمالي الطلبات والنشاط الحديث",
+        "total": "المجموع",
+        "today": "اليوم",
+        "avg_daily": "المعدل اليومي (30 يوم)",
+        "cancellation_rate": "معدل الإلغاء"
+    },
+    "order_status": {
+        "title": "التوزيع حسب الحالة",
+        "subtitle": "تفاصيل جميع الطلبات",
+        "empty": "لا توجد بيانات متاحة"
+    },
+    "order_groups": {
+        "title": "مجموعات الطلبات",
+        "subtitle": "عرض مجمع حسب المرحلة"
+    },
+    "status": {
+        "PENDING": "قيد الانتظار",
+        "CONFIRMED": "مؤكدة",
+        "PROCESSING": "قيد المعالجة",
+        "READY_TO_SHIP": "جاهزة للشحن",
+        "SHIPPED": "تم الشحن",
+        "DELIVERED": "تم التوصيل",
+        "CANCELLED": "ملغاة",
+        "REFUNDED": "مستردة",
+        "PAYMENT_PENDING": "الدفع معلق",
+        "PAYMENT_FAILED": "فشل الدفع"
+    },
+    "groups": {
+        "pending_confirmation": "في انتظار التأكيد",
+        "confirmed_and_processing": "مؤكدة وقيد المعالجة",
+        "shipped_and_delivered": "مشحونة وموصلة",
+        "cancelled": "ملغاة"
+    },
+    "customers": {
+        "visitors_total": "الزوار (30 يوم)",
+        "conversion_rate": "معدل التحويل: {{value}}%",
+        "purchasing": "العملاء المشترون",
+        "avg_orders": "السلة: {{value}} طلب/عميل",
+        "new": "عملاء جدد",
+        "returning": "عملاء دائمون",
+        "revenue_total": "الإيرادات (30 يوم)"
+    },
+    "wallet": {
+        "title": "المحفظة",
+        "subtitle": "حركات الشهر الحالي",
+        "credit_month": "الائتمان الشهري",
+        "debit_month": "الخصم الشهري",
+        "net_movement_month": "صافي الحركة",
+        "transactions_month": "معاملات الشهر"
+    },
+    "expenses": {
+        "title": "المصاريف",
+        "subtitle": "متابعة النفقات التشغيلية",
+        "current_month": "الشهر الحالي",
+        "last_30_days": "آخر 30 يوم",
+        "transactions": "{{count}} معاملة",
+        "top_categories": "أهم الفئات"
+    },
+    "combined": {
+        "title": "الملخص المالي الشهري",
+        "subtitle": "عرض موحد للتدفقات والنفقات",
+        "wallet_credit": "ائتمان المحفظة",
+        "wallet_debit": "خصم المحفظة",
+        "operating_expenses": "النفقات التشغيلية",
+        "outflows_plus_expenses": "التدفقات الخارجة + المصاريف",
+        "previous_month": "الشهر السابق"
+    },
+
 
 
 
@@ -404,6 +484,7 @@
 
 
     "common": {
+        "no_baseline": "لا توجد قاعدة",
         "save": "حفظ",
         "cancel": "إلغاء",
         "delete": "حذف",
@@ -1121,7 +1202,35 @@
         "slug": "المعرف الفريد (Slug)",
         "created_at": "تاريخ الإنشاء",
         "updated_at": "تاريخ آخر تحديث"
+    },
+    "visitors_map": {
+        "title": "خريطة الزوار",
+        "subtitle": "تصور المواقع الجغرافية لزوارك.",
+        "refresh": "تحديث",
+        "total_visitors": "إجمالي الزوار",
+        "all_records": "جميع السجلات",
+        "with_location": "مع تحديد الموقع",
+        "coordinates_available": "الإحداثيات متوفرة",
+        "without_location": "بدون تحديد الموقع",
+        "coordinates_unavailable": "الإحداثيات غير متوفرة",
+        "geographic_distribution": "التوزيع الجغرافي",
+        "visitors_displayed": "{{count}} زائر (زوار) معروض (معروضون) على الخريطة",
+        "data_available": "البيانات متوفرة",
+        "search_placeholder": "ابحث عن مدينة أو بلد...",
+        "all_countries": "جميع البلدان",
+        "search_country_placeholder": "ابحث عن بلد...",
+        "unknown_location": "موقع غير معروف",
+        "country_code_unavailable": "رمز البلد غير متوفر",
+        "no_visitor_found": "لم يتم العثور على أي زائر",
+        "modify_search_criteria": "عدّل معايير البحث الخاصة بك.",
+        "visitor_location": "موقع زائر",
+        "locations_count": "{{count}} موقع (مواقع)",
+        "recent_visitors": "الزوار الأخيرون",
+        "latest_visits": "آخر الزيارات المسجلة",
+        "unknown_city": "مدينة غير معروفة",
+        "unknown_country": "بلد غير معروف"
     }
+
 
 
 

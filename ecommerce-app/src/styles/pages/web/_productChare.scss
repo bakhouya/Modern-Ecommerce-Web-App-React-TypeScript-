@@ -43,7 +43,7 @@
         padding: 18px;
         background: $base_color ;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+         @include radius() ;
         box-shadow: 0 16px 45px rgba(15, 23, 42, 0.13), 0 3px 10px rgba(15, 23, 42, 0.04);
         animation: product-share-enter 0.18s ease-out;
         transform-origin: top right;
@@ -59,7 +59,7 @@
         flex-shrink: 0;
         @include flex(center, center, 0) ;
         border: 0;
-        border-radius:$radius_base ;
+        @include radius() ;
         background: $hover_color ;
         cursor: pointer;
     }
@@ -72,7 +72,7 @@
         padding: 12px;
         text-align: start ;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+        @include radius() ;
         background: $base_color ;
         cursor: pointer;
         transition: background 0.2s ease, border-color 0.2s ease;
@@ -91,7 +91,7 @@
         justify-content: center;
         color: $primary;
         background: rgba($primary, 0.09);
-        border-radius: 10px;
+         @include radius_large() ;
     }
 
     &__copy-text {
@@ -139,7 +139,7 @@
         gap: 7px;
         padding: 9px 3px;
         border: 1px solid transparent;
-        border-radius: $radius_base ;
+        @include radius() ;
         background: transparent;
         cursor: pointer;
         transition: background 0.2s ease, transform 0.2s ease;
@@ -156,52 +156,6 @@
             background: $hover_color ;
             transform: translateY(-2px);
         }
-
-        // &--whatsapp {
-        //     color: #159447;
-        //     &:hover {
-        //         background: #edfbf1;
-        //     }
-        // }
-
-        // &--facebook {
-        //     color: #1877f2;
-        //     &:hover {
-        //         background: #eff6ff;
-        //     }
-        // }
-
-        // &--telegram {
-        //     color: #229ed9;
-
-        //     &:hover {
-        //         background: #eff9ff;
-        //     }
-        // }
-
-        // &--x {
-        //     color: #111827;
-
-        //     &:hover {
-        //         background: #f3f4f6;
-        //     }
-        // }
-
-        // &--linkedin {
-        //     color: #0a66c2;
-
-        //     &:hover {
-        //         background: #eff6ff;
-        //     }
-        // }
-
-        // &--email {
-        //     color: #6b7280;
-
-        //     &:hover {
-        //         background: #f3f4f6;
-        //     }
-        // }
     }
 
     &__native {
@@ -213,7 +167,7 @@
         margin-top: 14px;
         padding: 11px;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+        @include radius() ;
         background: $base_color ;
         cursor: pointer;
         transition: background 0.2s ease;
@@ -255,7 +209,7 @@
             width: auto;
             max-width: none;
             padding: 18px;
-            border-radius: 18px;
+            @include radius() ;
             transform-origin: bottom center;
             z-index: 99999999999999 !important;
         }
@@ -301,7 +255,7 @@
     overflow: hidden;
     background: $base_color ;
     border: 1px solid $border_color ;
-    border-radius: $radius_base ;
+    @include radius() ;
     box-sizing: border-box;
 
     &__header {
@@ -318,7 +272,7 @@
         height: 44px;
         color: $primary ;
         background: $hover_color ;
-        border-radius: $radius_base ;
+        @include radius_large() ;
     }
 
     &__heading-content {
@@ -333,7 +287,7 @@
         padding: 7px 10px;
         background: $hover_color;
         border: 1px solid $hover_color ;
-        border-radius: $radius_base ;
+         @include radius_large() ;
         letter-spacing: 0.5px;
         white-space: nowrap;
     }
@@ -347,7 +301,7 @@
         color: var(--offer-success);
         background: var(--offer-success-soft);
         border: 1px solid #d1efdf;
-        border-radius: $radius_base ;
+        @include radius() ;
 
         > svg { flex: 0 0 auto; margin-top: 1px;}
 
@@ -368,7 +322,7 @@
         padding: 14px;
         background: $base_color ;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+        @include radius() ;
         transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 
         &--reached {
@@ -410,7 +364,7 @@
         height: 40px;
         color: $primary ;
         background: $hover_color ;
-        border-radius: $radius_base ;
+         @include radius_large() ;
     }
 
     &__tier-info {
@@ -440,7 +394,7 @@
         padding: 7px 10px;
         color: $primary ;
         background: $hover_color ;
-        border-radius: $radius_base ;
+         @include radius_large() ;
         text-align: end ;
         white-space: nowrap;
 
@@ -476,7 +430,7 @@
         margin-top: 17px;
         padding: 15px;
         border: 1px solid $border_color ;
-        border-radius: $radius_base ;
+         @include radius() ;
 
         > p {
             margin: 10px 0 0;
@@ -516,7 +470,7 @@
         height: 7px;
         overflow: hidden;
         background: #e9ebef;
-        border-radius: 20px;
+        @include radius_large() ;
     }
 
     &__progress-fill {
@@ -538,7 +492,7 @@
         padding: 12px;
         color: var(--offer-success);
         background: var(--offer-success-soft);
-        border-radius: $radius_base ;
+        @include radius_large() ;
         font-size: 12px;
         font-weight: 700;
         line-height: 1.5;
@@ -551,7 +505,7 @@
         padding: 17px;
         background: linear-gradient(120deg, #fff8f4 0%, #fff 100%);
         border: 1px solid #f6d7c8;
-        border-radius: $radius_base ;
+        @include radius() ;
     }
 
     &__single-icon {
@@ -562,7 +516,7 @@
         height: 48px;
         color: var(--offer-primary);
         background: var(--offer-primary-soft);
-        border-radius: $radius_base ;
+        @include radius_large() ;
     }
 
     &__single-content {
@@ -600,7 +554,7 @@
             color: var(--offer-primary-dark);
             background: var(--offer-primary-soft);
             border: 1px solid #ffdfd0;
-            border-radius: $radius_base ;
+             @include radius_large() ;
             font-size: 16px;
             font-weight: 900;
         }
@@ -611,7 +565,7 @@
     .product-offers {
         margin-top: 12px;
         padding: 14px;
-        border-radius: $radius_base ;
+         @include radius() ;
 
         &__header {
             gap: 9px;
@@ -622,7 +576,7 @@
             flex-basis: 38px;
             width: 38px;
             height: 38px;
-            border-radius: $radius_base ;
+             @include radius_large() ;
         }
 
         &__title {
